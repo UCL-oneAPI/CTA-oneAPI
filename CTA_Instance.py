@@ -1,5 +1,5 @@
-from analysers.post_analyser.PostAnalyser import PostAnalyser
-from analysers.pre_analyser.PreAnalyser import PreAnalyser
+from analysers.PostAnalyser import PostAnalyser
+from analysers.PreAnalyser import PreAnalyser
 from auto_editor.AutoEditor import AutoEditor
 from report_presentation.Presenter import Presenter
 
@@ -7,7 +7,7 @@ from report_presentation.Presenter import Presenter
 class CTA_Instance:
     '''
     the same CTA_Instance is used throughout a single run of CTA.
-    Data required in CTA's different components can be stored here.
+    Data created/used in different components can be stored here.
     '''
 
     def __init__(self, dpct_version_root, cta_version_root, report_root):
@@ -41,13 +41,6 @@ class CTA_Instance:
         post_analyser = PostAnalyser(self.cta_version_root)
         self.initial_warnings = post_analyser.get_all_warnings()
 
-    def create_report_presentation(self):
-        '''
-        create files for report
-        '''
-        presenter = Presenter(self.report_root, self.initial_warnings, self.final_warnings, self.changes)
-        presenter.generate_ui_files()
-
     def save_to_csvs(self):
         '''
         Store initial_warnings, final_warnings and changes as separate csvs,
@@ -55,3 +48,10 @@ class CTA_Instance:
         :return: path to newly generated folder where these csvs are stored (next to presentation folder)
         '''
         pass
+
+    def create_report_presentation(self):
+        '''
+        create files for report
+        '''
+        presenter = Presenter(self.report_root, self.initial_warnings, self.final_warnings, self.changes)
+        presenter.generate_ui_files()

@@ -1,7 +1,8 @@
-'''
-This defines the CLI and handles user commands.
-'''
 from CTA_Instance import CTA_Instance
+
+
+# This defines the CLI and handles user commands.
+# Todo Zhongyuan: add CLI implementation
 
 
 def run_cta(dpct_project_path, destination_path, report_path):
