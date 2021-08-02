@@ -1,3 +1,0 @@
-RULES_TO_DESCRIPTIONS = {
-    0: 0
-}
