@@ -15,6 +15,78 @@ class Fix1003Rule(BaseRule):
     def run_rule(self, project: StructuredProjectSource,
                  warning_first_line: int, warning_last_line: int, file_path: str) -> StructuredProjectSource:
         # Todo: add rule here
+
+        # create a new file for output
+        # new_file = open("%s.cla.cpp" % new_file_path, "w")
+
+        remove_function = True
+
+        tmp_dict = project.get_paths_to_lines()
+
+        for file_path in tmp_dict.keys(): # 遍历每个文件
+            # all_lines = project.get_paths_to_lines()[file_name]
+
+            all_lines = tmp_dict[file_path]
+            code_segment_before_changed = all_lines[warning_last_line + 1]
+            for i in range(warning_last_line, len(all_lines)):
+                if ";" not in all_lines[i]:
+                    if first_time == False:
+                        now_code = all_lines[i].strip()
+                    else:
+                        now_code = all_lines[i]
+                        print("prefix code", now_code)
+                        prefix = count_prefix(now_code)
+                    warning_code = warning_code + now_code
+                    warning_code = warning_code.replace("\n", "")
+                    first_time = False
+                else:
+                    if first_time == False:
+                        now_code = all_lines[i].strip()
+                    else:
+                        now_code = all_lines[i]
+                        prefix = count_prefix(warning_code)
+                    warning_code = warning_code + now_code + "\n"
+                    print("i:", i, ",warning_code:", warning_code)
+
+                    if remove_function == True:
+                        if "=(" in warning_code:
+                            prefix = count_prefix(warning_code)
+                            new_code = warning_code.split("=(")
+                            merged_warning_code = merge_except_function(new_code)
+                            new_code = merged_warning_code.replace(",0);", ";")
+                            new_code = new_code.replace(", 0);", ";")
+                        elif "= (" in warning_code:
+                            prefix = count_prefix(warning_code)
+                            new_code = warning_code.split("= (")
+                            merged_warning_code = merge_except_function(new_code)
+                            new_code = merged_warning_code.replace(",0);", ";")
+                            new_code = new_code.replace(", 0);", ";")
+                        elif "((" in warning_code:
+                            new_code = warning_code.split("((")
+                            merged_warning_code = merge_except_function(new_code)
+                            new_code = merged_warning_code.replace(",0));", ";")
+                            new_code = new_code.replace(", 0));", ";")
+                        remove_function == False
+
+
+                    new_code = prefix + new_code
+                    print("prefix", prefix, ".")
+                    print(new_code)
+
+                    for j in range(warning_last_line+1,i):
+                        all_lines[j] = ""
+
+                    all_lines[warning_last_line+1] = new_code
+
+                    # new_file.write(prefix + "#----------------CLA----------\n")
+                    # new_file.write(new_code)
+                    warning_code = ""
+                    warning_code_1003 = False
+                    first_time = True
+                tmp_dict[file_path] = all_lines
+
+        project.paths_to_lines = tmp_dict
+
         return project
 
 
