@@ -28,7 +28,8 @@ class BaseRule:
 
     def initiate_run(self, project: StructuredProjectSource):
         for warning_code in self.dpct_warning_codes:
-            relevant_warning_locations = project.dpct_warnings_dict[warning_code]
+            relevant_warning_locations = project.dpct_warnings_dict[warning_code] \
+                if warning_code in project.dpct_warnings_dict else []
             for warning in relevant_warning_locations:
                 file_path = warning.file_path
                 code_lines = project.paths_to_lines[file_path]
