@@ -1,5 +1,6 @@
 from typing import List
 
+from auto_editor.StructuredProjectSource import StructuredProjectSource
 from constants import RULES_TO_DESCRIPTIONS
 from enums import CodeChange
 
@@ -19,11 +20,20 @@ class AutoEditor:
         '''
 
         all_documented_changes = []
+        project = StructuredProjectSource(self.dpct_version_root)
 
         for rule in RULES_TO_DESCRIPTIONS.values():
-            rule().run()
+            rule().initiate_run(project)
             changes = rule.get_tracked_changes()
             for change in changes:
                 all_documented_changes.append(change)
 
+        self.save_new_version(project)
         return all_documented_changes
+
+    def save_new_version(self, project: StructuredProjectSource):
+        for path, code_lines in project.paths_to_lines:
+            full_path = self.cta_version_root + path
+            with open(full_path, 'a') as f:
+                for line in code_lines:
+                    f.write(line.code)
