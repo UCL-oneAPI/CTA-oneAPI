@@ -67,10 +67,21 @@ def fix_1003(old_file_path,new_file_path):
                         now_code = all_lines[i]
                     warning_code = warning_code + now_code+"\n"
                     print("i:",i,",warning_code:",warning_code)
-                    new_code = warning_code.split("((")
-                    #new_code = warning_code.replace("CHECK_CUDA((", "")
-                    new_code = new_code[1].replace(",0));", ";")
-                    new_code = new_code.replace(", 0));", ";")
+
+                    if "=(" in warning_code :
+                        new_code = warning_code.split("=(")
+                        new_code = new_code[1].replace(",0);", ";")
+                        new_code = new_code.replace(", 0);", ";")
+                    elif "= (" in warning_code :
+                        new_code = warning_code.split("= (")
+                        new_code = new_code[1].replace(",0);", ";")
+                        new_code = new_code.replace(", 0);", ";")
+                    else:
+                        new_code = warning_code.split("((")
+                        new_code = new_code[1].replace(",0));", ";")
+                        new_code = new_code.replace(", 0));", ";")
+
+
                     new_file.write("#----------------CLA----------\n")
                     new_file.write(new_code)
                     print(new_code)
