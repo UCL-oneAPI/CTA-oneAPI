@@ -21,7 +21,17 @@ class Fix1003Rule(BaseRule):
 
 #----------wenqi without merge in code
 
+
 import os
+
+# This is a sample Python script.
+
+# Press ⌃R to execute it or replace it with your code.
+# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
+
+import os
+
+
 
 def fix_1003(old_file_path,new_file_path):
     lines = open(old_file_path)
@@ -41,6 +51,7 @@ def fix_1003(old_file_path,new_file_path):
     warning_code = ""
     #use to label the origin number of blank before the code
     first_time = True
+    remove_function = True
 
 
     while i < len(all_lines):
@@ -69,30 +80,31 @@ def fix_1003(old_file_path,new_file_path):
                     warning_code = warning_code + now_code+"\n"
                     print("i:",i,",warning_code:",warning_code)
 
-                    #if "=(" in warning_code :
-                    #    prefix = count_prefix(warning_code)
-                    #    new_code = warning_code.split("=(")
-                    #    new_code = new_code[1].replace(",0);", ";")
-                    #    new_code = new_code.replace(", 0);", ";")
-                    #elif "= (" in warning_code :
-                    #    prefix = count_prefix(warning_code)
-                    #    new_code = warning_code.split("= (")
-                    #    new_code = new_code[1].replace(",0);", ";")
-                    #    new_code = new_code.replace(", 0);", ";")
-
-
-                    #check the number of " " before the code
-                    #prefix = count_prefix(warning_code)
-
-                    new_code = warning_code.split("((")
-                    new_code = new_code[1].replace(",0));", ";")
-                    new_code = new_code.replace(", 0));", ";")
+                    if remove_function == True:
+                        if "=(" in warning_code :
+                            prefix = count_prefix(warning_code)
+                            new_code = warning_code.split("=(")
+                            merged_warning_code = merge_except_function(new_code)
+                            new_code = merged_warning_code.replace(",0);", ";")
+                            new_code = new_code.replace(", 0);", ";")
+                        elif "= (" in warning_code :
+                            prefix = count_prefix(warning_code)
+                            new_code = warning_code.split("= (")
+                            merged_warning_code = merge_except_function(new_code)
+                            new_code = merged_warning_code.replace(",0);", ";")
+                            new_code = new_code.replace(", 0);", ";")
+                        elif "((" in warning_code :
+                            new_code = warning_code.split("((")
+                            merged_warning_code = merge_except_function(new_code)
+                            new_code = merged_warning_code.replace(",0));", ";")
+                            new_code = new_code.replace(", 0));", ";")
+                        remove_function == False
 
                     new_code = prefix + new_code
                     print("prefix",prefix,".")
                     print(new_code)
 
-                    new_file.write("  "+"#----------------CLA----------\n")
+                    new_file.write(prefix+"#----------------CLA----------\n")
                     new_file.write(new_code)
                     warning_code = ""
                     warning_code_1003 = False
@@ -121,10 +133,22 @@ def count_prefix(new_code):
 
     return prefix
 
+def merge_except_function(new_code):
+    j, merged_warning_code = 1, ""
+    while j < len(new_code):
+        #print("j is :",new_code[j])
+        if j >1:
+            merged_warning_code = merged_warning_code + "=(" +new_code[j]
+        else:
+            merged_warning_code = merged_warning_code  + new_code[j]
+        j += 1
+    print("merged_warning_code:",merged_warning_code)
+    return merged_warning_code
+
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    old_file_path = "../oneAPI-DirectProgramming-training/ising/dpcpp/main.dp.cpp"
-    new_file_path = "../oneAPI-DirectProgramming-training/ising/cla"
+    old_file_path = "../oneAPI-DirectProgramming-training/chi2/dpcpp/chi2.dp.cpp"
+    new_file_path = "../oneAPI-DirectProgramming-training/chi2/cla"
     fix_1003(old_file_path,new_file_path)
 
-
+# See PyCharm help at https://www.jetbrains.com/help/pycharm/
