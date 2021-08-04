@@ -114,6 +114,13 @@ kernel2_wrapper(  knode *knodes,
 
   q_ct1.memcpy(offset_2D, offset_2, count * sizeof(long));
 
+
+  /*
+  DPCT1003:28: Migrated API does not return error code. (*, 0) is inserted. You
+  may need to rewrite this code.
+  */
+  CUDA_SAFE_CALL((sycl::free(c->N, q_ct1), 0));
+
   q_ct1.memcpy(startD, start, count * sizeof(int));
 
   q_ct1.memcpy(endD, end, count * sizeof(int));

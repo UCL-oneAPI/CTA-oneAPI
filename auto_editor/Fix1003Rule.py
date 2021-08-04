@@ -22,6 +22,8 @@ class Fix1003Rule(BaseRule):
         # new_file = open("%s.cla.cpp" % new_file_path, "w")
 
         remove_function = True
+        warning_code = ""
+        first_time = True
 
         tmp_dict = project.get_paths_to_lines()
 
@@ -31,11 +33,11 @@ class Fix1003Rule(BaseRule):
             all_lines = tmp_dict[file_path]
             code_segment_before_changed = all_lines[warning_last_line + 1]
             for i in range(warning_last_line, len(all_lines)):
-                if ";" not in all_lines[i]:
+                if ";" not in all_lines[i].code:
                     if first_time == False:
-                        now_code = all_lines[i].strip()
+                        now_code = all_lines[i].code.strip()
                     else:
-                        now_code = all_lines[i]
+                        now_code = all_lines[i].code
                         print("prefix code", now_code)
                         prefix = count_prefix(now_code)
                     warning_code = warning_code + now_code
@@ -43,9 +45,9 @@ class Fix1003Rule(BaseRule):
                     first_time = False
                 else:
                     if first_time == False:
-                        now_code = all_lines[i].strip()
+                        now_code = all_lines[i].code.strip()
                     else:
-                        now_code = all_lines[i]
+                        now_code = all_lines[i].code
                         prefix = count_prefix(warning_code)
                     warning_code = warning_code + now_code + "\n"
                     print("i:", i, ",warning_code:", warning_code)
@@ -75,10 +77,10 @@ class Fix1003Rule(BaseRule):
                     print("prefix", prefix, ".")
                     print(new_code)
 
-                    for j in range(warning_last_line+1,i):
-                        all_lines[j] = ""
+                    # for j in range(warning_last_line+1,i):
+                    #     all_lines[j] = ""
 
-                    all_lines[warning_last_line+1] = new_code
+                    all_lines[warning_last_line+1].code = new_code
 
                     # new_file.write(prefix + "#----------------CLA----------\n")
                     # new_file.write(new_code)

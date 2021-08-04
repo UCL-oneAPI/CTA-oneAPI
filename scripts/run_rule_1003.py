@@ -10,8 +10,8 @@ def call_run_rule():
 
     rule = Fix1003Rule()
     project = StructuredProjectSource(path_to_dpct_root)
-    project = rule.run_rule(project=project, warning_first_line=125,
-                            warning_last_line=129, file_path=local_path_to_file)
+    project = rule.run_rule(project=project, warning_first_line=117,
+                            warning_last_line=120, file_path=local_path_to_file)
 
     create_new_version(project, new_root=path_to_new_root)
 
