@@ -5,7 +5,7 @@ from enums import ChangeTypeEnum
 
 class Fix1049Rule(BaseRule):
     @property
-    def dpct_warning_code(self) -> str:
+    def dpct_warning_codes(self) -> str:
         return "DPCT1049"
 
     @property

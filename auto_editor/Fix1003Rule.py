@@ -1,3 +1,5 @@
+from typing import List
+
 from auto_editor.BaseRule import BaseRule
 from auto_editor.StructuredProjectSource import StructuredProjectSource
 from enums import ChangeTypeEnum
@@ -5,8 +7,8 @@ from enums import ChangeTypeEnum
 
 class Fix1003Rule(BaseRule):
     @property
-    def dpct_warning_code(self) -> str:
-        return "DPCT1003"
+    def dpct_warning_codes(self) -> List[str]:
+        return ["DPCT1003"]
 
     @property
     def change_type(self) -> ChangeTypeEnum:

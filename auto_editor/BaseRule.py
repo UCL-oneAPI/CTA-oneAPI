@@ -15,8 +15,11 @@ class BaseRule:
 
     @property
     @abstractmethod
-    def dpct_warning_code(self) -> str:
-        raise Exception("This property must be overriden by each rule to provide the warning code.")
+    def dpct_warning_codes(self) -> List[str]:
+        '''
+        :return: list of all warning codes on which a rule should be applied, e.g.: ['DPCT1003',]
+        '''
+        raise Exception("Relevant warning codes not provided for rule.")
 
     @property
     @abstractmethod
@@ -24,21 +27,22 @@ class BaseRule:
         raise Exception("This property must be overriden by each rule to state the ChangeTypeEnum.")
 
     def initiate_run(self, project: StructuredProjectSource):
-        relevant_warning_locations = project.dpct_warnings_dict[self.dpct_warning_code]
-        for warning in relevant_warning_locations:
-            file_path = warning.file_path
-            code_lines = project.paths_to_lines[file_path]
+        for warning_code in self.dpct_warning_codes:
+            relevant_warning_locations = project.dpct_warnings_dict[warning_code]
+            for warning in relevant_warning_locations:
+                file_path = warning.file_path
+                code_lines = project.paths_to_lines[file_path]
 
-            # index of line id is taken at each iteration,
-            # as it may change if the project is modified in preveious iterations
-            warning_first_line = self.get_index_of_line_id(warning.first_line_id, code_lines)
-            warning_last_line = self.get_index_of_line_id(warning.last_line_id, code_lines)
+                # index of line id is taken at each iteration,
+                # as it may change if the project is modified in preveious iterations
+                warning_first_line = self.get_index_of_line_id(warning.first_line_id, code_lines)
+                warning_last_line = self.get_index_of_line_id(warning.last_line_id, code_lines)
 
-            # project is updated every time a rule runs, so it always has latest changes.
-            # the update for each warning is tracked, so all changes related to that warning can be associated to each other
-            old_project_version = copy.deepcopy(project)
-            project = self.run_rule(project, warning_first_line, warning_last_line, file_path)
-            self.track_change(old_project_version, project)
+                # project is updated every time a rule runs, so it always has latest changes.
+                # the update for each warning is tracked, so all changes related to that warning can be associated to each other
+                old_project_version = copy.deepcopy(project)
+                project = self.run_rule(project, warning_first_line, warning_last_line, file_path)
+                self.track_change(old_project_version, project)
 
         self.is_run_complete = True
 

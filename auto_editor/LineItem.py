@@ -3,7 +3,7 @@ from uuid import uuid4
 
 
 class LineItem:
-    def __init__(self, code: str, original_line: int):
+    def __init__(self, code: str, original_line: int = None):
         self.id = uuid4()  # unique ID for each line
         self.code = code
         self.original_line = original_line  # lines always start counting from zero
