@@ -50,6 +50,11 @@ def count_warnings():
             sublist = warnings_count.add_to_tuple(str(j))
             if sublist:
                 warning_list.extend(sublist)
+        for l in i.rglob('*.dp.hpp'):
+            print(l)
+            sublist = warnings_count.add_to_tuple(str(l))
+            if sublist:
+                warning_list.extend(sublist)
     print(len(warning_list))
     for k in warning_list:
         print(k)
