@@ -43,6 +43,8 @@ def fix_1003(old_file_path,new_file_path):
     #use to label the origin number of blank before the code
     first_time = True
 
+    # warning handle function name collection
+    warning_prefixs_collection = ["CHECK_CUDA((","CUDA_SAFE_CALL((","err = ","CHECK((", "int err ="]
 
     while i < len(all_lines):
         if warning_message_1003 == False:
