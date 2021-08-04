@@ -1,3 +1,5 @@
+import os
+from pathlib import Path
 from typing import List
 
 from auto_editor.StructuredProjectSource import StructuredProjectSource
@@ -32,8 +34,9 @@ class AutoEditor:
         return all_documented_changes
 
     def save_new_version(self, project: StructuredProjectSource):
-        for path, code_lines in project.paths_to_lines:
-            full_path = self.cta_version_root + path
-            with open(full_path, 'a') as f:
+        current_user_path = Path.cwd()
+        for path, code_lines in project.paths_to_lines.items():
+            full_path = os.path.join(current_user_path, self.cta_version_root, path)
+            with open(full_path, 'a+') as f:
                 for line in code_lines:
                     f.write(line.code)
