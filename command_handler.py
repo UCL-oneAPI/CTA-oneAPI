@@ -46,6 +46,7 @@ if __name__ == '__main__':
 
     if args.mode == 'default':
         run_cta(args.project_path, args.destination_path, args.report_path)
-
+        # print("1")
     if args.mode == 'report_only':
         run_cta(args.project_path, args.destination_path, args.report_path)
+        # print('2')
