@@ -21,6 +21,9 @@ class Fix1003Rule(BaseRule):
 
 #----------wenqi without merge in code
 
+
+import os
+
 def fix_1003(old_file_path,new_file_path):
     lines = open(old_file_path)
     new_file = open("%s.cla.cpp" % new_file_path, "w")
@@ -61,9 +64,12 @@ def fix_1003(old_file_path,new_file_path):
                     else:
                         now_code = all_lines[i]
                     warning_code = warning_code + now_code+"\n"
-                    print("i:",i,",warning_code",warning_code)
-                    new_code = warning_code.replace("CHECK_CUDA((", "")
-                    new_code = new_code.replace(",0));", ";")
+                    print("i:",i,",warning_code:",warning_code)
+                    new_code = warning_code.split("((")
+                    #new_code = warning_code.replace("CHECK_CUDA((", "")
+                    new_code = new_code[1].replace(",0));", ";")
+                    new_code = new_code.replace(", 0));", ";")
+                    new_file.write("#----------------CLA----------\n")
                     new_file.write(new_code)
                     print(new_code)
                     warning_code = ""
