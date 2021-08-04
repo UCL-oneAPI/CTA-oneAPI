@@ -32,7 +32,7 @@ class Fix1003Rule(BaseRule):
 
             all_lines = tmp_dict[file_path]
             code_segment_before_changed = all_lines[warning_last_line + 1]
-            for i in range(warning_last_line, len(all_lines)):
+            for i in range(warning_last_line+1, len(all_lines)):
                 if ";" not in all_lines[i].code:
                     if first_time == False:
                         now_code = all_lines[i].code.strip()
@@ -50,7 +50,7 @@ class Fix1003Rule(BaseRule):
                         now_code = all_lines[i].code
                         prefix = count_prefix(warning_code)
                     warning_code = warning_code + now_code + "\n"
-                    print("i:", i, ",warning_code:", warning_code)
+                    # print("i:", i, ",warning_code:", warning_code)
 
                     if remove_function == True:
                         if "=(" in warning_code:
@@ -74,11 +74,11 @@ class Fix1003Rule(BaseRule):
 
 
                     new_code = prefix + new_code
-                    print("prefix", prefix, ".")
-                    print(new_code)
+                    # print("prefix", prefix, ".")
+                    # print(new_code)
 
-                    # for j in range(warning_last_line+1,i):
-                    #     all_lines[j] = ""
+                    for j in range(warning_last_line+1,i):
+                        all_lines[j] = ""
 
                     all_lines[warning_last_line+1].code = new_code
 
@@ -87,7 +87,13 @@ class Fix1003Rule(BaseRule):
                     warning_code = ""
                     warning_code_1003 = False
                     first_time = True
-                tmp_dict[file_path] = all_lines
+
+                    tmp_dict[file_path] = all_lines
+                    # print("1")
+                # print(all_lines[i].code)
+                # print("1")
+                break
+
 
         project.paths_to_lines = tmp_dict
 
