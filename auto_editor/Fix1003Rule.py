@@ -21,7 +21,6 @@ class Fix1003Rule(BaseRule):
 
 #----------wenqi without merge in code
 
-
 import os
 
 def fix_1003(old_file_path,new_file_path):
@@ -43,13 +42,12 @@ def fix_1003(old_file_path,new_file_path):
     #use to label the origin number of blank before the code
     first_time = True
 
-    # warning handle function name collection
-    warning_prefixs_collection = ["CHECK_CUDA((","CUDA_SAFE_CALL((","err = ","CHECK((", "int err ="]
 
     while i < len(all_lines):
         if warning_message_1003 == False:
             if "/*" in all_lines[i] and "DPCT1003" in all_lines[i+1]:
                 warning_message_1003 = True
+
             elif warning_code_1003 == True:
 
                 if ";" not in all_lines[i]:
@@ -57,39 +55,50 @@ def fix_1003(old_file_path,new_file_path):
                         now_code = all_lines[i].strip()
                     else:
                         now_code = all_lines[i]
+                        print("prefix code",now_code)
+                        prefix = count_prefix(now_code)
                     warning_code = warning_code + now_code
                     warning_code = warning_code.replace("\n", "")
-
+                    first_time = False
                 else:
                     if first_time == False:
                         now_code = all_lines[i].strip()
                     else:
                         now_code = all_lines[i]
+                        prefix = count_prefix(warning_code)
                     warning_code = warning_code + now_code+"\n"
                     print("i:",i,",warning_code:",warning_code)
 
-                    if "=(" in warning_code :
-                        new_code = warning_code.split("=(")
-                        new_code = new_code[1].replace(",0);", ";")
-                        new_code = new_code.replace(", 0);", ";")
-                    elif "= (" in warning_code :
-                        new_code = warning_code.split("= (")
-                        new_code = new_code[1].replace(",0);", ";")
-                        new_code = new_code.replace(", 0);", ";")
-                    else:
-                        new_code = warning_code.split("((")
-                        new_code = new_code[1].replace(",0));", ";")
-                        new_code = new_code.replace(", 0));", ";")
+                    #if "=(" in warning_code :
+                    #    prefix = count_prefix(warning_code)
+                    #    new_code = warning_code.split("=(")
+                    #    new_code = new_code[1].replace(",0);", ";")
+                    #    new_code = new_code.replace(", 0);", ";")
+                    #elif "= (" in warning_code :
+                    #    prefix = count_prefix(warning_code)
+                    #    new_code = warning_code.split("= (")
+                    #    new_code = new_code[1].replace(",0);", ";")
+                    #    new_code = new_code.replace(", 0);", ";")
 
 
-                    new_file.write("#----------------CLA----------\n")
-                    new_file.write(new_code)
+                    #check the number of " " before the code
+                    #prefix = count_prefix(warning_code)
+
+                    new_code = warning_code.split("((")
+                    new_code = new_code[1].replace(",0));", ";")
+                    new_code = new_code.replace(", 0));", ";")
+
+                    new_code = prefix + new_code
+                    print("prefix",prefix,".")
                     print(new_code)
+
+                    new_file.write("  "+"#----------------CLA----------\n")
+                    new_file.write(new_code)
                     warning_code = ""
                     warning_code_1003 = False
                     first_time = True
 
-                first_time = False
+
             else:
                 new_file.write(all_lines[i])
         else:
@@ -99,10 +108,23 @@ def fix_1003(old_file_path,new_file_path):
 
         i += 1
 
+def count_prefix(new_code):
+    j, prefix = 0, ""
+    while j < len(new_code):
+        #print("j is :",new_code[j])
+        if new_code[j] == " ":
+            prefix = prefix + " "
+            j += 1
+            #print("1")
+        else:
+            break
+
+    return prefix
+
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     old_file_path = "../oneAPI-DirectProgramming-training/ising/dpcpp/main.dp.cpp"
     new_file_path = "../oneAPI-DirectProgramming-training/ising/cla"
     fix_1003(old_file_path,new_file_path)
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+
