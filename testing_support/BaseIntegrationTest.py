@@ -23,28 +23,6 @@ class BaseIntegrationTest(unittest.TestCase):
         return Path.joinpath(self.cta_root_path, 'testing_support', 'integration_testing_data', 'test_project')
 
     def tearDown(self) -> None:
-        # cta_root_path = self.cta_root_path
-        # print('at teardown:', cta_root_path)
-
-        # for f in os.listdir(cta_root_path):
-        #     print('child:', f)
-        #     print('child full:', os.path.join(cta_root_path, f))
-        #     child = os.path.join(cta_root_path, f)
-        #     if os.path.isdir(child):
-        #         for g in os.listdir(child):
-        #             grandchild = os.path.join(child, g)
-        #             print('child child:', g)
-        #             print('child child full:', grandchild)
-        #             if os.path.isdir(grandchild):
-        #                 for h in os.listdir(grandchild):
-        #                     ggchild = os.path.join(grandchild, h)
-        #                     print('child child child:', h)
-        #                     print('child child child full:', ggchild)
-        #             else:
-        #                 print(f'grandchild is not directory: {grandchild}')
-        #     else:
-        #         print(f'child is not directory: {child}')
-
         self.remove_destination()
 
     def remove_destination(self):
