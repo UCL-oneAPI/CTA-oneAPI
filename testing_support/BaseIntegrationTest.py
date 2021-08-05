@@ -14,6 +14,6 @@ class BaseIntegrationTest(unittest.TestCase):
 
     def tearDown(self) -> None:
         pre_path = Path.cwd()
-        full_path = pre_path/ '..' / Path(self.destination_root)
+        full_path = pre_path / Path(self.destination_root)
         for f in os.listdir(full_path):
             os.remove(os.path.join(self.destination_root, f))
