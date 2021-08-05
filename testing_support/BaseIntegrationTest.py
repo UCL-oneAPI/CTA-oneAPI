@@ -13,7 +13,7 @@ class BaseIntegrationTest(unittest.TestCase):
         return 'testing_support/integration_testing_data/test_project'
 
     def tearDown(self) -> None:
-        pre_path = Path.cwd()
-        full_path = pre_path / Path(self.destination_root)
+        cta_root_path = Path(__file__).parent.parent.resolve()
+        full_path = cta_root_path / Path(self.destination_root)
         for f in os.listdir(full_path):
             os.remove(os.path.join(self.destination_root, f))
