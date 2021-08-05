@@ -13,7 +13,7 @@ class AddCommentsTestRule(BaseRule):
 
     @property
     def dpct_warning_codes(self) -> List[str]:
-        return ['DPCT1065', 'DPCT1010']
+        return ['DPCT1111']
 
     def run_rule(self, project: StructuredProjectSource,
                  warning_first_line: int, warning_last_line: int, file_path: str) -> StructuredProjectSource:

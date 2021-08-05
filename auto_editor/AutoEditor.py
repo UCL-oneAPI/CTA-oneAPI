@@ -24,9 +24,10 @@ class AutoEditor:
         all_documented_changes = []
         project = StructuredProjectSource(self.dpct_version_root)
 
-        for rule in RULES_TO_DESCRIPTIONS.values():
-            rule().initiate_run(project)
-            changes = rule.get_tracked_changes()
+        for rule in RULES_TO_DESCRIPTIONS:
+            rule_instance = rule()
+            rule_instance.initiate_run(project)
+            changes = rule_instance.get_tracked_changes()
             for change in changes:
                 all_documented_changes.append(change)
 
