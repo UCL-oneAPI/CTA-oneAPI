@@ -1,4 +1,3 @@
-import os
 from pathlib import Path
 from typing import List
 
@@ -8,7 +7,7 @@ from enums import CodeChange
 
 
 class AutoEditor:
-    def __init__(self, dpct_version_root, cta_version_root):
+    def __init__(self, dpct_version_root: Path, cta_version_root: Path):
         self.dpct_version_root = dpct_version_root
         self.cta_version_root = cta_version_root
 
@@ -35,9 +34,8 @@ class AutoEditor:
         return all_documented_changes
 
     def save_new_version(self, project: StructuredProjectSource):
-        current_user_path = Path.cwd()
         for path, code_lines in project.paths_to_lines.items():
-            full_path = os.path.join(current_user_path, self.cta_version_root, path)
+            full_path = self.cta_version_root / path
             with open(full_path, 'a+') as f:
                 for line in code_lines:
                     f.write(line.code)
