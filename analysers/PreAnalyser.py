@@ -11,4 +11,5 @@ class PreAnalyser(BaseAnalyser):
         It analyses the project in self.project_root_path.
         :return: list of named tuples WarningItem, one WarningItem for each warning in the project
         '''
+        #TODO Yifei: change this
         return []
