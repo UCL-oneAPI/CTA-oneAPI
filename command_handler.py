@@ -6,12 +6,15 @@ import argparse
 # Todo Zhongyuan: add CLI implementation
 
 
-def run_cta(dpct_project_path, destination_path, report_path):
+def run_cta(dpct_project_path, destination_path, report_path, is_report_only=False):
     validate_paths(dpct_project_path, destination_path)
     cta_instance = CTA_Instance(dpct_project_path, destination_path, report_path)
     cta_instance.run_pre_analyzer()
-    cta_instance.run_editor()
-    cta_instance.run_post_analyzer()
+
+    if not is_report_only:
+        cta_instance.run_editor()
+        cta_instance.run_post_analyzer()
+
     cta_instance.create_report_presentation()
     cta_instance.save_to_csvs()
 
