@@ -1,3 +1,4 @@
+import os
 from pathlib import Path
 
 from auto_editor.AutoEditor import AutoEditor
@@ -7,8 +8,15 @@ from auto_editor.StructuredProjectSource import StructuredProjectSource
 
 def call_run_rule():
     local_path_to_file = 'kernel_wrapper2.dp.cpp'
-    path_to_dpct_root = Path.joinpath(Path('..'), 'auto_editor', 'sample_data', 'test_project')
-    path_to_new_root = Path.joinpath(Path('..'), 'auto_editor', 'sample_data', 'destination_dir')
+    cta_root = Path(__file__).parent.parent.resolve()
+    path_to_dpct_root = Path.joinpath(cta_root, 'auto_editor', 'sample_data', 'test_project')
+    path_to_new_root = Path.joinpath(cta_root, 'auto_editor', 'sample_data', 'destination_dir')
+
+    if os.path.exists(path_to_new_root):
+        for f in os.listdir(path_to_new_root):
+            os.remove(os.path.join(path_to_new_root, f))
+        os.rmdir(os.path.join(path_to_new_root))
+    os.mkdir(os.path.join(path_to_new_root))
 
     rule = Fix1003Rule()
     project = StructuredProjectSource(path_to_dpct_root)
@@ -20,7 +28,7 @@ def call_run_rule():
 
 def create_new_version(project, new_root):
     # this just saves the version in the new_root path, so it's easier to look at it.
-    editor = AutoEditor(dpct_version_root='', cta_version_root=new_root)
+    editor = AutoEditor(dpct_version_root=Path(''), cta_version_root=new_root)
     editor.save_new_version(project)
 
 
