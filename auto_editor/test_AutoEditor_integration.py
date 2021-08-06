@@ -3,17 +3,13 @@ import unittest
 
 from auto_editor.AutoEditor import AutoEditor
 from enums import DiffOperationEnum, ChangeTypeEnum
+from testing_support.BaseIntegrationTest import BaseIntegrationTest
 
 
-class TestAutoEditorIntegration(unittest.TestCase):
-    def destination_path(self):
-        return '../auto_editor/integration_testing_data/destination_dir'
-
+class TestAutoEditorIntegration(BaseIntegrationTest):
     def test_makeChanges_dpctProjectWithWarnings_warningsFixed(self):
-        dpct_root = '../auto_editor/integration_testing_data/test_project'
-        new_root = self.destination_path()
-
-        editor = AutoEditor(dpct_version_root=dpct_root, cta_version_root=new_root)
+        editor = AutoEditor(dpct_version_root=self.dpct_root,
+                            cta_version_root=self.destination_root)
         changes = editor.make_changes()
 
         self.assertEqual(len(changes), 6)
@@ -25,9 +21,6 @@ class TestAutoEditorIntegration(unittest.TestCase):
         for change in changes:
             self.assertEqual(change.change_type, ChangeTypeEnum.recommendation)
 
-    def tearDown(self) -> None:
-        for f in os.listdir(self.destination_path()):
-            os.remove(os.path.join(self.destination_path(), f))
 
 if __name__ == '__main__':
     unittest.main()

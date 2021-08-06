@@ -1,3 +1,5 @@
+from pathlib import Path
+
 from analysers.PostAnalyser import PostAnalyser
 from analysers.PreAnalyser import PreAnalyser
 from auto_editor.AutoEditor import AutoEditor
@@ -11,8 +13,9 @@ class CTA_Instance:
     '''
 
     def __init__(self, dpct_version_root, cta_version_root, report_root):
-        self.dpct_version_root = dpct_version_root
-        self.cta_version_root = cta_version_root
+        cta_tool_root = Path(__file__).parent.resolve()
+        self.dpct_version_root = cta_tool_root / dpct_version_root
+        self.cta_version_root = cta_tool_root / cta_version_root
         self.report_root = report_root
         self.initial_warnings = []
         self.final_warnings = []

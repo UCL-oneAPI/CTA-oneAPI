@@ -8,7 +8,7 @@ from enums import WarningLocation
 
 
 class StructuredProjectSource:
-    def __init__(self, dpct_root: str):
+    def __init__(self, dpct_root: Path):
         self.dpct_root = dpct_root
         self.paths_to_lines = self.get_paths_to_lines()
         self.dpct_warnings_dict = self.get_dpct_warnings_dict()
@@ -25,8 +25,7 @@ class StructuredProjectSource:
 
     def get_line_items(self, file_path) -> List[LineItem]:
         line_items = []
-        full_root_path = self.get_full_path_to_root()
-        full_file_path = full_root_path / file_path
+        full_file_path = self.dpct_root / file_path
         with open(full_file_path) as f:
             code_lines = f.readlines()
             for i in range(len(code_lines)):
@@ -43,18 +42,11 @@ class StructuredProjectSource:
 
         paths = []
 
-        # training_dir = Path(self.dpct_root)
-        # dpcpp_dir = training_dir.rglob('*/dpcpp')
-        full_dpct_path = self.get_full_path_to_root()
-        for file_path in os.listdir(full_dpct_path):
+        for file_path in os.listdir(self.dpct_root):
             if file_path.endswith(".dp.cpp") or file_path.endswith(".dp.hpp"):
                 paths.append(file_path)
 
         return paths
-
-    def get_full_path_to_root(self):
-        current_user_path = Path.cwd()
-        return current_user_path / Path(self.dpct_root)
 
     def get_all_file_paths_with_pattern(self, pattern: str):
         pass

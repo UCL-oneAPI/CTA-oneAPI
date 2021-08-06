@@ -1,3 +1,5 @@
+from pathlib import Path
+
 from auto_editor.AutoEditor import AutoEditor
 from auto_editor.Fix1003Rule import Fix1003Rule
 from auto_editor.StructuredProjectSource import StructuredProjectSource
@@ -5,8 +7,8 @@ from auto_editor.StructuredProjectSource import StructuredProjectSource
 
 def call_run_rule():
     local_path_to_file = 'kernel_wrapper2.dp.cpp'
-    path_to_dpct_root = '../auto_editor/sample_data/test_project'
-    path_to_new_root = '../auto_editor/sample_data/destination_dir'
+    path_to_dpct_root = Path.joinpath(Path('..'), 'auto_editor', 'sample_data', 'test_project')
+    path_to_new_root = Path.joinpath(Path('..'), 'auto_editor', 'sample_data', 'destination_dir')
 
     rule = Fix1003Rule()
     project = StructuredProjectSource(path_to_dpct_root)
