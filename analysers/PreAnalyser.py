@@ -1,6 +1,7 @@
 from typing import List
 
 from analysers.BaseAnalyser import BaseAnalyser
+from auto_editor.StructuredProjectSource import StructuredProjectSource
 from enums import WarningItem
 
 
@@ -11,7 +12,12 @@ class PreAnalyser(BaseAnalyser):
         It analyses the project in self.project_root_path.
         :return: list of named tuples WarningItem, one WarningItem for each warning in the project
         '''
-        # TODO Yifei: change this to actual logic
+
+        project = StructuredProjectSource(self.project_root_path)
+        warnings_dict = project.dpct_warnings_dict
+
+        # TODO Yifei: transform warnings_dict to all_warnings below
+
         warning = WarningItem(project_name="test_project",
                               warning_code="DPCT1111",
                               file_path='/kernel_wrapper2.dp.cpp',
