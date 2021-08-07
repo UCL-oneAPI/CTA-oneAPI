@@ -17,14 +17,13 @@ class PreAnalyser(BaseAnalyser):
 
         project = StructuredProjectSource(self.project_root_path)
         warnings_dict = project.dpct_warnings_dict
+        all_warnings = []
         codes = []
         ids = []
         for i in project.paths_to_lines.values():
             for j in i:
                 codes.append(j.code)
-                ids.append(j.id)
-        # TODO Yifei: transform warnings_dict to all_warnings below
-        all_warnings = []
+                ids.append(j.id)       
 
         for k, v in warnings_dict.items():
             for info in v:
