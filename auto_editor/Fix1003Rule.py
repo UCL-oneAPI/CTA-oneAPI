@@ -25,83 +25,73 @@ class Fix1003Rule(BaseRule):
         warning_code = ""
         first_time = True
 
-        tmp_dict = project.get_paths_to_lines()
+        tmp_dict = project.paths_to_lines
 
-        for file_path in tmp_dict.keys(): # 遍历每个文件
+        # for file_path in tmp_dict.keys():
             # all_lines = project.get_paths_to_lines()[file_name]
 
-            all_lines = tmp_dict[file_path]
-            code_segment_before_changed = all_lines[warning_last_line + 1]
-            for i in range(warning_last_line+1, len(all_lines)):
-                if ";" not in all_lines[i].code:
-                    if first_time == False:
-                        now_code = all_lines[i].code.strip()
-                    else:
-                        now_code = all_lines[i].code
-                        print("prefix code", now_code)
-                        prefix = count_prefix(now_code)
-                    warning_code = warning_code + now_code
-                    warning_code = warning_code.replace("\n", "")
-                    first_time = False
+        all_lines = tmp_dict[file_path]
+        code_segment_before_changed = all_lines[warning_last_line + 1]
+        for i in range(warning_last_line+1, len(all_lines)):
+            if ";" not in all_lines[i].code:
+                if first_time == False:
+                    now_code = all_lines[i].code.strip()
                 else:
-                    if first_time == False:
-                        now_code = all_lines[i].code.strip()
-                    else:
-                        now_code = all_lines[i].code
+                    now_code = all_lines[i].code
+                    print("prefix code", now_code)
+                    prefix = count_prefix(now_code)
+                warning_code = warning_code + now_code
+                warning_code = warning_code.replace("\n", "")
+                first_time = False
+            else:
+                if first_time == False:
+                    now_code = all_lines[i].code.strip()
+                else:
+                    now_code = all_lines[i].code
+                    prefix = count_prefix(warning_code)
+                warning_code = warning_code + now_code + "\n"
+                # print("i:", i, ",warning_code:", warning_code)
+
+                if remove_function == True:
+                    if "=(" in warning_code:
                         prefix = count_prefix(warning_code)
-                    warning_code = warning_code + now_code + "\n"
-                    # print("i:", i, ",warning_code:", warning_code)
-
-                    if remove_function == True:
-                        if "=(" in warning_code:
-                            prefix = count_prefix(warning_code)
-                            new_code = warning_code.split("=(")
-                            merged_warning_code = merge_except_function(new_code)
-                            new_code = merged_warning_code.replace(",0);", ";")
-                            new_code = new_code.replace(", 0);", ";")
-                        elif "= (" in warning_code:
-                            prefix = count_prefix(warning_code)
-                            new_code = warning_code.split("= (")
-                            merged_warning_code = merge_except_function(new_code)
-                            new_code = merged_warning_code.replace(",0);", ";")
-                            new_code = new_code.replace(", 0);", ";")
-                        elif "((" in warning_code:
-                            new_code = warning_code.split("((")
-                            merged_warning_code = merge_except_function(new_code)
-                            new_code = merged_warning_code.replace(",0));", ";")
-                            new_code = new_code.replace(", 0));", ";")
-                        remove_function == False
+                        new_code = warning_code.split("=(")
+                        merged_warning_code = merge_except_function(new_code)
+                        new_code = merged_warning_code.replace(",0);", ";")
+                        new_code = new_code.replace(", 0);", ";")
+                    elif "= (" in warning_code:
+                        prefix = count_prefix(warning_code)
+                        new_code = warning_code.split("= (")
+                        merged_warning_code = merge_except_function(new_code)
+                        new_code = merged_warning_code.replace(",0);", ";")
+                        new_code = new_code.replace(", 0);", ";")
+                    elif "((" in warning_code:
+                        new_code = warning_code.split("((")
+                        merged_warning_code = merge_except_function(new_code)
+                        new_code = merged_warning_code.replace(",0));", ";")
+                        new_code = new_code.replace(", 0));", ";")
+                    remove_function == False
 
 
-                    new_code = prefix + new_code
-                    # print("prefix", prefix, ".")
-                    # print(new_code)
+                new_code = prefix + new_code
 
-                    for j in range(warning_last_line+1,i):
-                        all_lines[j] = ""
+                for j in range(warning_last_line+1,i):
+                    all_lines[j] = ""
 
-                    all_lines[warning_last_line+1].code = new_code
+                all_lines[warning_last_line+1].code = new_code
 
-                    # new_file.write(prefix + "#----------------CLA----------\n")
-                    # new_file.write(new_code)
-                    warning_code = ""
-                    warning_code_1003 = False
-                    first_time = True
+                warning_code = ""
+                warning_code_1003 = False
+                first_time = True
 
-                    tmp_dict[file_path] = all_lines
-                    # print("1")
-                # print(all_lines[i].code)
-                # print("1")
-                break
+                tmp_dict[file_path] = all_lines
+            break
 
 
         project.paths_to_lines = tmp_dict
 
         return project
 
-
-
-#----------wenqi without merge in code
 
 
 import os
@@ -111,96 +101,7 @@ import os
 # Press ⌃R to execute it or replace it with your code.
 # Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
 
-import os
 
-
-
-def fix_1003(old_file_path,new_file_path):
-    lines = open(old_file_path)
-    new_file = open("%s.cla.cpp" % new_file_path, "w")
-
-    i = 0
-    warning_message_1003 = False # check whether this line is warning message
-    warning_code_1003 = False # check whether this line is warning code
-
-    # define the differ_collection
-    all_lines = []
-    for line in lines:
-        line = str(line)
-        all_lines.append(line)
-
-    # warning code
-    warning_code = ""
-    #use to label the origin number of blank before the code
-    first_time = True
-    remove_function = True
-
-
-    while i < len(all_lines):
-        if warning_message_1003 == False:
-            if "/*" in all_lines[i] and "DPCT1003" in all_lines[i+1]:
-                warning_message_1003 = True
-
-            elif warning_code_1003 == True:
-
-                if ";" not in all_lines[i]:
-                    if first_time == False:
-                        now_code = all_lines[i].strip()
-                    else:
-                        now_code = all_lines[i]
-                        print("prefix code",now_code)
-                        prefix = count_prefix(now_code)
-                    warning_code = warning_code + now_code
-                    warning_code = warning_code.replace("\n", "")
-                    first_time = False
-                else:
-                    if first_time == False:
-                        now_code = all_lines[i].strip()
-                    else:
-                        now_code = all_lines[i]
-                        prefix = count_prefix(warning_code)
-                    warning_code = warning_code + now_code+"\n"
-                    print("i:",i,",warning_code:",warning_code)
-
-                    if remove_function == True:
-                        if "=(" in warning_code :
-                            prefix = count_prefix(warning_code)
-                            new_code = warning_code.split("=(")
-                            merged_warning_code = merge_except_function(new_code)
-                            new_code = merged_warning_code.replace(",0);", ";")
-                            new_code = new_code.replace(", 0);", ";")
-                        elif "= (" in warning_code :
-                            prefix = count_prefix(warning_code)
-                            new_code = warning_code.split("= (")
-                            merged_warning_code = merge_except_function(new_code)
-                            new_code = merged_warning_code.replace(",0);", ";")
-                            new_code = new_code.replace(", 0);", ";")
-                        elif "((" in warning_code :
-                            new_code = warning_code.split("((")
-                            merged_warning_code = merge_except_function(new_code)
-                            new_code = merged_warning_code.replace(",0));", ";")
-                            new_code = new_code.replace(", 0));", ";")
-                        remove_function == False
-
-                    new_code = prefix + new_code
-                    print("prefix",prefix,".")
-                    print(new_code)
-
-                    new_file.write(prefix+"#----------------CLA----------\n")
-                    new_file.write(new_code)
-                    warning_code = ""
-                    warning_code_1003 = False
-                    first_time = True
-
-
-            else:
-                new_file.write(all_lines[i])
-        else:
-            if "*/" in all_lines[i]:
-                warning_message_1003 = False
-                warning_code_1003 = True
-
-        i += 1
 
 def count_prefix(new_code):
     j, prefix = 0, ""
