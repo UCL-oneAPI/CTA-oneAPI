@@ -53,15 +53,15 @@ class Fix1003Rule(BaseRule):
                 new_code = prefix + new_code
                 print("new_code:",new_code)
 
-                for j in range(warning_last_line+1,i):
-                    print("j:",j)
+                for j in range(warning_last_line+1,i+1):
+                    print("j:",j,",i:",i)
                     temp = all_lines[j]
                     temp.code = ""
                     all_lines[j] = temp
 
-                print("warning_last_line+1",warning_last_line+1)
+
                 all_lines[warning_last_line+1].code = new_code
-                print("all_lines[warning_last_line+1]:",all_lines[warning_last_line+1].code)
+                self.test_print( all_lines, warning_last_line)
 
                 warning_code = ""
                 warning_code_1003 = False
@@ -73,6 +73,11 @@ class Fix1003Rule(BaseRule):
 
         project.paths_to_lines = tmp_dict
         return project
+
+    def test_print(self,all_lines,warning_last_line):
+        print("all_lines[warning_last_line+1]:", all_lines[warning_last_line + 1].code)
+        print("all_lines[warning_last_line+2]:", all_lines[warning_last_line + 2].code)
+        print("all_lines[warning_last_line+3]:", all_lines[warning_last_line + 3].code)
 
     def remove_function_info(self, warning_code):
         prefix = ""
