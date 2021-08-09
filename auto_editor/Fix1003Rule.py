@@ -48,22 +48,28 @@ class Fix1003Rule(BaseRule):
 
                 if remove_function == True:
                     prefix, new_code = self.remove_function_info(warning_code)
-                    remove_function == False
+                    remove_function = False
 
                 new_code = prefix + new_code
                 print("new_code:",new_code)
 
                 for j in range(warning_last_line+1,i):
-                    all_lines[j] = ""
+                    print("j:",j)
+                    temp = all_lines[j]
+                    temp.code = ""
+                    all_lines[j] = temp
 
+                print("warning_last_line+1",warning_last_line+1)
                 all_lines[warning_last_line+1].code = new_code
+                print("all_lines[warning_last_line+1]:",all_lines[warning_last_line+1].code)
 
                 warning_code = ""
                 warning_code_1003 = False
                 first_time = True
 
                 tmp_dict[file_path] = all_lines
-            break
+
+                break
 
         project.paths_to_lines = tmp_dict
         return project
@@ -115,10 +121,13 @@ def merge_except_function(new_code):
         #print("j is :",new_code[j])
         if j >1:
             merged_warning_code = merged_warning_code + "=(" +new_code[j]
+            #print("1---",merged_warning_code)
         else:
-            merged_warning_code = merged_warning_code  + new_code[j]
+            #print("2.1---", merged_warning_code,", new_code[j]:--",new_code[j])
+            merged_warning_code = merged_warning_code + new_code[j]
+            #print("2.2---", merged_warning_code)
         j += 1
-    print("merged_warning_code:",merged_warning_code)
+    print("merged_warning_code:", merged_warning_code)
     return merged_warning_code
 
 # Press the green button in the gutter to run the script.
