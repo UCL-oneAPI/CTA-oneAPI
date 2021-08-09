@@ -19,15 +19,14 @@ class Fix1003Rule(BaseRule):
         # Todo: add rule here
 
         remove_function = True
-        warning_code = ""
         first_time = True
-        prefix = ""
-
+        warning_code, prefix = "", ""
         tmp_dict = project.paths_to_lines
-
         all_lines = tmp_dict[file_path]
         #code_segment_before_changed = all_lines[warning_last_line + 1]
+
         for i in range(warning_last_line+1, len(all_lines)):
+            print("warning code:",all_lines[i].code)
             if ";" not in all_lines[i].code:
                 if first_time == False:
                     now_code = all_lines[i].code.strip()
@@ -44,6 +43,7 @@ class Fix1003Rule(BaseRule):
                 else:
                     now_code = all_lines[i].code
                     prefix = count_prefix(warning_code)
+
                 warning_code = warning_code + now_code + "\n"
 
                 if remove_function == True:
@@ -51,6 +51,7 @@ class Fix1003Rule(BaseRule):
                     remove_function == False
 
                 new_code = prefix + new_code
+                print("new_code:",new_code)
 
                 for j in range(warning_last_line+1,i):
                     all_lines[j] = ""
@@ -69,6 +70,7 @@ class Fix1003Rule(BaseRule):
 
     def remove_function_info(self, warning_code):
         prefix = ""
+        new_code = warning_code
         if "=(" in warning_code:
             prefix = count_prefix(warning_code)
             new_code = self.replace_condition("=(", warning_code)
@@ -92,16 +94,6 @@ class Fix1003Rule(BaseRule):
             new_code = new_code.replace(", 0);", ";")
 
         return new_code
-
-
-
-import os
-
-# This is a sample Python script.
-
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
-
 
 
 def count_prefix(new_code):

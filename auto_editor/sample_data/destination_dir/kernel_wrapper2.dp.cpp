@@ -119,8 +119,7 @@ kernel2_wrapper(  knode *knodes,
   DPCT1003:28: Migrated API does not return error code. (*, 0) is inserted. You
   may need to rewrite this code.
   */
-sycl::free(c->N, q_ct1);
-
+  CUDA_SAFE_CALL((sycl::free(c->N, q_ct1), 0));
 
   q_ct1.memcpy(startD, start, count * sizeof(int));
 
