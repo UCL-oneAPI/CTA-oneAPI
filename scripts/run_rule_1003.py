@@ -27,7 +27,7 @@ def call_run_rule():
     # one line warning code
     project = rule.run_rule(project=project, warning_first_line=330,
                             warning_last_line=333, file_path=local_path_to_file)
-    print("-----------------------------------")
+    print("---------------------------------------------------------------------------")
 
     #multiple line warning code
     project = rule.run_rule(project=project, warning_first_line=335,

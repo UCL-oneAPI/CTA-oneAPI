@@ -29,7 +29,6 @@ class Fix1003Rule(BaseRule):
                     now_code = all_lines[i].code.strip()
                 else:
                     now_code = all_lines[i].code
-                    print("prefix code", now_code)
                     prefix = count_prefix(now_code)
                 warning_code = warning_code + now_code
                 warning_code = warning_code.replace("\n", "")
@@ -57,16 +56,16 @@ class Fix1003Rule(BaseRule):
 
     def replace_useless_multiple_line(self,warning_last_line,i,all_lines):
         for j in range(warning_last_line + 1, i + 1):
-            print("j:", j, ",i:", i)
             temp = all_lines[j]
             temp.code = ""
             all_lines[j] = temp
 
     def test_print(self,all_lines,warning_last_line):
-        print("all_lines[warning_last_line]:", all_lines[warning_last_line ].code)
-        print("all_lines[warning_last_line+1]:", all_lines[warning_last_line + 1].code)
-        print("all_lines[warning_last_line+2]:", all_lines[warning_last_line + 2].code)
-        print("all_lines[warning_last_line+3]:", all_lines[warning_last_line + 3].code)
+        print("******Fix1003 Result****")
+        print("all_lines[",warning_last_line,"]:", all_lines[warning_last_line ].code)
+        print("all_lines[",warning_last_line+1,"]:", all_lines[warning_last_line + 1].code)
+        print("all_lines[",warning_last_line+2,"]:", all_lines[warning_last_line + 2].code)
+        print("all_lines[",warning_last_line+3,"]:", all_lines[warning_last_line + 3].code)
 
     def remove_function_info(self, warning_code):
         prefix = ""
@@ -121,7 +120,7 @@ def merge_except_function(new_code):
             merged_warning_code = merged_warning_code + new_code[j]
             #print("2.2---", merged_warning_code)
         j += 1
-    print("merged_warning_code:", merged_warning_code)
+    #print("merged_warning_code:", merged_warning_code)
     return merged_warning_code
 
 # Press the green button in the gutter to run the script.
