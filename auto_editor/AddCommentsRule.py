@@ -13,9 +13,10 @@ class AddCommentsRule(BaseRule):
     @property
     def dpct_warning_codes(self) -> List[str]:
         # Todo: add relevant warning codes
-        return ['DPCT1065', 'DPCT1010']
+        return ['DPCT1111']
 
     def run_rule(self, project: StructuredProjectSource,
                  warning_first_line: int, warning_last_line: int, file_path: str) -> StructuredProjectSource:
         # Todo: add rule here
+        print(f'rule runs here. warning first: {warning_first_line}')
         return project
