@@ -17,13 +17,10 @@ class Fix1003Rule(BaseRule):
     def run_rule(self, project: StructuredProjectSource,
                  warning_first_line: int, warning_last_line: int, file_path: str) -> StructuredProjectSource:
         # Todo: add rule here
-
-        remove_function = True
         first_time = True
         warning_code, prefix = "", ""
         tmp_dict = project.paths_to_lines
         all_lines = tmp_dict[file_path]
-        #code_segment_before_changed = all_lines[warning_last_line + 1]
 
         for i in range(warning_last_line+1, len(all_lines)):
             print("warning code:",all_lines[i].code)
@@ -45,36 +42,28 @@ class Fix1003Rule(BaseRule):
                     prefix = count_prefix(warning_code)
 
                 warning_code = warning_code + now_code + "\n"
-
-                if remove_function == True:
-                    prefix, new_code = self.remove_function_info(warning_code)
-                    remove_function = False
-
+                prefix, new_code = self.remove_function_info(warning_code)
                 new_code = prefix + new_code
                 print("new_code:",new_code)
 
-                for j in range(warning_last_line+1,i+1):
-                    print("j:",j,",i:",i)
-                    temp = all_lines[j]
-                    temp.code = ""
-                    all_lines[j] = temp
-
-
+                self.replace_useless_multiple_line(warning_last_line, i, all_lines)
                 all_lines[warning_last_line+1].code = new_code
                 self.test_print( all_lines, warning_last_line)
-
-                warning_code = ""
-                warning_code_1003 = False
-                first_time = True
-
                 tmp_dict[file_path] = all_lines
-
                 break
 
         project.paths_to_lines = tmp_dict
         return project
 
+    def replace_useless_multiple_line(self,warning_last_line,i,all_lines):
+        for j in range(warning_last_line + 1, i + 1):
+            print("j:", j, ",i:", i)
+            temp = all_lines[j]
+            temp.code = ""
+            all_lines[j] = temp
+
     def test_print(self,all_lines,warning_last_line):
+        print("all_lines[warning_last_line]:", all_lines[warning_last_line ].code)
         print("all_lines[warning_last_line+1]:", all_lines[warning_last_line + 1].code)
         print("all_lines[warning_last_line+2]:", all_lines[warning_last_line + 2].code)
         print("all_lines[warning_last_line+3]:", all_lines[warning_last_line + 3].code)
