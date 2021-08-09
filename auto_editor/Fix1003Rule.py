@@ -18,20 +18,15 @@ class Fix1003Rule(BaseRule):
                  warning_first_line: int, warning_last_line: int, file_path: str) -> StructuredProjectSource:
         # Todo: add rule here
 
-        # create a new file for output
-        # new_file = open("%s.cla.cpp" % new_file_path, "w")
-
         remove_function = True
         warning_code = ""
         first_time = True
+        prefix = ""
 
         tmp_dict = project.paths_to_lines
 
-        # for file_path in tmp_dict.keys():
-            # all_lines = project.get_paths_to_lines()[file_name]
-
         all_lines = tmp_dict[file_path]
-        code_segment_before_changed = all_lines[warning_last_line + 1]
+        #code_segment_before_changed = all_lines[warning_last_line + 1]
         for i in range(warning_last_line+1, len(all_lines)):
             if ";" not in all_lines[i].code:
                 if first_time == False:
@@ -50,28 +45,10 @@ class Fix1003Rule(BaseRule):
                     now_code = all_lines[i].code
                     prefix = count_prefix(warning_code)
                 warning_code = warning_code + now_code + "\n"
-                # print("i:", i, ",warning_code:", warning_code)
 
                 if remove_function == True:
-                    if "=(" in warning_code:
-                        prefix = count_prefix(warning_code)
-                        new_code = warning_code.split("=(")
-                        merged_warning_code = merge_except_function(new_code)
-                        new_code = merged_warning_code.replace(",0);", ";")
-                        new_code = new_code.replace(", 0);", ";")
-                    elif "= (" in warning_code:
-                        prefix = count_prefix(warning_code)
-                        new_code = warning_code.split("= (")
-                        merged_warning_code = merge_except_function(new_code)
-                        new_code = merged_warning_code.replace(",0);", ";")
-                        new_code = new_code.replace(", 0);", ";")
-                    elif "((" in warning_code:
-                        new_code = warning_code.split("((")
-                        merged_warning_code = merge_except_function(new_code)
-                        new_code = merged_warning_code.replace(",0));", ";")
-                        new_code = new_code.replace(", 0));", ";")
+                    prefix, new_code = self.remove_function_info(warning_code)
                     remove_function == False
-
 
                 new_code = prefix + new_code
 
@@ -87,10 +64,34 @@ class Fix1003Rule(BaseRule):
                 tmp_dict[file_path] = all_lines
             break
 
-
         project.paths_to_lines = tmp_dict
-
         return project
+
+    def remove_function_info(self, warning_code):
+        prefix = ""
+        if "=(" in warning_code:
+            prefix = count_prefix(warning_code)
+            new_code = self.replace_condition("=(", warning_code)
+        elif "= (" in warning_code:
+            prefix = count_prefix(warning_code)
+            new_code = self.replace_condition("= (", warning_code)
+        elif "((" in warning_code:
+            new_code = self.replace_condition("((", warning_code)
+
+        return prefix, new_code
+
+    def replace_condition(self, type, warning_code):
+        new_code = warning_code.split(type)
+        if type == "((":
+            merged_warning_code = merge_except_function(new_code)
+            new_code = merged_warning_code.replace(",0));", ";")
+            new_code = new_code.replace(", 0));", ";")
+        else:
+            merged_warning_code = merge_except_function(new_code)
+            new_code = merged_warning_code.replace(",0);", ";")
+            new_code = new_code.replace(", 0);", ";")
+
+        return new_code
 
 
 
