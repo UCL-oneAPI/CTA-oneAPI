@@ -25,21 +25,12 @@ class Fix1003Rule(BaseRule):
         for i in range(warning_last_line+1, len(all_lines)):
             print("warning code:",all_lines[i].code)
             if ";" not in all_lines[i].code:
-                if first_time == False:
-                    now_code = all_lines[i].code.strip()
-                else:
-                    now_code = all_lines[i].code
-                    #prefix = count_prefix(now_code)
+                now_code = self.strip_determin(first_time, all_lines[i])
                 warning_code = warning_code + now_code
                 warning_code = warning_code.replace("\n", "")
                 first_time = False
             else:
-                if first_time == False:
-                    now_code = all_lines[i].code.strip()
-                else:
-                    now_code = all_lines[i].code
-                    #prefix = count_prefix(warning_code)
-
+                now_code = self.strip_determin( first_time, all_lines[i])
                 warning_code = warning_code + now_code + "\n"
                 prefix, new_code = self.remove_function_info(warning_code)
                 new_code = prefix + new_code
@@ -104,11 +95,9 @@ class Fix1003Rule(BaseRule):
 def count_prefix(new_code):
     j, prefix = 0, ""
     while j < len(new_code):
-        #print("j is :",new_code[j])
         if new_code[j] == " ":
             prefix = prefix + " "
             j += 1
-            #print("1")
         else:
             break
 
@@ -117,22 +106,14 @@ def count_prefix(new_code):
 def merge_except_function(new_code):
     j, merged_warning_code = 1, ""
     while j < len(new_code):
-        #print("j is :",new_code[j])
         if j >1:
             merged_warning_code = merged_warning_code + "=(" +new_code[j]
-            #print("1---",merged_warning_code)
         else:
-            #print("2.1---", merged_warning_code,", new_code[j]:--",new_code[j])
             merged_warning_code = merged_warning_code + new_code[j]
-            #print("2.2---", merged_warning_code)
         j += 1
     #print("merged_warning_code:", merged_warning_code)
     return merged_warning_code
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    old_file_path = "../oneAPI-DirectProgramming-training/chi2/dpcpp/chi2.dp.cpp"
-    new_file_path = "../oneAPI-DirectProgramming-training/chi2/cla"
-    fix_1003(old_file_path,new_file_path)
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+
+
