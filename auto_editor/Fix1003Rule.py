@@ -42,7 +42,7 @@ class Fix1003Rule(BaseRule):
                 tmp_dict[file_path] = all_lines
                 break
 
-        project.paths_to_lines = tmp_dict
+        project.paths_to_lines[file_path] = tmp_dict[file_path]
         return project
 
     def strip_determin(self,first_time,lines):

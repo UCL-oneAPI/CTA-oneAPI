@@ -3,3 +3,6 @@ auto_editor/__pycache__/Fix1003Rule.cpython-38.pyc
 auto_editor/__pycache__/AddCommentsRule.cpython-38.pyc
 auto_editor/__pycache__/Fix1003Rule.cpython-38.pyc
 auto_editor/__pycache__/AddCommentsRule.cpython-38.pyc
+*.pyc
+*.iml
+*.pyc
