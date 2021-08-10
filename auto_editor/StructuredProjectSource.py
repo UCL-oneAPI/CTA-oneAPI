@@ -1,4 +1,4 @@
-import os
+#import os
 import re
 from pathlib import Path
 from typing import List, Dict
@@ -43,8 +43,7 @@ class StructuredProjectSource:
         paths = []
         test_path = str(self.dpct_root.stem) #'test_project'
         print('path name', test_path)
-        num1 = 0
-        num2 = 0
+        num = 0
         # for file_path in os.listdir(self.dpct_root):
         #     if file_path.endswith(".dp.cpp") or file_path.endswith(".dp.hpp"):
         #         paths.append(file_path)
@@ -52,13 +51,16 @@ class StructuredProjectSource:
         for file_dpcpp in self.dpct_root.rglob('*.dp.cpp'):
             temp1 = file_dpcpp.parts
             if test_path in temp1:
-                num1 = temp1.index(test_path)
-            dpcpp_path = '/'.join(temp1[num1+1:])
+                num = temp1.index(test_path)
+            dpcpp_path = '/'.join(temp1[num+1:])
             paths.append(dpcpp_path)
 
         for file_dphpp in self.dpct_root.rglob('*.dp.hpp'):
             temp2 = file_dphpp.parts
-            paths.append(str(temp2[-1]))
+            if test_path in temp2:
+                num = temp2.index(test_path)
+            dphpp_path = '/'.join(temp2[num+1:])
+            paths.append(dphpp_path)
         for i in paths:
             print(i)
 

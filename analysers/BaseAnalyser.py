@@ -13,6 +13,7 @@ class BaseAnalyser:
     #     :return: list of named tuples with all warnings
     #     '''
     #     return []
+
     def get_first_line_num(self, first_id, codes, ids):
         first = 0
         if first_id in ids:
