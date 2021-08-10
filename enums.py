@@ -12,7 +12,7 @@ class ChangeTypeEnum(Enum):
     recommendation = 'recommendation'
 
 
-WarningItem = namedtuple('WarningItem', 'project_name warning_code file_path message initial')
+WarningItem = namedtuple('WarningItem', 'project_name warning_code file_path message line')
 
 CodeChange = namedtuple('CodeChange', 'edit_id path_to_file line_id diff_operation rule change_type')
 

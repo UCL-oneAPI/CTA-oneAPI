@@ -1,7 +1,7 @@
 import os
 from pathlib import Path
 
-from auto_editor.AddCommentsTestRule import AddCommentsTestRule
+from auto_editor.AddCommentsRule import AddCommentsRule
 from auto_editor.AutoEditor import AutoEditor
 from auto_editor.StructuredProjectSource import StructuredProjectSource
 
@@ -18,7 +18,7 @@ def call_run_rule():
         os.rmdir(os.path.join(path_to_new_root))
     os.mkdir(os.path.join(path_to_new_root))
 
-    rule = AddCommentsTestRule()
+    rule = AddCommentsRule()
     project = StructuredProjectSource(path_to_dpct_root)
     project = rule.run_rule(project=project, warning_first_line=125,
                             warning_last_line=129, file_path=local_path_to_file)
