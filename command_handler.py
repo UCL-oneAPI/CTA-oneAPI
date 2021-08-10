@@ -65,6 +65,6 @@ if __name__ == '__main__':
         run_cta(args.project_path, args.destination_path, args.report_path)
 
     if args.mode == 'report_only':
-        run_cta(args.project_path, args.destination_path, args.report_path)
+        run_cta(args.project_path, args.destination_path, args.report_path,is_report_only=True)
 
 
