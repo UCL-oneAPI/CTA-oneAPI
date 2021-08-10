@@ -36,6 +36,7 @@ class AutoEditor:
     def save_new_version(self, project: StructuredProjectSource):
         for path, code_lines in project.paths_to_lines.items():
             full_path = self.cta_version_root / path
+            Path(full_path).mkdir(parents=True, exist_ok=True)
             with open(full_path, 'a+') as f:
                 for line in code_lines:
                     f.write(line.code)
