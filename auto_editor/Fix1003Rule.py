@@ -29,7 +29,7 @@ class Fix1003Rule(BaseRule):
                     now_code = all_lines[i].code.strip()
                 else:
                     now_code = all_lines[i].code
-                    prefix = count_prefix(now_code)
+                    #prefix = count_prefix(now_code)
                 warning_code = warning_code + now_code
                 warning_code = warning_code.replace("\n", "")
                 first_time = False
@@ -38,7 +38,7 @@ class Fix1003Rule(BaseRule):
                     now_code = all_lines[i].code.strip()
                 else:
                     now_code = all_lines[i].code
-                    prefix = count_prefix(warning_code)
+                    #prefix = count_prefix(warning_code)
 
                 warning_code = warning_code + now_code + "\n"
                 prefix, new_code = self.remove_function_info(warning_code)
@@ -54,6 +54,14 @@ class Fix1003Rule(BaseRule):
         project.paths_to_lines = tmp_dict
         return project
 
+    def strip_determin(self,first_time,lines):
+        if first_time == False:
+            now_code = lines.code.strip()
+        else:
+            now_code = lines.code
+
+        return now_code
+
     def replace_useless_multiple_line(self,warning_last_line,i,all_lines):
         for j in range(warning_last_line + 1, i + 1):
             temp = all_lines[j]
@@ -68,13 +76,11 @@ class Fix1003Rule(BaseRule):
         print("all_lines[",warning_last_line+3,"]:", all_lines[warning_last_line + 3].code)
 
     def remove_function_info(self, warning_code):
-        prefix = ""
+        prefix = count_prefix(warning_code)
         new_code = warning_code
         if "=(" in warning_code:
-            prefix = count_prefix(warning_code)
             new_code = self.replace_condition("=(", warning_code)
         elif "= (" in warning_code:
-            prefix = count_prefix(warning_code)
             new_code = self.replace_condition("= (", warning_code)
         elif "((" in warning_code:
             new_code = self.replace_condition("((", warning_code)

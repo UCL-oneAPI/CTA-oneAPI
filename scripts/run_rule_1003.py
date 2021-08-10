@@ -33,6 +33,12 @@ def call_run_rule():
     project = rule.run_rule(project=project, warning_first_line=335,
                             warning_last_line=338, file_path=local_path_to_file)
 
+    print("---------------------------------------------------------------------------")
+
+    # test prefix
+    project = rule.run_rule(project=project, warning_first_line=411,
+                            warning_last_line=414, file_path=local_path_to_file)
+
     create_new_version(project, new_root=path_to_new_root)
 
 
