@@ -1,5 +1,5 @@
 from CTA_Instance import CTA_Instance
-
+import os
 
 # This defines the CLI and handles user commands.
 # Todo Zhongyuan: add CLI implementation
@@ -26,4 +26,19 @@ def validate_paths(dpct_project_path, destination_path):
     generates exceptions if directory of destination_path is not empty
     or if dpct_project_path directory contains no (nested) .dp.cpp or .dp.h files
     '''
-    pass
+
+    if dpct_project_path.endswith('.cpp') is False:
+        r = "The path does not contain the cpp file."
+        return r
+    elif os.path.exists(destination_path) is False:
+        r = "This path does not exist."
+        return r
+    elif os.path.isdir(destination_path) is False:
+        r = "This is not a folder."
+        return r
+    elif os.listdir(destination_path):
+        r = "This folder is not empty."
+        return r
+    else:
+        print("Works!")
+        return True
