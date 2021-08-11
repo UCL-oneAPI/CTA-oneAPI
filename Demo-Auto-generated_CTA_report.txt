@@ -12,7 +12,7 @@ Like: there are 3 DPCT1003 warning and 6 DPCT1049 fixed
 5. how many warning without fixed?
 Like: there are 2 DPCT1003 without fixed
 
-6.	warnings analysis for original code
+6.	warnings analysis before CTA
 Number	Warning type	Line number (Warning message)	Line number (Warning code)
 1	    DPCTxxxx
 2	    DPCTxxxx
@@ -26,10 +26,15 @@ Number	Warning type	Line number (Warning message)	Line number (Warning code)
 3	    DPCTxxxx
 4	    DPCTxxxx
 
-8.	Fix detail:
+8. changes list
+(list of all lines across repo that have been either added or deleted, with corresponding rule,
+other lines that were added/deleted in the same operation, file path, line id)
+
+9.	Fix detail:
 xxxx -> xxxx
 
-9.	Recommendations:
+10.	Recommendations:
 
-10.	Diff auto-generated HTML link
+
+11.	Diff auto-generated HTML link
 
