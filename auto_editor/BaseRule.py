@@ -33,7 +33,9 @@ class BaseRule:
             for warning in relevant_warning_locations:
                 file_path = warning.file_path
                 code_lines = project.paths_to_lines[file_path]
-
+                # print('first id', warning.first_line_id)
+                # for q in code_lines:
+                #     print(q.id)
                 # index of line id is taken at each iteration,
                 # as it may change if the project is modified in preveious iterations
                 warning_first_line = self.get_index_of_line_id(warning.first_line_id, code_lines)
