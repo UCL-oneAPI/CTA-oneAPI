@@ -2,30 +2,32 @@ Auto-generated CTA report
 
 1.	Total number of warnings
 
-2.	how many warnings are fixed?
+2.  Warning distribution charts
+
+3.	how many warnings are fixed?
 Like: there are 3 DPCT1003 warning and 6 DPCT1049 fixed
 
-3.	how many warning without fixed?
+4.	how many warning without fixed?
 Like: there are 2 DPCT1003 without fixed
 
-4.	warnings analysis for original code
+5.	warnings analysis for original code
 Number	Warning type	Line number (Warning message)	Line number (Warning code)
 1	    DPCTxxxx
 2	    DPCTxxxx
 3	    DPCTxxxx
 4	    DPCTxxxx
 
-5.	warnings analysis after CTA
+6.	warnings analysis after CTA
 Number	Warning type	Line number (Warning message)	Line number (Warning code)
 1	    DPCTxxxx
 2	    DPCTxxxx
 3	    DPCTxxxx
 4	    DPCTxxxx
 
-6.	Fix detail:
+7.	Fix detail:
 xxxx -> xxxx
 
-7.	Recommendations:
+8.	Recommendations:
 
-8.	Diff auto-generated HTML link
+9.	Diff auto-generated HTML link
 
