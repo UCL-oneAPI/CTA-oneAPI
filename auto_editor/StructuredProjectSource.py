@@ -1,4 +1,3 @@
-#import os
 import re
 from pathlib import Path
 from typing import List, Dict
@@ -42,15 +41,15 @@ class StructuredProjectSource:
         dpct_extensions = ('*.dp.cpp', '*.dp.hpp')
         all_dpct_files = []
         paths = []
-        test_path = str(self.dpct_root.stem)
+        project_path = str(self.dpct_root.stem)
         root_index = 0
 
         for ext in dpct_extensions:
             all_dpct_files.extend(self.dpct_root.rglob(ext))
         for file in all_dpct_files:
             path_parts = file.parts
-            if test_path in path_parts:
-                root_index = path_parts.index(test_path)
+            if project_path in path_parts:
+                root_index = path_parts.index(project_path)
             dpct_path = '/'.join(path_parts[root_index+1:])
             paths.append(dpct_path)
 
