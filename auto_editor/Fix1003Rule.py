@@ -23,7 +23,9 @@ class Fix1003Rule(BaseRule):
         tmp_dict = project.paths_to_lines
         all_lines = tmp_dict[file_path]
 
-        for i in range(warning_last_line+1, len(all_lines)):
+        k = self.find_true_originline_number(all_lines,warning_last_line)
+
+        for i in range(k+1, len(all_lines)):
             print("warning code:",all_lines[i].code)
             if ";" not in all_lines[i].code:
                 now_code = self.strip_determin(first_time, all_lines[i])
@@ -37,17 +39,23 @@ class Fix1003Rule(BaseRule):
                 new_code = prefix + new_code
                 print("new_code:",new_code)
 
-                self.replace_useless_multiple_line(warning_last_line, i, all_lines)
+                i_position = self.replace_useless_multiple_line(warning_last_line, i, all_lines)
                 new_lineItem = LineItem(new_code)
                 # new_lineItem.original_line = warning_last_line+1
                 # all_lines[warning_last_line+1] = new_lineItem
-                all_lines.insert(warning_last_line+1,new_lineItem)
+                all_lines.insert(i_position,new_lineItem)
                 self.test_print( all_lines, warning_last_line)
                 tmp_dict[file_path] = all_lines
                 break
 
         project.paths_to_lines[file_path] = tmp_dict[file_path]
         return project
+
+    def find_true_originline_number(self,all_lines,warning_last_line):
+        for i in range( len(all_lines)):
+            if all_lines[i].original_line == warning_last_line:
+                 return i
+        return 0
 
     def strip_determin(self,first_time,lines):
         if first_time == False:
@@ -65,8 +73,8 @@ class Fix1003Rule(BaseRule):
             # all_lines[j] = empty_lineItem_instance
         return_flag = True
         insert_position = 0
-        for k in range(0,len(len(all_lines))):
-            if all_lines[k].code in range(warning_last_line+1, i+1):
+        for k in range(0,len(all_lines)-1):
+            if all_lines[k].original_line in range(warning_last_line+1, i+1+1):
                 if return_flag:
                     insert_position = k
                     return_flag = False
