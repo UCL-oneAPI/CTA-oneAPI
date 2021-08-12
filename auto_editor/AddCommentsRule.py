@@ -45,7 +45,7 @@ class AddCommentsRule(BaseRule):
                     comment_item = LineItem("/*This is an insertion in the code!*/\n")
                     all_items.insert(warning_first_line, comment_item)
                     w_type = "DPCT"
-
+                    return project
 
 
                 if w_type == "DPCT1065":
@@ -53,5 +53,6 @@ class AddCommentsRule(BaseRule):
                     comment_item = LineItem("/*It works!*/\n")
                     all_items.insert(warning_first_line, comment_item)
                     w_type = "DPCT"
+                    return project
 
         return project
