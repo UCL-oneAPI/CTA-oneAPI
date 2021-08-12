@@ -39,30 +39,20 @@ class StructuredProjectSource:
         :return: list with paths to all files inside directory at self.dpct_version_root
         '''
         # Todo: use same logic here as in PreAnalyser. Currently nested files aren't discovered.
-
+        dpct_extensions = ('*.dp.cpp', '*.dp.hpp')
+        all_dpct_files = []
         paths = []
-        test_path = str(self.dpct_root.stem) #'test_project'
-        print('path name', test_path)
-        num = 0
-        # for file_path in os.listdir(self.dpct_root):
-        #     if file_path.endswith(".dp.cpp") or file_path.endswith(".dp.hpp"):
-        #         paths.append(file_path)
+        test_path = str(self.dpct_root.stem)
+        root_index = 0
 
-        for file_dpcpp in self.dpct_root.rglob('*.dp.cpp'):
-            temp1 = file_dpcpp.parts
-            if test_path in temp1:
-                num = temp1.index(test_path)
-            dpcpp_path = '/'.join(temp1[num+1:])
-            paths.append(dpcpp_path)
-
-        for file_dphpp in self.dpct_root.rglob('*.dp.hpp'):
-            temp2 = file_dphpp.parts
-            if test_path in temp2:
-                num = temp2.index(test_path)
-            dphpp_path = '/'.join(temp2[num+1:])
-            paths.append(dphpp_path)
-        for i in paths:
-            print(i)
+        for ext in dpct_extensions:
+            all_dpct_files.extend(self.dpct_root.rglob(ext))
+        for file in all_dpct_files:
+            path_parts = file.parts
+            if test_path in path_parts:
+                root_index = path_parts.index(test_path)
+            dpct_path = '/'.join(path_parts[root_index+1:])
+            paths.append(dpct_path)
 
         return paths
 

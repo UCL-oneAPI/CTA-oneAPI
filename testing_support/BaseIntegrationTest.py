@@ -28,11 +28,13 @@ class BaseIntegrationTest(unittest.TestCase):
     def remove_destination(self):
         full_destination_path = self.cta_root_path / Path(self.destination_root)
         for f in os.listdir(full_destination_path):
-            if os.path.isdir(os.path.join(full_destination_path, f)):
-                for g in os.listdir(os.path.join(full_destination_path, f)):
-                    os.remove(os.path.join(full_destination_path, f, g))
-                os.rmdir(os.path.join(full_destination_path, f))
-            else:
-                os.remove(os.path.join(full_destination_path, f))
+            self.remove_folder(full_destination_path, f)
         os.rmdir(os.path.join(full_destination_path))
 
+    def remove_folder(self, full_path, f_path):
+        if os.path.isdir(os.path.join(full_path, f_path)):
+            for g in os.listdir(os.path.join(full_path, f_path)):
+                self.remove_folder(full_path, os.path.join(f_path, g))
+            os.rmdir(os.path.join(full_path, f_path))
+        else:
+            os.remove(os.path.join(full_path, f_path))
