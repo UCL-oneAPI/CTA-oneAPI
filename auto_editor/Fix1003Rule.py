@@ -58,11 +58,20 @@ class Fix1003Rule(BaseRule):
         return now_code
 
     def replace_useless_multiple_line(self,warning_last_line,i,all_lines):
-        del all_lines[warning_last_line+1:i+1]
+        # del all_lines[warning_last_line+1:i+1]
         # for j in range(warning_last_line + 1, i + 1):
             # empty_lineItem_instance = LineItem("")
             # # empty_lineItem_instance.original_line = j-1
             # all_lines[j] = empty_lineItem_instance
+        return_flag = True
+        insert_position = 0
+        for k in range(0,len(len(all_lines))):
+            if all_lines[k].code in range(warning_last_line+1, i+1):
+                if return_flag:
+                    insert_position = k
+                    return_flag = False
+                del all_lines[k]
+        return insert_position
 
 
     def test_print(self,all_lines,warning_last_line):
