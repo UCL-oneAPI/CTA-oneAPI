@@ -1,5 +1,7 @@
 from analysers.BaseAnalyser import BaseAnalyser
-
+from auto_editor.StructuredProjectSource import StructuredProjectSource
+from enums import WarningItem
+from typing import List
 
 class PostAnalyser(BaseAnalyser):
     def get_all_warnings(self) -> List[WarningItem]:
