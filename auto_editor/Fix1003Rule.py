@@ -73,7 +73,7 @@ class Fix1003Rule(BaseRule):
         print("all_lines[",warning_last_line+3,"]:", all_lines[warning_last_line + 3].code)
 
     def remove_function_info(self, warning_code):
-        prefix = count_prefix(warning_code)
+        prefix = get_indentation_spaces(warning_code)
         new_code = warning_code
         if "=(" in warning_code:
             new_code = self.replace_condition("=(", warning_code)
@@ -98,7 +98,7 @@ class Fix1003Rule(BaseRule):
         return new_code
 
 
-def count_prefix(new_code):
+def get_indentation_spaces(new_code):
     j, prefix = 0, ""
     while j < len(new_code):
         if new_code[j] == " ":
