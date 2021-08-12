@@ -24,7 +24,7 @@ class Fix1003Rule(BaseRule):
         all_lines = tmp_dict[file_path]
 
         k = self.find_true_originline_number(all_lines,warning_last_line)
-
+        one_line_warning_code = True
         for i in range(k+1, len(all_lines)):
             print("warning code:",all_lines[i].code)
             if ";" not in all_lines[i].code:
@@ -32,9 +32,13 @@ class Fix1003Rule(BaseRule):
                 warning_code = warning_code + now_code
                 warning_code = warning_code.replace("\n", "")
                 first_time = False
+                one_line_warning_code = False
             else:
                 now_code = self.strip_determin( first_time, all_lines[i])
-                warning_code = warning_code + now_code + "\n"
+                if one_line_warning_code == False:
+                    warning_code = warning_code + now_code + "\n"
+                else:
+                    warning_code = now_code
                 prefix, new_code = self.remove_function_info(warning_code)
                 new_code = prefix + new_code
                 print("new_code:",new_code)
