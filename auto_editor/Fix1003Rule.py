@@ -40,7 +40,8 @@ class Fix1003Rule(BaseRule):
                 self.replace_useless_multiple_line(warning_last_line, i, all_lines)
                 new_lineItem = LineItem(new_code)
                 # new_lineItem.original_line = warning_last_line+1
-                all_lines[warning_last_line+1] = new_lineItem
+                # all_lines[warning_last_line+1] = new_lineItem
+                all_lines.insert(warning_last_line+1,new_lineItem)
                 self.test_print( all_lines, warning_last_line)
                 tmp_dict[file_path] = all_lines
                 break
@@ -57,7 +58,7 @@ class Fix1003Rule(BaseRule):
         return now_code
 
     def replace_useless_multiple_line(self,warning_last_line,i,all_lines):
-        del all_lines[warning_last_line+1,i+1]
+        del all_lines[warning_last_line+1:i+1]
         # for j in range(warning_last_line + 1, i + 1):
             # empty_lineItem_instance = LineItem("")
             # # empty_lineItem_instance.original_line = j-1
@@ -72,7 +73,7 @@ class Fix1003Rule(BaseRule):
         print("all_lines[",warning_last_line+3,"]:", all_lines[warning_last_line + 3].code)
 
     def remove_function_info(self, warning_code):
-        prefix = get_indentation_spaces(warning_code)
+        prefix = count_prefix(warning_code)
         new_code = warning_code
         if "=(" in warning_code:
             new_code = self.replace_condition("=(", warning_code)
@@ -97,7 +98,7 @@ class Fix1003Rule(BaseRule):
         return new_code
 
 
-def get_indentation_spaces(new_code):
+def count_prefix(new_code):
     j, prefix = 0, ""
     while j < len(new_code):
         if new_code[j] == " ":
