@@ -73,8 +73,8 @@ class Fix1003Rule(BaseRule):
         print("all_lines[",warning_last_line+3,"]:", all_lines[warning_last_line + 3].code)
 
     def remove_function_info(self, warning_code):
-        prefix = get_indentation_spaces(warning_code)
         new_code = warning_code
+        prefix = self.get_indentation_spaces(new_code)
         if "=(" in warning_code:
             new_code = self.replace_condition("=(", warning_code)
         elif "= (" in warning_code:
@@ -87,38 +87,37 @@ class Fix1003Rule(BaseRule):
     def replace_condition(self, type, warning_code):
         new_code = warning_code.split(type)
         if type == "((":
-            merged_warning_code = merge_except_function(new_code)
+            merged_warning_code = self.merge_except_function(new_code)
             new_code = merged_warning_code.replace(",0));", ";")
             new_code = new_code.replace(", 0));", ";")
         else:
-            merged_warning_code = merge_except_function(new_code)
+            merged_warning_code = self.merge_except_function(new_code)
             new_code = merged_warning_code.replace(",0);", ";")
             new_code = new_code.replace(", 0);", ";")
 
         return new_code
 
 
-def get_indentation_spaces(new_code):
-    j, prefix = 0, ""
-    while j < len(new_code):
-        if new_code[j] == " ":
-            prefix = prefix + " "
+    def get_indentation_spaces(self,new_code):
+        j, prefix = 0, ""
+        while j < len(new_code):
+            if new_code[j] == " ":
+                prefix = prefix + " "
+                j += 1
+            else:
+                break
+        return prefix
+
+    def merge_except_function(self,new_code):
+        j, merged_warning_code = 1, ""
+        while j < len(new_code):
+            if j >1:
+                merged_warning_code = merged_warning_code + "=(" +new_code[j]
+            else:
+                merged_warning_code = merged_warning_code + new_code[j]
             j += 1
-        else:
-            break
-
-    return prefix
-
-def merge_except_function(new_code):
-    j, merged_warning_code = 1, ""
-    while j < len(new_code):
-        if j >1:
-            merged_warning_code = merged_warning_code + "=(" +new_code[j]
-        else:
-            merged_warning_code = merged_warning_code + new_code[j]
-        j += 1
-    #print("merged_warning_code:", merged_warning_code)
-    return merged_warning_code
+        #print("merged_warning_code:", merged_warning_code)
+        return merged_warning_code
 
 
 
