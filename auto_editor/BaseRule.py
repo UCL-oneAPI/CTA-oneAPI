@@ -27,12 +27,13 @@ class BaseRule:
         raise Exception("This property must be overriden by each rule to state the ChangeTypeEnum.")
 
     def initiate_run(self, project: StructuredProjectSource):
+        current_project_version = project
         for warning_code in self.dpct_warning_codes:
-            relevant_warning_locations = project.dpct_warnings_dict[warning_code] \
-                if warning_code in project.dpct_warnings_dict else []
+            relevant_warning_locations = current_project_version.dpct_warnings_dict[warning_code] \
+                if warning_code in current_project_version.dpct_warnings_dict else []
             for warning in relevant_warning_locations:
                 file_path = warning.file_path
-                code_lines = project.paths_to_lines[file_path]
+                code_lines = current_project_version.paths_to_lines[file_path]
                 # print('first id', warning.first_line_id)
                 # for q in code_lines:
                 #     print(q.id)
@@ -43,9 +44,10 @@ class BaseRule:
 
                 # project is updated every time a rule runs, so it always has latest changes.
                 # the update for each warning is tracked, so all changes related to that warning can be associated to each other
-                old_project_version = copy.deepcopy(project)
-                project = self.run_rule(project, warning_first_line, warning_last_line, file_path)
-                self.track_change(old_project_version, project)
+                old_project_version = copy.deepcopy(current_project_version)
+                current_project_version = self.run_rule(current_project_version, warning_first_line, warning_last_line,
+                                                        file_path)
+                self.track_change(old_project_version, current_project_version)
 
         self.is_run_complete = True
 
