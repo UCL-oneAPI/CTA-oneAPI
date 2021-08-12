@@ -1,16 +1,3 @@
-
-auto_editor/__pycache__/Fix1003Rule.cpython-38.pyc
-auto_editor/__pycache__/AddCommentsRule.cpython-38.pyc
-auto_editor/__pycache__/Fix1003Rule.cpython-38.pyc
-auto_editor/__pycache__/AddCommentsRule.cpython-38.pyc
+.idea/workspace.xml
 *.pyc
-*.iml
-*.pyc
-# .idea/vcs.xml
-# .idea/modules.xml
-# .idea/misc.xml
-# .idea/inspectionProfiles/Project_Default.xml
-# .idea/inspectionProfiles/profiles_settings.xml
 /.idea
-/__pycache__
-
