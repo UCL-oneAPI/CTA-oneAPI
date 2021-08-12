@@ -4,6 +4,13 @@ from enums import WarningItem
 from typing import List
 
 class PostAnalyser(BaseAnalyser):
+    """
+    Basically, the same as the pre-analyzer,
+    plus the ability to also detect and count new CTA warnings/recommendations.
+    We currently don't have any of these,
+    so I recommend working with a 'dummy' string here.
+    E.g. for the ticket you can assume that all CTA warnings/recommendations begin with "CTA<some-number>: "
+    """
     def get_all_warnings(self) -> List[WarningItem]:
         project = StructuredProjectSource(self.project_root_path)
         warnings_dict = project.dpct_warnings_dict
@@ -24,9 +31,6 @@ class PostAnalyser(BaseAnalyser):
                                       warning_code=k,
                                       file_path=path,
                                       message=message,
-                                      # "DPCT1111:3: The workgroup size passed to the SYCL kernel may exceed the limit.\n"
-                                      #         "To get the device limit, query info::device::max_work_group_size. Adjust the\n"
-                                      #         "workgroup size if needed.",
                                       line=first_line)
                 all_warnings.append(warning)
         return all_warnings
