@@ -19,7 +19,7 @@ class AddCommentsRule(BaseRule):
 
     def run_rule(self, project: StructuredProjectSource,
                  warning_first_line: int, warning_last_line: int, file_path: str) -> StructuredProjectSource:
-        # Todo: add rule here
+        # Todo Qichen: fix rule
         state = False
         w_type = "DPCT"
         all_line = list()
@@ -46,21 +46,19 @@ class AddCommentsRule(BaseRule):
                     all_items.insert(warning_first_line, comment_item)
                     w_type = "DPCT"
 
-
-
                 if w_type == "DPCT1065":
                     del all_items[warning_first_line: warning_last_line + 1]
                     comment_item = LineItem("/*It works!*/\n")
                     all_items.insert(warning_first_line, comment_item)
                     w_type = "DPCT"
 
-        fp_file = open(file_path, 'w+')
-        all_items = project.paths_to_lines[file_path]
-        new_lines = list()
-        for c in all_items:
-            new_lines.append(c.code)
-        for item in new_lines:
-            fp_file.write(item)
-        fp_file.close()
+        # fp_file = open(file_path, 'w+')
+        # all_items = project.paths_to_lines[file_path]
+        # new_lines = list()
+        # for c in all_items:
+        #     new_lines.append(c.code)
+        # for item in new_lines:
+        #     fp_file.write(item)
+        # fp_file.close()
 
         return project
