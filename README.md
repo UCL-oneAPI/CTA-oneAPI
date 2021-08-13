@@ -13,21 +13,25 @@ Python version: 3.7.9
 Website: https://ucl-oneapi.github.io/CTA-oneAPI/
 
 ## Installation
+
 ### Prerequisites
 
 ## Usage
 CTA is currently available in two modes.
-Use the command below to get the output of default mode (including CTA processed files and reports)  
+Use the command below to get the output of default mode (including CTA processed files and a report)  
 ```Shell
 python command_handler.py --mode=default --project-path=auto_editor/sample_data/test_project --destination-path=auto_editor/sample_data/
-cd cta
 ```
 Or set `--mode=read_only` to get report only. 
 
 The `auto_editor/sample_data/test_project` is the path to the DPCT files, and `auto_editor/sample_data/` is the path to the output files.
 
 ### For Helps
-    python command_handler.py --help
+```Shell
+python command_handler.py --help
+```
 
 ### For Version Information
-    python command_handler.py --version
+```Shell
+python command_handler.py --version
+```
