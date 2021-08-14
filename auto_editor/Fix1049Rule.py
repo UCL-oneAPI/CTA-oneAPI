@@ -39,7 +39,7 @@ class Fix1049Rule(BaseRule):
             result = re.search(nd_range_pattern, code)
             if result:
                 vec_names = self.get_vector_names(result, i, file_lines)
-                range_len = int(result.group()[result.group().index('<')+1:-1])
+                range_len = int(result.group()[result.group().index('<') + 1:-1])
                 return (range_len, vec_names)
 
         logging.exception("Fix of DPCT1049: no nd_range declared in loop.")
@@ -51,7 +51,7 @@ class Fix1049Rule(BaseRule):
         masked_code, masks_to_values = self.mask_code_params(joined_code)
         params_with_multiply = re.findall("(?:,|\*|[^\s,^\*,^,]*)", masked_code)
         params_with_multiply = [e for e in params_with_multiply if not e == '']
-        if not params_with_multiply[1] == '*' and params_with_multiply[3]==',':
+        if not params_with_multiply[1] == '*' and params_with_multiply[3] == ',':
             raise Exception('Fix 1049: Code structure different than expected. Cannot resolve.')
 
         vec_1 = self.unmask(params_with_multiply[0], masks_to_values)

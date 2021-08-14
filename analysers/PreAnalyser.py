@@ -40,19 +40,3 @@ class PreAnalyser(BaseAnalyser):
                                       line=first_line)
                 all_warnings.append(warning)
         return all_warnings
-
-    def get_first_line_num(self, first_id, codes, ids):
-        first = 0
-        if first_id in ids:
-            first = ids.index(first_id) + 2
-        return first
-
-    def get_warning_message(self, first, last_info, codes, ids):
-        message = ""
-        last = 0
-        if last_info in ids:
-            last = ids.index(last_info)
-        for i in range(first-1, last-1):
-            message += codes[i].strip() + '\n'
-        message += codes[last - 1].strip()
-        return message
