@@ -1,4 +1,3 @@
-import os
 import re
 from pathlib import Path
 from typing import List, Dict
@@ -39,12 +38,20 @@ class StructuredProjectSource:
         :return: list with paths to all files inside directory at self.dpct_version_root
         '''
         # Todo: use same logic here as in PreAnalyser. Currently nested files aren't discovered.
-
+        dpct_extensions = ('*.dp.cpp', '*.dp.hpp')
+        all_dpct_files = []
         paths = []
+        project_path = str(self.dpct_root.stem)
+        root_index = 0
 
-        for file_path in os.listdir(self.dpct_root):
-            if file_path.endswith(".dp.cpp") or file_path.endswith(".dp.hpp"):
-                paths.append(file_path)
+        for ext in dpct_extensions:
+            all_dpct_files.extend(self.dpct_root.rglob(ext))
+        for file in all_dpct_files:
+            path_parts = file.parts
+            if project_path in path_parts:
+                root_index = path_parts.index(project_path)
+            dpct_path = '/'.join(path_parts[root_index+1:])
+            paths.append(dpct_path)
 
         return paths
 
