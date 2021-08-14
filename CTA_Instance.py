@@ -62,10 +62,3 @@ class CTA_Instance:
         '''
         presenter = Presenter(self.report_root, self.initial_warnings, self.final_warnings, self.changes)
         presenter.generate_ui_files()
-
-if __name__ == '__main__':
-    cta = CTA_Instance(r"C:\Users\lenovo\Desktop\CTA-oneAPI\auto_editor\sample_data\test_project",
-                       r"C:\Users\lenovo\Desktop\CTA-oneAPI\auto_editor\sample_data\destination_dir\kernel_wrapper2.dp.cpp",
-                       r"C:\Users\lenovo\Desktop\CTA-oneAPI\auto_editor\sample_data")
-    cta.run_pre_analyzer()
-    cta.save_to_csvs()
