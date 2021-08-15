@@ -7,13 +7,13 @@ from testing_support.BaseIntegrationTest import BaseIntegrationTest
 class TestPreAnalyzerIntegration(BaseIntegrationTest):
 
     def test_getAllWarnings_dpctProjectWithWarning_warningExtracted(self):
-        post_analyser = PostAnalyser(self.cta_root_path)
+        post_analyser = PostAnalyser(self.dpct_root)
         warnings = post_analyser.get_all_warnings()
         print(warnings)
 
-        self.assertEqual(len(warnings), 1)
+        self.assertEqual(len(warnings), 24)
         self.assertEqual(warnings[0].project_name, 'test_project')
-        self.assertEqual(warnings[0].warning_code, 'CTA1111')
+        self.assertEqual(warnings[0].warning_code, 'DPCT1111')
         self.assertEqual(warnings[0].file_path, '/kernel_wrapper2.dp.cpp')
         self.assertEqual(warnings[0].message,
                          "DPCT1111:3: The workgroup size passed to the SYCL kernel may exceed the limit.\n"

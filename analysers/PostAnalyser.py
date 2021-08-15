@@ -17,6 +17,7 @@ class PostAnalyser(BaseAnalyser):
         all_warnings = []
         codes = []
         ids = []
+
         for i in project.paths_to_lines.values():
             for j in i:
                 codes.append(j.code)
@@ -34,3 +35,8 @@ class PostAnalyser(BaseAnalyser):
                                       line=first_line)
                 all_warnings.append(warning)
         return all_warnings
+
+
+    def count_newCTA_warnings(self):
+        
+        return 0
