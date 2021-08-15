@@ -29,3 +29,5 @@ class BaseAnalyser:
             message += codes[i].strip() + '\n'
         message += codes[last - 1].strip()
         return message
+
+
