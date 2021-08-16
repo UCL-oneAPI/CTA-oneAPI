@@ -16,6 +16,11 @@ Website: https://ucl-oneapi.github.io/CTA-oneAPI/
 
 ### Prerequisites
 
+### Download
+```Shell
+git clone https://github.com/UCL-oneAPI/CTA-oneAPI
+cd CTA-oneAPI
+```
 ## Usage
 CTA is currently available in two modes.
 Use the command below to get the output of default mode (including CTA processed files and a report)  
