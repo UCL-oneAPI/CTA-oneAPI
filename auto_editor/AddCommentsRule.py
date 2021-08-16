@@ -19,7 +19,7 @@ class AddCommentsRule(BaseRule):
 
     def run_rule(self, project: StructuredProjectSource,
                  warning_first_line: int, warning_last_line: int, file_path: str) -> StructuredProjectSource:
-        # Todo: add rule here
+        # Todo Qichen: fix rule
         state = False
         w_type = "DPCT"
         all_line = list()
@@ -54,5 +54,6 @@ class AddCommentsRule(BaseRule):
                     all_items.insert(warning_first_line, comment_item)
                     w_type = "DPCT"
                     return project
+
 
         return project
