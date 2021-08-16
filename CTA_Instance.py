@@ -4,6 +4,7 @@ from analysers.PostAnalyser import PostAnalyser
 from analysers.PreAnalyser import PreAnalyser
 from auto_editor.AutoEditor import AutoEditor
 from report_presentation.Presenter import Presenter
+import pandas as pd
 
 
 class CTA_Instance:
@@ -50,7 +51,9 @@ class CTA_Instance:
         so that they can be inspected after the run.
         :return: path to newly generated folder where these csvs are stored (next to presentation folder)
         '''
-        pass
+        pd.DataFrame(self.initial_warnings).to_csv('pre-analyzer.csv')
+        pd.DataFrame(self.final_warnings).to_csv('post_analyzer.csv')
+        pd.DataFrame(self.changes).to_csv('changes.csv')
 
     def create_report_presentation(self):
         '''
