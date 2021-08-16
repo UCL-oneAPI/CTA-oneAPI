@@ -1,6 +1,6 @@
 from analysers.BaseAnalyser import BaseAnalyser
 from auto_editor.StructuredProjectSource import StructuredProjectSource
-from enums import WarningItem
+from enums import WarningItem, RecommendationItem
 from typing import List
 
 class PostAnalyser(BaseAnalyser):
@@ -48,27 +48,27 @@ class PostAnalyser(BaseAnalyser):
 
     def get_all_recommendation(self) -> List[RecommendationItem]:
         project = StructuredProjectSource(self.project_root_path)
-
-        # loop through every line in project
-        recommendation_message,line = "",0
-        all_recommendations = []
-        for file_name, warnings in project.paths_to_lines.items():
-            start_flag = False
-            for lineItem in warnings:
-                code = lineItem.code
-                if "CTA" in code:
-                    start_flag = True
-                    recommendation_message += str(code)
-                if start_flag == True:
-                    recommendation_message += str(code)
-                    if "*/" in code:
-                        recommendation_item = RecommendationItem(project_name=self.project_root_path.stem,
-                                              recommendation_code=k,
-                                              file_path=path,
-                                              message=recommendation_message,
-                                              line=first_line)
-                        recommendation_message = ""
-                        start_flag = False
-                        all_recommendations.append(recommendation_item)
-        return all_recommendations
+        #
+        # # loop through every line in project
+        # recommendation_message,line = "",0
+        # all_recommendations = []
+        # for file_name, warnings in project.paths_to_lines.items():
+        #     start_flag = False
+        #     for lineItem in warnings:
+        #         code = lineItem.code
+        #         if "CTA" in code:
+        #             start_flag = True
+        #             recommendation_message += str(code)
+        #         if start_flag == True:
+        #             recommendation_message += str(code)
+        #             if "*/" in code:
+        #                 recommendation_item = RecommendationItem(project_name=self.project_root_path.stem,
+        #                                       recommendation_code=k,
+        #                                       file_path=path,
+        #                                       message=recommendation_message,
+        #                                       line=first_line)
+        #                 recommendation_message = ""
+        #                 start_flag = False
+        #                 all_recommendations.append(recommendation_item)
+        # return all_recommendations
 
