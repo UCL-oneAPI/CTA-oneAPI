@@ -61,13 +61,14 @@ if __name__ == '__main__':
     parser.add_argument('--version', action='version')
     args = parser.parse_args()
 
-    if validate_paths(args.project_path,args.destination_path) is True:
+    validate_check_result = validate_paths(args.project_path,args.destination_path)
+    if validate_check_result is True:
         if args.mode == 'default':
             run_cta(args.project_path, args.destination_path, args.report_path)
 
         if args.mode == 'report_only':
             run_cta(args.project_path, args.destination_path, args.report_path,is_report_only=True)
     else:
-        print("please check the file path, the path provided is not valid")
+        print(validate_check_result)
 
 
