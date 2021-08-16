@@ -61,7 +61,7 @@ if __name__ == '__main__':
     parser.add_argument('--version', action='version')
     args = parser.parse_args()
 
-    if validate_paths(args.project_path,args.destination_path):
+    if validate_paths(args.project_path,args.destination_path) is True:
         if args.mode == 'default':
             run_cta(args.project_path, args.destination_path, args.report_path)
 

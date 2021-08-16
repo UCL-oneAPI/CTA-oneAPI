@@ -1,3 +1,7 @@
 
 .idea/workspace.xml
 .idea/inspectionProfiles/Project_Default.xml
+*.pyc
+*.cpp
+/.idea
+/__pycache__
