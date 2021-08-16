@@ -17,6 +17,7 @@ class PostAnalyser(BaseAnalyser):
         all_warnings = []
         codes = []
         ids = []
+        cta_number,dpct_number = 0
 
         for i in project.paths_to_lines.values():
             for j in i:
@@ -28,15 +29,19 @@ class PostAnalyser(BaseAnalyser):
                 path = '/' + info[2]
                 first_line = self.get_first_line_num(info[0], codes, ids)
                 message = self.get_warning_message(first_line, info[1], codes, ids)
+                cta_number, dpct_number = self.count_warnings_numbers(k,cta_number,dpct_number)
                 warning = WarningItem(project_name=self.project_root_path.stem,
                                       warning_code=k,
                                       file_path=path,
                                       message=message,
                                       line=first_line)
                 all_warnings.append(warning)
-        return all_warnings
+        return all_warnings,cta_number, dpct_number
 
 
-    def count_newCTA_warnings(self):
-        
-        return 0
+    def count_warnings_numbers(self, warning_code,cta_number,dpct_number):
+        if 'CTA' in warning_code:
+            cta_number += 1
+        elif 'DPCT' in warning_code:
+            dpct_number += 1
+        return cta_number,dpct_number
