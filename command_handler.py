@@ -68,6 +68,6 @@ if __name__ == '__main__':
         if args.mode == 'report_only':
             run_cta(args.project_path, args.destination_path, args.report_path,is_report_only=True)
     else:
-        print("please double check the file path, the path provided is not valid")
+        print("please check the file path, the path provided is not valid")
 
 
