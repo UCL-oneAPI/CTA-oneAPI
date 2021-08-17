@@ -4,7 +4,7 @@ from enums import RecommendationLocation
 
 class StructuredProjectSource_Recommendation(StructuredProjectSource):
     def __init__(self):
-        recommendations_dict = self.get_all_recommendations()
+        self.recommendations_dict = self.get_all_recommendations()
 
     def get_all_recommendations(self):
         recommendations_dict = {}
