@@ -30,14 +30,14 @@ class PostAnalyser(BaseAnalyser):
                 path = '/' + info[2]
                 first_line = self.get_first_line_num(info[0], codes, ids)
                 message = self.get_warning_message(first_line, info[1], codes, ids)
-                cta_number, dpct_number = self.count_warnings_numbers(k,cta_number,dpct_number)
+                #cta_number, dpct_number = self.count_warnings_numbers(k,cta_number,dpct_number)
                 warning = WarningItem(project_name=self.project_root_path.stem,
                                       warning_code=k,
                                       file_path=path,
                                       message=message,
                                       line=first_line)
                 all_warnings.append(warning)
-        return all_warnings,cta_number, dpct_number
+        return all_warnings
 
 
     def count_warnings_numbers(self, warning_code,cta_number,dpct_number):
@@ -49,27 +49,27 @@ class PostAnalyser(BaseAnalyser):
 
     def get_all_recommendation(self) -> List[RecommendationItem]:
         project = StructuredProjectSource_Recommendation(self.project_root_path)
-
-        # loop through every line in project
-        recommendation_message,line = "",0
+        recommendations_dict = project.recommendations_dict
         all_recommendations = []
-        for file_name, warnings in project.paths_to_lines.items():
-            start_flag = False
-            for lineItem in warnings:
-                code = lineItem.code
-                if "CTA" in code:
-                    start_flag = True
-                    recommendation_message += str(code)
-                if start_flag == True:
-                    recommendation_message += str(code)
-                    if "*/" in code:
-                        recommendation_item = RecommendationItem(project_name=self.project_root_path.stem,
-                                              recommendation_code=k,
-                                              file_path=path,
-                                              message=recommendation_message,
-                                              line=first_line)
-                        recommendation_message = ""
-                        start_flag = False
-                        all_recommendations.append(recommendation_item)
+        codes = []
+        ids = []
+
+        for i in project.paths_to_lines.values():
+            for j in i:
+                codes.append(j.code)
+                ids.append(j.id)
+
+        for k, v in recommendations_dict.items():
+            for info in v:
+                path = '/' + info[2]
+                first_line = self.get_first_line_num(info[0], codes, ids)
+                message = self.get_warning_message(first_line, info[1], codes, ids)
+                warning = WarningItem(project_name=self.project_root_path.stem,
+                                      warning_code=k,
+                                      file_path=path,
+                                      message=message,
+                                      line=first_line)
+                all_recommendations.append(warning)
         return all_recommendations
+
 
