@@ -1,6 +1,7 @@
 from CTA_Instance import CTA_Instance
 import argparse
 import os
+import os.path
 
 
 # This defines the CLI and handles user commands.
@@ -73,8 +74,11 @@ if __name__ == '__main__':
     else:
         des = '/'+str(args.destination_path)
     output_folder_path = (str(os.getcwd()) + str(des)+'\outputs').replace('\\','/')
+    if os.path.exists(output_folder_path):
+        pass
+    else:
+        os.mkdir(output_folder_path)  # make directory
     # print(output_folder_path)
-    os.mkdir(output_folder_path)  # make directory
     validate_check_result = validate_paths(args.project_path,
                                            output_folder_path)  # get validate path checking result
     if validate_check_result is True:
