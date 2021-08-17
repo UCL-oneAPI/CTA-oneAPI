@@ -65,7 +65,7 @@ class PostAnalyser(BaseAnalyser):
                 first_line = self.get_first_line_num(info[0], codes, ids)
                 message = self.get_warning_message(first_line, info[1], codes, ids)
                 warning = RecommendationItem(project_name=self.project_root_path.stem,
-                                      warning_code=k,
+                                      recommendation_code=k,
                                       file_path=path,
                                       message=message,
                                       line=first_line)
