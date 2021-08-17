@@ -76,7 +76,7 @@ if __name__ == '__main__':
     # print(output_folder_path)
     os.mkdir(output_folder_path)  # make directory
     validate_check_result = validate_paths(args.project_path,
-                                           args.destination_path)  # get validate path checking result
+                                           output_folder_path)  # get validate path checking result
     if validate_check_result is True:
         if args.mode == 'default':
             run_cta(args.project_path, args.destination_path, args.report_path)
