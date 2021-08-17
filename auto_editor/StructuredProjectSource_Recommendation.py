@@ -9,9 +9,11 @@ class StructuredProjectSource_Recommendation(StructuredProjectSource):
     def get_all_recommendations(self):
         recommendations_dict = {}
         for file_path, code_lines in self.paths_to_lines.items():
+
             for i in range(len(code_lines)):
                 line_item = code_lines[i]
                 recommendation_code = line_item.get_cta_recommendation()
+
                 if recommendation_code:
                     first_line = self.get_first_warning_line(i, code_lines)
                     last_line = self.get_last_warning_line(i, code_lines)

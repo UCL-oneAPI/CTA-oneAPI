@@ -70,6 +70,7 @@ class PostAnalyser(BaseAnalyser):
                                       message=message,
                                       line=first_line)
                 all_recommendations.append(warning)
+                
         return all_recommendations
 
 
