@@ -51,7 +51,6 @@ class PostAnalyser(BaseAnalyser):
         project = StructuredProjectSource_Recommendation(self.project_root_path)
         recommendations_dict = project.recommendations_dict
         all_recommendations = []
-        
         codes = []
         ids = []
 
