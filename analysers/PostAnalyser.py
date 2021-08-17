@@ -1,5 +1,6 @@
 from analysers.BaseAnalyser import BaseAnalyser
 from auto_editor.StructuredProjectSource import StructuredProjectSource
+from auto_editor.StructuredProjectSource_Recommendation import StructuredProjectSource_Recommendation
 from enums import WarningItem, RecommendationItem
 from typing import List
 
@@ -47,7 +48,7 @@ class PostAnalyser(BaseAnalyser):
         return cta_number,dpct_number
 
     def get_all_recommendation(self) -> List[RecommendationItem]:
-        project = StructuredProjectSource(self.project_root_path)
+        project = StructuredProjectSource_Recommendation(self.project_root_path)
         #
         # # loop through every line in project
         # recommendation_message,line = "",0
