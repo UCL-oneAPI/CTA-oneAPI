@@ -7,9 +7,9 @@ from testing_support.BaseIntegrationTest import BaseIntegrationTest
 class TestPreAnalyzerIntegration(BaseIntegrationTest):
 
     def test_getAllWarnings_dpctProjectWithWarning_warningExtracted(self):
-        post_analyser = PostAnalyser(self.dpct_root)
-        recommendations = post_analyser.get_all_recommendation()
-        print(recommendations)
+        # post_analyser = PostAnalyser(self.dpct_root)
+        # recommendations = post_analyser.get_all_recommendation()
+        # print(recommendations)
 
         # self.assertEqual(len(recommendations), 24)
         # self.assertEqual(recommendations[0].project_name, 'test_project')
@@ -21,6 +21,7 @@ class TestPreAnalyzerIntegration(BaseIntegrationTest):
         #                  "workgroup size if needed.")  # @Yifei I hope this is correct with the "\n" and spacing,
         # # otherwise feel free to make changes
         # self.assertEqual(recommendations[0].line, 127)
+        pass
 
 
 if __name__ == '__main__':
