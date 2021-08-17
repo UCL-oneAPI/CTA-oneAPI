@@ -20,4 +20,5 @@ CodeChange = namedtuple('CodeChange', 'edit_id path_to_file line_id diff_operati
 
 WarningLocation = namedtuple('WarningLocation', 'first_line_id last_line_id file_path')
 
+
 RecommendationLocation = namedtuple('RecommendationLocation', 'first_line_id last_line_id file_path')

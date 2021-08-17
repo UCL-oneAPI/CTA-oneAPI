@@ -1,4 +1,5 @@
 from analysers.BaseAnalyser import BaseAnalyser
+
 from auto_editor.StructuredProjectSource import StructuredProjectSource
 from auto_editor.StructuredProjectSource_Recommendation import StructuredProjectSource_Recommendation
 from enums import WarningItem, RecommendationItem
@@ -72,5 +73,3 @@ class PostAnalyser(BaseAnalyser):
                 all_recommendations.append(warning)
                 
         return all_recommendations
-
-
