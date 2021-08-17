@@ -2,6 +2,7 @@ from CTA_Instance import CTA_Instance
 import argparse
 import os
 
+
 # This defines the CLI and handles user commands.
 # Todo Zhongyuan: add CLI implementation
 
@@ -68,14 +69,20 @@ if __name__ == '__main__':
     parser.add_argument('--version', action='version')
     args = parser.parse_args()
 
-    validate_check_result = validate_paths(args.project_path,args.destination_path)
+    if args.destination_path == None:
+        des = ""
+    else:
+        des = '/'+str(args.destination_path)
+    output_folder_path = (str(os.getcwd()) + str(des)+'\outputs').replace('\\','/')
+    # print(output_folder_path)
+    os.mkdir(output_folder_path)  # make directory
+    validate_check_result = validate_paths(args.project_path,
+                                           args.destination_path)  # get validate path checking result
     if validate_check_result is True:
         if args.mode == 'default':
             run_cta(args.project_path, args.destination_path, args.report_path)
 
         if args.mode == 'report_only':
-            run_cta(args.project_path, args.destination_path, args.report_path,is_report_only=True)
+            run_cta(args.project_path, args.destination_path, args.report_path, is_report_only=True)
     else:
         print(validate_check_result)
-
-
