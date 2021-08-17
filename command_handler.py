@@ -28,6 +28,9 @@ def validate_paths(dpct_project_path, destination_path):
     generates exceptions if directory of destination_path is not empty
     or if dpct_project_path directory contains no (nested) .dp.cpp or .dp.h files
     '''
+    if os.path.exists(dpct_project_path) is False:
+        r = "The dpct project path does not exist."
+        return r
     filenames = os.listdir(dpct_project_path)
     state_cpp = False
     for filename in filenames:
