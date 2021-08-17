@@ -46,7 +46,6 @@ def validate_paths(dpct_project_path, destination_path):
     elif os.listdir(destination_path):
         r = "This folder is not empty."
         return r
-
     else:
         print("Works!")
         return True
