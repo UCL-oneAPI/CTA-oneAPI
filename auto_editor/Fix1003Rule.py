@@ -25,6 +25,9 @@ class Fix1003Rule(BaseRule):
 
         k = self.find_true_originline_number(all_lines,warning_last_line)
         one_line_warning_code = True
+
+        self.remove_code(warning_first_line,warning_last_line)
+
         for i in range(k+1, len(all_lines)):
             print("warning code:",all_lines[i].code)
             if ";" not in all_lines[i].code:
@@ -79,6 +82,7 @@ class Fix1003Rule(BaseRule):
 
     def remove_code(self, first_line: int, last_line: int = None):
         remaining_line = last_line + 1 if last_line else first_line + 1
+        print("remove", self.file_lines[first_line: remaining_line])
         del self.file_lines[first_line: remaining_line]
 
     def delete_dpct_warning(self, warning_begin_id, warning_end_id):
