@@ -8,7 +8,7 @@ from auto_editor import StructuredProjectSource_Recommendation
 class TestPreAnalyzerIntegration(BaseIntegrationTest):
 
     def test_getAllWarnings_dpctProjectWithWarning_warningExtracted(self):
-        # t = StructuredProjectSource_Recommendation("../auto_editor/sample_data/destination_dir")
+        pre_analyser = PostAnalyser(self.dpct_root)
         # print(t)
         # recommendations = post_analyser.get_all_recommendation()
         # print(recommendations)
