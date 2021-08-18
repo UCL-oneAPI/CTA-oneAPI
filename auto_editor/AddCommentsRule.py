@@ -41,17 +41,16 @@ class AddCommentsRule(BaseRule):
                 # add if statement for the corresponding warning type, and change the recommendation
 
                 if w_type == "DPCT1049":
-                    del all_items[warning_first_line: warning_last_line + 1]
+                    del all_items[warning_first_line - 1: warning_last_line]
                     comment_item = LineItem("/*This is an insertion in the code!*/\n")
-                    all_items.insert(warning_first_line, comment_item)
+                    all_items.insert(warning_first_line - 1, comment_item)
                     w_type = "DPCT"
                     return project
 
-
                 if w_type == "DPCT1065":
-                    del all_items[warning_first_line: warning_last_line + 1]
+                    del all_items[warning_first_line - 1: warning_last_line]
                     comment_item = LineItem("/*It works!*/\n")
-                    all_items.insert(warning_first_line, comment_item)
+                    all_items.insert(warning_first_line - 1, comment_item)
                     w_type = "DPCT"
                     return project
 
