@@ -71,6 +71,12 @@ class Fix1003Rule(BaseRule):
         del all_lines[k+1:i+1]
         return k+1
 
+    def get_index_of_line_id(line_id, code_lines: List[LineItem]) -> int:
+        for i in range(len(code_lines)):
+            if code_lines[i].id == line_id:
+                return i
+        raise Exception("No line with given ID found.")
+
 
     def test_print(self,all_lines,warning_last_line):
         print("******Fix1003 Result****")
