@@ -2,12 +2,14 @@ import unittest
 
 from analysers.PostAnalyser import PostAnalyser
 from testing_support.BaseIntegrationTest import BaseIntegrationTest
+from auto_editor import StructuredProjectSource_Recommendation
 
 
 class TestPreAnalyzerIntegration(BaseIntegrationTest):
 
     def test_getAllWarnings_dpctProjectWithWarning_warningExtracted(self):
-        # post_analyser = PostAnalyser(self.dpct_root)
+        t = StructuredProjectSource_Recommendation("../auto_editor/sample_data/destination_dir")
+        print(t)
         # recommendations = post_analyser.get_all_recommendation()
         # print(recommendations)
 
