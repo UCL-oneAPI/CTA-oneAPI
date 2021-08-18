@@ -77,6 +77,15 @@ class Fix1003Rule(BaseRule):
                 return i
         raise Exception("No line with given ID found.")
 
+    def remove_code(self, first_line: int, last_line: int = None):
+        remaining_line = last_line + 1 if last_line else first_line + 1
+        del self.file_lines[first_line: remaining_line]
+
+    def delete_dpct_warning(self, warning_begin_id, warning_end_id):
+        warning_begin_i = self.get_index_of_line_id(warning_begin_id, self.file_lines)
+        warning_end_i = self.get_index_of_line_id(warning_end_id, self.file_lines)
+        self.remove_code(warning_begin_i, warning_end_i)
+
 
     def test_print(self,all_lines,warning_last_line):
         print("******Fix1003 Result****")
