@@ -243,10 +243,9 @@ float cluster_distance(clusters_t &clusters, const int c1, const int c2, cluster
 
 
 // Free the cluster data structures on host
-  /*
+ /*
   CTA1003:1: This is the test recommendation for CTA system.
   */
-
 void freeCluster(clusters_t* c) {
   free(c->N);
   free(c->pi);
@@ -259,6 +258,9 @@ void freeCluster(clusters_t* c) {
 }
 
 // Free the cluster data structures on device
+/*
+  CTA1003:2: This is the test recommendation for CTA system.
+  */
 void freeClusterDevice(clusters_t *c) try {
     dpct::device_ext &dev_ct1 = dpct::get_current_device();
     sycl::queue &q_ct1 = dev_ct1.default_queue();
@@ -337,7 +339,6 @@ clusters_t *setupClusterDevice(clusters_t *c, const int num_clusters,
   may need to rewrite this code.
   */
   c->pi = sycl::malloc_device<float>(num_clusters, q_ct1);
-
   /*
   DPCT1003:39: Migrated API does not return error code. (*, 0) is inserted. You
   may need to rewrite this code.
@@ -418,7 +419,6 @@ void copyClusterFromDevice(clusters_t *c, clusters_t *c_tmp, clusters_t *d_c,
     You may need to rewrite this code.
     */
     q_ct1.memcpy(c_tmp, d_c, sizeof(clusters_t)).wait();
-
   // copy all of the arrays from the structs
   /*
   DPCT1003:48: Migrated API does not return error code. (*, 0) is inserted. You

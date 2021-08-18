@@ -19,7 +19,6 @@ class PostAnalyser(BaseAnalyser):
         all_warnings = []
         codes = []
         ids = []
-        cta_number,dpct_number = 0
 
         for i in project.paths_to_lines.values():
             for j in i:

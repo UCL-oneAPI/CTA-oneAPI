@@ -3,26 +3,27 @@ import unittest
 from analysers.PostAnalyser import PostAnalyser
 from testing_support.BaseIntegrationTest import BaseIntegrationTest
 from auto_editor import StructuredProjectSource_Recommendation
-
+from pathlib import Path
 
 class TestPreAnalyzerIntegration(BaseIntegrationTest):
 
     def test_getAllWarnings_dpctProjectWithWarning_warningExtracted(self):
-        pre_analyser = PostAnalyser(self.dpct_root)
-        # print(t)
-        # recommendations = post_analyser.get_all_recommendation()
-        # print(recommendations)
 
-        # self.assertEqual(len(recommendations), 24)
-        # self.assertEqual(recommendations[0].project_name, 'test_project')
-        # self.assertEqual(recommendations[0].recommendation_code, 'DPCT1111')
-        # self.assertEqual(recommendations[0].file_path, '/kernel_wrapper2.dp.cpp')
-        # self.assertEqual(recommendations[0].message,
-        #                  "DPCT1111:3: The workgroup size passed to the SYCL kernel may exceed the limit.\n"
-        #                  "To get the device limit, query info::device::max_work_group_size. Adjust the\n"
-        #                  "workgroup size if needed.")  # @Yifei I hope this is correct with the "\n" and spacing,
-        # # otherwise feel free to make changes
-        # self.assertEqual(recommendations[0].line, 127)
+
+        cta_root = Path(__file__).parent.parent.resolve()
+        p = Path.joinpath(cta_root, 'auto_editor', 'sample_data', 'destination_dir')
+        print("cta_root:",p)
+        post_analyser = PostAnalyser(p)
+
+        recommendations = post_analyser.get_all_recommendation()
+        print(recommendations)
+
+        self.assertEqual(len(recommendations), 2)
+        self.assertEqual(recommendations[0].project_name, 'destination_dir')
+        self.assertEqual(recommendations[0].recommendation_code, 'CTA1003')
+        self.assertEqual(recommendations[0].file_path, '/cluster.dp.cpp')
+        self.assertEqual(recommendations[0].message,'CTA1003:1: This is the test recommendation for CTA system.')
+        self.assertEqual(recommendations[0].line, 247)
         pass
 
 
