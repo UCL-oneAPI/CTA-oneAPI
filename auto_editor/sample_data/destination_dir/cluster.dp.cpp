@@ -328,16 +328,7 @@ clusters_t *setupClusterDevice(clusters_t *c, const int num_clusters,
   may need to rewrite this code.
   */
   CUDA_SAFE_CALL((c->N = sycl::malloc_device<float>(num_clusters, q_ct1), 0));
-  /*
-  DPCT1003:38: Migrated API does not return error code. (*, 0) is inserted. You
-  may need to rewrite this code.
-  */
   c->pi = sycl::malloc_device<float>(num_clusters, q_ct1);
-
-  /*
-  DPCT1003:39: Migrated API does not return error code. (*, 0) is inserted. You
-  may need to rewrite this code.
-  */
   c->constant = sycl::malloc_device<float>(num_clusters, q_ct1);
   /*
   DPCT1003:40: Migrated API does not return error code. (*, 0) is inserted. You
@@ -409,12 +400,7 @@ void copyClusterFromDevice(clusters_t *c, clusters_t *c_tmp, clusters_t *d_c,
     dpct::device_ext &dev_ct1 = dpct::get_current_device();
     sycl::queue &q_ct1 = dev_ct1.default_queue();
   if (d_c != NULL)
-    /*
-    DPCT1003:47: Migrated API does not return error code. (*, 0) is inserted.
-    You may need to rewrite this code.
-    */
     q_ct1.memcpy(c_tmp, d_c, sizeof(clusters_t)).wait();
-
   // copy all of the arrays from the structs
   /*
   DPCT1003:48: Migrated API does not return error code. (*, 0) is inserted. You
