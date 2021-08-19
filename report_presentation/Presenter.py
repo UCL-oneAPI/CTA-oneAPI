@@ -26,6 +26,7 @@ class Presenter:
                 </head>
                 <h1 align="center">CTA Report</h1>
                 <style> 
+                body {margin: 30px;}
                 .before-warning-table table,th, td
                   {
                   font-size:0.8em;
@@ -50,17 +51,17 @@ class Presenter:
                 
                 </style>
                 <body>
-                <p>     1.  Analysis files:  </p>
+                <p><b>     1.  Analysis files:  </b></p>
                 <p>  %s </p>
-                <p>     2.  Number of files:  </p>
+                <p><b>     2.  Number of files:  </b></p>
                 <p>  %s </p>
-                <p>     3.  Total Number of Warnings: %s</p>
-                <p>     4.  Distribution Graph: </p>
+                <p><b>     3.  Total Number of Warnings: %s</b></p>
+                <p><b>     4.  Distribution Graph: </b></p>
                   <img src="images/before-overall.png" width="600" height="450" />
                 <p>
                   <a href="subgraphs.html">Sub Images for Every File</a>
                 </p>
-                <p>     5.  Detailed Warning Information (Before CTA)</p>
+                <p><b>     5.  Detailed Warning Information (Before CTA)</b></p>
                 <div class = "before-warning-table">
                 <table border = "0">
                         <tr>
@@ -69,7 +70,7 @@ class Presenter:
                                 <th>Project Name</th>
                                 <th>Line Number</th>
                                 <th>Warning message</th>
-                        </tr>''' % (file_path_string,warning_code_string,len(all_warnings))
+                        </tr>''' % (file_path_string, warning_code_string, len(all_warnings))
         for i in all_warnings:
             message = i.message
             if '<' in message:
@@ -141,7 +142,7 @@ class Presenter:
         plt.xticks(x + bar_width / 2, occurrence.keys())
         plt.yticks(np.arange(0, max(occurrence.values())+1, step=3))
         plt.ylabel("Occurrence")
-        #plt.title("Warning Types with Number of Occurrences")
+        plt.title("Warning Types with Number of Occurrences (Overall)")
         plt.legend(loc="upper left", fontsize="x-small")
         plt.savefig(str(image_path) + '/before-overall.png')
         plt.show()
@@ -172,6 +173,7 @@ class Presenter:
                 step = 3
             plt.yticks(np.arange(0, max_value, step=step))
             plt.ylabel("Occurrence")
+            plt.title("Warnings in "+ k)
             plt.savefig(str(image_path) + '/' + k + '.jpg')
             plt.show()
 
