@@ -167,3 +167,5 @@ presenter.visualization(all_warnings)
 with open('test.html', 'w') as f:
     f.write(presenter.html_page(file_path_string,warning_code_string))
 
+with open('test.md', 'w') as f:
+    f.write(presenter.html_page(file_path_string,warning_code_string))
