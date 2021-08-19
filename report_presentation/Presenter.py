@@ -16,7 +16,9 @@ class Presenter:
         # Todo: insert code here
         pass
 
-    def html_page(self):
+    def html_page(self,file_path_string,warning_code_string):
+
+
         html = '''
                 <html lang="en">
                 <head>
@@ -49,8 +51,10 @@ class Presenter:
                 
                 </style>
                 <body>
-                <p>     1.  Analysis files:</p>
-                <p>     2.  Number of files:</p>
+                <p>     1.  Analysis files:  </p>
+                 <p>  %s </p>
+                <p>     2.  Number of files:  </p>
+                <p>  %s </p>
                 <p>     3.  Total Number of Warnings: %s</p>
                 <p>     4.  Distribution Graph: </p>
                   <img src="before-histogram.jpg" width="600" height="450" />
@@ -64,7 +68,7 @@ class Presenter:
                                 <th>Project Name</th>
                                 <th>Line Number</th>
                                 <th>Warning message</th>
-                        </tr>''' % (len(all_warnings))
+                        </tr>''' % (file_path_string,warning_code_string,len(all_warnings))
         for i in all_warnings:
             message = i.message
             if '<' in message:
@@ -88,6 +92,32 @@ class Presenter:
                 </html>
                 '''
         return html
+
+    def get_unique_filepath_and_warning_code(self,warnings):
+        unique_file_path = []
+        unique_warning_code = []
+        for i in warnings:
+            if i.warning_code not in unique_warning_code:
+                unique_warning_code.append(i.warning_code)
+            if i.file_path not in unique_file_path:
+                unique_file_path.append(i.file_path)
+        return unique_warning_code,unique_file_path
+
+    def get_string_of_list(self,alist):
+        astring = "    "
+        for i in alist:
+            astring += "    "
+            astring += i
+        return astring
+
+    def test_get_string_of_list(self,warnings):
+        unique_warning_code,unique_file_path = self.get_unique_filepath_and_warning_code(warnings)
+        file_path_string = self.get_string_of_list(unique_file_path)
+        warning_code_string = self.get_string_of_list(unique_warning_code)
+        print(file_path_string)
+        print(warning_code_string)
+
+
 
     def visualization(self, warnings):
         warning_codes = []
@@ -127,6 +157,11 @@ all_warnings = PreAnalyser.get_all_warnings(preAnalyser)
 final_warnings = []
 changes = []
 presenter = Presenter(report_root, all_warnings, final_warnings, changes)
+#peint/test
+presenter.test_get_string_of_list(all_warnings)
+unique_warning_code,unique_file_path = presenter.get_unique_filepath_and_warning_code(all_warnings)
+file_path_string = presenter.get_string_of_list(unique_file_path)
+warning_code_string = presenter.get_string_of_list(unique_warning_code)
 presenter.visualization(all_warnings)
 with open('test.html', 'w') as f:
-    f.write(presenter.html_page())
+    f.write(presenter.html_page(file_path_string,warning_code_string))
