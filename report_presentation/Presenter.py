@@ -188,7 +188,6 @@ presenter.test_get_string_of_list(all_warnings)
 unique_warning_code,unique_file_path = presenter.get_unique_filepath_and_warning_code(all_warnings)
 file_path_string = presenter.get_string_of_list(unique_file_path)
 warning_code_string = presenter.get_string_of_list(unique_warning_code)
-
 image_path = Path.joinpath(report_root, 'images')
 image_path.mkdir(parents=True, exist_ok=True)
 presenter.visualization_overall(all_warnings, image_path)
@@ -197,4 +196,3 @@ with open('test.html', 'w') as report:
     report.write(presenter.html_page(file_path_string,warning_code_string))
 with open('subgraphs.html', 'w') as sub_images:
     sub_images.write(sub_graph.add_images())
-
