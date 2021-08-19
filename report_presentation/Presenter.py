@@ -27,6 +27,7 @@ class Presenter:
                 </head>
                 <h1 align="center">CTA Report</h1>
                 <style> 
+                
                 .before-warning-table table,th, td
                   {
                   font-size:0.8em;
@@ -106,8 +107,8 @@ class Presenter:
     def get_string_of_list(self,alist):
         astring = "    "
         for i in alist:
-            astring += "    "
             astring += i
+            astring += " ;   "
         return astring
 
     def test_get_string_of_list(self,warnings):
