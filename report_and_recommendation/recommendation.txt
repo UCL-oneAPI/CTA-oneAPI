@@ -1,0 +1,24 @@
+1003 1049 ： can be changed, no recommendation
+
+1065:
+CTA1065:count number: recommended to ignore this warning. but you can also consider replacing "item_ct1.barrier();" with
+"item_ct1.barrier(sycl::access::fence_space::local_space);"
+【I this we can do this auto, looks like it well be work to replace all "replacing item_ct1.barrier();" with "
+item_ct1.barrier(sycl::access::fence_space::local_space);"】
+
+
+1039(27/32 same):
+CTA1039:count number: Base on the experience, strongly recommended to leave the code as it is and ignore this warning.
+BUT, if "&xxx" points to local memory, please accept the DPCT proposal.
+
+1008(15/15 same):
+CTA1008:count number:Please accept the DPCT proposal.  You can leave the code as it is for now.
+
+1000(9/9same) 1001(9/9same):
+CTA1000/1001:count number: Base on the experience, strongly recommended to ignore this warning.
+
+1032(5/8 same):
+CTA1032:count number: Base on the experience, recommended to ignore this warning. If it didn't work, adjust the code
+
+others:
+Data hunger, Didn't give the recommendation.
