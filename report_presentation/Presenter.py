@@ -49,10 +49,13 @@ class Presenter:
                 
                 </style>
                 <body>
-                <p>Total Number of Warnings: %s</p>
+                <p>     1.  Analysis files:</p>
+                <p>     2.  Number of files:</p>
+                <p>     3.  Total Number of Warnings: %s</p>
+                <p>     4.  Distribution Graph: </p>
                   <img src="before-histogram.jpg" width="600" height="450" />
                 </p>
-                <p>Detailed Warning Information</p>
+                <p>     5.  Detailed Warning Information (Before CTA)</p>
                 <div class = "before-warning-table">
                 <table border = "0">
                         <tr>
