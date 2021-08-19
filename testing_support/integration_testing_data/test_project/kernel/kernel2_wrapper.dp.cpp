@@ -6,7 +6,7 @@
 #include "./kernel2.dp.cpp"
 #include "./kernel2_wrapper.h"
 
-void
+void 
 kernel2_wrapper(  knode *knodes,
     long knodes_elem,
     long knodes_mem,
@@ -24,8 +24,8 @@ kernel2_wrapper(  knode *knodes,
     int *recstart,
     int *reclength)
 {
-  dpct::device_ext &dev_ct1 = dpct::get_current_device();
-  sycl::queue &q_ct1 = dev_ct1.default_queue();
+ dpct::device_ext &dev_ct1 = dpct::get_current_device();
+ sycl::queue &q_ct1 = dev_ct1.default_queue();
 
   long long offload_start = get_time();
 
@@ -114,13 +114,6 @@ kernel2_wrapper(  knode *knodes,
 
   q_ct1.memcpy(offset_2D, offset_2, count * sizeof(long));
 
-
-  /*
-  DPCT1003:28: Migrated API does not return error code. (*, 0) is inserted. You
-  may need to rewrite this code.
-  */
-  CUDA_SAFE_CALL((sycl::free(c->N, q_ct1), 0));
-
   q_ct1.memcpy(startD, start, count * sizeof(int));
 
   q_ct1.memcpy(endD, end, count * sizeof(int));
@@ -173,7 +166,7 @@ kernel2_wrapper(  knode *knodes,
 #endif
 
 
-  printf("Total time:\n");
-  printf("%.12f s\n", (float) (offload_end-offload_start) / 1000000);
+  printf("Total time:\n"); 
+  printf("%.12f s\n", (float) (offload_end-offload_start) / 1000000); 
 }
 
