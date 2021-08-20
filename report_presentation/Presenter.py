@@ -17,7 +17,9 @@ class Presenter:
         # Todo: insert code here
         pass
 
-    def html_page(self, file_path_string, warning_code_string):
+    def html_page(self, unique_warning_code,unique_file_path):
+        file_path_string = presenter.get_string_of_list(unique_file_path)
+        warning_code_string = presenter.get_string_of_list(unique_warning_code)
         html = '''
                 <html lang="en">
                 <head>
@@ -51,17 +53,21 @@ class Presenter:
                 
                 </style>
                 <body>
-                <p><b>     1.  Analysis files:  </b></p>
+                <p><b>     1.  Number of Analysis files:  %s</b></p>
+                
+                <p><b>     2.  Analysis files:    </b></p>
                 <p>  %s </p>
-                <p><b>     2.  Number of files:  </b></p>
+                <p><b>     3.  Number of warning type:  %s </b></p>
+                 
+                <p><b>     4.  Warning code type:    </b></p>
                 <p>  %s </p>
-                <p><b>     3.  Total Number of Warnings: %s</b></p>
-                <p><b>     4.  Distribution Graph: </b></p>
+                <p><b>     5.  Total Number of Warnings: %s</b></p>
+                <p><b>     6.  Distribution Graph: </b></p>
                   <img src="images/before-overall.png" width="600" height="450" />
                 <p>
                   <a href="subgraphs.html">Sub Images for Every File</a>
                 </p>
-                <p><b>     5.  Detailed Warning Information (Before CTA)</b></p>
+                <p><b>     7.  Detailed Warning Information (Before CTA)</b></p>
                 <div class = "before-warning-table">
                 <table border = "0">
                         <tr>
@@ -70,7 +76,7 @@ class Presenter:
                                 <th>Project Name</th>
                                 <th>Line Number</th>
                                 <th>Warning message</th>
-                        </tr>''' % (file_path_string, warning_code_string, len(all_warnings))
+                        </tr>''' % ( len(unique_warning_code),file_path_string, len(unique_file_path),warning_code_string, len(all_warnings))
         for i in all_warnings:
             message = i.message
             if '<' in message:
@@ -188,13 +194,11 @@ changes = []
 presenter = Presenter(report_root, all_warnings, final_warnings, changes)
 presenter.test_get_string_of_list(all_warnings)
 unique_warning_code,unique_file_path = presenter.get_unique_filepath_and_warning_code(all_warnings)
-file_path_string = presenter.get_string_of_list(unique_file_path)
-warning_code_string = presenter.get_string_of_list(unique_warning_code)
 image_path = Path.joinpath(report_root, 'images')
 image_path.mkdir(parents=True, exist_ok=True)
 presenter.visualization_overall(all_warnings, image_path)
 presenter.visulization_partial(all_warnings, image_path)
 with open('test.html', 'w') as report:
-    report.write(presenter.html_page(file_path_string,warning_code_string))
+    report.write(presenter.html_page(unique_warning_code,unique_file_path))
 with open('subgraphs.html', 'w') as sub_images:
     sub_images.write(sub_graph.add_images())
