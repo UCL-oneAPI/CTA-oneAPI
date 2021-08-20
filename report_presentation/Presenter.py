@@ -187,6 +187,7 @@ class Presenter:
         for i in os.listdir(image_path):
             os.remove(os.path.join(image_path, i))
         os.rmdir(image_path)
+        print('removed')
 
 
 report_root = Path(__file__).parent
@@ -199,8 +200,10 @@ changes = []
 presenter = Presenter(report_root, all_warnings, final_warnings, changes)
 presenter.test_get_string_of_list(all_warnings)
 unique_warning_code, unique_file_path = presenter.get_unique_filepath_and_warning_code(all_warnings)
+
 image_path = Path.joinpath(report_root, 'images')
-presenter.remove_image_folder(image_path)
+if image_path.is_dir() and os.listdir(image_path):
+    presenter.remove_image_folder(image_path)
 image_path.mkdir(parents=True, exist_ok=True)
 presenter.visualization_overall(all_warnings, image_path)
 presenter.visulization_partial(all_warnings, image_path)
