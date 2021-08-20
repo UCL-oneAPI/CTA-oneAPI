@@ -3,6 +3,7 @@ from pathlib import Path
 from collections import Counter
 import numpy as np
 import matplotlib.pyplot as plt
+import os
 import sub_graph
 
 
@@ -53,19 +54,19 @@ class Presenter:
                 
                 </style>
                 <body>
-                <p><b>     1.  Number of Analysis files:  %s</b></p>
+                <p><b>     1.  Number of Analysis Files:  %s</b></p>
                 
-                <p><b>     2.  Analysis files:    </b></p>
+                <p><b>     2.  Analysis Files:    </b></p>
                 <p>  %s </p>
-                <p><b>     3.  Number of warning type:  %s </b></p>
+                <p><b>     3.  Number of Warning Type:  %s </b></p>
                  
-                <p><b>     4.  Warning code type:    </b></p>
+                <p><b>     4.  Warning Code Type:    </b></p>
                 <p>  %s </p>
                 <p><b>     5.  Total Number of Warnings: %s</b></p>
                 <p><b>     6.  Distribution Graph: </b></p>
                   <img src="images/before-overall.png" width="600" height="450" />
                 <p>
-                  <a href="subgraphs.html">Sub Images for Every File</a>
+                  <a href="subgraphs.html">Sub Graphs for Every File</a>
                 </p>
                 <p><b>     7.  Detailed Warning Information (Before CTA)</b></p>
                 <div class = "before-warning-table">
@@ -76,7 +77,7 @@ class Presenter:
                                 <th>Project Name</th>
                                 <th>Line Number</th>
                                 <th>Warning message</th>
-                        </tr>''' % ( len(unique_warning_code),file_path_string, len(unique_file_path),warning_code_string, len(all_warnings))
+                        </tr>''' % (len(unique_warning_code), file_path_string, len(unique_file_path), warning_code_string, len(all_warnings))
         for i in all_warnings:
             message = i.message
             if '<' in message:
@@ -157,7 +158,7 @@ class Presenter:
         file_warnings = {}
         codes = []
         for i in warnings:
-            file_name = Path(i.file_path).stem[:-3]
+            file_name = Path(i.file_path).name
             file_warnings.setdefault(file_name, []).append(i.warning_code)
             codes.append(i.warning_code)
         codes = set(codes)
@@ -167,7 +168,6 @@ class Presenter:
             for code in codes:
                 if code not in warning_distribution.keys():
                     warning_distribution[code] = 0
-            #print(warning_distribution)
             x = np.arange(len(codes))
             bar_width = 0.2
             plt.bar(x, warning_distribution.values(), bar_width, align="center", color='blue', alpha=0.5)
@@ -179,9 +179,14 @@ class Presenter:
                 step = 3
             plt.yticks(np.arange(0, max_value, step=step))
             plt.ylabel("Occurrence")
-            plt.title("Warnings in "+ k)
+            plt.title("Warnings in " + k)
             plt.savefig(str(image_path) + '/' + k + '.jpg')
             plt.show()
+
+    def remove_image_folder(self, image_path):
+        for i in os.listdir(image_path):
+            os.remove(os.path.join(image_path, i))
+        os.rmdir(image_path)
 
 
 report_root = Path(__file__).parent
@@ -193,8 +198,9 @@ final_warnings = []
 changes = []
 presenter = Presenter(report_root, all_warnings, final_warnings, changes)
 presenter.test_get_string_of_list(all_warnings)
-unique_warning_code,unique_file_path = presenter.get_unique_filepath_and_warning_code(all_warnings)
+unique_warning_code, unique_file_path = presenter.get_unique_filepath_and_warning_code(all_warnings)
 image_path = Path.joinpath(report_root, 'images')
+presenter.remove_image_folder(image_path)
 image_path.mkdir(parents=True, exist_ok=True)
 presenter.visualization_overall(all_warnings, image_path)
 presenter.visulization_partial(all_warnings, image_path)
