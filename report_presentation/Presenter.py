@@ -66,9 +66,9 @@ class Presenter:
                 <p><b>     6.  Distribution Graph: </b></p>
                   <img src="images/before-overall.png" width="600" height="450" />
                 <p>
-                  <a href="subgraphs.html">Sub Graphs for Every File</a>
+                  <a href="subgraphs.html">7.   Sub Graphs for Every File</a>
                 </p>
-                <p><b>     7.  Detailed Warning Information (Before CTA)</b></p>
+                <p><b>     8.  Detailed Warning Information (Before CTA)</b></p>
                 <div class = "before-warning-table">
                 <table border = "0">
                         <tr>
