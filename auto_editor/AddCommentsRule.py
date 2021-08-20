@@ -42,14 +42,14 @@ class AddCommentsRule(BaseRule):
 
                 if w_type == "DPCT1049":
                     del all_items[warning_first_line - 1: warning_last_line]
-                    comment_item = LineItem("/*This is an insertion in the code!*/\n")
+                    comment_item = LineItem("/*CTA1049:count number: recommendation*/\n")
                     all_items.insert(warning_first_line - 1, comment_item)
                     w_type = "DPCT"
                     return project
 
                 if w_type == "DPCT1065":
                     del all_items[warning_first_line - 1: warning_last_line]
-                    comment_item = LineItem("/*It works!*/\n")
+                    comment_item = LineItem("/*CTA1065:count number: recommended to ignore this warning. but you can also consider replacing 'item_ct1.barrier();' with 'item_ct1.barrier(sycl::access::fence_space::local_space);'*/\n")
                     all_items.insert(warning_first_line - 1, comment_item)
                     w_type = "DPCT"
                     return project
