@@ -23,55 +23,8 @@ class Presenter:
     def html_page(self, all_warnings,final_warnings,changes,unique_warning_code, unique_file_path,diff_path):
         file_path_string = Presenter.get_string_of_list(unique_file_path)
         warning_code_string = Presenter.get_string_of_list(unique_warning_code)
-        html = '''
-                <html lang="en">
-                <head>
-                  <meta charset="UTF-8">
-                  <title>CTA Report</title>
-                </head>
-                <h1 align="center">CTA Report</h1>
-                <style> 
-                p.serif{font-family:"Times New Roman",Times,serif;}
-                p.sansserif{font-family:Arial,Helvetica,sans-serif;}
-                body {margin: 50px;}
-                .before-warning-table table,th, td
-                  {
-                  font-size:0.8em;
-                  border:1px solid 	#FFFFFF;
-                  padding:10px;
-                  }
-                  table
-                  {
-                  border-collapse:collapse;
-                  }
-                th
-                  {
-                  font-size:1em;
-                  text-align:left;
-                  padding-top:5px;
-                  padding-bottom:4px;
-                  background-color:	#4169E1;
-                  color:#ffffff;
-                  }
-                tr:nth-child(even)
-                  {background-color: #F2F2F2;}
-                
-                </style>
-                <body>
-                <p class="serif" ><b>     1.  Number of Analysis Files:  %s</b></p>
-                
-                <p class="serif" ><b>     2.  Analysis Files:    </b></p>
-                <p class="serif" >  %s </p>
-                <p class="serif" ><b>     3.  Number of Warning Type:  %s </b></p>
-                 
-                <p class="serif" ><b>     4.  Warning Code Type:    </b></p>
-                <p class="serif" >  %s </p>
-                <p class="serif" ><b>     5.  Total Number of Warnings: %s</b></p>
-                <p class="serif" ><b>     6.  Distribution Graph: </b></p>
-                  <img src="images/before-overall.png" width="600" height="450" />
-                <p class="serif" >
-                  <a href="subgraphs.html">7.   Sub Graphs for Every File</a>
-                </p>
+        html = self.get_html1_7(all_warnings,unique_warning_code, unique_file_path,file_path_string,warning_code_string)
+        html += '''
                 <p class="serif" ><b>     8.  Detailed Warning Information (Before CTA)</b></p>
                 <div class = "before-warning-table">
                 <table border = "0">
@@ -82,7 +35,7 @@ class Presenter:
                                 <th>Project Name</th>
                                 <th>Line Number</th>
                                 <th>Warning message</th>
-                        </tr>''' % (len(unique_warning_code), file_path_string, len(unique_file_path), warning_code_string, len(all_warnings))
+                        </tr>'''
         html += self.get_warning_info(all_warnings)
 
         html += '''
@@ -120,16 +73,9 @@ class Presenter:
                 </table>
                 '''
         warning_fixed = len(all_warnings) - len(final_warnings) - len(changes)
-        html += '''
-                <p class="serif" ><b>     11. Number of warnings have been fixed: %s</b></p>
-                        ''' % warning_fixed
-        html += '''
-                <p class="serif" ><b>     12.  Number of warnings have CTA recommendation: %s</b></p>
-                        ''' % len(changes)
-        html += '''
-                <p class="serif" ><b>     13.  Comparison of before & after </b></p>
-                <p class="serif" ><b>     Diff Link:  </b></p>               
-                '''
+
+        html += self.get_html11_13(warning_fixed,changes)
+
         for file in diff_path.rglob('*.html'):
             html += '''
                     <a href="html_files/%s.html"  class="serif"  >%s</a><br>
@@ -162,6 +108,75 @@ class Presenter:
                         </tr>
                         ''' % (num, i.warning_code, i.file_path, i.project_name, i.line, message)
         return html
+
+    def get_html1_7(self, all_warnings,unique_warning_code, unique_file_path,file_path_string,warning_code_string):
+        html1_7= '''
+                        <html lang="en">
+                        <head>
+                          <meta charset="UTF-8">
+                          <title>CTA Report</title>
+                        </head>
+                        <h1 align="center">CTA Report</h1>
+                        <style> 
+                        p.serif{font-family:"Times New Roman",Times,serif;}
+                        p.sansserif{font-family:Arial,Helvetica,sans-serif;}
+                        body {margin: 50px;}
+                        .before-warning-table table,th, td
+                          {
+                          font-size:0.8em;
+                          border:1px solid 	#FFFFFF;
+                          padding:10px;
+                          }
+                          table
+                          {
+                          border-collapse:collapse;
+                          }
+                        th
+                          {
+                          font-size:1em;
+                          text-align:left;
+                          padding-top:5px;
+                          padding-bottom:4px;
+                          background-color:	#4169E1;
+                          color:#ffffff;
+                          }
+                        tr:nth-child(even)
+                          {background-color: #F2F2F2;}
+
+                        </style>
+                        <body>
+                        <p class="serif" ><b>     1.  Number of Analysis Files:  %s</b></p>
+
+                        <p class="serif" ><b>     2.  Analysis Files:    </b></p>
+                        <p class="serif" >  %s </p>
+                        <p class="serif" ><b>     3.  Number of Warning Type:  %s </b></p>
+
+                        <p class="serif" ><b>     4.  Warning Code Type:    </b></p>
+                        <p class="serif" >  %s </p>
+                        <p class="serif" ><b>     5.  Total Number of Warnings: %s</b></p>
+                        <p class="serif" ><b>     6.  Distribution Graph: </b></p>
+                          <img src="images/before-overall.png" width="600" height="450" />
+                        <p class="serif" >
+                          <a href="subgraphs.html">7.   Sub Graphs for Every File</a>
+                        </p>
+                        '''% (len(unique_warning_code), file_path_string, len(unique_file_path), warning_code_string, len(all_warnings))
+        return html1_7
+
+    def get_html11_13(self,warning_fixed,changes):
+        html =''
+        html += '''
+                        <p class="serif" ><b>     11. Number of warnings have been fixed: %s</b></p>
+                                ''' % warning_fixed
+        html += '''
+                        <p class="serif" ><b>     12.  Number of warnings have CTA recommendation: %s</b></p>
+                                ''' % len(changes)
+        html += '''
+                        <p class="serif" ><b>     13.  Comparison of before & after </b></p>
+                        <p class="serif" ><b>     Diff Link:  </b></p>               
+                        '''
+        return html
+
+
 
     def get_recommendation_info(self, recommendations):
         html = ""
