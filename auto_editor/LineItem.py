@@ -18,3 +18,13 @@ class LineItem:
         if result:
             warning_code = result.group(1)
         return warning_code
+
+    def get_cta_recommendation(self):
+        pattern = ".*(CTA\d{4}):\d+: "
+        code_line = self.code.lstrip()
+        result = re.search(pattern, code_line)
+
+        recommendation_code = None
+        if result:
+            recommendation_code = result.group(1)
+        return recommendation_code
