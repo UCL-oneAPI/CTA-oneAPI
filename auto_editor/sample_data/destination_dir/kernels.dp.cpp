@@ -120,11 +120,9 @@ void sampled_rows_kernel(const IdxT* nsamples, float* X, const IdxT nrows_X,
     }
   }
   /*
-  CTA1065: count number: CTA recommended to ignore this warning.
-  but you can also consider replacing 'item_ct1.barrier();' 
-  with 'item_ct1.barrier(sycl::access::fence_space::local_space);' 
-  to have have better performance if the kernel function 
-  has no memory accesses in the global memory.
+  DPCT1065:0: Consider replacing sycl::nd_item::barrier() with
+  sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+  performance, if there is no access to global memory.
   */
   item_ct1.barrier();
 
