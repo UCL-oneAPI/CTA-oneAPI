@@ -1,7 +1,6 @@
 from analysers.PreAnalyser import PreAnalyser
 from analysers.PostAnalyser import PostAnalyser
-import scripts.run_rule_1003 as run_rule_1003
-import scripts.run_comments_rule as run_comments_rule
+import diff_html
 import sub_graph
 from pathlib import Path
 from collections import Counter
@@ -89,7 +88,6 @@ class Presenter:
                 '''
         html += '''
                 <p><b>     9.  Detailed Warning Information (After CTA)</b></p>
-                <div class = "after-warning-table">
                 <table border = "0">
                         <tr>
                                 <th>No.</th>
@@ -106,7 +104,6 @@ class Presenter:
 
         html += '''
                 <p><b>     10.  Detailed Recommendation Information (After CTA)</b></p>
-                <div class = "after-recommendation-table">
                 <table border = "0">
                         <tr>
                                 <th>No.</th>
@@ -116,20 +113,25 @@ class Presenter:
                                 <th>Line Number</th>
                                 <th>Recommendation message</th>
                         </tr>'''
-        html += self.get_warning_info(changes)
+        #html += self.get_warning_info(changes)
         html += '''
                 </table>
                 '''
+        warning_fixed = len(all_warnings) - len(final_warnings)
         html += '''
-                <p><b>     11. Number of warnings have been fixed: </b></p>
-                        '''
+                <p><b>     11. Number of warnings have been fixed: %s</b></p>
+                        ''' % warning_fixed
         html += '''
-                <p><b>     12.  Number of warnings have CTA recommendation: </b></p>
-                        '''
+                <p><b>     12.  Number of warnings have CTA recommendation: %s</b></p>
+                        ''' % len(changes)
         html += '''
                 <p><b>     13.  Comparison of before & after </b></p>
-                <p><b>     Diff Link:  </b></p>
+                <p><b>     Diff Link:  </b></p>               
                 '''
+        for file in diff_path.rglob('*.html'):
+            html += '''
+                    <a href="html_files/%s.html">%s</a><br>
+                    ''' % (file.stem, file.name)
         html += '''
                 </div>
                 </body>
@@ -264,14 +266,20 @@ print('change', changes)
 presenter = Presenter(report_root, all_warnings, final_warnings, changes)
 presenter.test_get_string_of_list(all_warnings)
 unique_warning_code, unique_file_path = presenter.get_unique_filepath_and_warning_code(all_warnings)
-#
-# image_path = Path.joinpath(report_root, 'images')
-# if image_path.is_dir() and os.listdir(image_path):
-#     presenter.remove_image_folder(image_path)
-# image_path.mkdir(parents=True, exist_ok=True)
-# presenter.visualization_overall(all_warnings, image_path)
-# presenter.visulization_partial(all_warnings, image_path)
+
+image_path = Path.joinpath(report_root, 'images')
+if image_path.is_dir() and os.listdir(image_path):
+    presenter.remove_image_folder(image_path)
+image_path.mkdir(parents=True, exist_ok=True)
+presenter.visualization_overall(all_warnings, image_path)
+presenter.visulization_partial(all_warnings, image_path)
+
+diff_path = Path.joinpath(Path.cwd(),'html_files')
+if diff_path.is_dir() and os.listdir(diff_path):
+    diff_html.remove_diff_folder(diff_path)
+diff_html.find_dpcpp(dpct_root, destination_root, diff_path)
+
 with open('report.html', 'w') as report:
     report.write(presenter.html_page(unique_warning_code,unique_file_path))
-# with open('subgraphs.html', 'w') as sub_images:
-#     sub_images.write(sub_graph.add_images())
+with open('subgraphs.html', 'w') as sub_images:
+    sub_images.write(sub_graph.add_images())
