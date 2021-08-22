@@ -1,6 +1,7 @@
 from analysers.PreAnalyser import PreAnalyser
 from analysers.PostAnalyser import PostAnalyser
 import scripts.run_rule_1003 as run_rule_1003
+import scripts.run_comments_rule as run_comments_rule
 import sub_graph
 from pathlib import Path
 from collections import Counter
@@ -74,45 +75,49 @@ class Presenter:
                 <div class = "before-warning-table">
                 <table border = "0">
                         <tr>
+                                <th>No.</th>
                                 <th>Warning Code</th>
                                 <th>File Path</th>
                                 <th>Project Name</th>
                                 <th>Line Number</th>
                                 <th>Warning message</th>
                         </tr>''' % (len(unique_warning_code), file_path_string, len(unique_file_path), warning_code_string, len(all_warnings))
-        for i in all_warnings:
-            message = i.message
-            if '<' in message:
-                message = message.replace('<', '&lt;')
-            if '>' in message:
-                message = message.replace('>', '&gt;')
-            html += '''
-                        <tr>
-                                <td>%s</td>
-                                <td>%s</td>
-                                <td>%s</td>
-                                <td>%s</td>
-                                <td>%s</td>
-                        </tr>
-                        ''' % (i.warning_code, i.file_path, i.project_name, i.line, message)
+        html += self.get_warning_info(all_warnings)
 
         html += '''
                 </table>
                 '''
         html += '''
                 <p><b>     9.  Detailed Warning Information (After CTA)</b></p>
-                '''
-        html += '''
-                <p><b>     10.  Detailed Recommendation Information (After CTA)</b></p>
-                <div class = "before-warning-table">
+                <div class = "after-warning-table">
                 <table border = "0">
                         <tr>
+                                <th>No.</th>
+                                <th>Warning Code</th>
+                                <th>File Path</th>
+                                <th>Project Name</th>
+                                <th>Line Number</th>
+                                <th>Warning message</th>
+                        </tr>'''
+        html += self.get_warning_info(final_warnings)
+        html += '''
+                </table>
+                '''
+
+        html += '''
+                <p><b>     10.  Detailed Recommendation Information (After CTA)</b></p>
+                <div class = "after-recommendation-table">
+                <table border = "0">
+                        <tr>
+                                <th>No.</th>
                                 <th>Recommendation Code</th>
                                 <th>File Path</th>
                                 <th>Project Name</th>
                                 <th>Line Number</th>
                                 <th>Recommendation message</th>
-                        </tr>
+                        </tr>'''
+        html += self.get_warning_info(changes)
+        html += '''
                 </table>
                 '''
         html += '''
@@ -130,6 +135,28 @@ class Presenter:
                 </body>
                 </html>
                 '''
+        return html
+
+    def get_warning_info(self, warnings):
+        html = ""
+        num = 0
+        for i in warnings:
+            num += 1
+            message = i.message
+            if '<' in message:
+                message = message.replace('<', '&lt;')
+            if '>' in message:
+                message = message.replace('>', '&gt;')
+            html += '''
+                        <tr>
+                                <td>%s</td>
+                                <td>%s</td>
+                                <td>%s</td>
+                                <td>%s</td>
+                                <td>%s</td>
+                                <td>%s</td>
+                        </tr>
+                        ''' % (num, i.warning_code, i.file_path, i.project_name, i.line, message)
         return html
 
     def get_unique_filepath_and_warning_code(self, warnings):
@@ -221,25 +248,30 @@ class Presenter:
 
 report_root = Path(__file__).parent
 cta_path = Path(__file__).parent.parent.resolve()
-dpct_root = Path.joinpath(cta_path, 'testing_support', 'integration_testing_data', 'test_project')
+#dpct_root = Path.joinpath(cta_path, 'testing_support', 'integration_testing_data', 'test_project')
+dpct_root = Path.joinpath(cta_path, 'auto_editor', 'sample_data', 'test_project')
+destination_root = Path.joinpath(cta_path, 'auto_editor', 'sample_data', 'destination_dir')
 preAnalyser = PreAnalyser(dpct_root)
 all_warnings = preAnalyser.get_all_warnings()
-postAnalyser = PostAnalyser(dpct_root)
 run_rule_1003.call_run_rule()
+run_comments_rule.call_run_rule()
+postAnalyser = PostAnalyser(destination_root)
 final_warnings = postAnalyser.get_all_warnings()
-print(final_warnings)
-changes = []
+changes = postAnalyser.get_all_recommendation()
+print('final', len(final_warnings))
+print('change', changes)
+#changes = []
 presenter = Presenter(report_root, all_warnings, final_warnings, changes)
 presenter.test_get_string_of_list(all_warnings)
 unique_warning_code, unique_file_path = presenter.get_unique_filepath_and_warning_code(all_warnings)
-
-image_path = Path.joinpath(report_root, 'images')
-if image_path.is_dir() and os.listdir(image_path):
-    presenter.remove_image_folder(image_path)
-image_path.mkdir(parents=True, exist_ok=True)
-presenter.visualization_overall(all_warnings, image_path)
-presenter.visulization_partial(all_warnings, image_path)
-with open('test.html', 'w') as report:
+#
+# image_path = Path.joinpath(report_root, 'images')
+# if image_path.is_dir() and os.listdir(image_path):
+#     presenter.remove_image_folder(image_path)
+# image_path.mkdir(parents=True, exist_ok=True)
+# presenter.visualization_overall(all_warnings, image_path)
+# presenter.visulization_partial(all_warnings, image_path)
+with open('report.html', 'w') as report:
     report.write(presenter.html_page(unique_warning_code,unique_file_path))
-with open('subgraphs.html', 'w') as sub_images:
-    sub_images.write(sub_graph.add_images())
+# with open('subgraphs.html', 'w') as sub_images:
+#     sub_images.write(sub_graph.add_images())
