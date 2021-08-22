@@ -96,6 +96,24 @@ class Presenter:
 
         html += '''
                 </table>
+                '''
+        html += '''
+                <p><b>     9.  Detailed Warning Information (After CTA)</b></p>
+                '''
+        html += '''
+                <p><b>     10.  Detailed Recommendation Information (After CTA)</b></p>
+                '''
+        html += '''
+                <p><b>     11. Number of warnings have been fixed: </b></p>
+                        '''
+        html += '''
+                <p><b>     12.  Number of warnings have CTA recommendation: </b></p>
+                        '''
+        html += '''
+                <p><b>     13.  Comparison of before & after </b></p>
+                <p><b>     Diff Link:  </b></p>
+                '''
+        html += '''
                 </div>
                 </body>
                 </html>
