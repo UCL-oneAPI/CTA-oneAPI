@@ -18,12 +18,14 @@ class Presenter:
 
     def generate_ui_files(self):
         # Todo: insert code here
+        Presenter.run_presenter()
         pass
 
     def html_page(self, all_warnings,final_warnings,changes,unique_warning_code, unique_file_path,diff_path):
         file_path_string = Presenter.get_string_of_list(unique_file_path)
         warning_code_string = Presenter.get_string_of_list(unique_warning_code)
-        html = self.get_html1_7(all_warnings,unique_warning_code, unique_file_path,file_path_string,warning_code_string)
+        html = self.get_html0()
+        html += self.get_html1_7(all_warnings,unique_warning_code, unique_file_path,file_path_string,warning_code_string)
         html += '''
                 <p class="serif" ><b>     8.  Detailed Warning Information (Before CTA)</b></p>
                 <div class = "before-warning-table">
@@ -109,8 +111,8 @@ class Presenter:
                         ''' % (num, i.warning_code, i.file_path, i.project_name, i.line, message)
         return html
 
-    def get_html1_7(self, all_warnings,unique_warning_code, unique_file_path,file_path_string,warning_code_string):
-        html1_7= '''
+    def get_html0(self):
+        html = '''
                         <html lang="en">
                         <head>
                           <meta charset="UTF-8">
@@ -144,7 +146,12 @@ class Presenter:
                           {background-color: #F2F2F2;}
 
                         </style>
-                        <body>
+                        <body> '''
+        return html
+
+
+    def get_html1_7(self, all_warnings,unique_warning_code, unique_file_path,file_path_string,warning_code_string):
+        html1_7= '''
                         <p class="serif" ><b>     1.  Number of Analysis Files:  %s</b></p>
 
                         <p class="serif" ><b>     2.  Analysis Files:    </b></p>
