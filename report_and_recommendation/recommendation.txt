@@ -1,24 +1,49 @@
 1003 1049 ： can be changed, no recommendation
 
 1065:
-CTA1065:count number: recommended to ignore this warning. but you can also consider replacing "item_ct1.barrier();" with
-"item_ct1.barrier(sycl::access::fence_space::local_space);"
-【I this we can do this auto, looks like it well be work to replace all "replacing item_ct1.barrier();" with "
-item_ct1.barrier(sycl::access::fence_space::local_space);"】
-
+CTA1065:count number: CTA recommended to ignore this warning. but you can also consider replacing "item_ct1.barrier();" with
+"item_ct1.barrier(sycl::access::fence_space::local_space); to have have better performance if the kernel function has no memory accesses in the global memory,"
 
 1039(27/32 same):
 CTA1039:count number: Base on the experience, strongly recommended to leave the code as it is and ignore this warning.
-BUT, if "&xxx" points to local memory, please accept the DPCT proposal.
+BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.
 
 1008(15/15 same):
-CTA1008:count number:Please accept the DPCT proposal.  You can leave the code as it is for now.
+CTA1008:count number:  The clock function is not defined in DPC++, you can leave the code as it is for now.
+and consult with your hardware vendor to find a replacement.
 
 1000(9/9same) 1001(9/9same):
 CTA1000/1001:count number: Base on the experience, strongly recommended to ignore this warning.
 
 1032(5/8 same):
-CTA1032:count number: Base on the experience, recommended to ignore this warning. If it didn't work, adjust the code
+CTA1032:count number: Base on the experience, recommended to ignore this warning. If it didn't work, please adjust the code.
 
-others:
-Data hunger, Didn't give the recommendation.
+1009(data hungry):
+CTA1009:count number: SYCL uses exceptions to report errors and does not use the error codes.
+The original code was commented out and a warning string was inserted. You need to rewrite this code
+
+1010(data hungry):[can look at it later: SYCL uses exceptions to report errors and does not use the error codes.
+The call was replaced with 0. You need to rewrite this code.]
+CTA1010:count number: Base on the experience, strongly recommended to ignore this warning.
+
+1011(data hungry):[can look at it later]
+CTA1011:count number: recommendation: delete the namespace
+
+
+1007(data hungry):
+CTA1007:count number:Migration of this CUDA API is not supported by the Intel(R)DPC Compatibility Tool.
+
+
+1017(data hungry):
+CTA1017:count number: The sycl: sincos call is used instead of the sincosf call. These two calls do not provide exactly the same functionality.
+Check thepotential precision and/or performance issues for the generated code.
+
+
+
+1013,1011,1004: no manual files --------
+CTA1013:count number:The rounding mode could not be specified and the generated code may have different precision then the original code.
+Verify the correctness.SYCL math built-ins rounding mode is aligned with OpenCL C 1.2 standard.
+CTA1011:count number:The tool detected overloaded operators for built-in vector types, which may conflict with the SYCL 1.2.1 standard operators
+(see 4.10.2.1 Vec interface). The tool inserted a namespace to avoid the conflict. Use SYCL 1.2.1 standard operators instead.
+CTA1004:count number: Could not generate replacement. Please replace it manually.
