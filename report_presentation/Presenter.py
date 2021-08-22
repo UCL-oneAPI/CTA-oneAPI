@@ -20,9 +20,9 @@ class Presenter:
         # Todo: insert code here
         pass
 
-    def html_page(self, unique_warning_code, unique_file_path):
-        file_path_string = presenter.get_string_of_list(unique_file_path)
-        warning_code_string = presenter.get_string_of_list(unique_warning_code)
+    def html_page(self, all_warnings,final_warnings,changes,unique_warning_code, unique_file_path,diff_path):
+        file_path_string = Presenter.get_string_of_list(unique_file_path)
+        warning_code_string = Presenter.get_string_of_list(unique_warning_code)
         html = '''
                 <html lang="en">
                 <head>
@@ -195,7 +195,7 @@ class Presenter:
                 unique_file_path.append(i.file_path)
         return unique_warning_code, unique_file_path
 
-    def get_string_of_list(self, alist):
+    def get_string_of_list( alist):
         astring = "    "
         for i in alist:
             astring += i
@@ -204,8 +204,8 @@ class Presenter:
 
     def test_get_string_of_list(self, warnings):
         unique_warning_code, unique_file_path = self.get_unique_filepath_and_warning_code(warnings)
-        file_path_string = self.get_string_of_list(unique_file_path)
-        warning_code_string = self.get_string_of_list(unique_warning_code)
+        file_path_string = Presenter.get_string_of_list(unique_file_path)
+        warning_code_string = Presenter.get_string_of_list(unique_warning_code)
         print(file_path_string)
         print(warning_code_string)
 
@@ -271,39 +271,44 @@ class Presenter:
             os.remove(os.path.join(image_path, i))
         os.rmdir(image_path)
 
+def run_presenter():
+    report_root = Path(__file__).parent
+    cta_path = Path(__file__).parent.parent.resolve()
+    # dpct_root = Path.joinpath(cta_path, 'testing_support', 'integration_testing_data', 'test_project')
+    dpct_root = Path.joinpath(cta_path, 'auto_editor', 'sample_data', 'test_project')
+    destination_root = Path.joinpath(cta_path, 'auto_editor', 'sample_data', 'destination_dir')
+    preAnalyser = PreAnalyser(dpct_root)
+    all_warnings = preAnalyser.get_all_warnings()
+    # run_rule_1003.call_run_rule()
+    # run_comments_rule.call_run_rule()
+    postAnalyser = PostAnalyser(destination_root)
+    final_warnings = postAnalyser.get_all_warnings()
+    changes = postAnalyser.get_all_recommendation()
+    print('final', len(final_warnings))
+    print('change', changes)
+    # changes = []
+    presenter = Presenter(report_root, all_warnings, final_warnings, changes)
+    presenter.test_get_string_of_list(all_warnings)
+    unique_warning_code, unique_file_path = presenter.get_unique_filepath_and_warning_code(all_warnings)
 
-report_root = Path(__file__).parent
-cta_path = Path(__file__).parent.parent.resolve()
-#dpct_root = Path.joinpath(cta_path, 'testing_support', 'integration_testing_data', 'test_project')
-dpct_root = Path.joinpath(cta_path, 'auto_editor', 'sample_data', 'test_project')
-destination_root = Path.joinpath(cta_path, 'auto_editor', 'sample_data', 'destination_dir')
-preAnalyser = PreAnalyser(dpct_root)
-all_warnings = preAnalyser.get_all_warnings()
-# run_rule_1003.call_run_rule()
-#run_comments_rule.call_run_rule()
-postAnalyser = PostAnalyser(destination_root)
-final_warnings = postAnalyser.get_all_warnings()
-changes = postAnalyser.get_all_recommendation()
-print('final', len(final_warnings))
-print('change', changes)
-#changes = []
-presenter = Presenter(report_root, all_warnings, final_warnings, changes)
-presenter.test_get_string_of_list(all_warnings)
-unique_warning_code, unique_file_path = presenter.get_unique_filepath_and_warning_code(all_warnings)
+    image_path = Path.joinpath(report_root, 'images')
+    if image_path.is_dir() and os.listdir(image_path):
+        presenter.remove_image_folder(image_path)
+    image_path.mkdir(parents=True, exist_ok=True)
+    presenter.visualization_overall(all_warnings, image_path)
+    presenter.visulization_partial(all_warnings, image_path)
 
-image_path = Path.joinpath(report_root, 'images')
-if image_path.is_dir() and os.listdir(image_path):
-    presenter.remove_image_folder(image_path)
-image_path.mkdir(parents=True, exist_ok=True)
-presenter.visualization_overall(all_warnings, image_path)
-presenter.visulization_partial(all_warnings, image_path)
+    diff_path = Path.joinpath(Path.cwd(), 'html_files')
+    if diff_path.is_dir() and os.listdir(diff_path):
+        diff_html.remove_diff_folder(diff_path)
+    diff_html.find_dpcpp(dpct_root, destination_root, diff_path)
 
-diff_path = Path.joinpath(Path.cwd(),'html_files')
-if diff_path.is_dir() and os.listdir(diff_path):
-    diff_html.remove_diff_folder(diff_path)
-diff_html.find_dpcpp(dpct_root, destination_root, diff_path)
+    with open('report.html', 'w') as report:
+        report.write(presenter.html_page(all_warnings,final_warnings,changes,unique_warning_code, unique_file_path,diff_path))
+    with open('subgraphs.html', 'w') as sub_images:
+        sub_images.write(sub_graph.add_images())
 
-with open('report.html', 'w') as report:
-    report.write(presenter.html_page(unique_warning_code,unique_file_path))
-with open('subgraphs.html', 'w') as sub_images:
-    sub_images.write(sub_graph.add_images())
+
+if __name__ == '__main__':
+    run_presenter()
+
