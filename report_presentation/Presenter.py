@@ -98,7 +98,6 @@ class Presenter:
                         <body> '''
         return html
 
-
     def get_html1_7(self, all_warnings,unique_warning_code, unique_file_path,file_path_string,warning_code_string):
         html1_7= '''
                         <p class="serif" ><b>     1.  Number of Analysis Files:  %s</b></p>
@@ -132,7 +131,6 @@ class Presenter:
                                         <th>Warning message</th>
                                 </tr>'''
         html += self.get_warning_info(all_warnings)
-
         html += '''
                         </table>
                         '''
@@ -193,8 +191,6 @@ class Presenter:
                     ''' % (file.stem, file.name)
 
         return html
-
-
 
     def get_recommendation_info(self, recommendations):
         html = ""
@@ -299,7 +295,6 @@ class Presenter:
             plt.savefig(str(image_path) + '/' + k + '.jpg')
             plt.show()
 
-
     def create_html(self, dpct_root, destination_root,all_warnings, final_warnings, changes, unique_warning_code, unique_file_path):
         diff_path = Path.joinpath(Path.cwd(), 'html_files')
         if diff_path.is_dir() and os.listdir(diff_path):
@@ -349,7 +344,6 @@ def run_presenter():
 
     presenter.show_visualize(report_root,all_warnings)
     presenter.create_html(dpct_root, destination_root,all_warnings, final_warnings, changes, unique_warning_code, unique_file_path)
-
 
 if __name__ == '__main__':
     run_presenter()
