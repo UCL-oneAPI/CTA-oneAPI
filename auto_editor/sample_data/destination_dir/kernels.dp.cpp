@@ -119,7 +119,13 @@ void sampled_rows_kernel(const IdxT* nsamples, float* X, const IdxT nrows_X,
       rand_idx = (int)(LCG_random_double(&seed) * ncols);
     }
   }
-  /*CTA1065:count number: recommended to ignore this warning. but you can also consider replacing 'item_ct1.barrier();' with 'item_ct1.barrier(sycl::access::fence_space::local_space);'*/
+  /*
+  CTA1065: count number: CTA recommended to ignore this warning.
+  but you can also consider replacing 'item_ct1.barrier();' 
+  with 'item_ct1.barrier(sycl::access::fence_space::local_space);' 
+  to have have better performance if the kernel function 
+  has no memory accesses in the global memory.
+  */
   item_ct1.barrier();
 
   // Each block processes one row of X. Columns are iterated over by blockDim.x at a time to ensure data coelescing

@@ -19,7 +19,6 @@ class StructuredProjectSource_Recommendation(StructuredProjectSource):
             for i in range(len(code_lines)):
                 line_item = code_lines[i]
                 recommendation_code = line_item.get_cta_recommendation()
-                print(recommendation_code)
                 if recommendation_code:
                     first_line = self.get_first_warning_line(i, code_lines)
                     last_line = self.get_last_warning_line(i, code_lines)
