@@ -111,21 +111,34 @@ class AddCommentsRule(BaseRule):
                 # add if statement for the corresponding warning type, and change the recommendation
                 if w_type == "DPCT1065":
                     del all_items[warning_first_line: warning_last_line + 1]
-                    comment_item = LineItem(prefix + "/*CTA1065:count number: recommended to ignore this warning. but you can also consider replacing 'item_ct1.barrier();' with 'item_ct1.barrier(sycl::access::fence_space::local_space);'*/\n")
+
+                    comment_item = LineItem(prefix + "/*CTA1065:count number: CTA recommended to ignore this warning. \n"
+                                                     + prefix + "but you can also consider replacing 'item_ct1.barrier();' \n"
+                                                     + prefix + "with 'item_ct1.barrier(sycl::access::fence_space::local_space);' \n"
+                                                     + prefix + "to have have better performance if the kernel function \n"
+                                                     + prefix + "has no memory accesses in the global memory.*/\n")
+
                     all_items.insert(warning_first_line, comment_item)
                     w_type = "DPCT"
                     return project
 
                 if w_type == "DPCT1039":
                     del all_items[warning_first_line: warning_last_line + 1]
-                    comment_item = LineItem(prefix + "/*CTA1039:count number: Base on the experience, strongly recommended to leave the code as it is and ignore this warning. BUT, if '&xxx' points to local memory, please accept the DPCT proposal.*/\n")
+
+                    comment_item = LineItem(prefix + "/*CTA1039:count number: Base on the experience, strongly recommended to leave the code as it is \n"
+                                                     + prefix + "and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,\n"
+                                                     + prefix + "replace the atomic function name with an atomic function name that includes the template parameters.*/\n")
+
                     all_items.insert(warning_first_line, comment_item)
                     w_type = "DPCT"
                     return project
 
                 if w_type == "DPCT1008":
                     del all_items[warning_first_line: warning_last_line + 1]
-                    comment_item = LineItem(prefix + "/*CTA1008:count number:Please accept the DPCT proposal.  You can leave the code as it is for now.*/\n")
+
+                    comment_item = LineItem(prefix + "/*CTA1008:count number: The clock function is not defined in DPC++, you can leave the code as it is for now. \n"
+                                                     + prefix + "And consult with your hardware vendor to find a replacement.*/\n")
+
                     all_items.insert(warning_first_line, comment_item)
                     w_type = "DPCT"
                     return project
