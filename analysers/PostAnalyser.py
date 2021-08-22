@@ -50,6 +50,7 @@ class PostAnalyser(BaseAnalyser):
     def get_all_recommendation(self) -> List[RecommendationItem]:
         project = StructuredProjectSource_Recommendation(self.project_root_path)
         recommendations_dict = project.recommendations_dict
+        print('dict', recommendations_dict)
         all_recommendations = []
         codes = []
         ids = []

@@ -1,10 +1,12 @@
 from analysers.PreAnalyser import PreAnalyser
+from analysers.PostAnalyser import PostAnalyser
+import scripts.run_rule_1003 as run_rule_1003
+import sub_graph
 from pathlib import Path
 from collections import Counter
 import numpy as np
 import matplotlib.pyplot as plt
 import os
-import sub_graph
 
 
 class Presenter:
@@ -18,7 +20,7 @@ class Presenter:
         # Todo: insert code here
         pass
 
-    def html_page(self, unique_warning_code,unique_file_path):
+    def html_page(self, unique_warning_code, unique_file_path):
         file_path_string = presenter.get_string_of_list(unique_file_path)
         warning_code_string = presenter.get_string_of_list(unique_warning_code)
         html = '''
@@ -102,6 +104,16 @@ class Presenter:
                 '''
         html += '''
                 <p><b>     10.  Detailed Recommendation Information (After CTA)</b></p>
+                <div class = "before-warning-table">
+                <table border = "0">
+                        <tr>
+                                <th>Recommendation Code</th>
+                                <th>File Path</th>
+                                <th>Project Name</th>
+                                <th>Line Number</th>
+                                <th>Recommendation message</th>
+                        </tr>
+                </table>
                 '''
         html += '''
                 <p><b>     11. Number of warnings have been fixed: </b></p>
@@ -205,15 +217,17 @@ class Presenter:
         for i in os.listdir(image_path):
             os.remove(os.path.join(image_path, i))
         os.rmdir(image_path)
-        print('removed')
 
 
 report_root = Path(__file__).parent
 cta_path = Path(__file__).parent.parent.resolve()
 dpct_root = Path.joinpath(cta_path, 'testing_support', 'integration_testing_data', 'test_project')
 preAnalyser = PreAnalyser(dpct_root)
-all_warnings = PreAnalyser.get_all_warnings(preAnalyser)
-final_warnings = []
+all_warnings = preAnalyser.get_all_warnings()
+postAnalyser = PostAnalyser(dpct_root)
+run_rule_1003.call_run_rule()
+final_warnings = postAnalyser.get_all_warnings()
+print(final_warnings)
 changes = []
 presenter = Presenter(report_root, all_warnings, final_warnings, changes)
 presenter.test_get_string_of_list(all_warnings)
