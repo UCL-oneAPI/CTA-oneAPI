@@ -31,12 +31,12 @@ class Presenter:
                 </head>
                 <h1 align="center">CTA Report</h1>
                 <style> 
-                body {margin: 30px;}
+                body {margin: 50px;}
                 .before-warning-table table,th, td
                   {
                   font-size:0.8em;
                   border:1px solid 	#FFFFFF;
-                  padding:5px;
+                  padding:10px;
                   }
                   table
                   {
