@@ -30,20 +30,21 @@ CTA1010:count number: Base on the experience, strongly recommended to ignore thi
 1011(data hungry):[can look at it later]
 CTA1011:count number: recommendation: delete the namespace
 
-
 1007(data hungry):
-CTA1007:count number:Migration of this CUDA API is not supported by the Intel(R)DPC Compatibility Tool.
-
+CTA1007:count number: Migration of this CUDA API is not supported by the Intel(R)DPC Compatibility Tool. Please rewrite it by yourself.
 
 1017(data hungry):
 CTA1017:count number: The sycl: sincos call is used instead of the sincosf call. These two calls do not provide exactly the same functionality.
-Check thepotential precision and/or performance issues for the generated code.
+Check thepotential precision and/or performance issues for the generated code. Two 1017 warnings in CTA analysis data pool choose not to change anything.
 
 
 
-1013,1011,1004: no manual files --------
+1013,1011,1004: no manual files -------- not give any recommendation for now
+
 CTA1013:count number:The rounding mode could not be specified and the generated code may have different precision then the original code.
 Verify the correctness.SYCL math built-ins rounding mode is aligned with OpenCL C 1.2 standard.
+
 CTA1011:count number:The tool detected overloaded operators for built-in vector types, which may conflict with the SYCL 1.2.1 standard operators
 (see 4.10.2.1 Vec interface). The tool inserted a namespace to avoid the conflict. Use SYCL 1.2.1 standard operators instead.
+
 CTA1004:count number: Could not generate replacement. Please replace it manually.
