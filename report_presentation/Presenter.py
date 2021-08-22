@@ -113,7 +113,7 @@ class Presenter:
                                 <th>Line Number</th>
                                 <th>Recommendation message</th>
                         </tr>'''
-        #html += self.get_warning_info(changes)
+        html += self.get_recommendation_info(changes)
         html += '''
                 </table>
                 '''
@@ -159,6 +159,28 @@ class Presenter:
                                 <td>%s</td>
                         </tr>
                         ''' % (num, i.warning_code, i.file_path, i.project_name, i.line, message)
+        return html
+
+    def get_recommendation_info(self, recommendations):
+        html = ""
+        num = 0
+        for i in recommendations:
+            num += 1
+            message = i.message
+            if '<' in message:
+                message = message.replace('<', '&lt;')
+            if '>' in message:
+                message = message.replace('>', '&gt;')
+            html += '''
+                                <tr>
+                                        <td>%s</td>
+                                        <td>%s</td>
+                                        <td>%s</td>
+                                        <td>%s</td>
+                                        <td>%s</td>
+                                        <td>%s</td>
+                                </tr>
+                                ''' % (num, i.recommendation_code, i.file_path, i.project_name, i.line, message)
         return html
 
     def get_unique_filepath_and_warning_code(self, warnings):
