@@ -117,7 +117,7 @@ class Presenter:
         html += '''
                 </table>
                 '''
-        warning_fixed = len(all_warnings) - len(final_warnings)
+        warning_fixed = len(all_warnings) - len(final_warnings) - len(changes)
         html += '''
                 <p><b>     11. Number of warnings have been fixed: %s</b></p>
                         ''' % warning_fixed
