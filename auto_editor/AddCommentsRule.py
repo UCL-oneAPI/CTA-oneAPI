@@ -91,6 +91,7 @@ class AddCommentsRule(BaseRule):
         # Todo Qichen: fix rule
         state = False
         w_type = "DPCT"
+        count = 0
         all_line = list()
         all_items = project.paths_to_lines[file_path]
         for c in all_items:
@@ -101,6 +102,7 @@ class AddCommentsRule(BaseRule):
             if state == True:
                 if len(line_list) != 0 and line_list[0].split(':')[0] in self.dpct_warning_codes:
                     w_type = line_list[0].split(':')[0]
+                    count = line_list[0].split(':')[1]
 
             if len(line_list) != 0 and line_list[0] == '/*':
                 state = True
@@ -112,11 +114,13 @@ class AddCommentsRule(BaseRule):
                 if w_type == "DPCT1065":
                     del all_items[warning_first_line: warning_last_line + 1]
 
-                    comment_item = LineItem(prefix + "/*CTA1065: count number: CTA recommended to ignore this warning. \n"
+                    comment_item = LineItem(prefix + "/*\n"
+                                                     + prefix + "CTA1065:" + count + ": CTA recommended to ignore this warning. \n"
                                                      + prefix + "but you can also consider replacing 'item_ct1.barrier();' \n"
                                                      + prefix + "with 'item_ct1.barrier(sycl::access::fence_space::local_space);' \n"
                                                      + prefix + "to have have better performance if the kernel function \n"
-                                                     + prefix + "has no memory accesses in the global memory.*/\n")
+                                                     + prefix + "has no memory accesses in the global memory.\n"
+                                                     + prefix + "*/\n")
 
                     all_items.insert(warning_first_line, comment_item)
                     w_type = "DPCT"
@@ -124,10 +128,11 @@ class AddCommentsRule(BaseRule):
 
                 if w_type == "DPCT1039":
                     del all_items[warning_first_line: warning_last_line + 1]
-
-                    comment_item = LineItem(prefix + "/*CTA1039: count number: Base on the experience, strongly recommended to leave the code as it is \n"
+                    comment_item = LineItem(prefix + "/*\n"
+                                                     + prefix + "CTA1039:" + count + ": Base on the experience, strongly recommended to leave the code as it is \n"
                                                      + prefix + "and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,\n"
-                                                     + prefix + "replace the atomic function name with an atomic function name that includes the template parameters.*/\n")
+                                                     + prefix + "replace the atomic function name with an atomic function name that includes the template parameters.\n"
+                                                     + prefix + "*/\n")
 
                     all_items.insert(warning_first_line, comment_item)
                     w_type = "DPCT"
@@ -136,8 +141,10 @@ class AddCommentsRule(BaseRule):
                 if w_type == "DPCT1008":
                     del all_items[warning_first_line: warning_last_line + 1]
 
-                    comment_item = LineItem(prefix + "/*CTA1008: count number: The clock function is not defined in DPC++, you can leave the code as it is for now. \n"
-                                                     + prefix + "And consult with your hardware vendor to find a replacement.*/\n")
+                    comment_item = LineItem(prefix + "/*\n"
+                                                     + prefix + "CTA1008:" + count + ": The clock function is not defined in DPC++, you can leave the code as it is for now. \n"
+                                                     + prefix + "And consult with your hardware vendor to find a replacement.\n"
+                                                     + prefix + "*/\n")
 
                     all_items.insert(warning_first_line, comment_item)
                     w_type = "DPCT"
@@ -145,21 +152,33 @@ class AddCommentsRule(BaseRule):
 
                 if w_type == "DPCT1000":
                     del all_items[warning_first_line: warning_last_line + 1]
-                    comment_item = LineItem(prefix + "/*CTA1000: count number: Base on the experience, strongly recommended to ignore this warning.*/\n")
+
+                    comment_item = LineItem(prefix + "/*\n"
+                                                     + prefix + "CTA1000:" + count + ": Base on the experience, strongly recommended to ignore this warning.\n"
+                                                     + prefix + "*/\n")
+
                     all_items.insert(warning_first_line, comment_item)
                     w_type = "DPCT"
                     return project
 
                 if w_type == "DPCT1001":
                     del all_items[warning_first_line: warning_last_line + 1]
-                    comment_item = LineItem(prefix + "/*CTA1001: count number: Base on the experience, strongly recommended to ignore this warning.*/\n")
+
+                    comment_item = LineItem(prefix + "/*\n"
+                                                     + prefix + "CTA1001:" + count + ": Base on the experience, strongly recommended to ignore this warning.\n"
+                                                     + prefix + "*/\n")
+
                     all_items.insert(warning_first_line, comment_item)
                     w_type = "DPCT"
                     return project
 
                 if w_type == "DPCT1032":
                     del all_items[warning_first_line: warning_last_line + 1]
-                    comment_item = LineItem(prefix + "/*CTA1032: count number: Base on the experience, recommended to ignore this warning. If it didn't work, adjust the code.*/\n")
+
+                    comment_item = LineItem(prefix + "/*\n"
+                                                     + prefix + "CTA1032:" + count + ": Base on the experience, recommended to ignore this warning. If it didn't work, adjust the code.\n"
+                                                     + prefix + "*/\n")
+
                     all_items.insert(warning_first_line, comment_item)
                     w_type = "DPCT"
                     return project
