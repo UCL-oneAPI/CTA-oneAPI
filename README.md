@@ -1,4 +1,4 @@
-remote_theme: Monos
+
 
 # CTA-oneAPI
 
