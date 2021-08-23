@@ -15,7 +15,7 @@ class AddCommentsRule(BaseRule):
     def dpct_warning_codes(self) -> List[str]:
         # Todo: add relevant warning codes
         # Add new warning types in this list
-        return ['DPCT1065','DPCT1039','DPCT1008','DPCT1000','DPCT1032','DPCT1001']
+        return ['DPCT1065','DPCT1039','DPCT1008','DPCT1000','DPCT1032','DPCT1001','DPCT1009','DPCT1010','DPCT1011','DPCT1007','DPCT1017']
 
     def get_indentation_spaces(self,new_code):
         j, prefix = 0, ""
@@ -108,6 +108,54 @@ class AddCommentsRule(BaseRule):
                     del all_items[warning_first_line: warning_last_line + 1]
                     comment_item = LineItem(prefix + "/*\n"
                                                      + prefix + "CTA1032:" + count + ": Base on the experience, recommended to ignore this warning. If it didn't work, adjust the code.\n"
+                                                     + prefix + "*/\n")
+                    all_items.insert(warning_first_line, comment_item)
+                    w_type = "DPCT"
+                    return project
+
+                if w_type == "DPCT1009":
+                    del all_items[warning_first_line: warning_last_line + 1]
+                    comment_item = LineItem(prefix + "/*\n"
+                                                     + prefix + "CTA1009:" + count + ": CTA1009:count number: SYCL uses exceptions to report errors and does not use the error codes. \n"
+                                                     + prefix + "The original code was commented out and a warning string was inserted. You need to rewrite this code\n"
+                                                     + prefix + "*/\n")
+                    all_items.insert(warning_first_line, comment_item)
+                    w_type = "DPCT"
+                    return project
+
+                if w_type == "DPCT1010":
+                    del all_items[warning_first_line: warning_last_line + 1]
+                    comment_item = LineItem(prefix + "/*\n"
+                                                     + prefix + "CTA1010:" + count + ": Base on the experience, strongly recommended to ignore this warning.\n"
+                                                     + prefix + "*/\n")
+                    all_items.insert(warning_first_line, comment_item)
+                    w_type = "DPCT"
+                    return project
+
+                if w_type == "DPCT1011":
+                    del all_items[warning_first_line: warning_last_line + 1]
+                    comment_item = LineItem(prefix + "/*\n"
+                                                     + prefix + "CTA1011:" + count + ": Delete the namespace.\n"
+                                                     + prefix + "*/\n")
+                    all_items.insert(warning_first_line, comment_item)
+                    w_type = "DPCT"
+                    return project
+
+                if w_type == "DPCT1007":
+                    del all_items[warning_first_line: warning_last_line + 1]
+                    comment_item = LineItem(prefix + "/*\n"
+                                                     + prefix + "CTA1007:" + count + ": Migration of this CUDA API is not supported by the Intel(R)DPC Compatibility Tool. Please rewrite it by yourself.\n"
+                                                     + prefix + "*/\n")
+                    all_items.insert(warning_first_line, comment_item)
+                    w_type = "DPCT"
+                    return project
+
+                if w_type == "DPCT1017":
+                    del all_items[warning_first_line: warning_last_line + 1]
+                    comment_item = LineItem(prefix + "/*\n"
+                                                     + prefix + "CTA1017:" + count + ": The sycl: sincos call is used instead of the sincosf call. These two calls do not provide exactly the same functionality. \n"
+                                                     + prefix + "Check thepotential precision and/or performance issues for the generated code. \n"
+                                                     + prefix + "Two 1017 warnings in CTA analysis data pool choose not to change anything.\n"
                                                      + prefix + "*/\n")
                     all_items.insert(warning_first_line, comment_item)
                     w_type = "DPCT"
