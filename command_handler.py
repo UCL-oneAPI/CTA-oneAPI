@@ -90,5 +90,9 @@ if __name__ == '__main__':
 
         if args.mode == 'report_only':
             run_cta(args.project_path, args.destination_path, args.report_path, is_report_only=True)
+
+        elif args.mode == 'training_analysis_report':
+            pass
+
     else:
         print(validate_check_result)
