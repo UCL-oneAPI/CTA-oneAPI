@@ -72,15 +72,17 @@ class Presenter:
                         p.serif{font-family:"Times New Roman",Times,serif;}
                         p.sansserif{font-family:Arial,Helvetica,sans-serif;}
                         body {margin: 50px;}
-                        .before-warning-table table,th, td
+                        .before-warning-table table, .after-warning-table table, .recommendation-table table, th, td
                           {
                           font-size:0.8em;
                           border:1px solid 	#FFFFFF;
                           padding:10px;
                           }
-                          table
+                         .before-warning-table, .after-warning-table, .recommendation-table
                           {
                           border-collapse:collapse;
+                          max-height: 100%;
+                          overflow-y: auto;
                           }
                         th
                           {
@@ -95,7 +97,7 @@ class Presenter:
                           {background-color: #F2F2F2;}
 
                         </style>
-                        <body> '''
+                        <body style="height:100%;"> '''
         return html
 
     def get_html1_7(self, all_warnings,unique_warning_code, unique_file_path,file_path_string,warning_code_string):
@@ -133,12 +135,14 @@ class Presenter:
         html += self.get_warning_info(all_warnings)
         html += '''
                         </table>
+                        </div>
                         '''
         return html
 
     def get_html9(self, final_warnings):
         html = '''
                         <p class="serif" ><b>     9.  Detailed Warning Information (After CTA)</b></p>
+                        <div class = "after-warning-table">
                         <table border = "0">
                                 <tr>
                                         <th>No.</th>
@@ -151,12 +155,14 @@ class Presenter:
         html += self.get_warning_info(final_warnings)
         html += '''
                         </table>
+                        </div>
                         '''
         return html
 
     def get_html10(self, changes):
         html = '''
                         <p class="serif" ><b>     10.  Detailed Recommendation Information (After CTA)</b></p>
+                        <div class = "recommendation-table", >
                         <table border = "0">
                                 <tr>
                                         <th>No.</th>
@@ -169,9 +175,9 @@ class Presenter:
         html += self.get_recommendation_info(changes)
         html += '''
                         </table>
+                        </div>
                         '''
         return html
-
 
     def get_html11_13(self,warning_fixed,changes,diff_path):
         html =''
@@ -259,7 +265,7 @@ class Presenter:
         plt.bar(x + bar_width, files_contain_warnings.values(), bar_width, align="center", color="blue", label="Number of documents containing such warnings",
                 alpha=0.5)
         plt.xticks(x + bar_width / 2, occurrence.keys())
-        plt.yticks(np.arange(0, max(occurrence.values())+1, step=3))
+        plt.yticks(np.arange(0, max(occurrence.values())+1, step=5))
         plt.ylabel("Occurrence")
         plt.title("Warning Types with Number of Occurrences (Overall)")
         plt.legend(loc="upper left", fontsize="x-small")

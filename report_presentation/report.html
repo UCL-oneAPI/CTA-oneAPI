@@ -9,15 +9,17 @@
                         p.serif{font-family:"Times New Roman",Times,serif;}
                         p.sansserif{font-family:Arial,Helvetica,sans-serif;}
                         body {margin: 50px;}
-                        .before-warning-table table,th, td
+                        .before-warning-table table, .after-warning-table table, .recommendation-table table, th, td
                           {
                           font-size:0.8em;
                           border:1px solid 	#FFFFFF;
                           padding:10px;
                           }
-                          table
+                         .before-warning-table, .after-warning-table, .recommendation-table
                           {
                           border-collapse:collapse;
+                          max-height: 100%;
+                          overflow-y: auto;
                           }
                         th
                           {
@@ -32,7 +34,7 @@
                           {background-color: #F2F2F2;}
 
                         </style>
-                        <body> 
+                        <body style="height:100%;"> 
                         <p class="serif" ><b>     1.  Number of Analysis Files:  3</b></p>
 
                         <p class="serif" ><b>     2.  Analysis Files:    </b></p>
@@ -646,8 +648,10 @@ performance, if there is no access to global memory.</td>
                         </tr>
                         
                         </table>
+                        </div>
                         
                         <p class="serif" ><b>     9.  Detailed Warning Information (After CTA)</b></p>
+                        <div class = "after-warning-table">
                         <table border = "0">
                                 <tr>
                                         <th>No.</th>
@@ -1233,8 +1237,10 @@ workgroup size if needed.</td>
                         </tr>
                         
                         </table>
+                        </div>
                         
                         <p class="serif" ><b>     10.  Detailed Recommendation Information (After CTA)</b></p>
+                        <div class = "recommendation-table", >
                         <table border = "0">
                                 <tr>
                                         <th>No.</th>
@@ -1258,6 +1264,7 @@ has no memory accesses in the global memory.</td>
                                 </tr>
                                 
                         </table>
+                        </div>
                         
                         <p class="serif" ><b>     11. Number of warnings have been fixed: 0</b></p>
                                 
