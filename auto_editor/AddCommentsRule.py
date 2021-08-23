@@ -138,9 +138,9 @@ class AddCommentsRule(BaseRule):
                     w_type = "DPCT"
                     return project
 
+
                 if w_type == "DPCT1008":
                     del all_items[warning_first_line: warning_last_line + 1]
-
                     comment_item = LineItem(prefix + "/*\n"
                                                      + prefix + "CTA1008:" + count + ": The clock function is not defined in DPC++, you can leave the code as it is for now. \n"
                                                      + prefix + "And consult with your hardware vendor to find a replacement.\n"
@@ -152,18 +152,15 @@ class AddCommentsRule(BaseRule):
 
                 if w_type == "DPCT1000":
                     del all_items[warning_first_line: warning_last_line + 1]
-
                     comment_item = LineItem(prefix + "/*\n"
                                                      + prefix + "CTA1000:" + count + ": Base on the experience, strongly recommended to ignore this warning.\n"
                                                      + prefix + "*/\n")
-
                     all_items.insert(warning_first_line, comment_item)
                     w_type = "DPCT"
                     return project
 
                 if w_type == "DPCT1001":
                     del all_items[warning_first_line: warning_last_line + 1]
-
                     comment_item = LineItem(prefix + "/*\n"
                                                      + prefix + "CTA1001:" + count + ": Base on the experience, strongly recommended to ignore this warning.\n"
                                                      + prefix + "*/\n")
@@ -172,9 +169,9 @@ class AddCommentsRule(BaseRule):
                     w_type = "DPCT"
                     return project
 
+
                 if w_type == "DPCT1032":
                     del all_items[warning_first_line: warning_last_line + 1]
-
                     comment_item = LineItem(prefix + "/*\n"
                                                      + prefix + "CTA1032:" + count + ": Base on the experience, recommended to ignore this warning. If it didn't work, adjust the code.\n"
                                                      + prefix + "*/\n")
