@@ -243,6 +243,9 @@ float cluster_distance(clusters_t &clusters, const int c1, const int c2, cluster
 
 
 // Free the cluster data structures on host
+ /*
+  CTA1003:1: This is the test recommendation for CTA system.
+  */
 void freeCluster(clusters_t* c) {
   free(c->N);
   free(c->pi);
@@ -255,6 +258,9 @@ void freeCluster(clusters_t* c) {
 }
 
 // Free the cluster data structures on device
+/*
+  CTA1003:2: This is the test recommendation for CTA system.
+  */
 void freeClusterDevice(clusters_t *c) try {
     dpct::device_ext &dev_ct1 = dpct::get_current_device();
     sycl::queue &q_ct1 = dev_ct1.default_queue();
