@@ -81,8 +81,8 @@ class Fix1049Rule(BaseRule):
         if not params_with_multiply[1] == '*' and params_with_multiply[3] == ',':
             raise Exception('Fix 1049: Code structure different than expected. Cannot resolve.')
 
-        vec_1 = self.unmask(params_with_multiply[0], masks_to_values)
-        vec_2 = self.unmask(params_with_multiply[2], masks_to_values)
+        vec_1 = self.unmask(params_with_multiply[0], masks_to_values) if masks_to_values else params_with_multiply[0]
+        vec_2 = self.unmask(params_with_multiply[2], masks_to_values) if masks_to_values else params_with_multiply[2]
 
         return vec_1, vec_2
 
@@ -93,21 +93,23 @@ class Fix1049Rule(BaseRule):
 
         raise Exception("Mask does not exist")
 
-    def mask_code_params(self, str) -> (str, dict):
+    def mask_code_params(self, code_str) -> (str, dict):
         masks_to_values = {}
         masked_full_code = ''
-        enclosing_locations = self.get_all_enclosings_locations(str)
+        enclosing_locations = self.get_all_enclosings_locations(code_str)
         start_i = 0
+        if not enclosing_locations:
+            return code_str, {}
         for loc_tuple in enclosing_locations:
-            masked_params = str[loc_tuple[0] + 1: loc_tuple[1]]
+            masked_params = code_str[loc_tuple[0] + 1: loc_tuple[1]]
             if masked_params in masks_to_values.values():
                 mask_name = list(masks_to_values.keys())[list(masks_to_values.values()).index(masked_params)]
             else:
                 mask_name = "mask_" + f'{start_i}'
                 masks_to_values[mask_name] = masked_params
 
-            closer = str[loc_tuple[1]]
-            masked_full_code += str[start_i:loc_tuple[0] + 1]
+            closer = code_str[loc_tuple[1]]
+            masked_full_code += code_str[start_i:loc_tuple[0] + 1]
             masked_full_code += mask_name + closer
 
             start_i = loc_tuple[1] + 1
@@ -258,4 +260,3 @@ class Fix1049Rule(BaseRule):
         warning_begin_i = get_index_of_line_id(warning_begin_id, self.file_lines)
         warning_end_i = get_index_of_line_id(warning_end_id, self.file_lines)
         self.remove_code(warning_begin_i, warning_end_i)
-

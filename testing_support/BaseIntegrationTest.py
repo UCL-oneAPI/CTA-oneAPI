@@ -2,8 +2,10 @@ import os
 import unittest
 from pathlib import Path
 
+from testing_support.BaseTest import BaseTest
 
-class BaseIntegrationTest(unittest.TestCase):
+
+class BaseIntegrationTest(BaseTest):
     def setUp(self) -> None:
         full_destination_path = self.cta_root_path / Path(self.destination_root)
         if os.path.exists(full_destination_path):
@@ -11,16 +13,12 @@ class BaseIntegrationTest(unittest.TestCase):
         os.mkdir(os.path.join(full_destination_path))
 
     @property
-    def cta_root_path(self):
-        return Path(__file__).parent.parent.resolve()
-
-    @property
     def destination_root(self):
-        return Path.joinpath(self.cta_root_path, 'testing_support', 'integration_testing_data', 'destination_dir')
+        return self.get_full_test_path('integration_testing_data/destination_dir')
 
     @property
     def dpct_root(self):
-        return Path.joinpath(self.cta_root_path, 'testing_support', 'integration_testing_data', 'test_project')
+        return self.get_full_test_path('integration_testing_data/test_project')
 
     def tearDown(self) -> None:
         self.remove_destination()
