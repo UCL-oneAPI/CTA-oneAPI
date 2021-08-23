@@ -40,3 +40,15 @@ python command_handler.py --help
 ```Shell
 python command_handler.py --version
 ```
+
+## Report
+### Auto-generate Report Example
+link:
+### Sample Programs Analysis Report
+link:
+### Special cases Analysis Report
+link:
+### Warning Message & Suggestion Report
+link:
+### Analysis Warnings Data
+link:
