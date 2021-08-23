@@ -1,3 +1,5 @@
+remote_theme: Monos
+
 # CTA-oneAPI
 
 This is the main repo for CTA (Code Translation Assistant), a tool that assists developers when completing the semi-automated code migration from CUDA to DPC++ by Intel’s compatibility tool DPCT.  
