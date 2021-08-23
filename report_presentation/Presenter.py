@@ -22,8 +22,8 @@ class Presenter:
         pass
 
     def html_page(self, all_warnings,final_warnings,changes,unique_warning_code, unique_file_path,diff_path):
-        file_path_string = Presenter.get_string_of_list(unique_file_path)
-        warning_code_string = Presenter.get_string_of_list(unique_warning_code)
+        file_path_string = self.get_string_of_list(unique_file_path)
+        warning_code_string = self.get_string_of_list(unique_warning_code)
         html =  self.get_html0()
         html += self.get_html1_7(all_warnings,unique_warning_code, unique_file_path,file_path_string,warning_code_string)
         html += self.get_html8(all_warnings)
@@ -224,7 +224,7 @@ class Presenter:
                 unique_file_path.append(i.file_path)
         return unique_warning_code, unique_file_path
 
-    def get_string_of_list( alist):
+    def get_string_of_list(self,alist):
         astring = "    "
         for i in alist:
             astring += i
@@ -233,8 +233,8 @@ class Presenter:
 
     def test_get_string_of_list(self, warnings):
         unique_warning_code, unique_file_path = self.get_unique_filepath_and_warning_code(warnings)
-        file_path_string = Presenter.get_string_of_list(unique_file_path)
-        warning_code_string = Presenter.get_string_of_list(unique_warning_code)
+        file_path_string = self.get_string_of_list(unique_file_path)
+        warning_code_string = self.get_string_of_list(unique_warning_code)
         print(file_path_string)
         print(warning_code_string)
 
