@@ -2,10 +2,8 @@ from analysers.PreAnalyser import PreAnalyser
 from analysers.PostAnalyser import PostAnalyser
 import diff_html
 import sub_graph
+import graph_visualization as graph
 from pathlib import Path
-from collections import Counter
-import numpy as np
-import matplotlib.pyplot as plt
 import os
 
 
@@ -18,21 +16,21 @@ class Presenter:
 
     def generate_ui_files(self):
         # Todo: insert code here
-        Presenter.run_presenter()
+        run_presenter()
         pass
 
-    def html_page(self, all_warnings,final_warnings,changes,unique_warning_code, unique_file_path,diff_path):
+    def html_page(self, all_warnings, final_warnings, changes, unique_warning_code, unique_file_path, diff_path):
         file_path_string = self.get_string_of_list(unique_file_path)
         warning_code_string = self.get_string_of_list(unique_warning_code)
-        html =  self.get_html0()
-        html += self.get_html1_7(all_warnings,unique_warning_code, unique_file_path,file_path_string,warning_code_string)
+        html = self.get_html0()
+        html += self.get_html1_7(all_warnings, unique_warning_code, unique_file_path, file_path_string, warning_code_string)
         html += self.get_html8(all_warnings)
         html += self.get_html9(final_warnings)
         html += self.get_html10(changes)
         warning_fixed = len(all_warnings) - len(final_warnings) - len(changes)
-        html += self.get_html11_13(warning_fixed,changes,diff_path)
+        html += self.get_html11_13(warning_fixed, changes, diff_path)
         html += '''
-                </div>
+                <br>
                 </body>
                 </html>
                 '''
@@ -100,7 +98,7 @@ class Presenter:
                         <body style="height:100%;"> '''
         return html
 
-    def get_html1_7(self, all_warnings,unique_warning_code, unique_file_path,file_path_string,warning_code_string):
+    def get_html1_7(self, all_warnings, unique_warning_code, unique_file_path, file_path_string, warning_code_string):
         html1_7= '''
                         <p class="serif" ><b>     1.  Number of Analysis Files:  %s</b></p>
 
@@ -116,7 +114,7 @@ class Presenter:
                         <p class="serif" >
                           <a href="subgraphs.html">7.   Sub Graphs for Every File</a>
                         </p>
-                        '''% (len(unique_warning_code), file_path_string, len(unique_file_path), warning_code_string, len(all_warnings))
+                        ''' % (len(unique_warning_code), file_path_string, len(unique_file_path), warning_code_string, len(all_warnings))
         return html1_7
 
     def get_html8(self, all_warnings):
@@ -162,7 +160,7 @@ class Presenter:
     def get_html10(self, changes):
         html = '''
                         <p class="serif" ><b>     10.  Detailed Recommendation Information (After CTA)</b></p>
-                        <div class = "recommendation-table", >
+                        <div class = "recommendation-table">
                         <table border = "0">
                                 <tr>
                                         <th>No.</th>
@@ -179,7 +177,7 @@ class Presenter:
                         '''
         return html
 
-    def get_html11_13(self,warning_fixed,changes,diff_path):
+    def get_html11_13(self, warning_fixed, changes, diff_path):
         html =''
         html += '''
                         <p class="serif" ><b>     11. Number of warnings have been fixed: %s</b></p>
@@ -230,78 +228,14 @@ class Presenter:
                 unique_file_path.append(i.file_path)
         return unique_warning_code, unique_file_path
 
-    def get_string_of_list(self,alist):
+    def get_string_of_list(self, alist):
         astring = "    "
         for i in alist:
             astring += i
             astring += " ;   "
         return astring
 
-    def test_get_string_of_list(self, warnings):
-        unique_warning_code, unique_file_path = self.get_unique_filepath_and_warning_code(warnings)
-        file_path_string = self.get_string_of_list(unique_file_path)
-        warning_code_string = self.get_string_of_list(unique_warning_code)
-        print(file_path_string)
-        print(warning_code_string)
-
-    def visualization_overall(self, warnings, image_path):
-        warning_codes = []
-        file_codes = {}
-        files_contain_warnings = {}
-        for i in warnings:
-            warning_codes.append(i.warning_code)
-            file_codes.setdefault(i.warning_code, []).append(i.file_path)
-        occurrence = Counter(warning_codes)
-        print(occurrence)
-
-        for k, v in file_codes.items():
-            files_contain_warnings[k] = len(list(set(v)))
-
-        x = np.arange(len(occurrence.keys()))
-        bar_width = 0.2
-        plt.figure(2)
-        #plt.bar(occurrence.keys(), occurrence.values(), 0.2, color='blue', alpha=0.8)
-        plt.bar(x, occurrence.values(), bar_width, align="center", color="green", label="Number of Occurrences", alpha=0.5)
-        plt.bar(x + bar_width, files_contain_warnings.values(), bar_width, align="center", color="blue", label="Number of documents containing such warnings",
-                alpha=0.5)
-        plt.xticks(x + bar_width / 2, occurrence.keys())
-        plt.yticks(np.arange(0, max(occurrence.values())+1, step=5))
-        plt.ylabel("Occurrence")
-        plt.title("Warning Types with Number of Occurrences (Overall)")
-        plt.legend(loc="upper left", fontsize="x-small")
-        plt.savefig(str(image_path) + '/before-overall.png')
-        plt.show()
-
-    def visulization_partial(self, warnings, image_path):
-        file_warnings = {}
-        codes = []
-        for i in warnings:
-            file_name = Path(i.file_path).name
-            file_warnings.setdefault(file_name, []).append(i.warning_code)
-            codes.append(i.warning_code)
-        codes = set(codes)
-        for k, v in file_warnings.items():
-            #warning_distribution = {k: Counter(v)}
-            warning_distribution = Counter(v)
-            for code in codes:
-                if code not in warning_distribution.keys():
-                    warning_distribution[code] = 0
-            x = np.arange(len(codes))
-            bar_width = 0.2
-            plt.bar(x, warning_distribution.values(), bar_width, align="center", color='blue', alpha=0.5)
-            plt.xticks(x, warning_distribution.keys())
-            max_value = max(warning_distribution.values()) + 1
-            if max_value <= 10:
-                step = 1
-            else:
-                step = 3
-            plt.yticks(np.arange(0, max_value, step=step))
-            plt.ylabel("Occurrence")
-            plt.title("Warnings in " + k)
-            plt.savefig(str(image_path) + '/' + k + '.jpg')
-            plt.show()
-
-    def create_html(self, dpct_root, destination_root,all_warnings, final_warnings, changes, unique_warning_code, unique_file_path):
+    def create_html(self, dpct_root, destination_root, all_warnings, final_warnings, changes, unique_warning_code, unique_file_path):
         diff_path = Path.joinpath(Path.cwd(), 'html_files')
         if diff_path.is_dir() and os.listdir(diff_path):
             diff_html.remove_diff_folder(diff_path)
@@ -319,21 +253,22 @@ class Presenter:
             os.remove(os.path.join(image_path, i))
         os.rmdir(image_path)
 
-    def show_visualize(self,report_root,all_warnings):
+    def show_visualize(self, report_root, all_warnings):
         image_path = Path.joinpath(report_root, 'images')
         if image_path.is_dir() and os.listdir(image_path):
-            Presenter.remove_image_folder(self,image_path)
+            Presenter.remove_image_folder(self, image_path)
         image_path.mkdir(parents=True, exist_ok=True)
-        Presenter.visualization_overall(self,all_warnings, image_path)
-        Presenter.visulization_partial(self,all_warnings, image_path)
+        graph.visualization_overall(all_warnings, image_path)
+        graph.visualization_partial(all_warnings, image_path)
 
-def get_warnings_and_changes(dpct_root,destination_root):
+
+def get_warnings_and_changes(dpct_root, destination_root):
     preAnalyser = PreAnalyser(dpct_root)
     all_warnings = preAnalyser.get_all_warnings()
     postAnalyser = PostAnalyser(destination_root)
     final_warnings = postAnalyser.get_all_warnings()
     changes = postAnalyser.get_all_recommendation()
-    return all_warnings,final_warnings,changes
+    return all_warnings, final_warnings, changes
 
 
 def run_presenter():
@@ -341,16 +276,14 @@ def run_presenter():
     cta_path = Path(__file__).parent.parent.resolve()
     dpct_root = Path.joinpath(cta_path, 'auto_editor', 'sample_data', 'test_project')
     destination_root = Path.joinpath(cta_path, 'auto_editor', 'sample_data', 'destination_dir')
-    all_warnings,final_warnings,changes = get_warnings_and_changes(dpct_root,destination_root)
+    all_warnings, final_warnings, changes = get_warnings_and_changes(dpct_root, destination_root)
 
-    print('change', changes)
     presenter = Presenter(report_root, all_warnings, final_warnings, changes)
-    presenter.test_get_string_of_list(all_warnings)
     unique_warning_code, unique_file_path = presenter.get_unique_filepath_and_warning_code(all_warnings)
 
-    presenter.show_visualize(report_root,all_warnings)
-    presenter.create_html(dpct_root, destination_root,all_warnings, final_warnings, changes, unique_warning_code, unique_file_path)
+    presenter.show_visualize(report_root, all_warnings)
+    presenter.create_html(dpct_root, destination_root, all_warnings, final_warnings, changes, unique_warning_code, unique_file_path)
+
 
 if __name__ == '__main__':
     run_presenter()
-

@@ -30,6 +30,7 @@ def read_file(file):
     read = f.readlines()
     return read
 
+
 def remove_diff_folder(diff_path):
     for i in os.listdir(diff_path):
         os.remove(os.path.join(diff_path, i))
