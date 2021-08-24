@@ -6,7 +6,7 @@ from typing import List, Tuple, Dict
 from auto_editor.BaseRule import BaseRule
 from auto_editor.LineItem import LineItem
 from auto_editor.StructuredProjectSource import StructuredProjectSource
-from auto_editor.constants import ND_RANGE_PATTERN, RANGE_ITEM, INDENTATION, RANGE_OPENER, RANGE_CLOSER, LINE_BREAK
+from auto_editor.consts import ND_RANGE_PATTERN, RANGE_ITEM, INDENTATION, RANGE_OPENER, RANGE_CLOSER, LINE_BREAK
 from auto_editor.utils import get_index_of_line_id
 from enums import ChangeTypeEnum
 
