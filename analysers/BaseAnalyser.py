@@ -12,6 +12,8 @@ class BaseAnalyser:
         '''
         :return: list of named tuples with all warnings
         '''
+        #Todo: implementation in PreAnalyzer and PostAnalyzer is pretty much identical.
+        # It should me moved here to avoid cloning
         return []
 
     def get_first_line_num(self, first_id, codes, ids):
