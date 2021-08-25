@@ -27,7 +27,7 @@ class Presenter:
         html += self.after_cta_table(final_warnings)
         html += self.recommendation_table(changes)
         warning_fixed = len(all_warnings) - len(final_warnings) - len(changes)
-        html += self.get_html11_13(warning_fixed, changes, diff_path)
+        html += self.final_analysis(warning_fixed, changes, diff_path)
         html += '''
                 <br>
                 </body>
@@ -177,7 +177,7 @@ class Presenter:
                         '''
         return html
 
-    def get_html11_13(self, warning_fixed, changes, diff_path):
+    def final_analysis(self, warning_fixed, changes, diff_path):
         html = ''
         html += '''
                         <p class="serif" ><b>     11. Number of warnings have been fixed: %s</b></p>
