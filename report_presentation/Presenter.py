@@ -16,8 +16,8 @@ class Presenter:
 
     def generate_ui_files(self):
         # Todo: insert code here
-        run_presenter()
-        pass
+        self.run_presenter()
+
 
     def html_page(self, all_warnings, final_warnings, changes, unique_warning_code, unique_file_path, diff_path):
         file_path_string = self.get_string_of_list(unique_file_path)
@@ -262,28 +262,26 @@ class Presenter:
         graph.visualization_partial(all_warnings, image_path)
 
 
-def get_warnings_and_changes(dpct_root, destination_root):
-    preAnalyser = PreAnalyser(dpct_root)
-    all_warnings = preAnalyser.get_all_warnings()
-    postAnalyser = PostAnalyser(destination_root)
-    final_warnings = postAnalyser.get_all_warnings()
-    changes = postAnalyser.get_all_recommendation()
-    return all_warnings, final_warnings, changes
+    def get_warnings_and_changes(self,dpct_root, destination_root):
+        preAnalyser = PreAnalyser(self.dpct_root)
+        all_warnings = preAnalyser.get_all_warnings()
+        postAnalyser = PostAnalyser(destination_root)
+        final_warnings = postAnalyser.get_all_warnings()
+        changes = postAnalyser.get_all_recommendation()
+        return all_warnings, final_warnings, changes
 
 
-def run_presenter():
-    # report_root = Path(__file__).parent
-    #cta_path = Path(__file__).parent.parent.resolve()
-    #dpct_root = Path.joinpath(cta_path, 'auto_editor', 'sample_data', 'test_project')
-    #destination_root = Path.joinpath(cta_path, 'auto_editor', 'sample_data', 'destination_dir')
-    #all_warnings, final_warnings, changes = get_warnings_and_changes(dpct_root, destination_root)
+    def run_presenter(self):
+        # report_root = Path(__file__).parent
+        #cta_path = Path(__file__).parent.parent.resolve()
+        #dpct_root = Path.joinpath(cta_path, 'auto_editor', 'sample_data', 'test_project')
+        #destination_root = Path.joinpath(cta_path, 'auto_editor', 'sample_data', 'destination_dir')
+        #all_warnings, final_warnings, changes = get_warnings_and_changes(dpct_root, destination_root)
 
-    presenter = Presenter(self.report_root, self.all_warnings, self.final_warnings, self.changes)
-    unique_warning_code, unique_file_path = presenter.get_unique_filepath_and_warning_code(all_warnings)
+        presenter = Presenter(self.report_root, self.all_warnings, self.final_warnings, self.changes)
+        unique_warning_code, unique_file_path = presenter.get_unique_filepath_and_warning_code(self.initial_warnings)
 
-    presenter.show_visualize(report_root, all_warnings)
-    presenter.create_html(dpct_root, destination_root, all_warnings, final_warnings, changes, unique_warning_code, unique_file_path)
+        presenter.show_visualize(self.report_root, self.all_warnings)
+        presenter.create_html(self.dpct_root, self.destination_root, self.initial_warnings, self.final_warnings, self.changes, unique_warning_code, unique_file_path)
 
 
-if __name__ == '__main__':
-    run_presenter()
