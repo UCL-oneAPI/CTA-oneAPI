@@ -6,22 +6,16 @@ from typing import List, Tuple, Dict
 from auto_editor.BaseRule import BaseRule
 from auto_editor.LineItem import LineItem
 from auto_editor.StructuredProjectSource import StructuredProjectSource
-from auto_editor.consts import ND_RANGE_PATTERN, RANGE_ITEM, INDENTATION, RANGE_OPENER, RANGE_CLOSER, LINE_BREAK
+from auto_editor.consts import ND_RANGE_PATTERN, RANGE_ITEM, INDENTATION, RANGE_OPENER, LINE_BREAK, \
+    GLOBAL_RANGE_IDENTIFIER, LOOP_BEGINNING_STR, GLOBAL_RANGE_DECLARATION, MASK_TEMPLATE, OPENERS_TO_CLOSERS, \
+    PARENTHESIS_OPENER, PARENTHESIS_CLOSER
 from auto_editor.utils import get_index_of_line_id
 from enums import ChangeTypeEnum
-
-'''
-- read through and clean
-- merge master into this
-- move self.file_lines to base class
-- write tests
-'''
 
 
 class Fix1049Rule(BaseRule):
     def __init__(self):
         super().__init__()
-        self.new_vec_name = "dpct_global_range"
         self.file_lines = []
 
     @property
@@ -34,13 +28,12 @@ class Fix1049Rule(BaseRule):
 
     def run_rule(self, project: StructuredProjectSource,
                  warning_first_line: int, warning_last_line: int, file_path: str) -> StructuredProjectSource:
-        loop_beginning_str = "parallel_for("
         self.file_lines = project.paths_to_lines[file_path]
         warning_begin_id = self.file_lines[warning_first_line].id
         warning_end_id = self.file_lines[warning_last_line].id
         for i in range(warning_last_line + 1, len(self.file_lines)):
             current_line = self.file_lines[i]
-            is_loop_starts = loop_beginning_str in current_line.code
+            is_loop_starts = LOOP_BEGINNING_STR in current_line.code
             if is_loop_starts:
                 vec_len, range_line_id, (vec_1, vec_2) = self.get_range_details(i)
                 self.add_vec_product_declaration(vec_1, vec_2, i)
@@ -52,13 +45,13 @@ class Fix1049Rule(BaseRule):
 
     def add_vec_product_declaration(self, vec_1, vec_2, loop_begin_i: int):
         indentation = self.get_indentation(self.file_lines[loop_begin_i].code)
-        declaration = f"{indentation}auto {self.new_vec_name} = {vec_1} * {vec_2};"
+        declaration = indentation + GLOBAL_RANGE_DECLARATION.format(GLOBAL_RANGE_IDENTIFIER, vec_1, vec_2)
         new_lines = [declaration, '']
         self.add_code(new_lines, loop_begin_i)
 
     def get_range_details(self, loop_beginning: int) -> (int, uuid, Tuple[str, str]):
-        for i in range(loop_beginning, loop_beginning + 2):
-            # nd_range must be at same or next line as loop beginning
+        max_lines = 2  # nd_range must be at same or next line as loop beginning
+        for i in range(loop_beginning, loop_beginning + max_lines):
             code = self.file_lines[i].code
             result = re.search(ND_RANGE_PATTERN, code)
             if result:
@@ -105,7 +98,7 @@ class Fix1049Rule(BaseRule):
             if masked_params in masks_to_values.values():
                 mask_name = list(masks_to_values.keys())[list(masks_to_values.values()).index(masked_params)]
             else:
-                mask_name = "mask_" + f'{start_i}'
+                mask_name = MASK_TEMPLATE.format(start_i)
                 masks_to_values[mask_name] = masked_params
 
             closer = code_str[loc_tuple[1]]
@@ -129,17 +122,15 @@ class Fix1049Rule(BaseRule):
         return same_level_enclosings
 
     def get_next_matching_enclosing_location(self, str) -> (int, int):
-        opener = '('
-        closer = ')'
         inner_openers = 0
         inner_closers = 0
         first_opener_i = None
         for i in range(len(str)):
-            if str[i] == opener:
+            if str[i] == PARENTHESIS_OPENER:
                 inner_openers += 1
                 if inner_openers == 1:
                     first_opener_i = i
-            if str[i] == closer:
+            if str[i] == PARENTHESIS_CLOSER:
                 inner_closers += 1
                 if inner_openers == inner_closers:
                     return (first_opener_i, i)
@@ -150,12 +141,8 @@ class Fix1049Rule(BaseRule):
             raise Exception('Corresponding closing character could not be found.')
 
     def get_closing_of_parentheses(self, line_index: int, opener_index) -> (int, int):
-        openers_to_closers = {'(': ')',
-                              '[': ']',
-                              '{': '}'
-                              }
         opener = self.file_lines[line_index].code[opener_index]
-        closer = openers_to_closers[opener]
+        closer = OPENERS_TO_CLOSERS[opener]
 
         inner_openers = 0
         inner_closers = 0
@@ -205,7 +192,7 @@ class Fix1049Rule(BaseRule):
 
         self.remove_code(range_begin, closing_line_i)
 
-        reversed_new_vec = self.reverse_range(self.new_vec_name, vec_len, indentation)
+        reversed_new_vec = self.reverse_range(GLOBAL_RANGE_IDENTIFIER, vec_len, indentation)
         reversed_new_vec[-1] += ','
         new_codes.extend(reversed_new_vec)
 
@@ -231,7 +218,7 @@ class Fix1049Rule(BaseRule):
             if not is_last:
                 code += ','
             else:
-                code += RANGE_CLOSER
+                code += PARENTHESIS_CLOSER
 
             items.append(code)
         return items
