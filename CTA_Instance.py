@@ -43,7 +43,7 @@ class CTA_Instance:
         populate self.final_warnings based on analysis of final version
         '''
         post_analyser = PostAnalyser(self.cta_version_root)
-        self.initial_warnings = post_analyser.get_all_warnings()
+        self.final_warnings = post_analyser.get_all_warnings()
 
     def save_to_csvs(self):
         '''
@@ -58,5 +58,5 @@ class CTA_Instance:
         create files for report
         '''
         presenter = Presenter(self.report_root, self.dpct_version_root, self.cta_version_root, self.initial_warnings, self.final_warnings, self.changes)
-        #print(len(self.initial_warnings), len(self.final_warnings))
+        print(len(self.initial_warnings), len(self.final_warnings), len(self.changes))
         presenter.generate_ui_files()
