@@ -272,13 +272,13 @@ def get_warnings_and_changes(dpct_root, destination_root):
 
 
 def run_presenter():
-    report_root = Path(__file__).parent
-    cta_path = Path(__file__).parent.parent.resolve()
-    dpct_root = Path.joinpath(cta_path, 'auto_editor', 'sample_data', 'test_project')
-    destination_root = Path.joinpath(cta_path, 'auto_editor', 'sample_data', 'destination_dir')
-    all_warnings, final_warnings, changes = get_warnings_and_changes(dpct_root, destination_root)
+    # report_root = Path(__file__).parent
+    #cta_path = Path(__file__).parent.parent.resolve()
+    #dpct_root = Path.joinpath(cta_path, 'auto_editor', 'sample_data', 'test_project')
+    #destination_root = Path.joinpath(cta_path, 'auto_editor', 'sample_data', 'destination_dir')
+    #all_warnings, final_warnings, changes = get_warnings_and_changes(dpct_root, destination_root)
 
-    presenter = Presenter(report_root, all_warnings, final_warnings, changes)
+    presenter = Presenter(self.report_root, self.all_warnings, self.final_warnings, self.changes)
     unique_warning_code, unique_file_path = presenter.get_unique_filepath_and_warning_code(all_warnings)
 
     presenter.show_visualize(report_root, all_warnings)
