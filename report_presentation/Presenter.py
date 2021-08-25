@@ -6,7 +6,7 @@ from report_presentation import diff_html, sub_graph,graph_visualization as grap
 
 
 class Presenter:
-    def __init__(self, report_root,dpct_version_root,cta_version_root, initial_warnings, final_warnings, changes):
+    def __init__(self, report_root, dpct_version_root,cta_version_root, initial_warnings, final_warnings, changes):
         self.report_root = report_root
         self.initial_warnings = initial_warnings
         self.final_warnings = final_warnings
@@ -17,7 +17,6 @@ class Presenter:
     def generate_ui_files(self):
         # Todo: insert code here
         self.run_presenter()
-
 
     def html_page(self, all_warnings, final_warnings, changes, unique_warning_code, unique_file_path, diff_path):
         file_path_string = self.get_string_of_list(unique_file_path)
@@ -118,6 +117,7 @@ class Presenter:
         return html1_7
 
     def get_html8(self, all_warnings):
+        #print('all: ', len(all_warnings))
         html = '''
                         <p class="serif" ><b>     8.  Detailed Warning Information (Before CTA)</b></p>
                         <div class = "before-warning-table">
@@ -208,12 +208,12 @@ class Presenter:
                 message = message.replace('>', '&gt;')
             html += '''
                                 <tr>
-                                        <td  class="serif" >%s</td>
-                                        <td  class="serif" >%s</td>
-                                        <td class="serif" >%s</td>
-                                        <td class="serif" >%s</td>
-                                        <td class="serif" >%s</td>
-                                        <td class="serif" >%s</td>
+                                        <td class="serif">%s</td>
+                                        <td class="serif">%s</td>
+                                        <td class="serif">%s</td>
+                                        <td class="serif">%s</td>
+                                        <td class="serif">%s</td>
+                                        <td class="serif">%s</td>
                                 </tr>
                                 ''' % (num, i.recommendation_code, i.file_path, i.project_name, i.line, message)
         return html
@@ -236,17 +236,20 @@ class Presenter:
         return astring
 
     def create_html(self, report_root, dpct_root, destination_root, all_warnings, final_warnings, changes, unique_warning_code, unique_file_path):
-        diff_path = Path.joinpath(report_root, 'html_files')
+        diff_path = Path.joinpath(Path(report_root), 'html_files')
 
         if diff_path.is_dir() and os.listdir(diff_path):
             diff_html.remove_diff_folder(diff_path)
-        diff_html.find_dpcpp(dpct_root, destination_root, diff_path)
-
-        with open('report.html', 'w') as report:
+        diff_html.find_dpcpp(dpct_root, destination_root, diff_path, report_root)
+        for i in os.listdir(report_root):
+            join_path = os.path.join(report_root, i)
+            if os.path.isfile(join_path):
+                os.remove(join_path)
+        with open(report_root+'/report.html', 'w') as report:
             report.write(
-                Presenter.html_page(self, all_warnings, final_warnings, changes, unique_warning_code, unique_file_path,
+                self.html_page(all_warnings, final_warnings, changes, unique_warning_code, unique_file_path,
                                     diff_path))
-        with open('subgraphs.html', 'w') as sub_images:
+        with open(report_root+'/subgraphs.html', 'w') as sub_images:
             sub_images.write(sub_graph.add_images())
 
     def remove_image_folder(self, image_path):
@@ -255,29 +258,25 @@ class Presenter:
         os.rmdir(image_path)
 
     def show_visualize(self, report_root, all_warnings):
-        image_path = Path.joinpath(report_root, 'images')
+        image_path = Path.joinpath(Path(report_root), 'images')
         if image_path.is_dir() and os.listdir(image_path):
             Presenter.remove_image_folder(self, image_path)
         image_path.mkdir(parents=True, exist_ok=True)
         graph.visualization_overall(all_warnings, image_path)
         graph.visualization_partial(all_warnings, image_path)
 
-
-    def get_warnings_and_changes(self,dpct_root, destination_root):
-        preAnalyser = PreAnalyser(self.dpct_root)
+    def get_warnings_and_changes(self, dpct_root, destination_root):
+        preAnalyser = PreAnalyser(dpct_root)
         all_warnings = preAnalyser.get_all_warnings()
         postAnalyser = PostAnalyser(destination_root)
         final_warnings = postAnalyser.get_all_warnings()
         changes = postAnalyser.get_all_recommendation()
         return all_warnings, final_warnings, changes
 
-
     def run_presenter(self):
         # report_root = Path(__file__).parent
-        presenter = Presenter(self.report_root, self.dpct_version_root,self.cta_version_root,self.initial_warnings, self.final_warnings, self.changes)
+        presenter = Presenter(self.report_root, self.dpct_version_root, self.cta_version_root, self.initial_warnings, self.final_warnings, self.changes)
         unique_warning_code, unique_file_path = presenter.get_unique_filepath_and_warning_code(self.initial_warnings)
 
         #presenter.show_visualize(self.report_root, self.initial_warnings)
-        presenter.create_html(self.report_root,self.dpct_version_root, self.cta_version_root, self.initial_warnings, self.final_warnings, self.changes, unique_warning_code, unique_file_path)
-
-
+        presenter.create_html(self.report_root, self.dpct_version_root, self.cta_version_root, self.initial_warnings, self.final_warnings, self.changes, unique_warning_code, unique_file_path)

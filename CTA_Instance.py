@@ -27,6 +27,7 @@ class CTA_Instance:
         '''
         pre_analyser = PreAnalyser(self.dpct_version_root)
         self.initial_warnings = pre_analyser.get_all_warnings()
+        #print('initial: ',len(self.initial_warnings))
 
     def run_editor(self):
         '''
@@ -56,5 +57,6 @@ class CTA_Instance:
         '''
         create files for report
         '''
-        presenter = Presenter(self.report_root, self.dpct_version_root,self.cta_version_root,self.initial_warnings, self.final_warnings, self.changes)
+        presenter = Presenter(self.report_root, self.dpct_version_root, self.cta_version_root, self.initial_warnings, self.final_warnings, self.changes)
+        #print(len(self.initial_warnings), len(self.final_warnings))
         presenter.generate_ui_files()
