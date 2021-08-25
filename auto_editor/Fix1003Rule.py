@@ -95,7 +95,8 @@ class Fix1003Rule(BaseRule):
 
     def test_print(self,all_lines,warning_last_line):
         print("******Fix1003 Result****")
-        print("all_lines[",warning_last_line,"]:", all_lines[warning_last_line ].code)
+        print(warning_last_line)
+        print("all_lines[",warning_last_line,"]:", all_lines[warning_last_line].code)
         print("all_lines[",warning_last_line+1,"]:", all_lines[warning_last_line + 1].code)
         print("all_lines[",warning_last_line+2,"]:", all_lines[warning_last_line + 2].code)
         print("all_lines[",warning_last_line+3,"]:", all_lines[warning_last_line + 3].code)

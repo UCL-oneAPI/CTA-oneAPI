@@ -1,18 +1,18 @@
 from analysers.PreAnalyser import PreAnalyser
 from analysers.PostAnalyser import PostAnalyser
-import diff_html
-import sub_graph
-import graph_visualization as graph
 from pathlib import Path
 import os
+from report_presentation import diff_html, sub_graph,graph_visualization as graph
 
 
 class Presenter:
-    def __init__(self, report_root, initial_warnings, final_warnings, changes):
+    def __init__(self, report_root,dpct_version_root,cta_version_root, initial_warnings, final_warnings, changes):
         self.report_root = report_root
         self.initial_warnings = initial_warnings
         self.final_warnings = final_warnings
         self.changes = changes
+        self.dpct_version_root = dpct_version_root
+        self.cta_version_root = cta_version_root
 
     def generate_ui_files(self):
         # Todo: insert code here
@@ -278,10 +278,10 @@ class Presenter:
         #destination_root = Path.joinpath(cta_path, 'auto_editor', 'sample_data', 'destination_dir')
         #all_warnings, final_warnings, changes = get_warnings_and_changes(dpct_root, destination_root)
 
-        presenter = Presenter(self.report_root, self.all_warnings, self.final_warnings, self.changes)
+        presenter = Presenter(self.report_root, self.dpct_version_root,self.cta_version_root,self.initial_warnings, self.final_warnings, self.changes)
         unique_warning_code, unique_file_path = presenter.get_unique_filepath_and_warning_code(self.initial_warnings)
 
-        presenter.show_visualize(self.report_root, self.all_warnings)
-        presenter.create_html(self.dpct_root, self.destination_root, self.initial_warnings, self.final_warnings, self.changes, unique_warning_code, unique_file_path)
+        #presenter.show_visualize(self.report_root, self.initial_warnings)
+        presenter.create_html(self.dpct_version_root, self.cta_version_root, self.initial_warnings, self.final_warnings, self.changes, unique_warning_code, unique_file_path)
 
 

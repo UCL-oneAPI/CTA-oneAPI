@@ -14,7 +14,7 @@ def run_cta(dpct_project_path, destination_path, report_path, is_report_only=Fal
     cta_instance.run_pre_analyzer()
 
     if not is_report_only:
-        cta_instance.run_editor()
+        #cta_instance.run_editor()
         cta_instance.run_post_analyzer()
 
     cta_instance.create_report_presentation()
