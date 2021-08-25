@@ -235,8 +235,9 @@ class Presenter:
             astring += " ;   "
         return astring
 
-    def create_html(self, dpct_root, destination_root, all_warnings, final_warnings, changes, unique_warning_code, unique_file_path):
-        diff_path = Path.joinpath(Path.cwd(), 'html_files')
+    def create_html(self, report_root, dpct_root, destination_root, all_warnings, final_warnings, changes, unique_warning_code, unique_file_path):
+        diff_path = Path.joinpath(report_root, 'html_files')
+
         if diff_path.is_dir() and os.listdir(diff_path):
             diff_html.remove_diff_folder(diff_path)
         diff_html.find_dpcpp(dpct_root, destination_root, diff_path)
@@ -273,15 +274,10 @@ class Presenter:
 
     def run_presenter(self):
         # report_root = Path(__file__).parent
-        #cta_path = Path(__file__).parent.parent.resolve()
-        #dpct_root = Path.joinpath(cta_path, 'auto_editor', 'sample_data', 'test_project')
-        #destination_root = Path.joinpath(cta_path, 'auto_editor', 'sample_data', 'destination_dir')
-        #all_warnings, final_warnings, changes = get_warnings_and_changes(dpct_root, destination_root)
-
         presenter = Presenter(self.report_root, self.dpct_version_root,self.cta_version_root,self.initial_warnings, self.final_warnings, self.changes)
         unique_warning_code, unique_file_path = presenter.get_unique_filepath_and_warning_code(self.initial_warnings)
 
         #presenter.show_visualize(self.report_root, self.initial_warnings)
-        presenter.create_html(self.dpct_version_root, self.cta_version_root, self.initial_warnings, self.final_warnings, self.changes, unique_warning_code, unique_file_path)
+        presenter.create_html(self.report_root,self.dpct_version_root, self.cta_version_root, self.initial_warnings, self.final_warnings, self.changes, unique_warning_code, unique_file_path)
 
 
