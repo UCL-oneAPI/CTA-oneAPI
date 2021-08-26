@@ -188,8 +188,7 @@ class Presenter:
                         <p class="serif" ><b>     12.  Number of warnings have CTA recommendation: %s</b></p>
                                 ''' % len(changes)
         html += '''
-                        <p class="serif" ><b>     13.  Comparison of before & after </b></p>
-                        <p class="serif" ><b>     Diff Link:  </b></p>               
+                        <p class="serif" ><b>     13.  Comparison of before & after : </b></p>
                         '''
         for file in diff_path.rglob('*.html'):
             html += '''
