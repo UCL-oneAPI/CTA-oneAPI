@@ -6,10 +6,13 @@ from report_presentation import diff_html, sub_graph, graph_visualization as gra
 
 
 class Presenter:
-    def __init__(self, report_root, dpct_version_root,cta_version_root, initial_warnings, final_warnings, changes):
+
+    def __init__(self, report_root, dpct_version_root,cta_version_root, initial_warnings, cta_recommendations,final_warnings, changes):
+
         self.report_root = report_root
         self.initial_warnings = initial_warnings
         self.final_warnings = final_warnings
+        self.cta_recommendations = cta_recommendations
         self.changes = changes
         self.dpct_version_root = dpct_version_root
         self.cta_version_root = cta_version_root
