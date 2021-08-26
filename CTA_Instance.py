@@ -19,6 +19,7 @@ class CTA_Instance:
         self.report_root = report_root
         self.initial_warnings = []
         self.final_warnings = []
+        self.cta_recommendations = []
         self.changes = []
 
     def run_pre_analyzer(self):
@@ -42,7 +43,8 @@ class CTA_Instance:
         populate self.final_warnings based on analysis of final version
         '''
         post_analyser = PostAnalyser(self.cta_version_root)
-        self.initial_warnings = post_analyser.get_all_warnings()
+        self.final_warnings = post_analyser.get_all_warnings()
+        self.cta_recommendations = post_analyser.get_all_recommendation()
 
     def save_to_csvs(self):
         '''
@@ -50,11 +52,16 @@ class CTA_Instance:
         so that they can be inspected after the run.
         :return: path to newly generated folder where these csvs are stored (next to presentation folder)
         '''
+        # TODO: please also store self.cta_recommendations
         pass
 
     def create_report_presentation(self):
         '''
         create files for report
         '''
-        presenter = Presenter(self.report_root, self.initial_warnings, self.final_warnings, self.changes)
+        presenter = Presenter(self.report_root,
+                              self.initial_warnings,
+                              self.final_warnings,
+                              self.cta_recommendations,
+                              self.changes)
         presenter.generate_ui_files()
