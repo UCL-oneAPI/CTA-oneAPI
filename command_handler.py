@@ -72,10 +72,15 @@ if __name__ == '__main__':
     parser.add_argument('--version', action='version')
     args = parser.parse_args()
 
+    des = ""
     if args.destination_path == None:
         des = ""
     else:
-        des = '/'+str(args.destination_path)
+        if os.path.exists(args.destination_path):
+            des = '/'+str(args.destination_path)
+        else:
+            os.mkdir(args.destination_path)  # make directory
+
     output_folder_path = (str(os.getcwd()) + str(des)+'\outputs').replace('\\','/')
     if os.path.exists(output_folder_path):
         pass
