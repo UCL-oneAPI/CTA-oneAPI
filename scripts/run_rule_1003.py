@@ -10,8 +10,8 @@ def call_run_rule():
     local_path_to_file = 'cluster.dp.cpp'
     #local_path_to_file = 'kernel_wrapper2.dp.cpp'
     cta_root = Path(__file__).parent.parent.resolve()
-    path_to_dpct_root = Path.joinpath(cta_root, 'auto_editor', 'sample_data', 'test_project')
-    path_to_new_root = Path.joinpath(cta_root, 'auto_editor', 'sample_data', 'destination_dir')
+    path_to_dpct_root = Path.joinpath(cta_root, 'scripts', 'sample_data', 'test_project')
+    path_to_new_root = Path.joinpath(cta_root, 'scripts', 'sample_data', 'destination_dir')
 
     if os.path.exists(path_to_new_root):
         for f in os.listdir(path_to_new_root):
