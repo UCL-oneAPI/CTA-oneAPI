@@ -27,11 +27,12 @@ cd CTA-oneAPI
 CTA is currently available in two modes.
 Use the command below to get the output of default mode (including CTA processed files and a report)  
 ```Shell
-python command_handler.py --mode=default --project-path=auto_editor/sample_data/test_project --destination-path=auto_editor/sample_data/
+python command_handler.py --mode=default --project-path=auto_editor/sample_data/test_project --destination-path=auto_editor/sample_data/destination_dir --report-path=auto_editor/sample_data/report
 ```
 Or set `--mode=read_only` to get report only. 
 
-The `auto_editor/sample_data/test_project` is the path to the DPCT files, and `auto_editor/sample_data/` is the path to the output files.
+`auto_editor/sample_data/test_project` is the path to the DPCT files, `auto_editor/sample_data/destination_dir` is the path to the CTA processed files,
+and `auto_editor/sample_data/report` is the path to the CTA generated HTML report
 
 ### For Helps
 ```Shell
