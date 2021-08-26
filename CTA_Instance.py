@@ -62,6 +62,6 @@ class CTA_Instance:
         create files for report
         '''
 
-        presenter = Presenter(self.report_root, self.dpct_version_root, self.cta_version_root, self.initial_warnings, self.final_warnings, self.cta_recommendations, self.changes)
+        presenter = Presenter(self.report_root, self.dpct_version_root, self.cta_version_root, self.initial_warnings, self.cta_recommendations, self.final_warnings, self.changes)
 
         presenter.generate_ui_files()

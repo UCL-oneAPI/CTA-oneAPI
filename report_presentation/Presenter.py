@@ -21,16 +21,16 @@ class Presenter:
         # Todo: insert code here
         self.run_presenter()
 
-    def html_page(self, all_warnings, final_warnings, changes, unique_warning_code, unique_file_path, diff_path):
+    def html_page(self, all_warnings, recommendations, final_warnings, changes, unique_warning_code, unique_file_path, diff_path):
         file_path_string = self.get_string_of_list(unique_file_path)
         warning_code_string = self.get_string_of_list(unique_warning_code)
         html = self.html_header()
         html += self.basic_analysis(all_warnings, unique_warning_code, unique_file_path, file_path_string, warning_code_string)
         html += self.before_cta_table(all_warnings)
         html += self.after_cta_table(final_warnings)
-        html += self.recommendation_table(changes)
-        warning_fixed = len(all_warnings) - len(final_warnings) - len(changes)
-        html += self.final_analysis(warning_fixed, changes, diff_path)
+        html += self.recommendation_table(recommendations)
+        warning_fixed = len(all_warnings) - len(final_warnings) - len(recommendations)
+        html += self.final_analysis(warning_fixed, recommendations, diff_path)
         html += '''
                 <br>
                 </body>
@@ -120,7 +120,6 @@ class Presenter:
         return html_basic_info
 
     def before_cta_table(self, all_warnings):
-        #print('all: ', len(all_warnings))
         html = '''
                         <p class="serif" ><b>     8.  Detailed Warning Information (Before CTA)</b></p>
                         <div class = "before-warning-table">
@@ -238,7 +237,7 @@ class Presenter:
             astring += " ;   "
         return astring
 
-    def create_html(self, report_root, dpct_root, destination_root, all_warnings, final_warnings, changes, unique_warning_code, unique_file_path):
+    def create_html(self, report_root, dpct_root, destination_root, all_warnings, recommendations, final_warnings, changes, unique_warning_code, unique_file_path):
         diff_path = Path.joinpath(Path(report_root), 'html_files')
 
         if diff_path.is_dir() and os.listdir(diff_path):
@@ -250,7 +249,7 @@ class Presenter:
                 os.remove(join_path)
         with open(report_root+'/report.html', 'w') as report:
             report.write(
-                self.html_page(all_warnings, final_warnings, changes, unique_warning_code, unique_file_path,
+                self.html_page(all_warnings, recommendations, final_warnings, changes, unique_warning_code, unique_file_path,
                                     diff_path))
         with open(report_root+'/subgraphs.html', 'w') as sub_images:
             sub_images.write(sub_graph.add_images(report_root))
@@ -278,8 +277,8 @@ class Presenter:
 
     def run_presenter(self):
         # report_root = Path(__file__).parent
-        presenter = Presenter(self.report_root, self.dpct_version_root, self.cta_version_root, self.initial_warnings, self.final_warnings, self.changes)
+        presenter = Presenter(self.report_root, self.dpct_version_root, self.cta_version_root, self.initial_warnings, self.cta_recommendations, self.final_warnings, self.changes)
         unique_warning_code, unique_file_path = presenter.get_unique_filepath_and_warning_code(self.initial_warnings)
 
         presenter.show_visualize(self.report_root, self.initial_warnings)
-        presenter.create_html(self.report_root, self.dpct_version_root, self.cta_version_root, self.initial_warnings, self.final_warnings, self.changes, unique_warning_code, unique_file_path)
+        presenter.create_html(self.report_root, self.dpct_version_root, self.cta_version_root, self.initial_warnings, self.cta_recommendations, self.final_warnings, self.changes, unique_warning_code, unique_file_path)
