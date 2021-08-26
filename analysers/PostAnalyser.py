@@ -25,13 +25,13 @@ class PostAnalyser(BaseAnalyser):
         project = StructuredProjectSource(self.project_root_path)
         warnings_dict = project.dpct_warnings_dict
         all_warnings = []
-        all_codes = {}
-        all_ids = {}
+        codes = []
+        ids = []
 
-        for name, line_item in project.paths_to_lines.items():
-            for i in line_item:
-                all_codes.setdefault(name, []).append(i.code)
-                all_ids.setdefault(name, []).append(i.id)
+        for i in project.paths_to_lines.values():
+            for j in i:
+                codes.append(j.code)
+                ids.append(j.id)
 
         for k, v in warnings_dict.items():
             for info in v:
@@ -45,7 +45,6 @@ class PostAnalyser(BaseAnalyser):
                                       message=message,
                                       line=first_line)
                 all_warnings.append(warning)
-
         return all_warnings
 
     def count_warnings_numbers(self, warning_code, cta_number, dpct_number):
