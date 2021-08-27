@@ -21,6 +21,7 @@ class LineItem:
 
     def get_cta_recommendation(self):
         pattern = ".*(CTA\d{4}):\d+: "
+        #pattern = ".*(CTA\d{4}): "
         code_line = self.code.lstrip()
         result = re.search(pattern, code_line)
 
