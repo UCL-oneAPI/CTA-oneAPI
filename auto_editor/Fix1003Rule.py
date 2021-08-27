@@ -26,9 +26,12 @@ class Fix1003Rule(BaseRule):
         print('-----------------------------------------------------------------------------------------------')
         first_time = True
         warning_code, prefix = "", ""
-        self.all_lines = project.paths_to_lines[file_path]
+        tmp_dict = project.paths_to_lines
+        self.all_lines = tmp_dict[file_path]
         warning_begin_id = self.all_lines[warning_first_line].id
         warning_end_id = self.all_lines[warning_last_line].id
+        warning_begin_index = get_index_of_line_id(warning_begin_id, self.all_lines)
+        warning_end_index = get_index_of_line_id(warning_end_id, self.all_lines)
         print('warning_first_line: ',warning_first_line,' ; warning_last_line: ',warning_last_line)
         one_line_warning_code = True
 
@@ -50,15 +53,16 @@ class Fix1003Rule(BaseRule):
                 new_code = prefix + new_code
                 print("new_code:",new_code)
 
-                warning_begin_index = self.delete_dpct_warning(warning_begin_id, warning_end_id)
+                warning_begin_index = self.replace_useless_multiple_line(warning_begin_index-1, i, self.all_lines)
+
                 print('warning_begin_index',warning_begin_index)
                 new_lineItem = LineItem(new_code)
-                #self.all_lines.insert(i_position,new_lineItem)
-                self.all_lines[warning_begin_index] = new_lineItem
+                self.all_lines.insert(warning_begin_index,new_lineItem)
+                tmp_dict[file_path] = self.all_lines
 
                 break
 
-        project.paths_to_lines[file_path] = self.all_lines
+        project.paths_to_lines[file_path] = tmp_dict[file_path]
         print('length: ',len(project.paths_to_lines[file_path]))
         return project
 
