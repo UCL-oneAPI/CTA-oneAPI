@@ -14,15 +14,6 @@ class PostAnalyser(BaseAnalyser):
     E.g. for the ticket you can assume that all CTA warnings/recommendations begin with "CTA<some-number>: "
     """
 
-    def get_all_warnings(self) -> List[WarningItem]:
-        '''
-        This creates the data for the report of dpct warnings.
-        It analyses the project in self.project_root_path.
-        :return: list of named tuples WarningItem, one WarningItem for each warning in the project
-        '''
-        all_warnings = self.get_warnings()
-        return all_warnings
-
     def count_warnings_numbers(self, warning_code, cta_number, dpct_number):
         if 'CTA' in warning_code:
             cta_number += 1
