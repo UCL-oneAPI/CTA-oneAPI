@@ -8,6 +8,14 @@ class BaseAnalyser:
     def __init__(self, project_root_path: Path):
         self.project_root_path = project_root_path
 
+    def get_all_warnings(self) -> List[WarningItem]:
+        '''
+        :return: list of named tuples with all warnings
+        '''
+        #Todo: implementation in PreAnalyzer and PostAnalyzer is pretty much identical.
+        # It should me moved here to avoid cloning
+        return []
+
     def get_first_line_num(self, first_id, codes, ids):
         first = 0
         if first_id in ids:
