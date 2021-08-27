@@ -5,7 +5,7 @@ from auto_editor.StructuredProjectSource import StructuredProjectSource
 from testing_support.BaseTest import BaseTest
 
 
-class Test_Fix1003Rule(BaseTest):
+class TestFix1003Rule(BaseTest):
     @property
     def test_project(self):
         path = self.get_full_test_path("unit_testing_data/1003_testing")
