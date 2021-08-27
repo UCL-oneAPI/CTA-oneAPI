@@ -18,12 +18,10 @@ class Presenter:
         self.cta_version_root = cta_version_root
 
     def generate_ui_files(self):
-        presenter = Presenter(self.report_root, self.dpct_version_root, self.cta_version_root, self.initial_warnings,
-                              self.cta_recommendations, self.final_warnings, self.changes)
-        unique_warning_code, unique_file_path = presenter.get_unique_filepath_and_warning_code(self.initial_warnings)
+        unique_warning_code, unique_file_path = self.get_unique_filepath_and_warning_code(self.initial_warnings)
 
-        presenter.show_visualize(self.report_root, self.initial_warnings)
-        presenter.create_html(self.report_root, self.dpct_version_root, self.cta_version_root, self.initial_warnings,
+        self.show_visualize(self.report_root, self.initial_warnings)
+        self.create_html(self.report_root, self.dpct_version_root, self.cta_version_root, self.initial_warnings,
                               self.cta_recommendations, self.final_warnings, self.changes, unique_warning_code,
                               unique_file_path)
 
