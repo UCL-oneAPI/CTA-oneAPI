@@ -10,4 +10,5 @@
                                               q_ct1),
        0));
 
+
   CUDA_SAFE_CALL((c->pi = sycl::malloc_device<float>(num_clusters, q_ct1), 0));

@@ -60,7 +60,6 @@ class Fix1003Rule(BaseRule):
                 new_lineItem = LineItem(new_code)
                 self.all_lines.insert(warning_begin_index,new_lineItem)
                 tmp_dict[file_path] = self.all_lines
-
                 break
 
         project.paths_to_lines[file_path] = tmp_dict[file_path]
