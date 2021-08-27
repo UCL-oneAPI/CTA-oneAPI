@@ -49,6 +49,7 @@ class Fix1003Rule(BaseRule):
                     warning_code = warning_code + now_code + "\n"
                 else:
                     warning_code = now_code
+                print("code to remove: ",warning_code)
                 prefix, new_code = self.remove_function_info(warning_code)
                 new_code = prefix + new_code
                 print("new_code:",new_code)
@@ -98,12 +99,15 @@ class Fix1003Rule(BaseRule):
     def remove_function_info(self, warning_code):
         new_code = warning_code
         prefix = self.get_indentation_spaces(new_code)
-        if "=(" in warning_code:
+
+        if "((" in warning_code:
+            new_code = self.replace_condition("((", warning_code)
+        elif "( (" in warning_code:
+            new_code = self.replace_condition("((", warning_code)
+        elif "=(" in warning_code:
             new_code = self.replace_condition("=(", warning_code)
         elif "= (" in warning_code:
             new_code = self.replace_condition("= (", warning_code)
-        elif "((" in warning_code:
-            new_code = self.replace_condition("((", warning_code)
 
         return prefix, new_code
 
