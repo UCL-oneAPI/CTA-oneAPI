@@ -27,7 +27,7 @@ cd CTA-oneAPI
 CTA is currently available in two modes.
 Use the command below to get the output of default mode (including CTA processed files and a report)  
 ```Shell
-python command_handler.py --mode=default --project-path=auto_editor/sample_data/test_project --destination-path=auto_editor/sample_data/destination_dir --report-path=auto_editor/sample_data/report
+python command_handler.py --mode=default --project-path=scripts/sample_data/test_project --destination-path=scripts/sample_data/destination_dir --report-path=scripts/sample_data/report
 ```
 Or set `--mode=read_only` to get report only. 
 
