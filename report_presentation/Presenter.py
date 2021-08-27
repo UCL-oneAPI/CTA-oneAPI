@@ -241,7 +241,7 @@ class Presenter:
 
         if diff_path.is_dir() and os.listdir(diff_path):
             diff_html.remove_diff_folder(diff_path)
-        diff_html.find_dpcpp(dpct_root, destination_root, diff_path, report_root)
+        diff_html.find_dpcpp(dpct_root, destination_root, diff_path)
         for i in os.listdir(report_root):
             join_path = os.path.join(report_root, i)
             if os.path.isfile(join_path):

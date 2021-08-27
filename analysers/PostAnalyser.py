@@ -1,6 +1,5 @@
 from analysers.BaseAnalyser import BaseAnalyser
 
-from auto_editor.StructuredProjectSource import StructuredProjectSource
 from auto_editor.StructuredProjectSource_Recommendation import StructuredProjectSource_Recommendation
 from enums import WarningItem, RecommendationItem
 from typing import List
@@ -21,33 +20,7 @@ class PostAnalyser(BaseAnalyser):
         It analyses the project in self.project_root_path.
         :return: list of named tuples WarningItem, one WarningItem for each warning in the project
         '''
-
-        project = StructuredProjectSource(self.project_root_path)
-        warnings_dict = project.dpct_warnings_dict
-        all_warnings = []
-        all_codes = {}
-        all_ids = {}
-
-        for name, line_item in project.paths_to_lines.items():
-            for i in line_item:
-                all_codes.setdefault(name, []).append(i.code)
-                all_ids.setdefault(name, []).append(i.id)
-
-        for k, v in warnings_dict.items():
-            for info in v:
-                path = '/' + info[2]
-                if info[2] in all_ids.keys():
-                    codes = all_codes[info[2]]
-                    ids = all_ids[info[2]]
-                    first_line = self.get_first_line_num(info[0], codes, ids)
-                    message = self.get_warning_message(first_line, info[1], codes, ids)
-                    # cta_number, dpct_number = self.count_warnings_numbers(k,cta_number,dpct_number)
-                    warning = WarningItem(project_name=self.project_root_path.stem,
-                                          warning_code=k,
-                                          file_path=path,
-                                          message=message,
-                                          line=first_line)
-                    all_warnings.append(warning)
+        all_warnings = self.get_warnings()
         return all_warnings
 
     def count_warnings_numbers(self, warning_code, cta_number, dpct_number):
@@ -64,8 +37,8 @@ class PostAnalyser(BaseAnalyser):
         all_codes = {}
         all_ids = {}
 
-        for name, line_item in project.paths_to_lines.items():
-            for i in line_item:
+        for name, line_items in project.paths_to_lines.items():
+            for i in line_items:
                 all_codes.setdefault(name, []).append(i.code)
                 all_ids.setdefault(name, []).append(i.id)
 
@@ -83,6 +56,5 @@ class PostAnalyser(BaseAnalyser):
                                                  message=message,
                                                  line=first_line)
                     all_recommendations.append(warning)
-
 
         return all_recommendations

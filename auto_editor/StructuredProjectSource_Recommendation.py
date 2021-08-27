@@ -3,13 +3,9 @@ from enums import RecommendationLocation
 from pathlib import Path
 
 
-
 class StructuredProjectSource_Recommendation(StructuredProjectSource):
     def __init__(self, dpct_root: Path):
         super().__init__(dpct_root)
-        # self.dpct_root = dpct_root
-        # self.paths_to_lines = self.get_paths_to_lines()
-        # self.dpct_warnings_dict = self.get_dpct_warnings_dict()
         self.recommendations_dict = self.get_all_recommendations()
 
     def get_all_recommendations(self):

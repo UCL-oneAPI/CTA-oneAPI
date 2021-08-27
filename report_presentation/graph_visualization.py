@@ -34,12 +34,12 @@ def visualization_overall(warnings, image_path):
 
 def visualization_partial(warnings, image_path):
     file_warnings = {}
-    codes = []
+    codes = set()
     for i in warnings:
         file_name = Path(i.file_path).name
         file_warnings.setdefault(file_name, []).append(i.warning_code)
-        codes.append(i.warning_code)
-    codes = set(codes)
+        codes.add(i.warning_code)
+    #codes = set(codes)
     for k, v in file_warnings.items():
         warning_distribution = Counter(v)
         for code in codes:
