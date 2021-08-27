@@ -36,7 +36,7 @@ class BaseRule:
                 code_lines = current_project_version.paths_to_lines[file_path]
 
                 # index of line id is taken at each iteration,
-                # as it may change if the project is modified in preveious iterations
+                # as it may change if the project is modified in previous iterations
                 warning_first_line = get_index_of_line_id(warning.first_line_id, code_lines)
                 warning_last_line = get_index_of_line_id(warning.last_line_id, code_lines)
 
