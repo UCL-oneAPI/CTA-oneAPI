@@ -18,8 +18,14 @@ class Presenter:
         self.cta_version_root = cta_version_root
 
     def generate_ui_files(self):
-        # Todo: insert code here
-        self.run_presenter()
+        presenter = Presenter(self.report_root, self.dpct_version_root, self.cta_version_root, self.initial_warnings,
+                              self.cta_recommendations, self.final_warnings, self.changes)
+        unique_warning_code, unique_file_path = presenter.get_unique_filepath_and_warning_code(self.initial_warnings)
+
+        presenter.show_visualize(self.report_root, self.initial_warnings)
+        presenter.create_html(self.report_root, self.dpct_version_root, self.cta_version_root, self.initial_warnings,
+                              self.cta_recommendations, self.final_warnings, self.changes, unique_warning_code,
+                              unique_file_path)
 
     def html_page(self, all_warnings, recommendations, final_warnings, changes, unique_warning_code, unique_file_path, diff_path):
         file_path_string = self.get_string_of_list(unique_file_path)
@@ -273,11 +279,3 @@ class Presenter:
         final_warnings = postAnalyser.get_all_warnings()
         changes = postAnalyser.get_all_recommendation()
         return all_warnings, final_warnings, changes
-
-    def run_presenter(self):
-        # report_root = Path(__file__).parent
-        presenter = Presenter(self.report_root, self.dpct_version_root, self.cta_version_root, self.initial_warnings, self.cta_recommendations, self.final_warnings, self.changes)
-        unique_warning_code, unique_file_path = presenter.get_unique_filepath_and_warning_code(self.initial_warnings)
-
-        presenter.show_visualize(self.report_root, self.initial_warnings)
-        presenter.create_html(self.report_root, self.dpct_version_root, self.cta_version_root, self.initial_warnings, self.cta_recommendations, self.final_warnings, self.changes, unique_warning_code, unique_file_path)
