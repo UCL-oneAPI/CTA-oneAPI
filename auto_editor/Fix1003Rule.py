@@ -90,24 +90,6 @@ class Fix1003Rule(BaseRule):
         self.remove_code(warning_begin_i, warning_end_i)
         return warning_begin_i
 
-    # def get_index_of_line_id(line_id, code_lines: List[LineItem]) -> int:
-    #     for i in range(len(code_lines)):
-    #         if code_lines[i].id == line_id:
-    #             return i
-    #     raise Exception("No line with given ID found.")
-    #
-    # def remove_code(self, first_line: int, last_line: int = None):
-    #     remaining_line = last_line + 1 if last_line else first_line + 1
-    #     print("remove", self.file_lines[first_line: remaining_line])
-    #     del self.file_lines[first_line: remaining_line]
-    #
-    # def delete_dpct_warning(self, warning_begin_id, warning_end_id):
-    #     warning_begin_i = self.get_index_of_line_id(warning_begin_id, self.file_lines)
-    #     warning_end_i = self.get_index_of_line_id(warning_end_id, self.file_lines)
-    #     self.remove_code(warning_begin_i, warning_end_i)
-
-
-
 
     def remove_function_info(self, warning_code):
         new_code = warning_code
