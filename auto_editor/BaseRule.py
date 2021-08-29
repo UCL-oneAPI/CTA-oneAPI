@@ -3,8 +3,8 @@ from abc import abstractmethod
 from typing import List
 from uuid import uuid4
 
-from auto_editor.LineItem import LineItem
 from auto_editor.StructuredProjectSource import StructuredProjectSource
+from auto_editor.utils import get_index_of_line_id
 from enums import CodeChange, DiffOperationEnum, ChangeTypeEnum
 
 
@@ -36,9 +36,9 @@ class BaseRule:
                 code_lines = current_project_version.paths_to_lines[file_path]
 
                 # index of line id is taken at each iteration,
-                # as it may change if the project is modified in preveious iterations
-                warning_first_line = self.get_index_of_line_id(warning.first_line_id, code_lines)
-                warning_last_line = self.get_index_of_line_id(warning.last_line_id, code_lines)
+                # as it may change if the project is modified in previous iterations
+                warning_first_line = get_index_of_line_id(warning.first_line_id, code_lines)
+                warning_last_line = get_index_of_line_id(warning.last_line_id, code_lines)
 
                 # project is updated every time a rule runs, so it always has latest changes.
                 # the update for each warning is tracked, so all changes related to that warning can be associated to each other
@@ -91,12 +91,6 @@ class BaseRule:
                                     rule=self.__class__.__name__,
                                     change_type=self.change_type)
                 self.tracked_changes.append(change)
-
-    def get_index_of_line_id(self, id, code_lines: List[LineItem]):
-        for i in range(len(code_lines)):
-            if code_lines[i].id == id:
-                return i
-        raise Exception("No line with given ID found.")
 
     def get_tracked_changes(self) -> List[CodeChange]:
         if not self.is_run_complete:

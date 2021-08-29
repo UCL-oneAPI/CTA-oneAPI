@@ -1,6 +1,8 @@
 from CTA_Instance import CTA_Instance
 import argparse
 import os
+import os.path
+
 
 # This defines the CLI and handles user commands.
 # Todo Zhongyuan: add CLI implementation
@@ -27,7 +29,16 @@ def validate_paths(dpct_project_path, destination_path):
     generates exceptions if directory of destination_path is not empty
     or if dpct_project_path directory contains no (nested) .dp.cpp or .dp.h files
     '''
-    if dpct_project_path.endswith('.cpp') is False:
+    if os.path.exists(dpct_project_path) is False:
+        r = "The dpct project path does not exist."
+        return r
+    filenames = os.listdir(dpct_project_path)
+    state_cpp = False
+    for filename in filenames:
+        if filename.endswith('.cpp') is True:
+            state_cpp = True
+
+    if not state_cpp:
         r = "The path does not contain the cpp file."
         return r
     elif os.path.exists(destination_path) is False:
@@ -61,10 +72,28 @@ if __name__ == '__main__':
     parser.add_argument('--version', action='version')
     args = parser.parse_args()
 
-    if args.mode == 'default':
-        run_cta(args.project_path, args.destination_path, args.report_path)
+    des = ""
+    if args.destination_path == None:
+        des = ""
+    else:
+        if os.path.exists(args.destination_path):
+            des = '/'+str(args.destination_path)
+        else:
+            os.mkdir(args.destination_path)  # make directory
 
-    if args.mode == 'report_only':
-        run_cta(args.project_path, args.destination_path, args.report_path,is_report_only=True)
+    output_folder_path = (str(os.getcwd()) + str(des)+'\outputs').replace('\\','/')
+    if os.path.exists(output_folder_path):
+        pass
+    else:
+        os.mkdir(output_folder_path)  # make directory
+    # print(output_folder_path)
+    validate_check_result = validate_paths(args.project_path,
+                                           output_folder_path)  # get validate path checking result
+    if validate_check_result is True:
+        if args.mode == 'default':
+            run_cta(args.project_path, args.destination_path, args.report_path)
 
-
+        if args.mode == 'report_only':
+            run_cta(args.project_path, args.destination_path, args.report_path, is_report_only=True)
+    else:
+        print(validate_check_result)
