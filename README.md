@@ -23,6 +23,7 @@ cd CTA-oneAPI
 ```
 
 ### Prerequisites
+Create a virtual environment, e.g. using `venv`.
 To install required packages, run `pip install -r -U requirements.txt
 `
 
