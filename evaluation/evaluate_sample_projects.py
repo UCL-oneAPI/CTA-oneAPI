@@ -15,7 +15,7 @@ def evaluate_samples(projects_root, report_path):
 
     # run cta on all projects
     for path in all_paths:
-        dpct_root = path + '/dpct-version'  # expected to be provided in each project
+        dpct_root = path + '/dpcpp'  # expected to be provided in each project
         destination_dir = path + '/cta-version'
         project_report_dir = path + 'cta-report'
         cta_instance = run_cta(dpct_root, destination_dir, project_report_dir)
