@@ -8,8 +8,8 @@ RULES_TO_DESCRIPTIONS = {
     Fix1049Rule: "Reproduce 1049 manual changes from sample data",
 
     #Todo Qichen: add again when bug is fixed
-    # AddCommentsRule: "Insert comments to provide recommendations for various warnings",
+    AddCommentsRule: "Insert comments to provide recommendations for various warnings",
 
     # test rule with simple exemplary implementation
-    AddCommentsTestRule: "Insert comments to provide recommendations for various warnings"
+    # AddCommentsTestRule: "Insert comments to provide recommendations for various warnings"
 }

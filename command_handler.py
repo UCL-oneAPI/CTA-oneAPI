@@ -19,6 +19,7 @@ def run_cta(dpct_project_path, destination_path, report_path, is_report_only=Fal
 
     cta_instance.create_report_presentation()
     cta_instance.save_to_csvs()
+    return cta_instance
 
 
 def validate_paths(dpct_project_path, destination_path):
