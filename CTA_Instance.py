@@ -59,8 +59,8 @@ class CTA_Instance:
         folder = os.path.exists(root)
         if not folder:
             os.mkdir(root)
-        pd.DataFrame(self.initial_warnings).to_csv(root + '/pre-analyzer.csv')
-        pd.DataFrame(self.final_warnings).to_csv(root + '/post_analyzer.csv')
+        pd.DataFrame(self.initial_warnings).to_csv(root + '/initial_warnings.csv')
+        pd.DataFrame(self.final_warnings).to_csv(root + '/final_warnings.csv')
         pd.DataFrame(self.changes).to_csv(root + '/changes.csv')
         pd.DataFrame(self.cta_recommendations).to_csv(root + '/cta_recommendations.csv')
 
