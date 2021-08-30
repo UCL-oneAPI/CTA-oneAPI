@@ -17,6 +17,13 @@ class TestFix1049Rule(BaseTest):
         path_to_file = 'comments_range.dp.cpp'
         new_project = AddCommentsRule().run_rule(project=self.test_project, warning_first_line=3,
                                              warning_last_line=7, file_path=path_to_file)
+
+        lines_in_file = new_project.paths_to_lines[path_to_file]
+        self.assertEqual(15, len(lines_in_file))
+
+        has_global_range_declaration = "CTA1065:3: CTA recommended to ignore this warning." in lines_in_file[3].code
+        self.assertTrue(has_global_range_declaration)
+
         cta_root = Path(__file__).parent.parent.resolve()
         path_to_new_root = Path.joinpath(cta_root, 'testing_support', 'unit_testing_data', 'AddComments_testing', 'result_files')
 
@@ -27,7 +34,6 @@ class TestFix1049Rule(BaseTest):
         os.mkdir(os.path.join(path_to_new_root))
         editor = AutoEditor(dpct_version_root=Path.joinpath(cta_root, 'testing_support', 'unit_testing_data', 'AddComments_testing'), cta_version_root=path_to_new_root)
         changes = editor.make_changes()
-        self.assertEqual(6, len(changes))
 
 
 
