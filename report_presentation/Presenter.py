@@ -201,7 +201,7 @@ class Presenter:
                         '''
         for file in diff_path.rglob('*.html'):
             html += '''
-                    <a href="html_files/%s.html"  class="serif"  >%s</a><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="html_files/%s.html"  class="serif"  >%s</a><br>
                     ''' % (file.stem, file.name)
 
         return html
