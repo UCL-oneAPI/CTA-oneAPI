@@ -1,9 +1,11 @@
+import os
 from pathlib import Path
 
 from analysers.PostAnalyser import PostAnalyser
 from analysers.PreAnalyser import PreAnalyser
 from auto_editor.AutoEditor import AutoEditor
 from report_presentation.Presenter import Presenter
+import pandas as pd
 
 
 class CTA_Instance:
@@ -28,7 +30,6 @@ class CTA_Instance:
         '''
         pre_analyser = PreAnalyser(self.dpct_version_root)
         self.initial_warnings = pre_analyser.get_all_warnings()
-        #print('initial: ',len(self.initial_warnings))
 
     def run_editor(self):
         '''
@@ -47,21 +48,27 @@ class CTA_Instance:
         self.final_warnings = post_analyser.get_all_warnings()
         self.cta_recommendations = post_analyser.get_all_recommendation()
 
-
     def save_to_csvs(self):
         '''
         Store initial_warnings, final_warnings and changes as separate csvs,
         so that they can be inspected after the run.
         :return: path to newly generated folder where these csvs are stored (next to presentation folder)
         '''
-        # TODO: please also store self.cta_recommendations
-        pass
+        root = self.report_root + "/raw_data"
+        folder = os.path.exists(root)
+        if not folder:
+            os.mkdir(root)
+        pd.DataFrame(self.initial_warnings).to_csv(root + '/initial_warnings.csv')
+        pd.DataFrame(self.final_warnings).to_csv(root + '/final_warnings.csv')
+        pd.DataFrame(self.changes).to_csv(root + '/changes.csv')
+        pd.DataFrame(self.cta_recommendations).to_csv(root + '/cta_recommendations.csv')
 
     def create_report_presentation(self):
         '''
         create files for report
         '''
-
+      
         presenter = Presenter(self.report_root, self.dpct_version_root, self.cta_version_root, self.initial_warnings, self.cta_recommendations, self.final_warnings, self.changes)
 
         presenter.generate_ui_files()
+

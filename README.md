@@ -16,13 +16,16 @@ Website: https://ucl-oneapi.github.io/CTA-oneAPI/
 
 ## Installation
 
-### Prerequisites
-
 ### Download
 ```Shell
 git clone https://github.com/UCL-oneAPI/CTA-oneAPI
 cd CTA-oneAPI
 ```
+
+### Prerequisites
+To install required packages, run `pip install -r -U requirements.txt
+`
+
 ## Usage
 CTA is currently available in two modes.
 Use the command below to get the output of default mode (including CTA processed files and a report)  
@@ -33,6 +36,14 @@ Or set `--mode=read_only` to get report only.
 
 `auto_editor/sample_data/test_project` is the path to the DPCT files, `auto_editor/sample_data/destination_dir` is the path to the CTA processed files,
 and `auto_editor/sample_data/report` is the path to the CTA generated HTML report
+
+## Testing
+To run tests, run `python -m unittest`.
+To generate a test coverage report, run: 
+```Shell
+ coverage run -m unittest
+ coverage report -m 
+```
 
 ### For Helps
 ```Shell
