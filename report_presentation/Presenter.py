@@ -259,8 +259,7 @@ class Presenter:
         with open(report_root + '/report.html', 'w') as report:
             report.write(
                 self.html_page(all_warnings, recommendations, final_warnings, changes, unique_warning_code,
-                               unique_file_path,
-                               diff_path))
+                               unique_file_path, diff_path))
         with open(report_root + '/subgraphs.html', 'w') as sub_images:
             sub_images.write(sub_graph.add_images(report_root))
 
