@@ -56,13 +56,18 @@ python command_handler.py --version
 ```
 
 ## Report
-### Auto-generate Report Example
-link:
-### Sample Programs Analysis Report
-link:
-### Special cases Analysis Report
-link:
-### Warning Message & Suggestion Report
-link:
-### Analysis Warnings Data
-link:
+Auto-generate Report Example  
+link:  
+Sample Programs Analysis Report  
+https://github.com/UCL-oneAPI/CTA-oneAPI/blob/main/historical_report/Sample%20programs%20analysis.docx  
+Special cases Analysis Report  
+https://github.com/UCL-oneAPI/CTA-oneAPI/blob/main/historical_report/Special%20cases%26Analysis.docx   
+Warning Message & Suggestion Report  
+https://github.com/UCL-oneAPI/CTA-oneAPI/blob/main/historical_report/warning%20message%26suggestion.xlsx  
+Analysis Warnings Data  
+https://github.com/UCL-oneAPI/CTA-oneAPI/blob/main/historical_report/Analysis%20_warnings_data.xlsx
+
+##Mapping
+Mapping is a tool for generating test analysis data, if you would like to learn more 
+about this tool, please visit the following link:   
+https://github.com/UCL-oneAPI/oneAPI-mapping
