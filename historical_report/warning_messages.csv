@@ -1,0 +1,321 @@
+message_id,message
+1,"The workgroup size passed to the SYCL kernel may
+* exceed the limit. To get the device limit, query
+* info::device::max_work_group_size. Adjust the workgroup size if
+* needed.
+"
+2,"The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.
+"
+3,"The workgroup size passed to the SYCL kernel may exceed
+the limit. To get the device limit, query
+info::device::max_work_group_size. Adjust the workgroup size if
+needed.
+"
+4,"Migrated API does not return error code. (*, 0) is inserted.
+You may need to rewrite this code.
+"
+5,"Error handling if-stmt was detected but could not be
+rewritten.
+"
+6,"The statement could not be removed.
+"
+7,"clock function is not defined in the DPC++. This is a
+hardware-specific feature. Consult with your hardware vendor to find a
+replacement.
+"
+8,"The workgroup size passed to the SYCL kernel may exceed the limit.
+To get the device limit, query info::device::max_work_group_size. Adjust the
+workgroup size if needed.
+"
+9,"Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.
+"
+10,"Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for
+better performance, if there is no access to global memory.
+"
+11,"The generated code assumes that ""l2_norm"" points to the global
+memory address space. If it points to a local memory address space, replace
+""dpct::atomic_fetch_add"" with ""dpct::atomic_fetch_add<float,
+sycl::access::address_space::local_space>"".
+"
+12,"The generated code assumes that ""total_obj_val"" points to the
+global memory address space. If it points to a local memory address space,
+replace ""dpct::atomic_fetch_add"" with ""dpct::atomic_fetch_add<float,
+sycl::access::address_space::local_space>"".
+"
+13,"The generated code assumes that ""correct"" points to the global
+memory address space. If it points to a local memory address space, replace
+""dpct::atomic_fetch_add"" with ""dpct::atomic_fetch_add<int,
+sycl::access::address_space::local_space>"".
+"
+14,"The generated code assumes that ""&grad[A_col_index[j]]"" points
+to the global memory address space. If it points to a local memory address
+space, replace ""dpct::atomic_fetch_add"" with
+""dpct::atomic_fetch_add<float, sycl::access::address_space::local_space>"".
+"
+15,"Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.
+"
+16,"The workgroup size passed to the SYCL kernel may exceed the
+* limit. To get the device limit, query info::device::max_work_group_size.
+* Adjust the workgroup size if needed.
+"
+17,"The generated code assumes that ""&vo[im + dims.nm     * (
+iu + NU           * (
+ix + dims_ncell_x * (
+iy + dims_ncell_y * (
+ie + dims_ne      * (
+"
+18,"The generated code assumes that ""&head[0]"" points to the global
+memory address space. If it points to a local memory address space, replace
+""dpct::atomic_fetch_add"" with ""dpct::atomic_fetch_add<int,
+sycl::access::address_space::local_space>"".
+"
+19,"The generated code assumes that ""&head[0]"" points to the
+global memory address space. If it points to a local memory address
+space, replace ""dpct::atomic_fetch_add"" with
+""dpct::atomic_fetch_add<int, sycl::access::address_space::local_space>"".
+"
+20,"The generated code assumes that ""&finished[lmem[1]]"" points to
+the global memory address space. If it points to a local memory address
+space, replace ""dpct::atomic_fetch_add"" with ""dpct::atomic_fetch_add<int,
+sycl::access::address_space::local_space>"".
+"
+21,"The generated code assumes that ""&finished[next_in_cycle]""
+points to the global memory address space. If it points to a local
+memory address space, replace ""dpct::atomic_exchange"" with
+""dpct::atomic_exchange<int, sycl::access::address_space::local_space>"".
+"
+22,"The generated code assumes that ""&head[0]"" points to the
+global memory address space. If it points to a local memory address space,
+replace ""dpct::atomic_fetch_add"" with ""dpct::atomic_fetch_add<int,
+sycl::access::address_space::local_space>"".
+"
+23,"SYCL uses exceptions to report errors and does not
+* use the error codes. The call was replaced with 0. You need to
+* rewrite this code.
+"
+24,"The workgroup size passed to the SYCL kernel may exceed
+* the limit. To get the device limit, query
+* info::device::max_work_group_size. Adjust the workgroup size if needed.
+"
+25,"Migrated API does not return error code. (*, 0) is inserted.
+* You may need to rewrite this code.
+"
+26,"SYCL uses exceptions to report errors and does not use the
+* error codes. The call was replaced with 0. You need to rewrite this code.
+"
+27,"clock function is not defined in the DPC++. This
+is a hardware-specific feature. Consult with your hardware
+vendor to find a replacement.
+"
+28,"The generated code assumes that ""emp4i"" points to the global
+memory address space. If it points to a local memory address space, replace
+""dpct::atomic_fetch_add"" with ""dpct::atomic_fetch_add<double,
+sycl::access::address_space::local_space>"".
+"
+29,"The generated code assumes that ""emp4k"" points to the global
+memory address space. If it points to a local memory address space, replace
+""dpct::atomic_fetch_add"" with ""dpct::atomic_fetch_add<double,
+sycl::access::address_space::local_space>"".
+"
+30,"The generated code assumes that ""emp5i"" points to the global
+memory address space. If it points to a local memory address space, replace
+""dpct::atomic_fetch_add"" with ""dpct::atomic_fetch_add<double,
+sycl::access::address_space::local_space>"".
+"
+31,"The generated code assumes that ""emp5k"" points to the global
+memory address space. If it points to a local memory address space, replace
+""dpct::atomic_fetch_add"" with ""dpct::atomic_fetch_add<double,
+sycl::access::address_space::local_space>"".
+"
+32,"Error handling if-stmt was detected but could not be rewritten.
+"
+33,"Consider replacing sycl::nd_item::barrier() with
+* sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+* performance, if there is no access to global memory.
+"
+34,"Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space)
+for better performance, if there is no access to global memory.
+"
+35,"SYCL uses exceptions to report errors and does not use the error
+codes. The call was replaced with 0. You need to rewrite this code.
+"
+36,"SYCL uses exceptions to report errors and does not use the error
+codes. The original code was commented out and a warning string was inserted.
+You need to rewrite this code.
+"
+37,"The generated code assumes that ""distance + INSTANCES*gx + gy""
+points to the global memory address space. If it points to a local memory
+address space, replace ""dpct::atomic_fetch_add"" with
+""dpct::atomic_fetch_add<int, sycl::access::address_space::local_space>"".
+"
+38,"The generated code assumes that ""&iter[0]"" points to the global
+memory address space. If it points to a local memory address space, replace
+""dpct::atomic_fetch_add"" with ""dpct::atomic_fetch_add<int,
+sycl::access::address_space::local_space>"".
+"
+39,"The generated code assumes that ""n_t"" points to the global
+memory address space. If it points to a local memory address space, replace
+""dpct::atomic_fetch_add"" with ""dpct::atomic_fetch_add<int,
+sycl::access::address_space::local_space>"".
+"
+40,"The generated code assumes that ""&gray_shade[0]"" points to the
+global memory address space. If it points to a local memory address space,
+replace ""dpct::atomic_fetch_add"" with ""dpct::atomic_fetch_add<int,
+sycl::access::address_space::local_space>"".
+"
+41,"The generated code assumes that ""&tail[0]"" points
+to the global memory address space. If it points to a local
+memory address space, replace ""dpct::atomic_fetch_add"" with
+""dpct::atomic_fetch_add<int,
+sycl::access::address_space::local_space>"".
+"
+42,"The generated code assumes that ""&color[pid]"" points to
+the global memory address space. If it points to a local memory
+address space, replace ""dpct::atomic_exchange"" with
+""dpct::atomic_exchange<int,
+sycl::access::address_space::local_space>"".
+"
+43,"The generated code assumes that ""&cost[pid]"" points to
+the global memory address space. If it points to a local memory
+address space, replace ""dpct::atomic_fetch_add"" with
+""dpct::atomic_fetch_add<int,
+sycl::access::address_space::local_space>"".
+"
+44,"The generated code assumes that ""&cost[id]"" points
+to the global memory address space. If it points to a local
+memory address space, replace ""dpct::atomic_fetch_max"" with
+""dpct::atomic_fetch_max<int,
+sycl::access::address_space::local_space>"".
+"
+45,"The generated code assumes that ""&color[id]""
+points to the global memory address space. If it points to a
+local memory address space, replace ""dpct::atomic_fetch_max""
+with ""dpct::atomic_fetch_max<int,
+sycl::access::address_space::local_space>"".
+"
+46,"The generated code assumes that ""&head[0]"" points to
+the global memory address space. If it points to a local memory
+address space, replace ""dpct::atomic_fetch_add"" with
+""dpct::atomic_fetch_add<int,
+sycl::access::address_space::local_space>"".
+"
+47,"The generated code assumes that ""&tail[0]"" points to the
+global memory address space. If it points to a local memory address
+space, replace ""dpct::atomic_fetch_add"" with
+""dpct::atomic_fetch_add<int, sycl::access::address_space::local_space>"".
+"
+48,"The generated code assumes that ""&iter[0]"" points to the
+global memory address space. If it points to a local memory address
+space, replace ""dpct::atomic_fetch_add"" with
+""dpct::atomic_fetch_add<int, sycl::access::address_space::local_space>"".
+"
+49,"The workgroup size passed to the SYCL kernel
+may exceed the limit. To get the device limit, query
+info::device::max_work_group_size. Adjust the workgroup size
+if needed.
+"
+50,"Consider replacing sycl::nd_item::barrier() with
+* sycl::nd_item::barrier(sycl::access::fence_space::local_space) for
+* better performance, if there is no access to global memory.
+"
+51,"The generated code assumes that ""&weight_i[j]"" points to
+the global memory address space. If it points to a local memory
+address space, replace ""dpct::atomic_fetch_add"" with
+""dpct::atomic_fetch_add<T, sycl::access::address_space::local_space>"".
+"
+52,"Migration of this CUDA API is not supported by the Intel(R)
+* DPC++ Compatibility Tool.
+"
+53,"The generated code assumes that ""cmp_size"" points to the global
+memory address space. If it points to a local memory address space, replace
+""dpct::atomic_fetch_add"" with ""dpct::atomic_fetch_add<unsigned int,
+sycl::access::address_space::local_space>"".
+"
+54,"The tool detected overloaded operators for built-in vector types,
+which may conflict with the SYCL 1.2.1 standard operators (see 4.10.2.1 Vec
+interface). The tool inserted a namespace to avoid the conflict. Use SYCL 1.2.1
+standard operators instead.
+"
+55,"Could not generate replacement.
+"
+56,"The workgroup size passed to the SYCL
+* kernel may exceed the limit. To get the device limit, query
+* info::device::max_work_group_size. Adjust the workgroup size if
+* needed.
+"
+57,"clock function is not defined in the DPC++. This is a
+* hardware-specific feature. Consult with your hardware vendor to find a
+* replacement.
+"
+58,"Consider replacing
+* sycl::nd_item::barrier() with
+* sycl::nd_item::barrier(sycl::access::fence_space::local_space)
+* for better performance, if there is no access to global
+* memory.
+"
+59,"Consider replacing
+* sycl::nd_item::barrier() with
+* sycl::nd_item::barrier(sycl::access::fence_space::local_space)
+* for better performance, if there is no access to
+* global memory.
+"
+60,"The generated code assumes that ""&Table[ran[j] & (TableSize-1)]""
+points to the global memory address space. If it points to a local memory
+address space, replace ""dpct::atomic_fetch_xor"" with
+""dpct::atomic_fetch_xor<u64Int, sycl::access::address_space::local_space>"".
+"
+61,"The workgroup size passed to the SYCL
+* kernel may exceed the limit. To get the device limit, query
+* info::device::max_work_group_size. Adjust the workgroup size
+* if needed.
+"
+62,"The workgroup size passed to the SYCL kernel may exceed
+the limit. To get the device limit, query
+info::device::max_work_group_size. Adjust the workgroup size if needed.
+"
+63,"SYCL uses exceptions to report errors and does not use
+the error codes. The original code was commented out and a warning
+string was inserted. You need to rewrite this code.
+"
+64,"The generated code assumes that ""out"" points to the global memory
+address space. If it points to a local memory address space, replace
+""dpct::atomic_fetch_add"" with ""dpct::atomic_fetch_add<int,
+sycl::access::address_space::local_space>"".
+"
+65,"The sycl::sincos call is used instead of the sincosf call.
+These two calls do not provide exactly the same functionality. Check the
+potential precision and/or performance issues for the generated code.
+"
+66,"The sycl::sincos call is used instead of the sincosf call. These
+two calls do not provide exactly the same functionality. Check the potential
+precision and/or performance issues for the generated code.
+"
+67,"Different generator is used, you may need to adjust the code.
+"
+68,"Migration of this CUDA API is not supported by the Intel(R) DPC++
+Compatibility Tool.
+"
+69,"The generated code assumes that ""nres"" points to the global
+memory address space. If it points to a local memory address space, replace
+""dpct::atomic_fetch_add"" with ""dpct::atomic_fetch_add<int,
+sycl::access::address_space::local_space>"".
+"
+70,"The rounding mode could not be specified and the generated
+code may have different precision then the original code. Verify the
+correctness. SYCL math built-ins rounding mode is aligned with OpenCL
+C 1.2 standard.
+"
+71,"The rounding mode could not be specified and the generated code
+may have different precision then the original code. Verify the correctness.
+SYCL math built-ins rounding mode is aligned with OpenCL C 1.2 standard.
+"
+72,"Migrated API does not return error code. (*, 0) is
+inserted. You may need to rewrite this code.
+"
