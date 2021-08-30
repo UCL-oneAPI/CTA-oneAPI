@@ -56,7 +56,7 @@ python command_handler.py --version
 ```
 
 ## Report
-Auto-generate Report Example  
+[Auto-generate Report Example](http://htmlpreview.github.io/?https://github.com/UCL-oneAPI/CTA-oneAPI/blob/main/Demo-Auto_report/report.html)
 
 [Sample Programs Analysis Report](https://github.com/UCL-oneAPI/CTA-oneAPI/blob/main/historical_report/Sample%20programs%20analysis.docx)
 
