@@ -55,9 +55,6 @@ class StructuredProjectSource:
 
         return paths
 
-    def get_all_file_paths_with_pattern(self, pattern: str):
-        pass
-
     def get_dpct_warnings_dict(self) -> Dict[str, List[WarningLocation]]:
         '''
         :return: Dictionary where keys are strings with dpct warning code.

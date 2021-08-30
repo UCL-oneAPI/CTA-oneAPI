@@ -19,10 +19,10 @@ void invert_cpu(float* data, int actualsize, float* log_determinant)  {
     data[0] = 1.0 / data[0];
   } else if(actualsize >= 2) { // dimensionality >= 2
     for (int i=1; i < actualsize; i++) data[i] /= data[0]; // normalize row 0
-    for (int i=1; i < actualsize; i++)  { 
+    for (int i=1; i < actualsize; i++)  {
       for (int j=i; j < actualsize; j++)  { // do a column of L
         float sum = 0.0;
-        for (int k = 0; k < i; k++)  
+        for (int k = 0; k < i; k++)
           sum += data[j*maxsize+k] * data[k*maxsize+i];
         data[j*maxsize+i] -= sum;
       }
@@ -31,21 +31,21 @@ void invert_cpu(float* data, int actualsize, float* log_determinant)  {
         float sum = 0.0;
         for (int k = 0; k < i; k++)
           sum += data[i*maxsize+k]*data[k*maxsize+j];
-        data[i*maxsize+j] = 
+        data[i*maxsize+j] =
           (data[i*maxsize+j]-sum) / data[i*maxsize+i];
       }
     }
 
     for(int i=0; i<actualsize; i++) {
       *log_determinant += ::log10(fabs(data[i*n+i]));
-      //printf("log_determinant: %e\n",*log_determinant); 
+      //printf("log_determinant: %e\n",*log_determinant);
     }
     for ( int i = 0; i < actualsize; i++ )  // invert L
       for ( int j = i; j < actualsize; j++ )  {
         float x = 1.0;
         if ( i != j ) {
           x = 0.0;
-          for ( int k = i; k < j; k++ ) 
+          for ( int k = i; k < j; k++ )
             x -= data[j*maxsize+k]*data[k*maxsize+i];
         }
         data[j*maxsize+i] = x / data[j*maxsize+j];
@@ -61,7 +61,7 @@ void invert_cpu(float* data, int actualsize, float* log_determinant)  {
     for ( int i = 0; i < actualsize; i++ )   // final inversion
       for ( int j = 0; j < actualsize; j++ )  {
         float sum = 0.0;
-        for ( int k = ((i>j)?i:j); k < actualsize; k++ )  
+        for ( int k = ((i>j)?i:j); k < actualsize; k++ )
           sum += ((j==k)?1.0:data[j*maxsize+k])*data[k*maxsize+i];
         data[j*maxsize+i] = sum;
       }
@@ -81,7 +81,7 @@ int validateArguments(int argc, char** argv, int* num_clusters, int* target_num_
       printf("Invalid number of starting clusters\n\n");
       printUsage(argv);
       return 1;
-    } 
+    }
 
     // Check bounds for num_clusters
     if(*num_clusters < 1) {
@@ -96,7 +96,7 @@ int validateArguments(int argc, char** argv, int* num_clusters, int* target_num_
       printf("Invalid infile.\n\n");
       printUsage(argv);
       return 2;
-    } 
+    }
 
     // parse target_num_clusters
     if(argc == 5) {
@@ -644,10 +644,10 @@ clusters_t *cluster(int original_num_clusters, int desired_num_clusters,
 
   DEBUG("GPU: Finished copying FCS data to device.\n");
 
-  //////////////// Initialization done, starting kernels //////////////// 
+  //////////////// Initialization done, starting kernels ////////////////
   DEBUG("Invoking seed_clusters kernel.\n");
 
-  // seed_clusters sets initial pi values, 
+  // seed_clusters sets initial pi values,
   // finds the means / covariances and copies it to all the clusters
   q_ct1.submit([&](sycl::handler &cgh) {
     sycl::accessor<float, 1, sycl::access::mode::read_write,
@@ -710,8 +710,8 @@ clusters_t *cluster(int original_num_clusters, int desired_num_clusters,
   for(int c=0; c < original_num_clusters; c++) {
     DEBUG("Cluster #%d\n",c);
 
-    DEBUG("\tN: %f\n",clusters.N[c]); 
-    DEBUG("\tpi: %f\n",clusters.pi[c]); 
+    DEBUG("\tN: %f\n",clusters.N[c]);
+    DEBUG("\tpi: %f\n",clusters.pi[c]);
 
     // means
     DEBUG("\tMeans: ");
@@ -828,7 +828,7 @@ clusters_t *cluster(int original_num_clusters, int desired_num_clusters,
     iters = 0;
     // This is the iterative loop for the EM algorithm.
     // It re-estimates parameters, re-computes constants, and then regroups the events
-    // These steps keep repeating until the change in likelihood is less than some epsilon        
+    // These steps keep repeating until the change in likelihood is less than some epsilon
     while(iters < MIN_ITERS || (fabs(change) > epsilon && iters < MAX_ITERS)) {
       old_likelihood = likelihood;
 
