@@ -9,6 +9,7 @@ RULES_TO_DESCRIPTIONS = {
 
     #Todo Qichen: add again when bug is fixed
     # AddCommentsRule: "Insert comments to provide recommendations for various warnings",
+    AddCommentsRule: "Insert comments to provide recommendations for various warnings",
 
     # test rule with simple exemplary implementation
     AddCommentsTestRule: "Insert comments to provide recommendations for various warnings"

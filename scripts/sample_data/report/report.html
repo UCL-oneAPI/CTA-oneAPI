@@ -35,15 +35,15 @@
 
                         </style>
                         <body style="height:100%;"> 
-                        <p class="serif" ><b>     1.  Number of Analysis Files:  2</b></p>
+                        <p class="serif" ><b>     1.  Number of Analysis Files:  6</b></p>
 
                         <p class="serif" ><b>     2.  Analysis Files:    </b></p>
-                        <p class="serif" >      /kernel_wrapper2.dp.cpp ;   /cluster.dp.cpp ;    </p>
-                        <p class="serif" ><b>     3.  Number of Warning Type:  2 </b></p>
+                        <p class="serif" >      /kernel_wrapper2.dp.cpp ;   /main.dp.cpp ;   /chi2.dp.cpp ;   /cluster.dp.cpp ;    </p>
+                        <p class="serif" ><b>     3.  Number of Warning Type:  4 </b></p>
 
                         <p class="serif" ><b>     4.  Warning Code Type:    </b></p>
-                        <p class="serif" >      DPCT1003 ;   DPCT1049 ;    </p>
-                        <p class="serif" ><b>     5.  Total Number of Warnings: 55</b></p>
+                        <p class="serif" >      DPCT1065 ;   DPCT1003 ;   DPCT1049 ;   DPCT1000 ;   DPCT1001 ;   DPCT1010 ;    </p>
+                        <p class="serif" ><b>     5.  Total Number of Warnings: 83</b></p>
                         <p class="serif" ><b>     6.  Distribution Graph: </b></p>
                           <img src="images/before-overall.png" width="600" height="450" />
                         <p class="serif" >
@@ -63,16 +63,88 @@
                                 </tr>
                         <tr>
                                 <td class="serif" >1</td>
+                                <td class="serif" >DPCT1065</td>
+                                <td class="serif" >/kernel_wrapper2.dp.cpp</td>
+                                <td class="serif" >test_project</td>
+                                <td class="serif" >42</td>
+                                <td class="serif" >DPCT1065:3: Consider replacing sycl::nd_item::barrier() with
+* sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+* performance, if there is no access to global memory.</td>
+                        </tr>
+                        
+                        <tr>
+                                <td class="serif" >2</td>
+                                <td class="serif" >DPCT1065</td>
+                                <td class="serif" >/main.dp.cpp</td>
+                                <td class="serif" >test_project</td>
+                                <td class="serif" >66</td>
+                                <td class="serif" >DPCT1065:0: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.</td>
+                        </tr>
+                        
+                        <tr>
+                                <td class="serif" >3</td>
                                 <td class="serif" >DPCT1003</td>
                                 <td class="serif" >/kernel_wrapper2.dp.cpp</td>
                                 <td class="serif" >test_project</td>
-                                <td class="serif" >119</td>
+                                <td class="serif" >126</td>
                                 <td class="serif" >DPCT1003:28: Migrated API does not return error code. (*, 0) is inserted. You
 may need to rewrite this code.</td>
                         </tr>
                         
                         <tr>
-                                <td class="serif" >2</td>
+                                <td class="serif" >4</td>
+                                <td class="serif" >DPCT1003</td>
+                                <td class="serif" >/chi2.dp.cpp</td>
+                                <td class="serif" >test_project</td>
+                                <td class="serif" >165</td>
+                                <td class="serif" >DPCT1003:8: Migrated API does not return error code. (*, 0) is inserted.
+You may need to rewrite this code.</td>
+                        </tr>
+                        
+                        <tr>
+                                <td class="serif" >5</td>
+                                <td class="serif" >DPCT1003</td>
+                                <td class="serif" >/chi2.dp.cpp</td>
+                                <td class="serif" >test_project</td>
+                                <td class="serif" >220</td>
+                                <td class="serif" >DPCT1003:9: Migrated API does not return error code. (*, 0) is inserted.
+You may need to rewrite this code.</td>
+                        </tr>
+                        
+                        <tr>
+                                <td class="serif" >6</td>
+                                <td class="serif" >DPCT1003</td>
+                                <td class="serif" >/chi2.dp.cpp</td>
+                                <td class="serif" >test_project</td>
+                                <td class="serif" >242</td>
+                                <td class="serif" >DPCT1003:10: Migrated API does not return error code. (*, 0) is
+inserted. You may need to rewrite this code.</td>
+                        </tr>
+                        
+                        <tr>
+                                <td class="serif" >7</td>
+                                <td class="serif" >DPCT1003</td>
+                                <td class="serif" >/chi2.dp.cpp</td>
+                                <td class="serif" >test_project</td>
+                                <td class="serif" >266</td>
+                                <td class="serif" >DPCT1003:11: Migrated API does not return error code. (*, 0) is
+inserted. You may need to rewrite this code.</td>
+                        </tr>
+                        
+                        <tr>
+                                <td class="serif" >8</td>
+                                <td class="serif" >DPCT1003</td>
+                                <td class="serif" >/chi2.dp.cpp</td>
+                                <td class="serif" >test_project</td>
+                                <td class="serif" >313</td>
+                                <td class="serif" >DPCT1003:13: Migrated API does not return error code. (*, 0) is
+inserted. You may need to rewrite this code.</td>
+                        </tr>
+                        
+                        <tr>
+                                <td class="serif" >9</td>
                                 <td class="serif" >DPCT1003</td>
                                 <td class="serif" >/cluster.dp.cpp</td>
                                 <td class="serif" >test_project</td>
@@ -82,7 +154,7 @@ may need to rewrite this code.</td>
                         </tr>
                         
                         <tr>
-                                <td class="serif" >3</td>
+                                <td class="serif" >10</td>
                                 <td class="serif" >DPCT1003</td>
                                 <td class="serif" >/cluster.dp.cpp</td>
                                 <td class="serif" >test_project</td>
@@ -92,7 +164,7 @@ may need to rewrite this code.</td>
                         </tr>
                         
                         <tr>
-                                <td class="serif" >4</td>
+                                <td class="serif" >11</td>
                                 <td class="serif" >DPCT1003</td>
                                 <td class="serif" >/cluster.dp.cpp</td>
                                 <td class="serif" >test_project</td>
@@ -102,7 +174,7 @@ may need to rewrite this code.</td>
                         </tr>
                         
                         <tr>
-                                <td class="serif" >5</td>
+                                <td class="serif" >12</td>
                                 <td class="serif" >DPCT1003</td>
                                 <td class="serif" >/cluster.dp.cpp</td>
                                 <td class="serif" >test_project</td>
@@ -112,7 +184,7 @@ may need to rewrite this code.</td>
                         </tr>
                         
                         <tr>
-                                <td class="serif" >6</td>
+                                <td class="serif" >13</td>
                                 <td class="serif" >DPCT1003</td>
                                 <td class="serif" >/cluster.dp.cpp</td>
                                 <td class="serif" >test_project</td>
@@ -122,7 +194,7 @@ may need to rewrite this code.</td>
                         </tr>
                         
                         <tr>
-                                <td class="serif" >7</td>
+                                <td class="serif" >14</td>
                                 <td class="serif" >DPCT1003</td>
                                 <td class="serif" >/cluster.dp.cpp</td>
                                 <td class="serif" >test_project</td>
@@ -132,7 +204,7 @@ may need to rewrite this code.</td>
                         </tr>
                         
                         <tr>
-                                <td class="serif" >8</td>
+                                <td class="serif" >15</td>
                                 <td class="serif" >DPCT1003</td>
                                 <td class="serif" >/cluster.dp.cpp</td>
                                 <td class="serif" >test_project</td>
@@ -142,7 +214,7 @@ may need to rewrite this code.</td>
                         </tr>
                         
                         <tr>
-                                <td class="serif" >9</td>
+                                <td class="serif" >16</td>
                                 <td class="serif" >DPCT1003</td>
                                 <td class="serif" >/cluster.dp.cpp</td>
                                 <td class="serif" >test_project</td>
@@ -152,7 +224,7 @@ may need to rewrite this code.</td>
                         </tr>
                         
                         <tr>
-                                <td class="serif" >10</td>
+                                <td class="serif" >17</td>
                                 <td class="serif" >DPCT1003</td>
                                 <td class="serif" >/cluster.dp.cpp</td>
                                 <td class="serif" >test_project</td>
@@ -162,7 +234,7 @@ may need to rewrite this code.</td>
                         </tr>
                         
                         <tr>
-                                <td class="serif" >11</td>
+                                <td class="serif" >18</td>
                                 <td class="serif" >DPCT1003</td>
                                 <td class="serif" >/cluster.dp.cpp</td>
                                 <td class="serif" >test_project</td>
@@ -172,7 +244,7 @@ may need to rewrite this code.</td>
                         </tr>
                         
                         <tr>
-                                <td class="serif" >12</td>
+                                <td class="serif" >19</td>
                                 <td class="serif" >DPCT1003</td>
                                 <td class="serif" >/cluster.dp.cpp</td>
                                 <td class="serif" >test_project</td>
@@ -182,7 +254,7 @@ may need to rewrite this code.</td>
                         </tr>
                         
                         <tr>
-                                <td class="serif" >13</td>
+                                <td class="serif" >20</td>
                                 <td class="serif" >DPCT1003</td>
                                 <td class="serif" >/cluster.dp.cpp</td>
                                 <td class="serif" >test_project</td>
@@ -192,7 +264,7 @@ may need to rewrite this code.</td>
                         </tr>
                         
                         <tr>
-                                <td class="serif" >14</td>
+                                <td class="serif" >21</td>
                                 <td class="serif" >DPCT1003</td>
                                 <td class="serif" >/cluster.dp.cpp</td>
                                 <td class="serif" >test_project</td>
@@ -202,7 +274,7 @@ may need to rewrite this code.</td>
                         </tr>
                         
                         <tr>
-                                <td class="serif" >15</td>
+                                <td class="serif" >22</td>
                                 <td class="serif" >DPCT1003</td>
                                 <td class="serif" >/cluster.dp.cpp</td>
                                 <td class="serif" >test_project</td>
@@ -212,7 +284,7 @@ may need to rewrite this code.</td>
                         </tr>
                         
                         <tr>
-                                <td class="serif" >16</td>
+                                <td class="serif" >23</td>
                                 <td class="serif" >DPCT1003</td>
                                 <td class="serif" >/cluster.dp.cpp</td>
                                 <td class="serif" >test_project</td>
@@ -222,7 +294,7 @@ may need to rewrite this code.</td>
                         </tr>
                         
                         <tr>
-                                <td class="serif" >17</td>
+                                <td class="serif" >24</td>
                                 <td class="serif" >DPCT1003</td>
                                 <td class="serif" >/cluster.dp.cpp</td>
                                 <td class="serif" >test_project</td>
@@ -232,7 +304,7 @@ may need to rewrite this code.</td>
                         </tr>
                         
                         <tr>
-                                <td class="serif" >18</td>
+                                <td class="serif" >25</td>
                                 <td class="serif" >DPCT1003</td>
                                 <td class="serif" >/cluster.dp.cpp</td>
                                 <td class="serif" >test_project</td>
@@ -242,7 +314,7 @@ may need to rewrite this code.</td>
                         </tr>
                         
                         <tr>
-                                <td class="serif" >19</td>
+                                <td class="serif" >26</td>
                                 <td class="serif" >DPCT1003</td>
                                 <td class="serif" >/cluster.dp.cpp</td>
                                 <td class="serif" >test_project</td>
@@ -252,7 +324,7 @@ may need to rewrite this code.</td>
                         </tr>
                         
                         <tr>
-                                <td class="serif" >20</td>
+                                <td class="serif" >27</td>
                                 <td class="serif" >DPCT1003</td>
                                 <td class="serif" >/cluster.dp.cpp</td>
                                 <td class="serif" >test_project</td>
@@ -262,7 +334,7 @@ You may need to rewrite this code.</td>
                         </tr>
                         
                         <tr>
-                                <td class="serif" >21</td>
+                                <td class="serif" >28</td>
                                 <td class="serif" >DPCT1003</td>
                                 <td class="serif" >/cluster.dp.cpp</td>
                                 <td class="serif" >test_project</td>
@@ -272,7 +344,7 @@ may need to rewrite this code.</td>
                         </tr>
                         
                         <tr>
-                                <td class="serif" >22</td>
+                                <td class="serif" >29</td>
                                 <td class="serif" >DPCT1003</td>
                                 <td class="serif" >/cluster.dp.cpp</td>
                                 <td class="serif" >test_project</td>
@@ -282,7 +354,7 @@ may need to rewrite this code.</td>
                         </tr>
                         
                         <tr>
-                                <td class="serif" >23</td>
+                                <td class="serif" >30</td>
                                 <td class="serif" >DPCT1003</td>
                                 <td class="serif" >/cluster.dp.cpp</td>
                                 <td class="serif" >test_project</td>
@@ -292,7 +364,7 @@ may need to rewrite this code.</td>
                         </tr>
                         
                         <tr>
-                                <td class="serif" >24</td>
+                                <td class="serif" >31</td>
                                 <td class="serif" >DPCT1003</td>
                                 <td class="serif" >/cluster.dp.cpp</td>
                                 <td class="serif" >test_project</td>
@@ -302,7 +374,7 @@ may need to rewrite this code.</td>
                         </tr>
                         
                         <tr>
-                                <td class="serif" >25</td>
+                                <td class="serif" >32</td>
                                 <td class="serif" >DPCT1003</td>
                                 <td class="serif" >/cluster.dp.cpp</td>
                                 <td class="serif" >test_project</td>
@@ -312,7 +384,7 @@ may need to rewrite this code.</td>
                         </tr>
                         
                         <tr>
-                                <td class="serif" >26</td>
+                                <td class="serif" >33</td>
                                 <td class="serif" >DPCT1003</td>
                                 <td class="serif" >/cluster.dp.cpp</td>
                                 <td class="serif" >test_project</td>
@@ -322,7 +394,7 @@ may need to rewrite this code.</td>
                         </tr>
                         
                         <tr>
-                                <td class="serif" >27</td>
+                                <td class="serif" >34</td>
                                 <td class="serif" >DPCT1003</td>
                                 <td class="serif" >/cluster.dp.cpp</td>
                                 <td class="serif" >test_project</td>
@@ -332,7 +404,7 @@ may need to rewrite this code.</td>
                         </tr>
                         
                         <tr>
-                                <td class="serif" >28</td>
+                                <td class="serif" >35</td>
                                 <td class="serif" >DPCT1003</td>
                                 <td class="serif" >/cluster.dp.cpp</td>
                                 <td class="serif" >test_project</td>
@@ -342,7 +414,7 @@ may need to rewrite this code.</td>
                         </tr>
                         
                         <tr>
-                                <td class="serif" >29</td>
+                                <td class="serif" >36</td>
                                 <td class="serif" >DPCT1003</td>
                                 <td class="serif" >/cluster.dp.cpp</td>
                                 <td class="serif" >test_project</td>
@@ -352,7 +424,7 @@ may need to rewrite this code.</td>
                         </tr>
                         
                         <tr>
-                                <td class="serif" >30</td>
+                                <td class="serif" >37</td>
                                 <td class="serif" >DPCT1003</td>
                                 <td class="serif" >/cluster.dp.cpp</td>
                                 <td class="serif" >test_project</td>
@@ -362,7 +434,7 @@ may need to rewrite this code.</td>
                         </tr>
                         
                         <tr>
-                                <td class="serif" >31</td>
+                                <td class="serif" >38</td>
                                 <td class="serif" >DPCT1003</td>
                                 <td class="serif" >/cluster.dp.cpp</td>
                                 <td class="serif" >test_project</td>
@@ -372,7 +444,7 @@ may need to rewrite this code.</td>
                         </tr>
                         
                         <tr>
-                                <td class="serif" >32</td>
+                                <td class="serif" >39</td>
                                 <td class="serif" >DPCT1003</td>
                                 <td class="serif" >/cluster.dp.cpp</td>
                                 <td class="serif" >test_project</td>
@@ -382,7 +454,7 @@ may need to rewrite this code.</td>
                         </tr>
                         
                         <tr>
-                                <td class="serif" >33</td>
+                                <td class="serif" >40</td>
                                 <td class="serif" >DPCT1003</td>
                                 <td class="serif" >/cluster.dp.cpp</td>
                                 <td class="serif" >test_project</td>
@@ -392,7 +464,7 @@ may need to rewrite this code.</td>
                         </tr>
                         
                         <tr>
-                                <td class="serif" >34</td>
+                                <td class="serif" >41</td>
                                 <td class="serif" >DPCT1003</td>
                                 <td class="serif" >/cluster.dp.cpp</td>
                                 <td class="serif" >test_project</td>
@@ -402,7 +474,7 @@ may need to rewrite this code.</td>
                         </tr>
                         
                         <tr>
-                                <td class="serif" >35</td>
+                                <td class="serif" >42</td>
                                 <td class="serif" >DPCT1003</td>
                                 <td class="serif" >/cluster.dp.cpp</td>
                                 <td class="serif" >test_project</td>
@@ -412,7 +484,7 @@ may need to rewrite this code.</td>
                         </tr>
                         
                         <tr>
-                                <td class="serif" >36</td>
+                                <td class="serif" >43</td>
                                 <td class="serif" >DPCT1003</td>
                                 <td class="serif" >/cluster.dp.cpp</td>
                                 <td class="serif" >test_project</td>
@@ -422,7 +494,7 @@ may need to rewrite this code.</td>
                         </tr>
                         
                         <tr>
-                                <td class="serif" >37</td>
+                                <td class="serif" >44</td>
                                 <td class="serif" >DPCT1003</td>
                                 <td class="serif" >/cluster.dp.cpp</td>
                                 <td class="serif" >test_project</td>
@@ -432,7 +504,7 @@ may need to rewrite this code.</td>
                         </tr>
                         
                         <tr>
-                                <td class="serif" >38</td>
+                                <td class="serif" >45</td>
                                 <td class="serif" >DPCT1003</td>
                                 <td class="serif" >/cluster.dp.cpp</td>
                                 <td class="serif" >test_project</td>
@@ -442,7 +514,7 @@ may need to rewrite this code.</td>
                         </tr>
                         
                         <tr>
-                                <td class="serif" >39</td>
+                                <td class="serif" >46</td>
                                 <td class="serif" >DPCT1003</td>
                                 <td class="serif" >/cluster.dp.cpp</td>
                                 <td class="serif" >test_project</td>
@@ -452,7 +524,7 @@ may need to rewrite this code.</td>
                         </tr>
                         
                         <tr>
-                                <td class="serif" >40</td>
+                                <td class="serif" >47</td>
                                 <td class="serif" >DPCT1003</td>
                                 <td class="serif" >/cluster.dp.cpp</td>
                                 <td class="serif" >test_project</td>
@@ -462,7 +534,7 @@ You may need to rewrite this code.</td>
                         </tr>
                         
                         <tr>
-                                <td class="serif" >41</td>
+                                <td class="serif" >48</td>
                                 <td class="serif" >DPCT1003</td>
                                 <td class="serif" >/cluster.dp.cpp</td>
                                 <td class="serif" >test_project</td>
@@ -472,7 +544,7 @@ You may need to rewrite this code.</td>
                         </tr>
                         
                         <tr>
-                                <td class="serif" >42</td>
+                                <td class="serif" >49</td>
                                 <td class="serif" >DPCT1003</td>
                                 <td class="serif" >/cluster.dp.cpp</td>
                                 <td class="serif" >test_project</td>
@@ -482,7 +554,7 @@ You may need to rewrite this code.</td>
                         </tr>
                         
                         <tr>
-                                <td class="serif" >43</td>
+                                <td class="serif" >50</td>
                                 <td class="serif" >DPCT1003</td>
                                 <td class="serif" >/cluster.dp.cpp</td>
                                 <td class="serif" >test_project</td>
@@ -492,7 +564,7 @@ You may need to rewrite this code.</td>
                         </tr>
                         
                         <tr>
-                                <td class="serif" >44</td>
+                                <td class="serif" >51</td>
                                 <td class="serif" >DPCT1003</td>
                                 <td class="serif" >/cluster.dp.cpp</td>
                                 <td class="serif" >test_project</td>
@@ -502,7 +574,7 @@ You may need to rewrite this code.</td>
                         </tr>
                         
                         <tr>
-                                <td class="serif" >45</td>
+                                <td class="serif" >52</td>
                                 <td class="serif" >DPCT1003</td>
                                 <td class="serif" >/cluster.dp.cpp</td>
                                 <td class="serif" >test_project</td>
@@ -512,7 +584,7 @@ You may need to rewrite this code.</td>
                         </tr>
                         
                         <tr>
-                                <td class="serif" >46</td>
+                                <td class="serif" >53</td>
                                 <td class="serif" >DPCT1003</td>
                                 <td class="serif" >/cluster.dp.cpp</td>
                                 <td class="serif" >test_project</td>
@@ -522,7 +594,7 @@ You may need to rewrite this code.</td>
                         </tr>
                         
                         <tr>
-                                <td class="serif" >47</td>
+                                <td class="serif" >54</td>
                                 <td class="serif" >DPCT1003</td>
                                 <td class="serif" >/cluster.dp.cpp</td>
                                 <td class="serif" >test_project</td>
@@ -532,7 +604,7 @@ You may need to rewrite this code.</td>
                         </tr>
                         
                         <tr>
-                                <td class="serif" >48</td>
+                                <td class="serif" >55</td>
                                 <td class="serif" >DPCT1003</td>
                                 <td class="serif" >/cluster.dp.cpp</td>
                                 <td class="serif" >test_project</td>
@@ -542,7 +614,7 @@ You may need to rewrite this code.</td>
                         </tr>
                         
                         <tr>
-                                <td class="serif" >49</td>
+                                <td class="serif" >56</td>
                                 <td class="serif" >DPCT1003</td>
                                 <td class="serif" >/cluster.dp.cpp</td>
                                 <td class="serif" >test_project</td>
@@ -552,7 +624,7 @@ may need to rewrite this code.</td>
                         </tr>
                         
                         <tr>
-                                <td class="serif" >50</td>
+                                <td class="serif" >57</td>
                                 <td class="serif" >DPCT1003</td>
                                 <td class="serif" >/cluster.dp.cpp</td>
                                 <td class="serif" >test_project</td>
@@ -562,7 +634,7 @@ may need to rewrite this code.</td>
                         </tr>
                         
                         <tr>
-                                <td class="serif" >51</td>
+                                <td class="serif" >58</td>
                                 <td class="serif" >DPCT1003</td>
                                 <td class="serif" >/cluster.dp.cpp</td>
                                 <td class="serif" >test_project</td>
@@ -572,7 +644,7 @@ may need to rewrite this code.</td>
                         </tr>
                         
                         <tr>
-                                <td class="serif" >52</td>
+                                <td class="serif" >59</td>
                                 <td class="serif" >DPCT1003</td>
                                 <td class="serif" >/cluster.dp.cpp</td>
                                 <td class="serif" >test_project</td>
@@ -582,18 +654,109 @@ may need to rewrite this code.</td>
                         </tr>
                         
                         <tr>
-                                <td class="serif" >53</td>
+                                <td class="serif" >60</td>
+                                <td class="serif" >DPCT1003</td>
+                                <td class="serif" >/main.dp.cpp</td>
+                                <td class="serif" >test_project</td>
+                                <td class="serif" >217</td>
+                                <td class="serif" >DPCT1003:1: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.</td>
+                        </tr>
+                        
+                        <tr>
+                                <td class="serif" >61</td>
+                                <td class="serif" >DPCT1003</td>
+                                <td class="serif" >/main.dp.cpp</td>
+                                <td class="serif" >test_project</td>
+                                <td class="serif" >223</td>
+                                <td class="serif" >DPCT1003:3: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.</td>
+                        </tr>
+                        
+                        <tr>
+                                <td class="serif" >62</td>
+                                <td class="serif" >DPCT1003</td>
+                                <td class="serif" >/main.dp.cpp</td>
+                                <td class="serif" >test_project</td>
+                                <td class="serif" >232</td>
+                                <td class="serif" >DPCT1003:5: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.</td>
+                        </tr>
+                        
+                        <tr>
+                                <td class="serif" >63</td>
+                                <td class="serif" >DPCT1003</td>
+                                <td class="serif" >/main.dp.cpp</td>
+                                <td class="serif" >test_project</td>
+                                <td class="serif" >242</td>
+                                <td class="serif" >DPCT1003:7: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.</td>
+                        </tr>
+                        
+                        <tr>
+                                <td class="serif" >64</td>
+                                <td class="serif" >DPCT1003</td>
+                                <td class="serif" >/main.dp.cpp</td>
+                                <td class="serif" >test_project</td>
+                                <td class="serif" >250</td>
+                                <td class="serif" >DPCT1003:9: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.</td>
+                        </tr>
+                        
+                        <tr>
+                                <td class="serif" >65</td>
+                                <td class="serif" >DPCT1003</td>
+                                <td class="serif" >/main.dp.cpp</td>
+                                <td class="serif" >test_project</td>
+                                <td class="serif" >260</td>
+                                <td class="serif" >DPCT1003:11: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.</td>
+                        </tr>
+                        
+                        <tr>
+                                <td class="serif" >66</td>
+                                <td class="serif" >DPCT1003</td>
+                                <td class="serif" >/main.dp.cpp</td>
+                                <td class="serif" >test_project</td>
+                                <td class="serif" >269</td>
+                                <td class="serif" >DPCT1003:13: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.</td>
+                        </tr>
+                        
+                        <tr>
+                                <td class="serif" >67</td>
+                                <td class="serif" >DPCT1003</td>
+                                <td class="serif" >/main.dp.cpp</td>
+                                <td class="serif" >test_project</td>
+                                <td class="serif" >336</td>
+                                <td class="serif" >DPCT1003:21: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.</td>
+                        </tr>
+                        
+                        <tr>
+                                <td class="serif" >68</td>
                                 <td class="serif" >DPCT1049</td>
                                 <td class="serif" >/kernel_wrapper2.dp.cpp</td>
                                 <td class="serif" >test_project</td>
-                                <td class="serif" >134</td>
+                                <td class="serif" >141</td>
                                 <td class="serif" >DPCT1049:3: The workgroup size passed to the SYCL kernel may exceed the limit.
 To get the device limit, query info::device::max_work_group_size. Adjust the
 workgroup size if needed.</td>
                         </tr>
                         
                         <tr>
-                                <td class="serif" >54</td>
+                                <td class="serif" >69</td>
+                                <td class="serif" >DPCT1049</td>
+                                <td class="serif" >/chi2.dp.cpp</td>
+                                <td class="serif" >test_project</td>
+                                <td class="serif" >296</td>
+                                <td class="serif" >DPCT1049:12: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.</td>
+                        </tr>
+                        
+                        <tr>
+                                <td class="serif" >70</td>
                                 <td class="serif" >DPCT1049</td>
                                 <td class="serif" >/cluster.dp.cpp</td>
                                 <td class="serif" >test_project</td>
@@ -604,7 +767,7 @@ Adjust the workgroup size if needed.</td>
                         </tr>
                         
                         <tr>
-                                <td class="serif" >55</td>
+                                <td class="serif" >71</td>
                                 <td class="serif" >DPCT1049</td>
                                 <td class="serif" >/cluster.dp.cpp</td>
                                 <td class="serif" >test_project</td>
@@ -612,6 +775,124 @@ Adjust the workgroup size if needed.</td>
                                 <td class="serif" >DPCT1049:69: The workgroup size passed to the SYCL kernel may exceed the
 limit. To get the device limit, query info::device::max_work_group_size.
 Adjust the workgroup size if needed.</td>
+                        </tr>
+                        
+                        <tr>
+                                <td class="serif" >72</td>
+                                <td class="serif" >DPCT1049</td>
+                                <td class="serif" >/main.dp.cpp</td>
+                                <td class="serif" >test_project</td>
+                                <td class="serif" >290</td>
+                                <td class="serif" >DPCT1049:15: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.</td>
+                        </tr>
+                        
+                        <tr>
+                                <td class="serif" >73</td>
+                                <td class="serif" >DPCT1049</td>
+                                <td class="serif" >/main.dp.cpp</td>
+                                <td class="serif" >test_project</td>
+                                <td class="serif" >315</td>
+                                <td class="serif" >DPCT1049:18: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.</td>
+                        </tr>
+                        
+                        <tr>
+                                <td class="serif" >74</td>
+                                <td class="serif" >DPCT1000</td>
+                                <td class="serif" >/chi2.dp.cpp</td>
+                                <td class="serif" >test_project</td>
+                                <td class="serif" >228</td>
+                                <td class="serif" >DPCT1000:1: Error handling if-stmt was detected but could not be
+rewritten.</td>
+                        </tr>
+                        
+                        <tr>
+                                <td class="serif" >75</td>
+                                <td class="serif" >DPCT1000</td>
+                                <td class="serif" >/chi2.dp.cpp</td>
+                                <td class="serif" >test_project</td>
+                                <td class="serif" >249</td>
+                                <td class="serif" >DPCT1000:3: Error handling if-stmt was detected but could not be
+rewritten.</td>
+                        </tr>
+                        
+                        <tr>
+                                <td class="serif" >76</td>
+                                <td class="serif" >DPCT1000</td>
+                                <td class="serif" >/chi2.dp.cpp</td>
+                                <td class="serif" >test_project</td>
+                                <td class="serif" >275</td>
+                                <td class="serif" >DPCT1000:5: Error handling if-stmt was detected but could not be
+rewritten.</td>
+                        </tr>
+                        
+                        <tr>
+                                <td class="serif" >77</td>
+                                <td class="serif" >DPCT1000</td>
+                                <td class="serif" >/chi2.dp.cpp</td>
+                                <td class="serif" >test_project</td>
+                                <td class="serif" >321</td>
+                                <td class="serif" >DPCT1000:7: Error handling if-stmt was detected but could not be
+rewritten.</td>
+                        </tr>
+                        
+                        <tr>
+                                <td class="serif" >78</td>
+                                <td class="serif" >DPCT1001</td>
+                                <td class="serif" >/chi2.dp.cpp</td>
+                                <td class="serif" >test_project</td>
+                                <td class="serif" >234</td>
+                                <td class="serif" >DPCT1001:0: The statement could not be removed.</td>
+                        </tr>
+                        
+                        <tr>
+                                <td class="serif" >79</td>
+                                <td class="serif" >DPCT1001</td>
+                                <td class="serif" >/chi2.dp.cpp</td>
+                                <td class="serif" >test_project</td>
+                                <td class="serif" >255</td>
+                                <td class="serif" >DPCT1001:2: The statement could not be removed.</td>
+                        </tr>
+                        
+                        <tr>
+                                <td class="serif" >80</td>
+                                <td class="serif" >DPCT1001</td>
+                                <td class="serif" >/chi2.dp.cpp</td>
+                                <td class="serif" >test_project</td>
+                                <td class="serif" >281</td>
+                                <td class="serif" >DPCT1001:4: The statement could not be removed.</td>
+                        </tr>
+                        
+                        <tr>
+                                <td class="serif" >81</td>
+                                <td class="serif" >DPCT1001</td>
+                                <td class="serif" >/chi2.dp.cpp</td>
+                                <td class="serif" >test_project</td>
+                                <td class="serif" >327</td>
+                                <td class="serif" >DPCT1001:6: The statement could not be removed.</td>
+                        </tr>
+                        
+                        <tr>
+                                <td class="serif" >82</td>
+                                <td class="serif" >DPCT1010</td>
+                                <td class="serif" >/main.dp.cpp</td>
+                                <td class="serif" >test_project</td>
+                                <td class="serif" >302</td>
+                                <td class="serif" >DPCT1010:16: SYCL uses exceptions to report errors and does not use the error
+codes. The call was replaced with 0. You need to rewrite this code.</td>
+                        </tr>
+                        
+                        <tr>
+                                <td class="serif" >83</td>
+                                <td class="serif" >DPCT1010</td>
+                                <td class="serif" >/main.dp.cpp</td>
+                                <td class="serif" >test_project</td>
+                                <td class="serif" >328</td>
+                                <td class="serif" >DPCT1010:19: SYCL uses exceptions to report errors and does not use the error
+codes. The call was replaced with 0. You need to rewrite this code.</td>
                         </tr>
                         
                         </table>
@@ -628,6 +909,26 @@ Adjust the workgroup size if needed.</td>
                                         <th>Line Number</th>
                                         <th>Warning message</th>
                                 </tr>
+                        <tr>
+                                <td class="serif" >1</td>
+                                <td class="serif" >DPCT1010</td>
+                                <td class="serif" >/main.dp.cpp</td>
+                                <td class="serif" >destination_dir</td>
+                                <td class="serif" >266</td>
+                                <td class="serif" >DPCT1010:16: SYCL uses exceptions to report errors and does not use the error
+codes. The call was replaced with 0. You need to rewrite this code.</td>
+                        </tr>
+                        
+                        <tr>
+                                <td class="serif" >2</td>
+                                <td class="serif" >DPCT1010</td>
+                                <td class="serif" >/main.dp.cpp</td>
+                                <td class="serif" >destination_dir</td>
+                                <td class="serif" >295</td>
+                                <td class="serif" >DPCT1010:19: SYCL uses exceptions to report errors and does not use the error
+codes. The call was replaced with 0. You need to rewrite this code.</td>
+                        </tr>
+                        
                         </table>
                         </div>
                         
@@ -642,15 +943,121 @@ Adjust the workgroup size if needed.</td>
                                         <th>Line Number</th>
                                         <th>Recommendation message</th>
                                 </tr>
+                                <tr>
+                                        <td class="serif">1</td>
+                                        <td class="serif">CTA1065</td>
+                                        <td class="serif">/kernel_wrapper2.dp.cpp</td>
+                                        <td class="serif">destination_dir</td>
+                                        <td class="serif">42</td>
+                                        <td class="serif">CTA1065:3: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.</td>
+                                </tr>
+                                
+                                <tr>
+                                        <td class="serif">2</td>
+                                        <td class="serif">CTA1065</td>
+                                        <td class="serif">/main.dp.cpp</td>
+                                        <td class="serif">destination_dir</td>
+                                        <td class="serif">66</td>
+                                        <td class="serif">CTA1065:0: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.</td>
+                                </tr>
+                                
+                                <tr>
+                                        <td class="serif">3</td>
+                                        <td class="serif">CTA1000</td>
+                                        <td class="serif">/chi2.dp.cpp</td>
+                                        <td class="serif">destination_dir</td>
+                                        <td class="serif">217</td>
+                                        <td class="serif">CTA1000:1: Base on the experience, strongly recommended to ignore this warning.</td>
+                                </tr>
+                                
+                                <tr>
+                                        <td class="serif">4</td>
+                                        <td class="serif">CTA1001</td>
+                                        <td class="serif">/chi2.dp.cpp</td>
+                                        <td class="serif">destination_dir</td>
+                                        <td class="serif">222</td>
+                                        <td class="serif">CTA1001:0: Base on the experience, strongly recommended to ignore this warning.</td>
+                                </tr>
+                                
+                                <tr>
+                                        <td class="serif">5</td>
+                                        <td class="serif">CTA1001</td>
+                                        <td class="serif">/chi2.dp.cpp</td>
+                                        <td class="serif">destination_dir</td>
+                                        <td class="serif">231</td>
+                                        <td class="serif">CTA1001:0: Base on the experience, strongly recommended to ignore this warning.</td>
+                                </tr>
+                                
+                                <tr>
+                                        <td class="serif">6</td>
+                                        <td class="serif">CTA1001</td>
+                                        <td class="serif">/chi2.dp.cpp</td>
+                                        <td class="serif">destination_dir</td>
+                                        <td class="serif">236</td>
+                                        <td class="serif">CTA1001:2: Base on the experience, strongly recommended to ignore this warning.</td>
+                                </tr>
+                                
+                                <tr>
+                                        <td class="serif">7</td>
+                                        <td class="serif">CTA1001</td>
+                                        <td class="serif">/chi2.dp.cpp</td>
+                                        <td class="serif">destination_dir</td>
+                                        <td class="serif">248</td>
+                                        <td class="serif">CTA1001:0: Base on the experience, strongly recommended to ignore this warning.</td>
+                                </tr>
+                                
+                                <tr>
+                                        <td class="serif">8</td>
+                                        <td class="serif">CTA1001</td>
+                                        <td class="serif">/chi2.dp.cpp</td>
+                                        <td class="serif">destination_dir</td>
+                                        <td class="serif">253</td>
+                                        <td class="serif">CTA1001:4: Base on the experience, strongly recommended to ignore this warning.</td>
+                                </tr>
+                                
+                                <tr>
+                                        <td class="serif">9</td>
+                                        <td class="serif">CTA1001</td>
+                                        <td class="serif">/chi2.dp.cpp</td>
+                                        <td class="serif">destination_dir</td>
+                                        <td class="serif">287</td>
+                                        <td class="serif">CTA1001:0: Base on the experience, strongly recommended to ignore this warning.</td>
+                                </tr>
+                                
+                                <tr>
+                                        <td class="serif">10</td>
+                                        <td class="serif">CTA1001</td>
+                                        <td class="serif">/chi2.dp.cpp</td>
+                                        <td class="serif">destination_dir</td>
+                                        <td class="serif">292</td>
+                                        <td class="serif">CTA1001:6: Base on the experience, strongly recommended to ignore this warning.</td>
+                                </tr>
+                                
                         </table>
                         </div>
                         
-                        <p class="serif" ><b>     11. Number of warnings have been fixed: 55</b></p>
+                        <p class="serif" ><b>     11. Number of warnings have been fixed: 71</b></p>
                                 
-                        <p class="serif" ><b>     12.  Number of warnings have CTA recommendation: 0</b></p>
+                        <p class="serif" ><b>     12.  Number of warnings have CTA recommendation: 10</b></p>
                                 
                         <p class="serif" ><b>     13.  Comparison of before & after : </b></p>
                         
+                    <a href="html_files/kernel_wrapper2.html"  class="serif"  >kernel_wrapper2.html</a><br>
+                    
+                    <a href="html_files/cluster.html"  class="serif"  >cluster.html</a><br>
+                    
+                    <a href="html_files/main.html"  class="serif"  >main.html</a><br>
+                    
+                    <a href="html_files/chi2.html"  class="serif"  >chi2.html</a><br>
+                    
                 <br>
                 </body>
                 </html>
