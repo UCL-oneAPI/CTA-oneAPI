@@ -24,7 +24,8 @@ def visualization_overall(warnings, image_path):
             label="Number of documents containing such warnings",
             alpha=0.5)
     plt.xticks(x + bar_width / 2, occurrence.keys())
-    plt.yticks(np.arange(0, max(occurrence.values()) + 1, step=5))
+    max_warnings = max(occurrence.values()) if occurrence.values() else 0
+    plt.yticks(np.arange(0, max_warnings + 1, step=5))
     plt.ylabel("Occurrence")
     plt.title("Warning Types with Number of Occurrences (Overall)")
     plt.legend(loc="upper left", fontsize="x-small")

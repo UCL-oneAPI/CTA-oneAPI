@@ -1,13 +1,14 @@
-from analysers.PreAnalyser import PreAnalyser
-from analysers.PostAnalyser import PostAnalyser
 from pathlib import Path
 import os
+
+from analysers.WarningAnalyser import WarningAnalyser
+from analysers.WarningRecommendationAnalyser import WarningRecommendationAnalyser
 from report_presentation import diff_html, sub_graph, graph_visualization as graph
 
 
 class Presenter:
 
-    def __init__(self, report_root, dpct_version_root,cta_version_root, initial_warnings, cta_recommendations,final_warnings, changes):
+    def __init__(self, report_root, dpct_version_root, cta_version_root, initial_warnings, cta_recommendations,final_warnings, changes):
 
         self.report_root = report_root
         self.initial_warnings = initial_warnings
@@ -271,9 +272,9 @@ class Presenter:
         graph.visualization_partial(all_warnings, image_path)
 
     def get_warnings_and_changes(self, dpct_root, destination_root):
-        preAnalyser = PreAnalyser(dpct_root)
-        all_warnings = preAnalyser.get_all_warnings()
-        postAnalyser = PostAnalyser(destination_root)
-        final_warnings = postAnalyser.get_all_warnings()
-        changes = postAnalyser.get_all_recommendation()
+        pre_analyser = WarningAnalyser(dpct_root)
+        all_warnings = pre_analyser.get_all_warnings()
+        post_analyser = WarningRecommendationAnalyser(destination_root)
+        final_warnings = post_analyser.get_all_warnings()
+        changes = post_analyser.get_all_recommendation()
         return all_warnings, final_warnings, changes

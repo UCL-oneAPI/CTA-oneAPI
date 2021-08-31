@@ -1,8 +1,8 @@
 import os
 from pathlib import Path
 
-from analysers.PostAnalyser import PostAnalyser
-from analysers.PreAnalyser import PreAnalyser
+from analysers.WarningAnalyser import WarningAnalyser
+from analysers.WarningRecommendationAnalyser import WarningRecommendationAnalyser
 from auto_editor.AutoEditor import AutoEditor
 from report_presentation.Presenter import Presenter
 import pandas as pd
@@ -28,7 +28,7 @@ class CTA_Instance:
         '''
         populate self.initial_warnings
         '''
-        pre_analyser = PreAnalyser(self.dpct_version_root)
+        pre_analyser = WarningAnalyser(self.dpct_version_root)
         self.initial_warnings = pre_analyser.get_all_warnings()
 
     def run_editor(self):
@@ -44,7 +44,7 @@ class CTA_Instance:
         '''
         populate self.final_warnings based on analysis of final version
         '''
-        post_analyser = PostAnalyser(self.cta_version_root)
+        post_analyser = WarningRecommendationAnalyser(self.cta_version_root)
         self.final_warnings = post_analyser.get_all_warnings()
         self.cta_recommendations = post_analyser.get_all_recommendation()
 

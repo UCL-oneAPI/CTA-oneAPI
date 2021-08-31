@@ -4,7 +4,7 @@ from auto_editor.StructuredProjectSource import StructuredProjectSource
 from enums import WarningItem
 
 
-class BaseAnalyser:
+class WarningAnalyser:
     def __init__(self, project_root_path: Path):
         self.project_root_path = project_root_path
 

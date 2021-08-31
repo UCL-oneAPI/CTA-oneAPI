@@ -1,14 +1,14 @@
 import unittest
 
-from analysers.PreAnalyser import PreAnalyser
+from analysers.WarningAnalyser import WarningAnalyser
 from testing_support.BaseIntegrationTest import BaseIntegrationTest
 
 
-class TestPreAnalyzerIntegration(BaseIntegrationTest):
+class TestWarningAnalyserIntegration(BaseIntegrationTest):
 
     def test_getAllWarnings_dpctProjectWithWarning_warningExtracted(self):
-        pre_analyser = PreAnalyser(self.dpct_root)
-        warnings = pre_analyser.get_all_warnings()
+        warning_analyser = WarningAnalyser(self.dpct_root)
+        warnings = warning_analyser.get_all_warnings()
 
         self.assertEqual(len(warnings), 22)
         self.assertEqual(warnings[0].project_name, 'test_project')

@@ -11,14 +11,18 @@ def evaluate_samples(projects_root, report_path):
     all_final_warnings = []
     all_cta_recommendations = []
     all_changes = []
-    all_paths = [i[0] for i in os.walk(projects_root)]
+    all_projects = os.listdir(projects_root)
 
     # run cta on all projects
-    for path in all_paths:
+    for project_name in all_projects:
+        path = 'evaluation/' + projects_root + '/' + project_name
         dpct_root = path + '/dpcpp'  # expected to be provided in each project
         destination_dir = path + '/cta-version'
-        project_report_dir = path + 'cta-report'
+        project_report_dir = path + '/cta-report'
         cta_instance = run_cta(dpct_root, destination_dir, project_report_dir)
+
+        #todo: change project_name in warning_item and change_item and recommendation
+
         all_initial_warnings.extend(cta_instance.initial_warnings)
         all_final_warnings.extend(cta_instance.final_warnings)
         all_cta_recommendations.extend(cta_instance.cta_recommendations)
@@ -26,6 +30,8 @@ def evaluate_samples(projects_root, report_path):
 
     # create accumulated csvs
     csv_root = report_path + '/raw_data'
+    if not os.path.exists(csv_root):
+        os.mkdir(csv_root)
     pd.DataFrame(all_initial_warnings).to_csv(csv_root + '/all_initial_warnings.csv')
     pd.DataFrame(all_final_warnings).to_csv(csv_root + '/all_final_warnings.csv')
     pd.DataFrame(all_cta_recommendations).to_csv(csv_root + '/all_cta_recommendations.csv')
@@ -67,3 +73,8 @@ if __name__ == '__main__':
             os.mkdir(args.aggregated_report_path)
 
     evaluate_samples(args.projects_root_path, args.aggregated_report_path)
+
+
+'''
+- add project_name to change item
+'''

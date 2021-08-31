@@ -11,5 +11,5 @@ RULES_TO_DESCRIPTIONS = {
     AddCommentsRule: "Insert comments to provide recommendations for various warnings",
 
     # test rule with simple exemplary implementation
-    # AddCommentsTestRule: "Insert comments to provide recommendations for various warnings"
+    AddCommentsTestRule: "Insert comments to provide recommendations for various warnings"
 }

@@ -1,17 +1,17 @@
 import unittest
 
-from analysers.PostAnalyser import PostAnalyser
+from analysers.WarningRecommendationAnalyser import WarningRecommendationAnalyser
 from testing_support.BaseIntegrationTest import BaseIntegrationTest
 
 
-class TestPostAnalyzerIntegration(BaseIntegrationTest):
+class TestWarningRecommendationAnalyserIntegration(BaseIntegrationTest):
 
     def test_getAllWarnings_dpctProjectWithWarning_warningExtracted(self):
         p = self.get_full_test_path("integration_testing_data/post_analyzer_testing_data")
         print("cta_root:", p)
-        post_analyser = PostAnalyser(p)
-        final_warnings = post_analyser.get_all_warnings()
-        recommendations = post_analyser.get_all_recommendation()
+        warning_recommendation_analyser = WarningRecommendationAnalyser(p)
+        final_warnings = warning_recommendation_analyser.get_all_warnings()
+        recommendations = warning_recommendation_analyser.get_all_recommendation()
         print(recommendations)
 
 

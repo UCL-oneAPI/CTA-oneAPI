@@ -1,11 +1,10 @@
-from analysers.BaseAnalyser import BaseAnalyser
-
+from analysers.WarningAnalyser import WarningAnalyser
 from auto_editor.StructuredProjectSource_Recommendation import StructuredProjectSource_Recommendation
-from enums import WarningItem, RecommendationItem
+from enums import RecommendationItem
 from typing import List
 
 
-class PostAnalyser(BaseAnalyser):
+class WarningRecommendationAnalyser(WarningAnalyser):
     """
     Basically, the same as the pre-analyzer,
     plus the ability to also detect and count new CTA warnings/recommendations.
