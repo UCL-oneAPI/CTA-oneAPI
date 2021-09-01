@@ -30,7 +30,7 @@ def visualization_overall(warnings, image_path):
     plt.title("Warning Types with Number of Occurrences (Overall)")
     plt.legend(loc="upper left", fontsize="x-small")
     plt.savefig(str(image_path) + '/before-overall.png')
-    plt.show()
+    plt.close()
 
 
 def visualization_partial(warnings, image_path):
@@ -40,7 +40,6 @@ def visualization_partial(warnings, image_path):
         file_name = Path(i.file_path).name
         file_warnings.setdefault(file_name, []).append(i.warning_code)
         codes.add(i.warning_code)
-    #codes = set(codes)
     for k, v in file_warnings.items():
         warning_distribution = Counter(v)
         for code in codes:
@@ -59,4 +58,4 @@ def visualization_partial(warnings, image_path):
         plt.ylabel("Occurrence")
         plt.title("Warnings in " + k)
         plt.savefig(str(image_path) + '/' + k + '.jpg')
-        plt.show()
+        plt.close()

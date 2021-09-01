@@ -258,46 +258,14 @@ void freeCluster(clusters_t* c) {
 void freeClusterDevice(clusters_t *c) try {
     dpct::device_ext &dev_ct1 = dpct::get_current_device();
     sycl::queue &q_ct1 = dev_ct1.default_queue();
-  /*
-  DPCT1003:28: Migrated API does not return error code. (*, 0) is inserted. You
-  may need to rewrite this code.
-  */
-  CUDA_SAFE_CALL((sycl::free(c->N, q_ct1), 0));
-  /*
-  DPCT1003:30: Migrated API does not return error code. (*, 0) is inserted. You
-  may need to rewrite this code.
-  */
-  CUDA_SAFE_CALL((sycl::free(c->pi, q_ct1), 0));
-  /*
-  DPCT1003:31: Migrated API does not return error code. (*, 0) is inserted. You
-  may need to rewrite this code.
-  */
-  CUDA_SAFE_CALL((sycl::free(c->constant, q_ct1), 0));
-  /*
-  DPCT1003:32: Migrated API does not return error code. (*, 0) is inserted. You
-  may need to rewrite this code.
-  */
-  CUDA_SAFE_CALL((sycl::free(c->avgvar, q_ct1), 0));
-  /*
-  DPCT1003:33: Migrated API does not return error code. (*, 0) is inserted. You
-  may need to rewrite this code.
-  */
-  CUDA_SAFE_CALL((sycl::free(c->means, q_ct1), 0));
-  /*
-  DPCT1003:34: Migrated API does not return error code. (*, 0) is inserted. You
-  may need to rewrite this code.
-  */
-  CUDA_SAFE_CALL((sycl::free(c->R, q_ct1), 0));
-  /*
-  DPCT1003:35: Migrated API does not return error code. (*, 0) is inserted. You
-  may need to rewrite this code.
-  */
-  CUDA_SAFE_CALL((sycl::free(c->Rinv, q_ct1), 0));
-  /*
-  DPCT1003:36: Migrated API does not return error code. (*, 0) is inserted. You
-  may need to rewrite this code.
-  */
-  CUDA_SAFE_CALL((sycl::free(c->memberships, q_ct1), 0));
+  sycl::free(c->N, q_ct1);
+  sycl::free(c->pi, q_ct1);
+  sycl::free(c->constant, q_ct1);
+  sycl::free(c->avgvar, q_ct1);
+  sycl::free(c->means, q_ct1);
+  sycl::free(c->R, q_ct1);
+  sycl::free(c->Rinv, q_ct1);
+  sycl::free(c->memberships, q_ct1);
 }
 catch (sycl::exception const &exc) {
   std::cerr << exc.what() << "Exception caught at file:" << __FILE__
@@ -323,77 +291,20 @@ clusters_t *setupClusterDevice(clusters_t *c, const int num_clusters,
                                const int num_dimensions) try {
     dpct::device_ext &dev_ct1 = dpct::get_current_device();
     sycl::queue &q_ct1 = dev_ct1.default_queue();
-  /*
-  DPCT1003:37: Migrated API does not return error code. (*, 0) is inserted. You
-  may need to rewrite this code.
-  */
-  CUDA_SAFE_CALL((c->N = sycl::malloc_device<float>(num_clusters, q_ct1), 0));
-  /*
-  DPCT1003:38: Migrated API does not return error code. (*, 0) is inserted. You
-  may need to rewrite this code.
-  */
-  CUDA_SAFE_CALL((c->pi = sycl::malloc_device<float>(num_clusters, q_ct1), 0));
-  /*
-  DPCT1003:39: Migrated API does not return error code. (*, 0) is inserted. You
-  may need to rewrite this code.
-  */
-  CUDA_SAFE_CALL(
-      (c->constant = sycl::malloc_device<float>(num_clusters, q_ct1), 0));
-  /*
-  DPCT1003:40: Migrated API does not return error code. (*, 0) is inserted. You
-  may need to rewrite this code.
-  */
-  CUDA_SAFE_CALL(
-      (c->avgvar = sycl::malloc_device<float>(num_clusters, q_ct1), 0));
-  /*
-  DPCT1003:41: Migrated API does not return error code. (*, 0) is inserted. You
-  may need to rewrite this code.
-  */
-  CUDA_SAFE_CALL((c->means = (float *)sycl::malloc_device(
-                      sizeof(float) * num_dimensions * num_clusters, q_ct1),
-                  0));
-  /*
-  DPCT1003:42: Migrated API does not return error code. (*, 0) is inserted. You
-  may need to rewrite this code.
-  */
-  CUDA_SAFE_CALL(
-      (c->R = (float *)sycl::malloc_device(sizeof(float) * num_dimensions *
-                                               num_dimensions * num_clusters,
-                                           q_ct1),
-       0));
-  /*
-  DPCT1003:43: Migrated API does not return error code. (*, 0) is inserted. You
-  may need to rewrite this code.
-  */
-  CUDA_SAFE_CALL(
-      (c->Rinv = (float *)sycl::malloc_device(sizeof(float) * num_dimensions *
-                                                  num_dimensions * num_clusters,
-                                              q_ct1),
-       0));
-  /*
-  DPCT1003:44: Migrated API does not return error code. (*, 0) is inserted. You
-  may need to rewrite this code.
-  */
-  CUDA_SAFE_CALL((c->memberships = (float *)sycl::malloc_device(
-                      sizeof(float) * num_events *
-                          (num_clusters + NUM_CLUSTERS_PER_BLOCK -
-                           num_clusters % NUM_CLUSTERS_PER_BLOCK),
-                      q_ct1),
-                  0));
+  c->N = sycl::malloc_device<float>(num_clusters, q_ct1);
+  c->pi = sycl::malloc_device<float>(num_clusters, q_ct1);
+  c->constant = sycl::malloc_device<float>(num_clusters, q_ct1);
+  c->avgvar = sycl::malloc_device<float>(num_clusters, q_ct1);
+  c->means = (float *)sycl::malloc_device(sizeof(float) * num_dimensions * num_clusters, q_ct1);
+  c->R = (float *)sycl::malloc_device(sizeof(float) * num_dimensions *num_dimensions * num_clusters,q_ct1);
+  c->Rinv = (float *)sycl::malloc_device(sizeof(float) * num_dimensions *num_dimensions * num_clusters,q_ct1);
+  c->memberships = (float *)sycl::malloc_device(sizeof(float) * num_events *(num_clusters + NUM_CLUSTERS_PER_BLOCK -num_clusters % NUM_CLUSTERS_PER_BLOCK),q_ct1);
 
   clusters_t* d_clusters;
-  /*
-  DPCT1003:45: Migrated API does not return error code. (*, 0) is inserted. You
-  may need to rewrite this code.
-  */
-  CUDA_SAFE_CALL((d_clusters = sycl::malloc_device<clusters_t>(1, q_ct1), 0));
+  d_clusters = sycl::malloc_device<clusters_t>(1, q_ct1);
 
   // Copy Cluster data to device
-  /*
-  DPCT1003:46: Migrated API does not return error code. (*, 0) is inserted. You
-  may need to rewrite this code.
-  */
-  CUDA_SAFE_CALL((q_ct1.memcpy(d_clusters, c, sizeof(clusters_t)).wait(), 0));
+  q_ct1.memcpy(d_clusters, c, sizeof(clusters_t)).wait();
   DEBUG("Finished copying cluster data to device.\n");
   return d_clusters;
 }
@@ -409,69 +320,15 @@ void copyClusterFromDevice(clusters_t *c, clusters_t *c_tmp, clusters_t *d_c,
     dpct::device_ext &dev_ct1 = dpct::get_current_device();
     sycl::queue &q_ct1 = dev_ct1.default_queue();
   if (d_c != NULL)
-    /*
-    DPCT1003:47: Migrated API does not return error code. (*, 0) is inserted.
-    You may need to rewrite this code.
-    */
-    CUDA_SAFE_CALL((q_ct1.memcpy(c_tmp, d_c, sizeof(clusters_t)).wait(), 0));
+    q_ct1.memcpy(c_tmp, d_c, sizeof(clusters_t)).wait();
   // copy all of the arrays from the structs
-  /*
-  DPCT1003:48: Migrated API does not return error code. (*, 0) is inserted. You
-  may need to rewrite this code.
-  */
-  CUDA_SAFE_CALL(
-      (q_ct1.memcpy(c->N, c_tmp->N, sizeof(float) * num_clusters).wait(), 0));
-  /*
-  DPCT1003:49: Migrated API does not return error code. (*, 0) is inserted. You
-  may need to rewrite this code.
-  */
-  CUDA_SAFE_CALL(
-      (q_ct1.memcpy(c->pi, c_tmp->pi, sizeof(float) * num_clusters).wait(), 0));
-  /*
-  DPCT1003:50: Migrated API does not return error code. (*, 0) is inserted. You
-  may need to rewrite this code.
-  */
-  CUDA_SAFE_CALL(
-      (q_ct1.memcpy(c->constant, c_tmp->constant, sizeof(float) * num_clusters)
-           .wait(),
-       0));
-  /*
-  DPCT1003:51: Migrated API does not return error code. (*, 0) is inserted. You
-  may need to rewrite this code.
-  */
-  CUDA_SAFE_CALL(
-      (q_ct1.memcpy(c->avgvar, c_tmp->avgvar, sizeof(float) * num_clusters)
-           .wait(),
-       0));
-  /*
-  DPCT1003:52: Migrated API does not return error code. (*, 0) is inserted. You
-  may need to rewrite this code.
-  */
-  CUDA_SAFE_CALL((q_ct1
-                      .memcpy(c->means, c_tmp->means,
-                              sizeof(float) * num_dimensions * num_clusters)
-                      .wait(),
-                  0));
-  /*
-  DPCT1003:53: Migrated API does not return error code. (*, 0) is inserted. You
-  may need to rewrite this code.
-  */
-  CUDA_SAFE_CALL((q_ct1
-                      .memcpy(c->R, c_tmp->R,
-                              sizeof(float) * num_dimensions * num_dimensions *
-                                  num_clusters)
-                      .wait(),
-                  0));
-  /*
-  DPCT1003:54: Migrated API does not return error code. (*, 0) is inserted. You
-  may need to rewrite this code.
-  */
-  CUDA_SAFE_CALL((q_ct1
-                      .memcpy(c->Rinv, c_tmp->Rinv,
-                              sizeof(float) * num_dimensions * num_dimensions *
-                                  num_clusters)
-                      .wait(),
-                  0));
+  q_ct1.memcpy(c->N, c_tmp->N, sizeof(float) * num_clusters).wait();
+  q_ct1.memcpy(c->pi, c_tmp->pi, sizeof(float) * num_clusters).wait();
+  q_ct1.memcpy(c->constant, c_tmp->constant, sizeof(float) * num_clusters).wait();
+  q_ct1.memcpy(c->avgvar, c_tmp->avgvar, sizeof(float) * num_clusters).wait();
+  q_ct1.memcpy(c->means, c_tmp->means,sizeof(float) * num_dimensions * num_clusters).wait();
+  q_ct1.memcpy(c->R, c_tmp->R,sizeof(float) * num_dimensions * num_dimensions *num_clusters).wait();
+  q_ct1.memcpy(c->Rinv, c_tmp->Rinv,sizeof(float) * num_dimensions * num_dimensions *num_clusters).wait();
 }
 catch (sycl::exception const &exc) {
   std::cerr << exc.what() << "Exception caught at file:" << __FILE__
@@ -483,63 +340,13 @@ void copyClusterToDevice(clusters_t *c, clusters_t *c_tmp,
                          const int num_clusters, const int num_dimensions) try {
     dpct::device_ext &dev_ct1 = dpct::get_current_device();
     sycl::queue &q_ct1 = dev_ct1.default_queue();
-  /*
-  DPCT1003:55: Migrated API does not return error code. (*, 0) is inserted. You
-  may need to rewrite this code.
-  */
-  CUDA_SAFE_CALL(
-      (q_ct1.memcpy(c_tmp->N, c->N, sizeof(float) * num_clusters).wait(), 0));
-  /*
-  DPCT1003:56: Migrated API does not return error code. (*, 0) is inserted. You
-  may need to rewrite this code.
-  */
-  CUDA_SAFE_CALL(
-      (q_ct1.memcpy(c_tmp->pi, c->pi, sizeof(float) * num_clusters).wait(), 0));
-  /*
-  DPCT1003:57: Migrated API does not return error code. (*, 0) is inserted. You
-  may need to rewrite this code.
-  */
-  CUDA_SAFE_CALL(
-      (q_ct1.memcpy(c_tmp->constant, c->constant, sizeof(float) * num_clusters)
-           .wait(),
-       0));
-  /*
-  DPCT1003:58: Migrated API does not return error code. (*, 0) is inserted. You
-  may need to rewrite this code.
-  */
-  CUDA_SAFE_CALL(
-      (q_ct1.memcpy(c_tmp->avgvar, c->avgvar, sizeof(float) * num_clusters)
-           .wait(),
-       0));
-  /*
-  DPCT1003:59: Migrated API does not return error code. (*, 0) is inserted. You
-  may need to rewrite this code.
-  */
-  CUDA_SAFE_CALL((q_ct1
-                      .memcpy(c_tmp->means, c->means,
-                              sizeof(float) * num_dimensions * num_clusters)
-                      .wait(),
-                  0));
-  /*
-  DPCT1003:60: Migrated API does not return error code. (*, 0) is inserted. You
-  may need to rewrite this code.
-  */
-  CUDA_SAFE_CALL((q_ct1
-                      .memcpy(c_tmp->R, c->R,
-                              sizeof(float) * num_dimensions * num_dimensions *
-                                  num_clusters)
-                      .wait(),
-                  0));
-  /*
-  DPCT1003:61: Migrated API does not return error code. (*, 0) is inserted. You
-  may need to rewrite this code.
-  */
-  CUDA_SAFE_CALL((q_ct1
-                      .memcpy(c_tmp->Rinv, c->Rinv,
-                              sizeof(float) * num_dimensions * num_dimensions *
-                                  num_clusters)
-                      .wait(),
-                  0));
+  q_ct1.memcpy(c_tmp->N, c->N, sizeof(float) * num_clusters).wait();
+  q_ct1.memcpy(c_tmp->pi, c->pi, sizeof(float) * num_clusters).wait();
+  q_ct1.memcpy(c_tmp->constant, c->constant, sizeof(float) * num_clusters).wait();
+  q_ct1.memcpy(c_tmp->avgvar, c->avgvar, sizeof(float) * num_clusters).wait();
+  q_ct1.memcpy(c_tmp->means, c->means,sizeof(float) * num_dimensions * num_clusters).wait();
+  q_ct1.memcpy(c_tmp->R, c->R,sizeof(float) * num_dimensions * num_dimensions *num_clusters).wait();
+  q_ct1.memcpy(c_tmp->Rinv, c->Rinv,sizeof(float) * num_dimensions * num_dimensions *num_clusters).wait();
 }
 catch (sycl::exception const &exc) {
   std::cerr << exc.what() << "Exception caught at file:" << __FILE__
@@ -620,34 +427,10 @@ clusters_t *cluster(int original_num_clusters, int desired_num_clusters,
 
   // allocate and copy relavant FCS data to device.
   int mem_size = num_dimensions * num_events * sizeof(float);
-  /*
-  DPCT1003:62: Migrated API does not return error code. (*, 0) is inserted. You
-  may need to rewrite this code.
-  */
-  CUDA_SAFE_CALL(
-      (d_fcs_data_by_event = (float *)sycl::malloc_device(mem_size, q_ct1), 0));
-  /*
-  DPCT1003:63: Migrated API does not return error code. (*, 0) is inserted. You
-  may need to rewrite this code.
-  */
-  CUDA_SAFE_CALL(
-      (d_fcs_data_by_dimension = (float *)sycl::malloc_device(mem_size, q_ct1),
-       0));
-  /*
-  DPCT1003:64: Migrated API does not return error code. (*, 0) is inserted. You
-  may need to rewrite this code.
-  */
-  CUDA_SAFE_CALL(
-      (q_ct1.memcpy(d_fcs_data_by_event, fcs_data_by_event, mem_size).wait(),
-       0));
-  /*
-  DPCT1003:65: Migrated API does not return error code. (*, 0) is inserted. You
-  may need to rewrite this code.
-  */
-  CUDA_SAFE_CALL(
-      (q_ct1.memcpy(d_fcs_data_by_dimension, fcs_data_by_dimension, mem_size)
-           .wait(),
-       0));
+  d_fcs_data_by_event = (float *)sycl::malloc_device(mem_size, q_ct1);
+  d_fcs_data_by_dimension = (float *)sycl::malloc_device(mem_size, q_ct1);
+  q_ct1.memcpy(d_fcs_data_by_event, fcs_data_by_event, mem_size).wait();
+  q_ct1.memcpy(d_fcs_data_by_dimension, fcs_data_by_dimension, mem_size).wait();
 
   DEBUG("GPU: Finished copying FCS data to device.\n");
 
@@ -757,12 +540,7 @@ clusters_t *cluster(int original_num_clusters, int desired_num_clusters,
   PRINT("Gaussian.cu: epsilon = %f\n",epsilon);
 
   float* d_likelihoods;
-  /*
-  DPCT1003:66: Migrated API does not return error code. (*, 0) is inserted. You
-  may need to rewrite this code.
-  */
-  CUDA_SAFE_CALL(
-      (d_likelihoods = sycl::malloc_device<float>(NUM_BLOCKS, q_ct1), 0));
+  d_likelihoods = sycl::malloc_device<float>(NUM_BLOCKS, q_ct1);
 
   // Variables for GMM reduce order
   float distance, min_distance = 0.0;
@@ -814,15 +592,7 @@ clusters_t *cluster(int original_num_clusters, int desired_num_clusters,
     regroup_iterations++;
 
     // Copy the likelihood totals from each block, sum them up to get a total
-    /*
-    DPCT1003:67: Migrated API does not return error code. (*, 0) is inserted.
-    You may need to rewrite this code.
-    */
-    CUDA_SAFE_CALL((q_ct1
-                        .memcpy(shared_likelihoods, d_likelihoods,
-                                sizeof(float) * NUM_BLOCKS)
-                        .wait(),
-                    0));
+    q_ct1.memcpy(shared_likelihoods, d_likelihoods,sizeof(float) * NUM_BLOCKS).wait();
     likelihood = 0.0;
     for(int i=0;i<NUM_BLOCKS;i++) {
       likelihood += shared_likelihoods[i]; 
@@ -857,29 +627,24 @@ clusters_t *cluster(int original_num_clusters, int desired_num_clusters,
             });
       });
 
-      /*
-      DPCT1003:70: Migrated API does not return error code. (*, 0) is inserted.
-      You may need to rewrite this code.
-      */
-      CUDA_SAFE_CALL((
-          q_ct1
-              .memcpy(clusters.N, temp_clusters.N, sizeof(float) * num_clusters)
-              .wait(),
-          0));
+      q_ct1.memcpy(clusters.N, temp_clusters.N, sizeof(float) * num_clusters).wait();
 
       sycl::range<3> gridDim1(1, num_dimensions, num_clusters);
       sycl::range<3> blockDim1(1, 1, NUM_THREADS_MSTEP);
-      /*
-      DPCT1049:68: The workgroup size passed to the SYCL kernel may exceed the
-      limit. To get the device limit, query info::device::max_work_group_size.
-      Adjust the workgroup size if needed.
-      */
       q_ct1.submit([&](sycl::handler &cgh) {
         sycl::accessor<float, 1, sycl::access::mode::read_write,
                        sycl::access::target::local>
             temp_sum_acc_ct1(sycl::range<1>(256 /*NUM_THREADS_MSTEP*/), cgh);
 
-        cgh.parallel_for(sycl::nd_range<3>(gridDim1 * blockDim1, blockDim1),
+        auto dpct_global_range = gridDim1 * blockDim1;
+
+        cgh.parallel_for(sycl::nd_range<3>(
+            sycl::range<3>(dpct_global_range.get(2),
+                dpct_global_range.get(1),
+                dpct_global_range.get(0)),
+            sycl::range<3>(blockDim1.get(2),
+                blockDim1.get(1),
+                blockDim1.get(0))),
                          [=](sycl::nd_item<3> item_ct1) {
                            mstep_means(d_fcs_data_by_dimension, d_clusters,
                                        num_dimensions, num_clusters, num_events,
@@ -887,15 +652,7 @@ clusters_t *cluster(int original_num_clusters, int desired_num_clusters,
                                        temp_sum_acc_ct1.get_pointer());
                          });
       });
-      /*
-      DPCT1003:71: Migrated API does not return error code. (*, 0) is inserted.
-      You may need to rewrite this code.
-      */
-      CUDA_SAFE_CALL((q_ct1
-                          .memcpy(clusters.means, temp_clusters.means,
-                                  sizeof(float) * num_clusters * num_dimensions)
-                          .wait(),
-                      0));
+      q_ct1.memcpy(clusters.means, temp_clusters.means,sizeof(float) * num_clusters * num_dimensions).wait();
 
       // Reduce means for all clusters, copy back to device
       for(int c=0; c < num_clusters; c++) {
@@ -910,25 +667,12 @@ clusters_t *cluster(int original_num_clusters, int desired_num_clusters,
         }
         DEBUG("\n");
       }
-      /*
-      DPCT1003:72: Migrated API does not return error code. (*, 0) is inserted.
-      You may need to rewrite this code.
-      */
-      CUDA_SAFE_CALL((q_ct1
-                          .memcpy(temp_clusters.means, clusters.means,
-                                  sizeof(float) * num_clusters * num_dimensions)
-                          .wait(),
-                      0));
+      q_ct1.memcpy(temp_clusters.means, clusters.means,sizeof(float) * num_clusters * num_dimensions).wait();
 
       // Covariance is symmetric, so we only need to compute N*(N+1)/2 matrix elements per cluster
       sycl::range<3> gridDim2(1, num_dimensions * (num_dimensions + 1) / 2,
                               (num_clusters + NUM_CLUSTERS_PER_BLOCK - 1) /
                                   NUM_CLUSTERS_PER_BLOCK);
-      /*
-      DPCT1049:69: The workgroup size passed to the SYCL kernel may exceed the
-      limit. To get the device limit, query info::device::max_work_group_size.
-      Adjust the workgroup size if needed.
-      */
       q_ct1.submit([&](sycl::handler &cgh) {
         sycl::accessor<float, 1, sycl::access::mode::read_write,
                        sycl::access::target::local>
@@ -945,7 +689,15 @@ clusters_t *cluster(int original_num_clusters, int desired_num_clusters,
                     1536 /*NUM_THREADS_MSTEP*NUM_CLUSTERS_PER_BLOCK*/),
                 cgh);
 
-        cgh.parallel_for(sycl::nd_range<3>(gridDim2 * blockDim1, blockDim1),
+        auto dpct_global_range = gridDim2 * blockDim1;
+
+        cgh.parallel_for(sycl::nd_range<3>(
+            sycl::range<3>(dpct_global_range.get(2),
+                dpct_global_range.get(1),
+                dpct_global_range.get(0)),
+            sycl::range<3>(blockDim1.get(2),
+                blockDim1.get(1),
+                blockDim1.get(0))),
                          [=](sycl::nd_item<3> item_ct1) {
                            mstep_covariance2(d_fcs_data_by_dimension,
                                              d_clusters, num_dimensions,
@@ -955,16 +707,7 @@ clusters_t *cluster(int original_num_clusters, int desired_num_clusters,
                                              temp_sums_acc_ct1.get_pointer());
                          });
       });
-      /*
-      DPCT1003:73: Migrated API does not return error code. (*, 0) is inserted.
-      You may need to rewrite this code.
-      */
-      CUDA_SAFE_CALL((q_ct1
-                          .memcpy(clusters.R, temp_clusters.R,
-                                  sizeof(float) * num_clusters *
-                                      num_dimensions * num_dimensions)
-                          .wait(),
-                      0));
+      q_ct1.memcpy(clusters.R, temp_clusters.R,sizeof(float) * num_clusters *num_dimensions * num_dimensions).wait();
 
     DEBUG("After cov2\tR:\n\t");
     for(int c=0; c < num_clusters; c++) 
@@ -993,16 +736,7 @@ clusters_t *cluster(int original_num_clusters, int desired_num_clusters,
           }
         }
       }
-      /*
-      DPCT1003:74: Migrated API does not return error code. (*, 0) is inserted.
-      You may need to rewrite this code.
-      */
-      CUDA_SAFE_CALL((q_ct1
-                          .memcpy(temp_clusters.R, clusters.R,
-                                  sizeof(float) * num_clusters *
-                                      num_dimensions * num_dimensions)
-                          .wait(),
-                      0));
+      q_ct1.memcpy(temp_clusters.R, clusters.R,sizeof(float) * num_clusters *num_dimensions * num_dimensions).wait();
 
       //CUT_CHECK_ERROR("M-step Kernel execution failed: ");
       params_iterations++;
@@ -1033,15 +767,7 @@ clusters_t *cluster(int original_num_clusters, int desired_num_clusters,
                                matrix_acc_ct1.get_pointer());
             });
       });
-      /*
-      DPCT1003:75: Migrated API does not return error code. (*, 0) is inserted.
-      You may need to rewrite this code.
-      */
-      CUDA_SAFE_CALL((q_ct1
-                          .memcpy(clusters.constant, temp_clusters.constant,
-                                  sizeof(float) * num_clusters)
-                          .wait(),
-                      0));
+      q_ct1.memcpy(clusters.constant, temp_clusters.constant,sizeof(float) * num_clusters).wait();
       for(int temp_c=0; temp_c < num_clusters; temp_c++)
         DEBUG("Cluster %d constant: %e\n",temp_c,clusters.constant[temp_c]);
 
@@ -1088,15 +814,7 @@ clusters_t *cluster(int original_num_clusters, int desired_num_clusters,
       //CUT_CHECK_ERROR("Kernel execution failed");
 
       // Copy the likelihood totals from each block, sum them up to get a total
-      /*
-      DPCT1003:76: Migrated API does not return error code. (*, 0) is inserted.
-      You may need to rewrite this code.
-      */
-      CUDA_SAFE_CALL((q_ct1
-                          .memcpy(shared_likelihoods, d_likelihoods,
-                                  sizeof(float) * NUM_BLOCKS)
-                          .wait(),
-                      0));
+      q_ct1.memcpy(shared_likelihoods, d_likelihoods,sizeof(float) * NUM_BLOCKS).wait();
       {
         likelihood = 0.0;
         for(int i=0;i<NUM_BLOCKS;i++) {
@@ -1115,15 +833,7 @@ clusters_t *cluster(int original_num_clusters, int desired_num_clusters,
     // copy all of the arrays from the device
     copyClusterFromDevice(&clusters, &temp_clusters, NULL, num_clusters, num_dimensions);
 
-    /*
-    DPCT1007:77: Migration of this CUDA API is not supported by the Intel(R)
-    * DPC++ Compatibility Tool.
-    */
-    CUDA_SAFE_CALL((q_ct1
-                        .memcpy(clusters.memberships, temp_clusters.memberships,
-                                sizeof(float) * num_events * num_clusters)
-                        .wait(),
-                    0));
+    q_ct1.memcpy(clusters.memberships, temp_clusters.memberships,sizeof(float) * num_events * num_clusters).wait();
 
     DEBUG("GPU done with copying cluster data from device\n");
 
@@ -1205,25 +915,10 @@ clusters_t *cluster(int original_num_clusters, int desired_num_clusters,
   } // outer loop from M to 1 clusters
   PRINT("\nFinal rissanen Score was: %f, with %d clusters.\n",min_rissanen,ideal_num_clusters);
 
-  /*
-  DPCT1032:78: Different generator is used, you may need to adjust the code.
-  */
-  CUDA_SAFE_CALL((sycl::free(d_likelihoods, q_ct1), 0));
-  /*
-  DPCT1003:79: Migrated API does not return error code. (*, 0) is inserted. You
-  may need to rewrite this code.
-  */
-  CUDA_SAFE_CALL((sycl::free(d_fcs_data_by_event, q_ct1), 0));
-  /*
-  DPCT1003:80: Migrated API does not return error code. (*, 0) is inserted. You
-  may need to rewrite this code.
-  */
-  CUDA_SAFE_CALL((sycl::free(d_fcs_data_by_dimension, q_ct1), 0));
-  /*
-  DPCT1003:81: Migrated API does not return error code. (*, 0) is inserted. You
-  may need to rewrite this code.
-  */
-  CUDA_SAFE_CALL((sycl::free(d_clusters, q_ct1), 0));
+  sycl::free(d_likelihoods, q_ct1);
+  sycl::free(d_fcs_data_by_event, q_ct1);
+  sycl::free(d_fcs_data_by_dimension, q_ct1);
+  sycl::free(d_clusters, q_ct1);
 
   freeCluster(&scratch_cluster);
   freeCluster(&clusters);

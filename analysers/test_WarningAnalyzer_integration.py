@@ -10,7 +10,7 @@ class TestWarningAnalyserIntegration(BaseIntegrationTest):
         warning_analyser = WarningAnalyser(self.dpct_root)
         warnings = warning_analyser.get_all_warnings()
 
-        self.assertEqual(len(warnings), 22)
+        self.assertEqual(5, len(warnings))
         self.assertEqual(warnings[0].project_name, 'test_project')
         self.assertEqual(warnings[0].warning_code, 'DPCT1111')
         self.assertEqual(warnings[0].file_path, '/kernel_wrapper2.dp.cpp')

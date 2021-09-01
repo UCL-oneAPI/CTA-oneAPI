@@ -73,13 +73,6 @@ void bitonic_sort( T* sh_data, const uint localid, sycl::nd_item<3> item_ct1)
     const bool sortThem = av > bv;
     sh_data[pos]      = select(av, bv, sortThem);
     sh_data[pos + j]  = select(bv, av, sortThem);
-
-    /*
-    DPCT1065:2: Consider replacing sycl::nd_item::barrier() with
-     * sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
-     * performance, if there is no access to global memory.
-    */
-    item_ct1.barrier();
   }
 }
 
@@ -107,12 +100,6 @@ void sort_threshold( T* data_in,
         temp[i] = UINT_MAX;
       }
     }
-    /*
-    DPCT1065:3: Consider replacing sycl::nd_item::barrier() with
-     * sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
-     * performance, if there is no access to global memory.
-    */
-    item_ct1.barrier();
     bitonic_sort(temp, localid, item_ct1);
 
     for (uint i = localid; i < tsum; i += LQSORT_LOCAL_WORKGROUP_SIZE) {
@@ -161,12 +148,6 @@ gqsort_kernel( T* d,  T* dn,  block_record<T>* blocks,  parent_record* parents, 
 
   // Set thread __shared__ counters to zero
   lt[localid] = gt[localid] = 0;
-  /*
-  DPCT1065:4: Consider replacing sycl::nd_item::barrier() with
-   * sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
-   * performance, if there is no access to global memory.
-  */
-  item_ct1.barrier();
 
   // Align thread accesses for coalesced reads.
   // Go through data...
@@ -181,12 +162,6 @@ gqsort_kernel( T* d,  T* dn,  block_record<T>* blocks,  parent_record* parents, 
   }
   lt[localid] = ltp;
   gt[localid] = gtp;
-  /*
-  DPCT1065:5: Consider replacing sycl::nd_item::barrier() with
-   * sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
-   * performance, if there is no access to global memory.
-  */
-  item_ct1.barrier();
 
   // calculate cumulative sums
   uint n;
@@ -196,12 +171,6 @@ gqsort_kernel( T* d,  T* dn,  block_record<T>* blocks,  parent_record* parents, 
       lt[localid] += lt[localid-i];
       gt[localid] += gt[localid-i];
     }
-    /*
-    DPCT1065:8: Consider replacing sycl::nd_item::barrier() with
-     * sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
-     * performance, if there is no access to global memory.
-    */
-    item_ct1.barrier();
   }
 
   if ((localid & n) == n) {
@@ -217,13 +186,6 @@ gqsort_kernel( T* d,  T* dn,  block_record<T>* blocks,  parent_record* parents, 
       plus_prescan(&lt[localid - i], &lt[localid]);
       plus_prescan(&gt[localid - i], &gt[localid]);
     }
-    /*
-    DPCT1065:9: Consider replacing sycl::nd_item::barrier() with
-     * sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
-     * performance, if there is no access to global memory.
-    */
-    item_ct1.barrier();
-  }
 
   // Allocate memory in the sequence this block is a part of
   if (localid == 0) {
@@ -234,32 +196,13 @@ gqsort_kernel( T* d,  T* dn,  block_record<T>* blocks,  parent_record* parents, 
     poldend = &pparent->oldend;
     pblockcount = &pparent->blockcount;
     // Atomic increment allocates memory to write to.
-    /*
-    DPCT1039:10: The generated code assumes that "psstart" points to the
-     * global memory address space. If it points to a local memory address
-     * space, replace "dpct::atomic_fetch_add" with
-     * "dpct::atomic_fetch_add<uint,
-     * sycl::access::address_space::local_space>".
-    */
     *lbeg =
         sycl::atomic<uint>(sycl::global_ptr<uint>(psstart)).fetch_add(*ltsum);
     // Atomic is necessary since multiple blocks access this
-    /*
-    DPCT1039:11: The generated code assumes that "psend" points to the
-     * global memory address space. If it points to a local memory address
-     * space, replace "dpct::atomic_fetch_sub" with
-     * "dpct::atomic_fetch_sub<uint,
-     * sycl::access::address_space::local_space>".
-    */
     *gbeg =
         sycl::atomic<uint>(sycl::global_ptr<uint>(psend)).fetch_sub(*gtsum) -
         *gtsum;
   }
-  /*
-  DPCT1065:6: Consider replacing sycl::nd_item::barrier() with
-   * sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
-   * performance, if there is no access to global memory.
-  */
   item_ct1.barrier();
 
   // Allocate locations for work items
@@ -276,11 +219,6 @@ gqsort_kernel( T* d,  T* dn,  block_record<T>* blocks,  parent_record* parents, 
     if (tmp > pivot) 
       sn[gfrom++] = tmp;
   }
-  /*
-  DPCT1065:7: Consider replacing sycl::nd_item::barrier() with
-   * sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
-   * performance, if there is no access to global memory.
-  */
   item_ct1.barrier();
 
   if (localid == 0) {
@@ -335,11 +273,6 @@ gqsort_kernel( T* d,  T* dn,  block_record<T>* blocks,  parent_record* parents, 
     uint direction;
   } workstack_record;
 
-/*
-DPCT1065:21: Consider replacing sycl::nd_item::barrier() with
- * sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
- * performance, if there is no access to global memory.
-*/
 #define PUSH(START, END)                                                       \
                                if (localid == 0) {                                                          \
   ++(*workstack_pointer);                                                    \
@@ -402,12 +335,6 @@ lqsort_kernel(T* d, T* dn, work_record<T>* seqs, sycl::nd_item<3> item_ct1,
       mys[i] = dn[i+d_offset];
     }
   }
-  /*
-  DPCT1065:13: Consider replacing sycl::nd_item::barrier() with
-   * sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
-   * performance, if there is no access to global memory.
-  */
-  item_ct1.barrier();
 
   while (*workstack_pointer >= 0) {
     // pop up the stack
@@ -415,12 +342,6 @@ lqsort_kernel(T* d, T* dn, work_record<T>* seqs, sycl::nd_item<3> item_ct1,
     start = wr.start;
     end = wr.end;
     direction = wr.direction;
-    /*
-    DPCT1065:14: Consider replacing sycl::nd_item::barrier() with
-     * sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
-     * performance, if there is no access to global memory.
-    */
-    item_ct1.barrier();
     if (localid == 0) {
       --(*workstack_pointer);
 
@@ -436,13 +357,6 @@ lqsort_kernel(T* d, T* dn, work_record<T>* seqs, sycl::nd_item<3> item_ct1,
     // Set thread __shared__ counters to zero
     lt[localid] = gt[localid] = 0;
     ltp = gtp = 0;
-    /*
-    DPCT1065:15: Consider replacing sycl::nd_item::barrier() with
-     * sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
-     * performance, if there is no access to global memory.
-    */
-    item_ct1.barrier();
-
     // Pick a pivot
     uint pivot = (*s)[start];
     if (start < end) {
@@ -461,12 +375,6 @@ lqsort_kernel(T* d, T* dn, work_record<T>* seqs, sycl::nd_item<3> item_ct1,
     }
     lt[localid] = ltp;
     gt[localid] = gtp;
-    /*
-    DPCT1065:16: Consider replacing sycl::nd_item::barrier() with
-     * sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
-     * performance, if there is no access to global memory.
-    */
-    item_ct1.barrier();
 
     // calculate cumulative sums
     uint n;
@@ -497,12 +405,6 @@ lqsort_kernel(T* d, T* dn, work_record<T>* seqs, sycl::nd_item<3> item_ct1,
         plus_prescan(&lt[localid - i], &lt[localid]);
         plus_prescan(&gt[localid - i], &gt[localid]);
       }
-      /*
-      DPCT1065:20: Consider replacing sycl::nd_item::barrier() with
-       * sycl::nd_item::barrier(sycl::access::fence_space::local_space) for
-       * better performance, if there is no access to global memory.
-      */
-      item_ct1.barrier();
     }
 
     // Allocate locations for work items
@@ -519,24 +421,12 @@ lqsort_kernel(T* d, T* dn, work_record<T>* seqs, sycl::nd_item<3> item_ct1,
       if (tmp > pivot)
         (*sn)[gfrom++] = tmp;
     }
-    /*
-    DPCT1065:17: Consider replacing sycl::nd_item::barrier() with
-     * sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
-     * performance, if there is no access to global memory.
-    */
-    item_ct1.barrier();
 
     // Store the pivot value between the new sequences
     for (i = start + *ltsum + localid; i < end - *gtsum;
          i += LQSORT_LOCAL_WORKGROUP_SIZE) {
       d[i+d_offset] = pivot;
     }
-    /*
-    DPCT1065:18: Consider replacing sycl::nd_item::barrier() with
-     * sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
-     * performance, if there is no access to global memory.
-    */
-    item_ct1.barrier();
 
     // if the sequence is shorter than SORT_THRESHOLD
     // sort it using an alternative sort and place result in d
