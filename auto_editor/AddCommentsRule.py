@@ -39,7 +39,7 @@ class AddCommentsRule(BaseRule):
         for c in all_items:
             all_line.append(c.code)
         prefix = ''
-        for i in range(all_line.__len__()):
+        for i in range(all_line.__len__())[warning_first_line:]:
             line_list = list(all_line[i].split())
             if state == True:
                 if len(line_list) != 0 and line_list[0].split(':')[0] in self.dpct_warning_codes:
