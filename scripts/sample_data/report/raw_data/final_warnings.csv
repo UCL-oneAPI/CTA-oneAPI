@@ -1,5 +1,0 @@
-,project_name,warning_code,file_path,message,line
-0,destination_dir,DPCT1010,/main.dp.cpp,"DPCT1010:16: SYCL uses exceptions to report errors and does not use the error
-codes. The call was replaced with 0. You need to rewrite this code.",266
-1,destination_dir,DPCT1010,/main.dp.cpp,"DPCT1010:19: SYCL uses exceptions to report errors and does not use the error
-codes. The call was replaced with 0. You need to rewrite this code.",295

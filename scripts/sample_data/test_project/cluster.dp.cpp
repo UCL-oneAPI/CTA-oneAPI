@@ -1116,8 +1116,8 @@ clusters_t *cluster(int original_num_clusters, int desired_num_clusters,
     copyClusterFromDevice(&clusters, &temp_clusters, NULL, num_clusters, num_dimensions);
 
     /*
-    DPCT1003:77: Migrated API does not return error code. (*, 0) is inserted.
-    You may need to rewrite this code.
+    DPCT1007:77: Migration of this CUDA API is not supported by the Intel(R)
+    * DPC++ Compatibility Tool.
     */
     CUDA_SAFE_CALL((q_ct1
                         .memcpy(clusters.memberships, temp_clusters.memberships,
@@ -1206,8 +1206,7 @@ clusters_t *cluster(int original_num_clusters, int desired_num_clusters,
   PRINT("\nFinal rissanen Score was: %f, with %d clusters.\n",min_rissanen,ideal_num_clusters);
 
   /*
-  DPCT1003:78: Migrated API does not return error code. (*, 0) is inserted. You
-  may need to rewrite this code.
+  DPCT1032:78: Different generator is used, you may need to adjust the code.
   */
   CUDA_SAFE_CALL((sycl::free(d_likelihoods, q_ct1), 0));
   /*
