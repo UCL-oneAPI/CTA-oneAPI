@@ -265,7 +265,9 @@ class Presenter:
 
     def remove_image_folder(self, image_path):
         for i in os.listdir(image_path):
-            os.remove(os.path.join(image_path, i))
+            join_path = os.path.join(image_path, i)
+            if os.path.isfile(join_path):
+                os.remove(join_path)
         os.rmdir(image_path)
 
     def show_visualize(self, report_root, all_warnings):
