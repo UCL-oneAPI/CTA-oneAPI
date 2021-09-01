@@ -7,7 +7,8 @@ from report_presentation import diff_html, sub_graph, graph_visualization as gra
 
 class Presenter:
 
-    def __init__(self, report_root, dpct_version_root,cta_version_root, initial_warnings, cta_recommendations,final_warnings, changes):
+    def __init__(self, report_root, dpct_version_root, cta_version_root, initial_warnings, cta_recommendations,
+                 final_warnings, changes):
 
         self.report_root = report_root
         self.initial_warnings = initial_warnings
@@ -22,14 +23,16 @@ class Presenter:
 
         self.show_visualize(self.report_root, self.initial_warnings)
         self.create_html(self.report_root, self.dpct_version_root, self.cta_version_root, self.initial_warnings,
-                              self.cta_recommendations, self.final_warnings, self.changes, unique_warning_code,
-                              unique_file_path)
+                         self.cta_recommendations, self.final_warnings, self.changes, unique_warning_code,
+                         unique_file_path)
 
-    def html_page(self, all_warnings, recommendations, final_warnings, changes, unique_warning_code, unique_file_path, diff_path):
+    def html_page(self, all_warnings, recommendations, final_warnings, changes, unique_warning_code, unique_file_path,
+                  diff_path):
         file_path_string = self.get_string_of_list(unique_file_path)
         warning_code_string = self.get_string_of_list(unique_warning_code)
         html = self.html_header()
-        html += self.basic_analysis(all_warnings, unique_warning_code, unique_file_path, file_path_string, warning_code_string)
+        html += self.basic_analysis(all_warnings, unique_warning_code, unique_file_path, file_path_string,
+                                    warning_code_string)
         html += self.before_cta_table(all_warnings)
         html += self.after_cta_table(final_warnings)
         html += self.recommendation_table(recommendations)
@@ -104,7 +107,8 @@ class Presenter:
                         <body style="height:100%;"> '''
         return html
 
-    def basic_analysis(self, all_warnings, unique_warning_code, unique_file_path, file_path_string, warning_code_string):
+    def basic_analysis(self, all_warnings, unique_warning_code, unique_file_path, file_path_string,
+                       warning_code_string):
         html_basic_info = '''
                         <p class="serif" ><b>     1.  Number of Analysis Files:  %s</b></p>
 
@@ -163,7 +167,7 @@ class Presenter:
                         '''
         return html
 
-    def recommendation_table(self, changes):
+    def recommendation_table(self, recommendations):
         html = '''
                         <p class="serif" ><b>     10.  Detailed Recommendation Information (After CTA)</b></p>
                         <div class = "recommendation-table">
@@ -176,27 +180,27 @@ class Presenter:
                                         <th>Line Number</th>
                                         <th>Recommendation message</th>
                                 </tr>'''
-        html += self.get_recommendation_info(changes)
+        html += self.get_recommendation_info(recommendations)
         html += '''
                         </table>
                         </div>
                         '''
         return html
 
-    def final_analysis(self, warning_fixed, changes, diff_path):
+    def final_analysis(self, warning_fixed, recommendations, diff_path):
         html = ''
         html += '''
                         <p class="serif" ><b>     11. Number of warnings have been fixed: %s</b></p>
                                 ''' % warning_fixed
         html += '''
                         <p class="serif" ><b>     12.  Number of warnings have CTA recommendation: %s</b></p>
-                                ''' % len(changes)
+                                ''' % len(recommendations)
         html += '''
                         <p class="serif" ><b>     13.  Comparison of before & after : </b></p>
                         '''
         for file in diff_path.rglob('*.html'):
             html += '''
-                    <a href="html_files/%s.html"  class="serif"  >%s</a><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="html_files/%s.html"  class="serif"  >%s</a><br>
                     ''' % (file.stem, file.name)
 
         return html
@@ -240,7 +244,8 @@ class Presenter:
             astring += " ;   "
         return astring
 
-    def create_html(self, report_root, dpct_root, destination_root, all_warnings, recommendations, final_warnings, changes, unique_warning_code, unique_file_path):
+    def create_html(self, report_root, dpct_root, destination_root, all_warnings, recommendations, final_warnings,
+                    changes, unique_warning_code, unique_file_path):
         diff_path = Path.joinpath(Path(report_root), 'html_files')
 
         if diff_path.is_dir() and os.listdir(diff_path):
@@ -250,11 +255,11 @@ class Presenter:
             join_path = os.path.join(report_root, i)
             if os.path.isfile(join_path):
                 os.remove(join_path)
-        with open(report_root+'/report.html', 'w') as report:
+        with open(report_root + '/report.html', 'w') as report:
             report.write(
-                self.html_page(all_warnings, recommendations, final_warnings, changes, unique_warning_code, unique_file_path,
-                                    diff_path))
-        with open(report_root+'/subgraphs.html', 'w') as sub_images:
+                self.html_page(all_warnings, recommendations, final_warnings, changes, unique_warning_code,
+                               unique_file_path, diff_path))
+        with open(report_root + '/subgraphs.html', 'w') as sub_images:
             sub_images.write(sub_graph.add_images(report_root))
 
     def remove_image_folder(self, image_path):
