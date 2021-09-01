@@ -201,7 +201,7 @@ class Presenter:
                         '''
         for file in diff_path.rglob('*.html'):
             html += '''
-                    <a href="html_files/%s.html"  class="serif"  >%s</a><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="html_files/%s.html"  class="serif"  >%s</a><br>
                     ''' % (file.stem, file.name)
 
         return html
@@ -265,7 +265,9 @@ class Presenter:
 
     def remove_image_folder(self, image_path):
         for i in os.listdir(image_path):
-            os.remove(os.path.join(image_path, i))
+            join_path = os.path.join(image_path, i)
+            if os.path.isfile(join_path):
+                os.remove(join_path)
         os.rmdir(image_path)
 
     def show_visualize(self, report_root, all_warnings):
