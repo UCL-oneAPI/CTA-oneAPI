@@ -31,6 +31,9 @@ class TestFix1003Rule(BaseTest):
         has_global_range_declaration = "c->Rinv = (float *)sycl::malloc_device(sizeof(float) * num_dimensions *num_dimensions * num_clusters,q_ct1);" in lines_in_file[2].code
         self.assertTrue(has_global_range_declaration)
 
+    def test_dpct_warning_codes(self):
+        self.assertTrue(Fix1003Rule.dpct_warning_codes,["DPCT1003"])
+
 
 if __name__ == '__main__':
     unittest.main()

@@ -66,11 +66,11 @@ class Fix1003Rule(BaseRule):
         print('length: ',len(project.paths_to_lines[file_path]))
         return project
 
-    def find_true_originline_number(self,all_lines,warning_last_line):
-        for i in range( len(all_lines)):
-            if all_lines[i].original_line == warning_last_line:
-                 return i
-        return 0
+    # def find_true_originline_number(self,all_lines,warning_last_line):
+    #     for i in range( len(all_lines)):
+    #         if all_lines[i].original_line == warning_last_line:
+    #              return i
+    #     return 0
 
     def strip_determin(self,first_time,lines):
         if first_time == False:
@@ -84,15 +84,15 @@ class Fix1003Rule(BaseRule):
         del all_lines[k+1:i+1]
         return k+1
 
-    def remove_code(self, first_line: int, last_line: int = None):
-        remaining_line = last_line + 1 if last_line else first_line + 1
-        del self.all_lines[first_line: remaining_line]
-
-    def delete_dpct_warning(self, warning_begin_id, warning_end_id):
-        warning_begin_i = get_index_of_line_id(warning_begin_id, self.all_lines)
-        warning_end_i = get_index_of_line_id(warning_end_id, self.all_lines)
-        self.remove_code(warning_begin_i, warning_end_i)
-        return warning_begin_i
+    # def remove_code(self, first_line: int, last_line: int = None):
+    #     remaining_line = last_line + 1 if last_line else first_line + 1
+    #     del self.all_lines[first_line: remaining_line]
+    #
+    # def delete_dpct_warning(self, warning_begin_id, warning_end_id):
+    #     warning_begin_i = get_index_of_line_id(warning_begin_id, self.all_lines)
+    #     warning_end_i = get_index_of_line_id(warning_end_id, self.all_lines)
+    #     self.remove_code(warning_begin_i, warning_end_i)
+    #     return warning_begin_i
 
 
     def remove_function_info(self, warning_code):
