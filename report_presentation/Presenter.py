@@ -124,8 +124,7 @@ class Presenter:
                         <p class="serif" >
                           <a href="subgraphs.html">7.   Sub Graphs for Every File</a>
                         </p>
-                        ''' % (
-            len(unique_warning_code), file_path_string, len(unique_file_path), warning_code_string, len(all_warnings))
+                        ''' % (len(unique_file_path), file_path_string, len(unique_warning_code), warning_code_string, len(all_warnings))
         return html_basic_info
 
     def before_cta_table(self, all_warnings):
