@@ -77,16 +77,17 @@ if __name__ == '__main__':
         des = ""
     else:
         if os.path.exists(args.destination_path):
-            des = '/'+str(args.destination_path)
+            des = '/' + str(args.destination_path)
         else:
             os.mkdir(args.destination_path)  # make directory
 
-    output_folder_path = (str(os.getcwd()) + str(des)+'\outputs').replace('\\','/')
-    if os.path.exists(output_folder_path):
-        pass
-    else:
-        os.mkdir(output_folder_path)  # make directory
+    # output_folder_path = (str(os.getcwd()) + str(des)+'\outputs').replace('\\','/')
+    # if os.path.exists(output_folder_path):
+    #     pass
+    # else:
+    #     os.mkdir(output_folder_path)  # make directory
     # print(output_folder_path)
+    output_folder_path = (str(os.getcwd()) + str(des)).replace('\\', '/')
     validate_check_result = validate_paths(args.project_path,
                                            output_folder_path)  # get validate path checking result
     if validate_check_result is True:
