@@ -17,7 +17,7 @@ def evaluate_samples(projects_root, report_path):
 
     # run cta on all projects
     for project_name in all_projects:
-        path = 'evaluation/' + projects_root + '/' + project_name
+        path = projects_root + '/' + project_name
         dpct_root = path + '/dpcpp'  # expected to be provided in each project
         destination_dir = path + '/cta-version'
         project_report_dir = path + '/cta-report'
@@ -30,8 +30,8 @@ def evaluate_samples(projects_root, report_path):
         all_changes = augment_and_extend(cta_instance.changes, project_name, all_changes)
 
     # create accumulated csvs
-    evaluation_tool_root = Path(__file__).parent.resolve()
-    csv_root = evaluation_tool_root / report_path / 'raw_data'
+    cta_tool_root = Path(__file__).parent.parent.resolve()
+    csv_root = cta_tool_root / report_path / 'raw_data'
     if not os.path.exists(csv_root):
         os.mkdir(csv_root)
     pd.DataFrame(all_initial_warnings).to_csv(csv_root / 'all_initial_warnings.csv')
@@ -40,7 +40,7 @@ def evaluate_samples(projects_root, report_path):
     pd.DataFrame(all_changes).to_csv(csv_root / 'all_changes.csv')
 
     # create interactive report
-    presenter = Presenter(evaluation_tool_root / report_path,
+    presenter = Presenter(cta_tool_root / report_path,
                           '',
                           # dpct and destination paths cannot be provided since inside the respective project paths.
                           '',  # presenter hence has broken links, but sufficient for evaluation
