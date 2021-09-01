@@ -1,5 +1,7 @@
 import argparse
 import os
+from pathlib import Path
+
 import pandas as pd
 
 from command_handler import run_cta
@@ -21,24 +23,24 @@ def evaluate_samples(projects_root, report_path):
         project_report_dir = path + '/cta-report'
         cta_instance = run_cta(dpct_root, destination_dir, project_report_dir)
 
-        #todo: change project_name in warning_item and change_item and recommendation
-
-        all_initial_warnings.extend(cta_instance.initial_warnings)
-        all_final_warnings.extend(cta_instance.final_warnings)
-        all_cta_recommendations.extend(cta_instance.cta_recommendations)
-        all_changes.extend(cta_instance.changes)
+        all_initial_warnings = augment_and_extend(cta_instance.initial_warnings, project_name, all_initial_warnings)
+        all_final_warnings = augment_and_extend(cta_instance.final_warnings, project_name, all_final_warnings)
+        all_cta_recommendations = augment_and_extend(cta_instance.cta_recommendations, project_name,
+                                                     all_cta_recommendations)
+        all_changes = augment_and_extend(cta_instance.changes, project_name, all_changes)
 
     # create accumulated csvs
-    csv_root = report_path + '/raw_data'
+    evaluation_tool_root = Path(__file__).parent.resolve()
+    csv_root = evaluation_tool_root / report_path / 'raw_data'
     if not os.path.exists(csv_root):
         os.mkdir(csv_root)
-    pd.DataFrame(all_initial_warnings).to_csv(csv_root + '/all_initial_warnings.csv')
-    pd.DataFrame(all_final_warnings).to_csv(csv_root + '/all_final_warnings.csv')
-    pd.DataFrame(all_cta_recommendations).to_csv(csv_root + '/all_cta_recommendations.csv')
-    pd.DataFrame(all_changes).to_csv(csv_root + '/all_changes.csv')
+    pd.DataFrame(all_initial_warnings).to_csv(csv_root / 'all_initial_warnings.csv')
+    pd.DataFrame(all_final_warnings).to_csv(csv_root / 'all_final_warnings.csv')
+    pd.DataFrame(all_cta_recommendations).to_csv(csv_root / 'all_cta_recommendations.csv')
+    pd.DataFrame(all_changes).to_csv(csv_root / 'all_changes.csv')
 
     # create interactive report
-    presenter = Presenter(report_path,
+    presenter = Presenter(evaluation_tool_root / report_path,
                           '',
                           # dpct and destination paths cannot be provided since inside the respective project paths.
                           '',  # presenter hence has broken links, but sufficient for evaluation
@@ -49,8 +51,16 @@ def evaluate_samples(projects_root, report_path):
     presenter.generate_ui_files()
 
 
+def augment_and_extend(items: list, project_name: str, all_list: list):
+    for item in items:
+        new_file_path = project_name + '/...' + item.file_path
+        new_item = item._replace(file_path=new_file_path)
+        all_list.append(new_item)
+    return all_list
+
+
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='...')
+    parser = argparse.ArgumentParser(description='Analyse group of projects')
 
     parser.add_argument('--projects-root-path', type=str, action='store',
                         help='this is the root path where all projects should be in.'
@@ -73,8 +83,3 @@ if __name__ == '__main__':
             os.mkdir(args.aggregated_report_path)
 
     evaluate_samples(args.projects_root_path, args.aggregated_report_path)
-
-
-'''
-- add project_name to change item
-'''

@@ -242,7 +242,7 @@ class Presenter:
         return astring
 
     def create_html(self, report_root, dpct_root, destination_root, all_warnings, recommendations, final_warnings, changes, unique_warning_code, unique_file_path):
-        diff_path = Path.joinpath(Path(report_root), 'html_files')
+        diff_path = Path.joinpath(report_root, 'html_files')
 
         if diff_path.is_dir() and os.listdir(diff_path):
             diff_html.remove_diff_folder(diff_path)
@@ -251,11 +251,11 @@ class Presenter:
             join_path = os.path.join(report_root, i)
             if os.path.isfile(join_path):
                 os.remove(join_path)
-        with open(report_root+'/report.html', 'w') as report:
+        with open(report_root / 'report.html', 'w') as report:
             report.write(
                 self.html_page(all_warnings, recommendations, final_warnings, changes, unique_warning_code, unique_file_path,
                                     diff_path))
-        with open(report_root+'/subgraphs.html', 'w') as sub_images:
+        with open(report_root / 'subgraphs.html', 'w') as sub_images:
             sub_images.write(sub_graph.add_images(report_root))
 
     def remove_image_folder(self, image_path):

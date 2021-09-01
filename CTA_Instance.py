@@ -18,7 +18,7 @@ class CTA_Instance:
         cta_tool_root = Path(__file__).parent.resolve()
         self.dpct_version_root = cta_tool_root / dpct_version_root
         self.cta_version_root = cta_tool_root / cta_version_root
-        self.report_root = report_root
+        self.report_root = cta_tool_root / report_root
         self.initial_warnings = []
         self.final_warnings = []
         self.cta_recommendations = []
@@ -54,14 +54,14 @@ class CTA_Instance:
         so that they can be inspected after the run.
         :return: path to newly generated folder where these csvs are stored (next to presentation folder)
         '''
-        root = self.report_root + "/raw_data"
+        root = self.report_root / "raw_data"
         folder = os.path.exists(root)
         if not folder:
             os.mkdir(root)
-        pd.DataFrame(self.initial_warnings).to_csv(root + '/initial_warnings.csv')
-        pd.DataFrame(self.final_warnings).to_csv(root + '/final_warnings.csv')
-        pd.DataFrame(self.changes).to_csv(root + '/changes.csv')
-        pd.DataFrame(self.cta_recommendations).to_csv(root + '/cta_recommendations.csv')
+        pd.DataFrame(self.initial_warnings).to_csv(root / 'initial_warnings.csv')
+        pd.DataFrame(self.final_warnings).to_csv(root / 'final_warnings.csv')
+        pd.DataFrame(self.changes).to_csv(root / 'changes.csv')
+        pd.DataFrame(self.cta_recommendations).to_csv(root / 'cta_recommendations.csv')
 
     def create_report_presentation(self):
         '''

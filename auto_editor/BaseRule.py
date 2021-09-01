@@ -76,7 +76,7 @@ class BaseRule:
 
             for line_id in deleted_line_ids:
                 change = CodeChange(edit_id=edit_id,
-                                    path_to_file=path,
+                                    file_path=path,
                                     line_id=line_id,
                                     diff_operation=DiffOperationEnum.delete,
                                     rule=self.__class__.__name__,
@@ -85,7 +85,7 @@ class BaseRule:
 
             for line_id in added_line_ids:
                 change = CodeChange(edit_id=edit_id,
-                                    path_to_file=path,
+                                    file_path=path,
                                     line_id=line_id,
                                     diff_operation=DiffOperationEnum.add,
                                     rule=self.__class__.__name__,
