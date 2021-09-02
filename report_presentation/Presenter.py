@@ -110,9 +110,9 @@ class Presenter:
     def basic_analysis(self, all_warnings, unique_warning_code, unique_file_path, file_path_string,
                        warning_code_string):
         html_basic_info = '''
-                        <p class="serif" ><b>     1.  Number of Analysis Files:  %s</b></p>
+                        <p class="serif" ><b>     1.  Number of Files Containing Warnings:  %s</b></p>
 
-                        <p class="serif" ><b>     2.  Analysis Files:    </b></p>
+                        <p class="serif" ><b>     2.  Files Containing Warnings:    </b></p>
                         <p class="serif" >  %s </p>
                         <p class="serif" ><b>     3.  Number of Warning Type:  %s </b></p>
 
@@ -124,8 +124,7 @@ class Presenter:
                         <p class="serif" >
                           <a href="subgraphs.html">7.   Sub Graphs for Every File</a>
                         </p>
-                        ''' % (
-            len(unique_warning_code), file_path_string, len(unique_file_path), warning_code_string, len(all_warnings))
+                        ''' % (len(unique_file_path), file_path_string, len(unique_warning_code), warning_code_string, len(all_warnings))
         return html_basic_info
 
     def before_cta_table(self, all_warnings):
@@ -265,7 +264,9 @@ class Presenter:
 
     def remove_image_folder(self, image_path):
         for i in os.listdir(image_path):
-            os.remove(os.path.join(image_path, i))
+            join_path = os.path.join(image_path, i)
+            if os.path.isfile(join_path):
+                os.remove(join_path)
         os.rmdir(image_path)
 
     def show_visualize(self, report_root, all_warnings):

@@ -38,6 +38,13 @@ kernel2_wrapper(  knode *knodes,
   int threadsPerBlock;
   threadsPerBlock = order < 256 ? order : 256;
 
+  /*
+  DPCT1065:14: Consider replacing sycl::nd_item::barrier() with
+  * sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+  * performance, if there is no access to global memory.
+  */
+  item_ct1.barrier();
+
   printf("# of blocks = %d, # of threads/block = %d (ensure that device can handle)\n", numBlocks, threadsPerBlock);
 
 
