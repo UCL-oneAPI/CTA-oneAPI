@@ -1,5 +1,4 @@
 from pathlib import Path
-
 from CTA_Instance import CTA_Instance
 import argparse
 import os
