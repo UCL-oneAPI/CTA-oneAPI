@@ -41,6 +41,16 @@ class TestFix1049Rule(BaseTest):
         has_global_range_declaration = "auto dpct_global_range = " in lines_in_file[7].code
         self.assertTrue(has_global_range_declaration)
 
+    def test_runRule_warningWithPartiallyNamedRange_warningResolved(self):
+        path_to_file = '1049_partially_declared_range/1049_partially_named_range.dp.cpp'
+        new_project = Fix1049Rule().run_rule(project=self.test_project, warning_first_line=0,
+                                             warning_last_line=4, file_path=path_to_file)
+        lines_in_file = new_project.paths_to_lines[path_to_file]
+        self.assertEqual(25, len(lines_in_file))
+
+        has_global_range_declaration = "auto dpct_global_range = " in lines_in_file[5].code
+        self.assertTrue(has_global_range_declaration)
+
 
 if __name__ == '__main__':
     unittest.main()

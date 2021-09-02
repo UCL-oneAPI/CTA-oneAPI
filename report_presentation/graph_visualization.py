@@ -18,7 +18,7 @@ def visualization_overall(warnings, image_path):
 
     x = np.arange(len(occurrence.keys()))
     bar_width = 0.2
-    plt.figure(2)
+    plt.figure(num=2, figsize=(20,12))
     plt.bar(x, occurrence.values(), bar_width, align="center", color="green", label="Number of Occurrences", alpha=0.5)
     plt.bar(x + bar_width, files_contain_warnings.values(), bar_width, align="center", color="blue",
             label="Number of documents containing such warnings",

@@ -9,7 +9,7 @@ import os.path
 
 
 def run_cta(dpct_project_path, destination_path, report_path, is_report_only=False):
-    validate_paths(dpct_project_path, destination_path)
+    # validate_paths(dpct_project_path, destination_path)
     cta_instance = CTA_Instance(dpct_project_path, destination_path, report_path)
     cta_instance.run_pre_analyzer()
 
@@ -88,13 +88,13 @@ if __name__ == '__main__':
     else:
         os.mkdir(output_folder_path)  # make directory
     # print(output_folder_path)
-    validate_check_result = validate_paths(args.project_path,
-                                           output_folder_path)  # get validate path checking result
-    if validate_check_result is True:
+    # validate_check_result = validate_paths(args.project_path,
+    #                                        output_folder_path)  # get validate path checking result
+    if True:
         if args.mode == 'default':
             run_cta(args.project_path, args.destination_path, args.report_path)
 
         if args.mode == 'report_only':
             run_cta(args.project_path, args.destination_path, args.report_path, is_report_only=True)
-    else:
-        print(validate_check_result)
+    # else:
+    #     print(validate_check_result)

@@ -37,6 +37,9 @@ class BaseRule:
 
                 # index of line id is taken at each iteration,
                 # as it may change if the project is modified in previous iterations
+                print('current path:', file_path, warning_code)
+                if file_path == 'shortcuts.dp.hpp':
+                    print('yo')
                 warning_first_line = get_index_of_line_id(warning.first_line_id, code_lines)
                 warning_last_line = get_index_of_line_id(warning.last_line_id, code_lines)
 
@@ -96,3 +99,7 @@ class BaseRule:
         if not self.is_run_complete:
             raise Exception("Documented change can only be shown after rule was applied!")
         return self.tracked_changes
+
+    def remove_code(self, file_lines, first_line: int, last_line: int = None):
+        remaining_line = last_line + 1 if last_line else first_line + 1
+        del file_lines[first_line: remaining_line]

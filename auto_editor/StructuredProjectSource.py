@@ -3,6 +3,7 @@ from pathlib import Path
 from typing import List, Dict
 
 from auto_editor.LineItem import LineItem
+from auto_editor.consts import DPCT_EXTENSIONS
 from enums import WarningLocation
 
 
@@ -14,7 +15,7 @@ class StructuredProjectSource:
 
     def get_paths_to_lines(self) -> Dict[str, List[LineItem]]:
         '''
-        :return: Dict where key = file path, value = list of LineItem instances.
+        :return: Dict of all relevant dpct files where key = file path, value = list of LineItem instances.
         '''
         file_items = {}
         for file_path in self.get_all_dpct_file_paths():
@@ -37,13 +38,12 @@ class StructuredProjectSource:
         Find all (relevant) files in dpct root and its subfolders
         :return: list with paths to all files inside directory at self.dpct_version_root
         '''
-        dpct_extensions = ('*.dp.cpp', '*.dp.hpp')
         all_dpct_files = []
         paths = []
         project_path = str(self.dpct_root.stem)
         root_index = 0
 
-        for ext in dpct_extensions:
+        for ext in DPCT_EXTENSIONS:
             all_dpct_files.extend(self.dpct_root.rglob(ext))
         for file in all_dpct_files:
             path_parts = file.parts

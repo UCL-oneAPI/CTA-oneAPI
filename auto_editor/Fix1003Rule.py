@@ -27,6 +27,7 @@ class Fix1003Rule(BaseRule):
         warning_code, prefix = "", ""
         tmp_dict = project.paths_to_lines
         self.all_lines = tmp_dict[file_path]
+        other_warnings = self.get_other_warnings(warning_first_line, project)
         print('warning_first_line: ', warning_first_line, ' ; warning_last_line: ', warning_last_line)
         one_line_warning_code = True
 
@@ -49,7 +50,11 @@ class Fix1003Rule(BaseRule):
                 new_code = prefix + new_code
                 print("new_code:", new_code)
 
-                warning_first_line = self.replace_useless_multiple_line(warning_first_line - 1, i, self.all_lines)
+                # remove old statement
+                self.remove_obsolete_code(i, warning_last_line, self.all_lines, other_warnings)
+
+                # remove old warning message
+                self.remove_code(self.all_lines, warning_first_line, warning_last_line)
 
                 print('warning_begin_index', warning_first_line)
                 new_lineItem = LineItem(new_code)
@@ -60,6 +65,15 @@ class Fix1003Rule(BaseRule):
         project.paths_to_lines[file_path] = tmp_dict[file_path]
         print('length: ', len(project.paths_to_lines[file_path]))
         return project
+
+    def get_other_warnings(self, warning_first_line, project):
+        other_warnings = []
+        current_warning_line_id = self.all_lines[warning_first_line].id
+        for warning_code, warning_list in project.dpct_warnings_dict.items():
+            for warning in warning_list:
+                if not warning.first_line_id == current_warning_line_id:
+                    other_warnings.append(warning)
+        return other_warnings
 
     def find_true_originline_number(self, all_lines, warning_last_line):
         for i in range(len(all_lines)):
@@ -75,16 +89,20 @@ class Fix1003Rule(BaseRule):
 
         return now_code
 
-    def replace_useless_multiple_line(self, k, i, all_lines):
-        for line_i in range(k + 1, i + 1):
+    def remove_obsolete_code(self, old_statement_end, warning_last_line, all_lines, other_warnings):
+        first_deletable_line = warning_last_line + 1
+        for line_i in range(first_deletable_line, old_statement_end + 1):
             # in rare edge cases, multiple warnings exist one after another,
             # referring to the same subsequent line of code (e.g. vmc sample project).
-            # If that happens, this method must not delete the subsequent warning.
-            found_warning_code = all_lines[line_i].get_dpct_warning_code()
-            if found_warning_code and found_warning_code != self.dpct_warning_codes[0]:
-                return k + 1
-        del all_lines[k + 1:i + 1]
-        return k + 1
+            # If that happens, this method must not delete the subsequent warning, but only the statement below,
+            # as that statement will be replaced later on.
+            for warning in other_warnings:
+                if warning.first_line_id == all_lines[line_i].id:
+                    last_warning_line = get_index_of_line_id(warning.last_line_id, all_lines)
+                    first_deletable_line = last_warning_line + 1
+                    break
+
+        del all_lines[first_deletable_line:old_statement_end + 1]
 
     def remove_function_info(self, warning_code):
         new_code = warning_code
