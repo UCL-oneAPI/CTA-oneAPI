@@ -34,6 +34,9 @@ class Fix1049Rule(BaseRule):
         for i in range(warning_last_line + 1, len(self.file_lines)):
             current_line = self.file_lines[i]
             is_loop_starts = LOOP_BEGINNING_STR in current_line.code
+            if current_line.get_dpct_warning_code():
+                logging.warning("No loop found until next warning begins")
+                break
             if is_loop_starts:
                 vec_len, range_line_id, (vec_1, vec_2) = self.get_range_details(i)
                 self.add_vec_product_declaration(vec_1, vec_2, i)
@@ -71,7 +74,7 @@ class Fix1049Rule(BaseRule):
         masked_code, masks_to_values = self.mask_code_params(joined_code)
         params_with_multiply = re.findall("(?:,|\*|[^\s,^\*,^,]*)", masked_code)
         params_with_multiply = [e for e in params_with_multiply if not e == '']
-        if not params_with_multiply[1] == '*' and params_with_multiply[3] == ',':
+        if not len(params_with_multiply) > 3 and params_with_multiply[1] == '*' and params_with_multiply[3] == ',':
             raise Exception('Fix 1049: Code structure different than expected. Cannot resolve.')
 
         vec_1 = self.unmask(params_with_multiply[0], masks_to_values) if masks_to_values else params_with_multiply[0]
@@ -169,6 +172,8 @@ class Fix1049Rule(BaseRule):
             if i == first_line:
                 line_code = line_code[first_char:]
             if i == last_line:
+                if i == first_line:
+                    last_char -= first_char + 1
                 line_code = line_code[:last_char + 1]
 
             clean_line = line_code.strip()  # remove excessive spaces

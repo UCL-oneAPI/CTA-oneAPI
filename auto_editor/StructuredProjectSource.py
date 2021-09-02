@@ -37,7 +37,6 @@ class StructuredProjectSource:
         Find all (relevant) files in dpct root and its subfolders
         :return: list with paths to all files inside directory at self.dpct_version_root
         '''
-        # Todo: use same logic here as in PreAnalyser. Currently nested files aren't discovered.
         dpct_extensions = ('*.dp.cpp', '*.dp.hpp')
         all_dpct_files = []
         paths = []
@@ -101,7 +100,8 @@ class StructuredProjectSource:
 
         start_comment_pattern = "\/\*"
 
-        for i in range(any_warning_line):
+        # +1 because otherwise the very first line (line 0) of the file won't be checked
+        for i in range(any_warning_line + 1):
             line_index = any_warning_line - i
             code_str = code_lines[line_index].code
             if re.search(start_comment_pattern, code_str):
