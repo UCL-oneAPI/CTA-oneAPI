@@ -32,14 +32,16 @@ def validate_paths(dpct_project_path, destination_path):
     if os.path.exists(dpct_project_path) is False:
         r = "The dpct project path does not exist."
         return r
-    filenames = os.listdir(dpct_project_path)
+    filenames = []
+    for root, dirs, files in os.walk(dpct_project_path):
+        filenames.extend(files)
     state_cpp = False
     for filename in filenames:
-        if filename.endswith('.cpp') is True:
+        if filename.endswith('.cpp') or filename.endswith('.hpp'):
             state_cpp = True
 
     if not state_cpp:
-        r = "The path does not contain the cpp file."
+        r = "The path does not contain the cpp or hpp file."
         return r
     elif os.path.exists(destination_path) is False:
         r = "This path does not exist."
