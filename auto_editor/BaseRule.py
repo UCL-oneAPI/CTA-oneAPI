@@ -37,7 +37,6 @@ class BaseRule:
 
                 # index of line id is taken at each iteration,
                 # as it may change if the project is modified in previous iterations
-                print('current path:', file_path, warning_code)
                 if file_path == 'shortcuts.dp.hpp':
                     print('yo')
                 warning_first_line = get_index_of_line_id(warning.first_line_id, code_lines)

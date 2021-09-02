@@ -8,7 +8,6 @@ import os.path
 # This defines the CLI and handles user commands.
 
 def run_cta(dpct_project_path, destination_path, report_path, is_report_only=False):
-    # validate_paths(dpct_project_path, destination_path)
     cta_instance = CTA_Instance(dpct_project_path, destination_path, report_path)
     cta_instance.run_pre_analyzer()
 
@@ -89,14 +88,12 @@ if __name__ == '__main__':
     # using "join_path" to get the actually output directory
     for i in a[1:]:
         output_folder_path = Path.joinpath(output_folder_path, i)
-    print('ooo', output_folder_path)
-    validate_check_result = validate_paths(args.project_path,
-                                           output_folder_path)  # get validate path checking result
-    # if validate_check_result is True:
-    if True: #Todo Qichen: fix bug validate_paths
-        if args.mode == 'default':
-            run_cta(args.project_path, args.destination_path, args.report_path)
 
-        if args.mode == 'report_only':
-            run_cta(args.project_path, args.destination_path, args.report_path, is_report_only=True)
+    # get validate path checking result
+    validate_paths(args.project_path, output_folder_path)
 
+    if args.mode == 'default':
+        run_cta(args.project_path, args.destination_path, args.report_path)
+
+    if args.mode == 'report_only':
+        run_cta(args.project_path, args.destination_path, args.report_path, is_report_only=True)
