@@ -1,0 +1,276 @@
+,project_name,warning_code,file_path,message,line
+0,relion_cta,DPCT1026,/src/acc/cuda/cuda_benchmark_utils.dp.cpp,"DPCT1026:2: The call to cudaEventCreate was removed, because this call is
+redundant in DPC++.",76
+1,relion_cta,DPCT1026,/src/acc/cuda/cuda_benchmark_utils.dp.cpp,"DPCT1026:3: The call to cudaEventCreate was removed, because this call is
+redundant in DPC++.",80
+2,relion_cta,DPCT1026,/src/acc/cuda/cuda_benchmark_utils.dp.cpp,"DPCT1026:6: The call to cudaEventDestroy was removed, because this call is
+redundant in DPC++.",136
+3,relion_cta,DPCT1026,/src/acc/cuda/cuda_benchmark_utils.dp.cpp,"DPCT1026:7: The call to cudaEventDestroy was removed, because this call is
+redundant in DPC++.",140
+4,relion_cta,DPCT1026,/src/acc/cuda/cuda_kernels/helper.dp.cpp,"DPCT1026:225: The call to __ldg was removed, because there is no correspoinding
+API in DPC++.",293
+5,relion_cta,DPCT1026,/src/acc/cuda/cuda_kernels/helper.dp.cpp,"DPCT1026:227: The call to __ldg was removed, because there is no correspoinding
+API in DPC++.",364
+6,relion_cta,DPCT1026,/src/acc/cuda/cuda_kernels/helper.dp.cpp,"DPCT1026:228: The call to __ldg was removed, because there is no correspoinding
+API in DPC++.",438
+7,relion_cta,DPCT1026,/src/acc/cuda/cuda_kernels/helper.dp.cpp,"DPCT1026:229: The call to __ldg was removed, because there is no correspoinding
+API in DPC++.",513
+8,relion_cta,DPCT1026,/src/acc/cuda/cuda_kernels/BP.dp.hpp,"DPCT1026:308: The call to __ldg was removed, because there is no correspoinding
+API in DPC++.",90
+9,relion_cta,DPCT1026,/src/acc/cuda/cuda_kernels/BP.dp.hpp,"DPCT1026:309: The call to __ldg was removed, because there is no correspoinding
+API in DPC++.",95
+10,relion_cta,DPCT1026,/src/acc/cuda/cuda_kernels/BP.dp.hpp,"DPCT1026:310: The call to __ldg was removed, because there is no correspoinding
+API in DPC++.",100
+11,relion_cta,DPCT1026,/src/acc/cuda/cuda_kernels/BP.dp.hpp,"DPCT1026:311: The call to __ldg was removed, because there is no correspoinding
+API in DPC++.",105
+12,relion_cta,DPCT1026,/src/acc/cuda/cuda_kernels/BP.dp.hpp,"DPCT1026:313: The call to __ldg was removed, because there is no correspoinding
+API in DPC++.",296
+13,relion_cta,DPCT1026,/src/acc/cuda/cuda_kernels/BP.dp.hpp,"DPCT1026:314: The call to __ldg was removed, because there is no correspoinding
+API in DPC++.",301
+14,relion_cta,DPCT1026,/src/acc/cuda/cuda_kernels/BP.dp.hpp,"DPCT1026:315: The call to __ldg was removed, because there is no correspoinding
+API in DPC++.",306
+15,relion_cta,DPCT1026,/src/acc/cuda/cuda_kernels/BP.dp.hpp,"DPCT1026:316: The call to __ldg was removed, because there is no correspoinding
+API in DPC++.",311
+16,relion_cta,DPCT1026,/src/acc/cuda/cuda_kernels/BP.dp.hpp,"DPCT1026:318: The call to __ldg was removed, because there is no correspoinding
+API in DPC++.",571
+17,relion_cta,DPCT1026,/src/acc/cuda/cuda_kernels/BP.dp.hpp,"DPCT1026:319: The call to __ldg was removed, because there is no correspoinding
+API in DPC++.",576
+18,relion_cta,DPCT1026,/src/acc/cuda/cuda_kernels/BP.dp.hpp,"DPCT1026:320: The call to __ldg was removed, because there is no correspoinding
+API in DPC++.",581
+19,relion_cta,DPCT1026,/src/acc/cuda/cuda_kernels/BP.dp.hpp,"DPCT1026:321: The call to __ldg was removed, because there is no correspoinding
+API in DPC++.",586
+20,relion_cta,DPCT1026,/src/acc/cuda/cuda_kernels/diff2.dp.hpp,"DPCT1026:136: The call to __ldg was
+removed, because there is no
+correspoinding API in DPC++.",300
+21,relion_cta,DPCT1026,/src/acc/cuda/cuda_kernels/diff2.dp.hpp,"DPCT1026:137: The call to __ldg was
+removed, because there is no
+correspoinding API in DPC++.",308
+22,relion_cta,DPCT1026,/src/acc/cuda/cuda_kernels/diff2.dp.hpp,"DPCT1026:138: The call to __ldg was
+removed, because there is no
+correspoinding API in DPC++.",316
+23,relion_cta,DPCT1026,/src/acc/cuda/cuda_kernels/diff2.dp.hpp,"DPCT1026:139: The call to __ldg was
+removed, because there is no
+correspoinding API in DPC++.",328
+24,relion_cta,DPCT1026,/src/acc/cuda/cuda_kernels/diff2.dp.hpp,"DPCT1026:140: The call to __ldg was
+removed, because there is no
+correspoinding API in DPC++.",335
+25,relion_cta,DPCT1026,/src/acc/cuda/cuda_kernels/diff2.dp.hpp,"DPCT1026:141: The call to __ldg was
+removed, because there is no
+correspoinding API in DPC++.",342
+26,relion_cta,DPCT1026,/src/acc/cuda/cuda_kernels/diff2.dp.hpp,"DPCT1026:142: The call to __ldg was
+removed, because there is no
+correspoinding API in DPC++.",353
+27,relion_cta,DPCT1026,/src/acc/cuda/cuda_kernels/diff2.dp.hpp,"DPCT1026:143: The call to __ldg was
+removed, because there is no
+correspoinding API in DPC++.",360
+28,relion_cta,DPCT1026,/src/acc/cuda/cuda_kernels/diff2.dp.hpp,"DPCT1026:144: The call to __ldg was removed, because there is no correspoinding
+API in DPC++.",380
+29,relion_cta,DPCT1026,/src/acc/cuda/cuda_kernels/diff2.dp.hpp,"DPCT1026:147: The call to __ldg was removed, because there is no correspoinding
+API in DPC++.",467
+30,relion_cta,DPCT1026,/src/acc/cuda/cuda_kernels/diff2.dp.hpp,"DPCT1026:148: The call to __ldg was removed, because there is no correspoinding
+API in DPC++.",472
+31,relion_cta,DPCT1026,/src/acc/cuda/cuda_kernels/diff2.dp.hpp,"DPCT1026:149: The call to __ldg was removed, because there is no correspoinding
+API in DPC++.",477
+32,relion_cta,DPCT1026,/src/acc/cuda/cuda_kernels/diff2.dp.hpp,"DPCT1026:150: The call to __ldg was removed, because there is no correspoinding
+API in DPC++.",482
+33,relion_cta,DPCT1026,/src/acc/cuda/cuda_kernels/diff2.dp.hpp,"DPCT1026:151: The call to __ldg was removed, because there is no correspoinding
+API in DPC++.",487
+34,relion_cta,DPCT1026,/src/acc/cuda/cuda_kernels/diff2.dp.hpp,"DPCT1026:152: The call to __ldg was removed, because there is no correspoinding
+API in DPC++.",492
+35,relion_cta,DPCT1026,/src/acc/cuda/cuda_kernels/diff2.dp.hpp,"DPCT1026:153: The call to __ldg was removed, because there is no correspoinding
+API in DPC++.",497
+36,relion_cta,DPCT1026,/src/acc/cuda/cuda_kernels/diff2.dp.hpp,"DPCT1026:154: The call to __ldg was removed, because there is no correspoinding
+API in DPC++.",502
+37,relion_cta,DPCT1026,/src/acc/cuda/cuda_kernels/diff2.dp.hpp,"DPCT1026:155: The call to __ldg was removed, because there is no correspoinding
+API in DPC++.",507
+38,relion_cta,DPCT1026,/src/acc/cuda/cuda_kernels/diff2.dp.hpp,"DPCT1026:157: The call to __ldg was removed, because there is no correspoinding
+API in DPC++.",578
+39,relion_cta,DPCT1026,/src/acc/cuda/cuda_kernels/diff2.dp.hpp,"DPCT1026:158: The call to __ldg was removed, because there is no correspoinding
+API in DPC++.",583
+40,relion_cta,DPCT1026,/src/acc/cuda/cuda_kernels/diff2.dp.hpp,"DPCT1026:162: The call to __ldg was
+removed, because there is no
+correspoinding API in DPC++.",723
+41,relion_cta,DPCT1026,/src/acc/cuda/cuda_kernels/diff2.dp.hpp,"DPCT1026:163: The call to __ldg was
+removed, because there is no
+correspoinding API in DPC++.",731
+42,relion_cta,DPCT1026,/src/acc/cuda/cuda_kernels/diff2.dp.hpp,"DPCT1026:164: The call to __ldg was
+removed, because there is no
+correspoinding API in DPC++.",739
+43,relion_cta,DPCT1026,/src/acc/cuda/cuda_kernels/diff2.dp.hpp,"DPCT1026:165: The call to __ldg was
+removed, because there is no
+correspoinding API in DPC++.",751
+44,relion_cta,DPCT1026,/src/acc/cuda/cuda_kernels/diff2.dp.hpp,"DPCT1026:166: The call to __ldg was
+removed, because there is no
+correspoinding API in DPC++.",758
+45,relion_cta,DPCT1026,/src/acc/cuda/cuda_kernels/diff2.dp.hpp,"DPCT1026:167: The call to __ldg was
+removed, because there is no
+correspoinding API in DPC++.",765
+46,relion_cta,DPCT1026,/src/acc/cuda/cuda_kernels/diff2.dp.hpp,"DPCT1026:168: The call to __ldg was
+removed, because there is no
+correspoinding API in DPC++.",776
+47,relion_cta,DPCT1026,/src/acc/cuda/cuda_kernels/diff2.dp.hpp,"DPCT1026:169: The call to __ldg was
+removed, because there is no
+correspoinding API in DPC++.",783
+48,relion_cta,DPCT1026,/src/acc/cuda/cuda_kernels/diff2.dp.hpp,"DPCT1026:170: The call to __ldg was removed, because there is no correspoinding
+API in DPC++.",801
+49,relion_cta,DPCT1026,/src/acc/cuda/cuda_kernels/diff2.dp.hpp,"DPCT1026:171: The call to __ldg was removed, because there is no correspoinding
+API in DPC++.",809
+50,relion_cta,DPCT1026,/src/acc/cuda/cuda_kernels/wavg.dp.hpp,"DPCT1026:126: The call to __ldg was removed, because there is no correspoinding
+API in DPC++.",125
+51,relion_cta,DPCT1026,/src/acc/cuda/cuda_kernels/wavg.dp.hpp,"DPCT1026:127: The call to __ldg was removed, because there is no correspoinding
+API in DPC++.",130
+52,relion_cta,DPCT1026,/src/acc/cuda/cuda_kernels/wavg.dp.hpp,"DPCT1026:128: The call to __ldg was removed, because there is no correspoinding
+API in DPC++.",138
+53,relion_cta,DPCT1026,/src/acc/cuda/cuda_kernels/wavg.dp.hpp,"DPCT1026:129: The call to __ldg was removed, because there is no correspoinding
+API in DPC++.",143
+54,relion_cta,DPCT1026,/src/acc/cuda/cuda_kernels/wavg.dp.hpp,"DPCT1026:130: The call to __ldg was removed, because there is no correspoinding
+API in DPC++.",156
+55,relion_cta,DPCT1026,/src/acc/cuda/cuda_kernels/wavg.dp.hpp,"DPCT1026:131: The call to __ldg was removed, because there is no correspoinding
+API in DPC++.",161
+56,relion_cta,DPCT1026,/src/acc/cuda/cuda_kernels/wavg.dp.hpp,"DPCT1026:132: The call to __ldg was removed, because there is no correspoinding
+API in DPC++.",169
+57,relion_cta,DPCT1012,/src/acc/cuda/cuda_benchmark_utils.dp.cpp,"DPCT1012:4: Detected kernel execution time measurement pattern and generated an
+initial code for time measurements in SYCL. You can change the way time is
+measured depending on your goals.",84
+58,relion_cta,DPCT1012,/src/acc/cuda/cuda_benchmark_utils.dp.cpp,"DPCT1012:5: Detected kernel execution time measurement pattern and generated an
+initial code for time measurements in SYCL. You can change the way time is
+measured depending on your goals.",113
+59,relion_cta,DPCT1012,/src/acc/cuda/custom_allocator.dp.hpp,"DPCT1012:16: Detected kernel execution time measurement pattern and generated an
+initial code for time measurements in SYCL. You can change the way time is
+measured depending on your goals.",123
+60,relion_cta,DPCT1012,/src/acc/cuda/custom_allocator.dp.hpp,"DPCT1012:198: Detected kernel execution time measurement pattern and generated
+an initial code for time measurements in SYCL. You can change the way time is
+measured depending on your goals.",133
+61,relion_cta,DPCT1010,/src/acc/cuda/cuda_autopicker.dp.cpp,"DPCT1010:293: SYCL uses exceptions to report errors and does not use the error
+codes. The call was replaced with 0. You need to rewrite this code.",208
+62,relion_cta,DPCT1010,/src/acc/cuda/cuda_autopicker.dp.cpp,"DPCT1010:294: SYCL uses exceptions to report errors and does not use the error
+codes. The call was replaced with 0. You need to rewrite this code.",233
+63,relion_cta,DPCT1010,/src/acc/cuda/cuda_autopicker.dp.cpp,"DPCT1010:295: SYCL uses exceptions to report errors and does not use the error
+codes. The call was replaced with 0. You need to rewrite this code.",245
+64,relion_cta,DPCT1010,/src/acc/cuda/cuda_autopicker.dp.cpp,"DPCT1010:296: SYCL uses exceptions to report errors and does not use the error
+codes. The call was replaced with 0. You need to rewrite this code.",280
+65,relion_cta,DPCT1010,/src/acc/cuda/cuda_autopicker.dp.cpp,"DPCT1010:297: SYCL uses exceptions to report errors and does not use the error
+codes. The call was replaced with 0. You need to rewrite this code.",318
+66,relion_cta,DPCT1010,/src/acc/cuda/cuda_autopicker.dp.cpp,"DPCT1010:299: SYCL uses exceptions to report errors and does not use the error
+codes. The call was replaced with 0. You need to rewrite this code.",608
+67,relion_cta,DPCT1010,/src/acc/cuda/cuda_autopicker.dp.cpp,"DPCT1010:300: SYCL uses exceptions to report errors and does not use the error
+codes. The call was replaced with 0. You need to rewrite this code.",622
+68,relion_cta,DPCT1010,/src/acc/cuda/cuda_autopicker.dp.cpp,"DPCT1010:301: SYCL uses exceptions to report errors and does not use the error
+codes. The call was replaced with 0. You need to rewrite this code.",900
+69,relion_cta,DPCT1010,/src/acc/cuda/cuda_autopicker.dp.cpp,"DPCT1010:302: SYCL uses exceptions to report errors and does not use the error
+codes. The call was replaced with 0. You need to rewrite this code.",1060
+70,relion_cta,DPCT1010,/src/acc/cuda/cuda_autopicker.dp.cpp,"DPCT1010:303: SYCL uses exceptions to report errors and does not use the error
+codes. The call was replaced with 0. You need to rewrite this code.",1092
+71,relion_cta,DPCT1010,/src/acc/cuda/cuda_autopicker.dp.cpp,"DPCT1010:306: SYCL uses exceptions to report errors and does not use the error
+codes. The call was replaced with 0. You need to rewrite this code.",1172
+72,relion_cta,DPCT1010,/src/acc/cuda/cub/device/dispatch/dispatch_radix_sort.dp.hpp,"DPCT1010:104: SYCL uses exceptions to report errors and does not use the error
+codes. The call was replaced with 0. You need to rewrite this code.",1026
+73,relion_cta,DPCT1010,/src/acc/cuda/cub/device/dispatch/dispatch_radix_sort.dp.hpp,"DPCT1010:105: SYCL uses exceptions to report errors and does not use the error
+codes. The call was replaced with 0. You need to rewrite this code.",1057
+74,relion_cta,DPCT1010,/src/acc/cuda/cub/device/dispatch/dispatch_radix_sort.dp.hpp,"DPCT1010:106: SYCL uses exceptions to report errors and does not use the error
+codes. The call was replaced with 0. You need to rewrite this code.",1096
+75,relion_cta,DPCT1010,/src/acc/cuda/cub/device/dispatch/dispatch_radix_sort.dp.hpp,"DPCT1010:108: SYCL uses exceptions to report errors and does not use the error
+codes. The call was replaced with 0. You need to rewrite this code.",1558
+76,relion_cta,DPCT1017,/src/acc/cuda/cuda_kernels/helper.dp.cpp,"DPCT1017:230: The sycl::sincos call is used instead of the sincos call. These
+two calls do not provide exactly the same functionality. Check the potential
+precision and/or performance issues for the generated code.",634
+77,relion_cta,DPCT1017,/src/acc/cuda/cuda_kernels/helper.dp.cpp,"DPCT1017:231: The sycl::sincos call is used instead of the sincos call. These
+two calls do not provide exactly the same functionality. Check the potential
+precision and/or performance issues for the generated code.",679
+78,relion_cta,DPCT1017,/src/acc/cuda/cuda_kernels/helper.dp.cpp,"DPCT1017:217: The sycl::sincos call is used instead of the sincosf call. These
+two calls do not provide exactly the same functionality. Check the potential
+precision and/or performance issues for the generated code.",873
+79,relion_cta,DPCT1017,/src/acc/cuda/cuda_kernels/helper.dp.cpp,"DPCT1017:218: The sycl::sincos call is used instead of the sincosf call. These
+two calls do not provide exactly the same functionality. Check the potential
+precision and/or performance issues for the generated code.",937
+80,relion_cta,DPCT1017,/src/acc/cuda/cuda_kernels/helper.dp.cpp,"DPCT1017:219: The sycl::sincos call is used instead of the sincosf call. These
+two calls do not provide exactly the same functionality. Check the potential
+precision and/or performance issues for the generated code.",945
+81,relion_cta,DPCT1017,/src/acc/cuda/cuda_kernels/helper.dp.cpp,"DPCT1017:220: The sycl::sincos call is used instead of the sincosf call. These
+two calls do not provide exactly the same functionality. Check the potential
+precision and/or performance issues for the generated code.",953
+82,relion_cta,DPCT1017,/src/acc/cuda/cuda_kernels/cuda_device_utils.dp.hpp,"DPCT1017:111: The sycl::sincos call is used instead of the sincosf call. These
+two calls do not provide exactly the same functionality. Check the potential
+precision and/or performance issues for the generated code.",125
+83,relion_cta,DPCT1017,/src/acc/cuda/cuda_kernels/cuda_device_utils.dp.hpp,"DPCT1017:112: The sycl::sincos call is used instead of the sincosf call. These
+two calls do not provide exactly the same functionality. Check the potential
+precision and/or performance issues for the generated code.",148
+84,relion_cta,DPCT1027,/src/acc/cuda/custom_allocator.dp.hpp,"DPCT1027:14: The call to cudaEventDestroy was replaced with 0, because this call
+is redundant in DPC++.",88
+85,relion_cta,DPCT1027,/src/acc/cuda/custom_allocator.dp.hpp,"DPCT1027:196: The call to cudaEventDestroy was replaced with 0, because this
+call is redundant in DPC++.",92
+86,relion_cta,DPCT1027,/src/acc/cuda/custom_allocator.dp.hpp,"DPCT1027:15: The call to cudaEventCreate was replaced with 0, because this call
+is redundant in DPC++.",114
+87,relion_cta,DPCT1027,/src/acc/cuda/custom_allocator.dp.hpp,"DPCT1027:197: The call to cudaEventCreate was replaced with 0, because this call
+is redundant in DPC++.",118
+88,relion_cta,DPCT1024,/src/acc/cuda/custom_allocator.dp.hpp,"DPCT1024:17: The original code returned the error code that was further consumed
+by the program logic. This original code was replaced with 0. You may need to
+rewrite the program logic consuming the error code.",128
+89,relion_cta,DPCT1024,/src/acc/cuda/custom_allocator.dp.hpp,"DPCT1024:199: The original code returned the error code that was further
+consumed by the program logic. This original code was replaced with 0. You may
+need to rewrite the program logic consuming the error code.",138
+90,relion_cta,DPCT1055,/src/acc/cuda/cub/util_type.dp.hpp,"DPCT1055:48: Vector types with size 1 are migrated to the corresponding
+fundamental types, which cannot be inherited. You need to rewrite the code.",517
+91,relion_cta,DPCT1053,/src/acc/cuda/cub/util_ptx.dp.hpp,DPCT1053:49: Migration of device assembly code is not supported.,94
+92,relion_cta,DPCT1053,/src/acc/cuda/cub/util_ptx.dp.hpp,DPCT1053:50: Migration of device assembly code is not supported.,115
+93,relion_cta,DPCT1053,/src/acc/cuda/cub/util_ptx.dp.hpp,DPCT1053:51: Migration of device assembly code is not supported.,139
+94,relion_cta,DPCT1053,/src/acc/cuda/cub/util_ptx.dp.hpp,DPCT1053:52: Migration of device assembly code is not supported.,185
+95,relion_cta,DPCT1053,/src/acc/cuda/cub/util_ptx.dp.hpp,DPCT1053:53: Migration of device assembly code is not supported.,207
+96,relion_cta,DPCT1053,/src/acc/cuda/cub/util_ptx.dp.hpp,DPCT1053:54: Migration of device assembly code is not supported.,247
+97,relion_cta,DPCT1053,/src/acc/cuda/cub/util_ptx.dp.hpp,DPCT1053:55: Migration of device assembly code is not supported.,261
+98,relion_cta,DPCT1053,/src/acc/cuda/cub/util_ptx.dp.hpp,DPCT1053:62: Migration of device assembly code is not supported.,374
+99,relion_cta,DPCT1053,/src/acc/cuda/cub/util_ptx.dp.hpp,DPCT1053:63: Migration of device assembly code is not supported.,396
+100,relion_cta,DPCT1053,/src/acc/cuda/cub/util_ptx.dp.hpp,DPCT1053:64: Migration of device assembly code is not supported.,418
+101,relion_cta,DPCT1053,/src/acc/cuda/cub/util_ptx.dp.hpp,DPCT1053:65: Migration of device assembly code is not supported.,437
+102,relion_cta,DPCT1053,/src/acc/cuda/cub/util_ptx.dp.hpp,DPCT1053:66: Migration of device assembly code is not supported.,451
+103,relion_cta,DPCT1053,/src/acc/cuda/cub/util_ptx.dp.hpp,DPCT1053:67: Migration of device assembly code is not supported.,464
+104,relion_cta,DPCT1053,/src/acc/cuda/cub/util_ptx.dp.hpp,DPCT1053:68: Migration of device assembly code is not supported.,475
+105,relion_cta,DPCT1053,/src/acc/cuda/cub/util_ptx.dp.hpp,DPCT1053:69: Migration of device assembly code is not supported.,502
+106,relion_cta,DPCT1053,/src/acc/cuda/cub/util_ptx.dp.hpp,DPCT1053:70: Migration of device assembly code is not supported.,516
+107,relion_cta,DPCT1053,/src/acc/cuda/cub/util_ptx.dp.hpp,DPCT1053:71: Migration of device assembly code is not supported.,529
+108,relion_cta,DPCT1053,/src/acc/cuda/cub/util_ptx.dp.hpp,DPCT1053:72: Migration of device assembly code is not supported.,542
+109,relion_cta,DPCT1053,/src/acc/cuda/cub/util_ptx.dp.hpp,DPCT1053:73: Migration of device assembly code is not supported.,555
+110,relion_cta,DPCT1053,/src/acc/cuda/cub/util_ptx.dp.hpp,DPCT1053:74: Migration of device assembly code is not supported.,568
+111,relion_cta,DPCT1053,/src/acc/cuda/cub/util_ptx.dp.hpp,DPCT1053:75: Migration of device assembly code is not supported.,781
+112,relion_cta,DPCT1053,/src/acc/cuda/cub/warp/specializations/warp_reduce_shfl.dp.hpp,DPCT1053:81: Migration of device assembly code is not supported.,151
+113,relion_cta,DPCT1053,/src/acc/cuda/cub/warp/specializations/warp_reduce_shfl.dp.hpp,DPCT1053:82: Migration of device assembly code is not supported.,191
+114,relion_cta,DPCT1053,/src/acc/cuda/cub/warp/specializations/warp_reduce_shfl.dp.hpp,DPCT1053:83: Migration of device assembly code is not supported.,230
+115,relion_cta,DPCT1053,/src/acc/cuda/cub/warp/specializations/warp_reduce_shfl.dp.hpp,DPCT1053:84: Migration of device assembly code is not supported.,276
+116,relion_cta,DPCT1053,/src/acc/cuda/cub/warp/specializations/warp_reduce_shfl.dp.hpp,DPCT1053:85: Migration of device assembly code is not supported.,322
+117,relion_cta,DPCT1053,/src/acc/cuda/cub/warp/specializations/warp_scan_shfl.dp.hpp,DPCT1053:92: Migration of device assembly code is not supported.,125
+118,relion_cta,DPCT1053,/src/acc/cuda/cub/warp/specializations/warp_scan_shfl.dp.hpp,DPCT1053:93: Migration of device assembly code is not supported.,165
+119,relion_cta,DPCT1053,/src/acc/cuda/cub/warp/specializations/warp_scan_shfl.dp.hpp,DPCT1053:94: Migration of device assembly code is not supported.,206
+120,relion_cta,DPCT1053,/src/acc/cuda/cub/warp/specializations/warp_scan_shfl.dp.hpp,DPCT1053:95: Migration of device assembly code is not supported.,247
+121,relion_cta,DPCT1053,/src/acc/cuda/cub/warp/specializations/warp_scan_shfl.dp.hpp,DPCT1053:96: Migration of device assembly code is not supported.,298
+122,relion_cta,DPCT1053,/src/acc/cuda/cub/warp/specializations/warp_scan_shfl.dp.hpp,DPCT1053:97: Migration of device assembly code is not supported.,349
+123,relion_cta,DPCT1053,/src/acc/cuda/cub/thread/thread_load.dp.hpp,DPCT1053:76: Migration of device assembly code is not supported.,155
+124,relion_cta,DPCT1053,/src/acc/cuda/cub/thread/thread_load.dp.hpp,DPCT1053:77: Migration of device assembly code is not supported.,185
+125,relion_cta,DPCT1053,/src/acc/cuda/cub/thread/thread_load.dp.hpp,DPCT1053:78: Migration of device assembly code is not supported.,225
+126,relion_cta,DPCT1053,/src/acc/cuda/cub/thread/thread_load.dp.hpp,DPCT1053:79: Migration of device assembly code is not supported.,243
+127,relion_cta,DPCT1053,/src/acc/cuda/cub/thread/thread_load.dp.hpp,DPCT1053:80: Migration of device assembly code is not supported.,262
+128,relion_cta,DPCT1053,/src/acc/cuda/cub/thread/thread_store.dp.hpp,DPCT1053:86: Migration of device assembly code is not supported.,157
+129,relion_cta,DPCT1053,/src/acc/cuda/cub/thread/thread_store.dp.hpp,DPCT1053:87: Migration of device assembly code is not supported.,184
+130,relion_cta,DPCT1053,/src/acc/cuda/cub/thread/thread_store.dp.hpp,DPCT1053:88: Migration of device assembly code is not supported.,220
+131,relion_cta,DPCT1053,/src/acc/cuda/cub/thread/thread_store.dp.hpp,DPCT1053:89: Migration of device assembly code is not supported.,237
+132,relion_cta,DPCT1053,/src/acc/cuda/cub/thread/thread_store.dp.hpp,DPCT1053:90: Migration of device assembly code is not supported.,254
+133,relion_cta,DPCT1007,/src/acc/cuda/cub/util_ptx.dp.hpp,"DPCT1007:58: Migration of this CUDA API is not supported by the Intel(R) DPC++
+Compatibility Tool.",305
+134,relion_cta,DPCT1007,/src/acc/cuda/cub/agent/single_pass_scan_operators.dp.hpp,"DPCT1007:98: Migration of this CUDA API is not supported by the Intel(R) DPC++
+Compatibility Tool.",392
+135,relion_cta,DPCT1007,/src/acc/cuda/cub/agent/single_pass_scan_operators.dp.hpp,"DPCT1007:99: Migration of this CUDA API is not supported by the Intel(R) DPC++
+Compatibility Tool.",412
+136,relion_cta,DPCT1007,/src/acc/cuda/cub/agent/single_pass_scan_operators.dp.hpp,"DPCT1007:100: Migration of this CUDA API is not supported by the Intel(R) DPC++
+Compatibility Tool.",430
+137,relion_cta,DPCT1023,/src/acc/cuda/cub/util_ptx.dp.hpp,"DPCT1023:59: The DPC++ sub-group does not support mask options for
+sycl::ONEAPI::any_of.",321
+138,relion_cta,DPCT1023,/src/acc/cuda/cub/util_ptx.dp.hpp,"DPCT1023:60: The DPC++ sub-group does not support mask options for
+sycl::ONEAPI::all_of.",339
+139,relion_cta,DPCT1004,/src/acc/cuda/cub/util_ptx.dp.hpp,DPCT1004:61: Could not generate replacement.,357
+140,relion_cta,DPCT1011,/src/acc/cuda/cuda_kernels/cuda_device_utils.dp.hpp,"DPCT1011:113: The tool detected overloaded operators for built-in vector types,
+which may conflict with the SYCL 1.2.1 standard operators (see 4.10.2.1 Vec
+interface). The tool inserted a namespace to avoid the conflict. Use SYCL 1.2.1
+standard operators instead.",163
+141,relion_cta,DPCT1011,/src/acc/cuda/cuda_kernels/cuda_device_utils.dp.hpp,"DPCT1011:114: The tool detected overloaded operators for built-in vector types,
+which may conflict with the SYCL 1.2.1 standard operators (see 4.10.2.1 Vec
+interface). The tool inserted a namespace to avoid the conflict. Use SYCL 1.2.1
+standard operators instead.",178
