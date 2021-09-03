@@ -34,12 +34,15 @@ class WarningRecommendationAnalyser(WarningAnalyser):
 
         for k, v in recommendations_dict.items():
             for info in v:
-                path = '/' + info[2]
-                if info[2] in all_ids.keys():
-                    codes = all_codes[info[2]]
-                    ids = all_ids[info[2]]
-                    first_line = self.get_first_line_num(info[0], codes, ids)
-                    message = self.get_warning_message(first_line, info[1], codes, ids)
+                first_line_id = info[0]
+                last_line_id = info[1]
+                file_path = info[2]
+                path = '/' + file_path
+                if file_path in all_ids.keys():
+                    codes = all_codes[file_path]
+                    ids = all_ids[file_path]
+                    first_line = self.get_first_line_num(first_line_id, codes, ids)
+                    message = self.get_warning_message(first_line, last_line_id, codes, ids)
                     warning = RecommendationItem(project_name=self.project_root_path.stem,
                                                  recommendation_code=k,
                                                  file_path=path,
