@@ -23,8 +23,10 @@ cd CTA-oneAPI
 ```
 
 ### Prerequisites
-To install required packages, run `pip install -r -U requirements.txt
+Create a virtual environment, e.g. using `venv`.
+To install required packages, run `pip install -r -U requirements.txt 
 `
+Before using the script, you may need to run `export PYTHONPATH=$PYTHONPATH:.` when in the root directory, to avoid import errors
 
 ## Usage
 CTA is currently available in two modes.

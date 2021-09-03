@@ -1,3 +1,5 @@
+DPCT_EXTENSIONS = ('*.dp.cpp', '*.dp.hpp')
+
 # ----- 1049 Constants ------
 LOOP_BEGINNING_STR = "parallel_for("
 

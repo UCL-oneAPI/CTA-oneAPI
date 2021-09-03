@@ -4,16 +4,35 @@ but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",42
-1,destination_dir,CTA1065,/main.dp.cpp,"CTA1065:0: CTA recommended to ignore this warning.
+1,destination_dir,CTA1065,/vmc.dp.cpp,"CTA1065:4: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",82
+2,destination_dir,CTA1065,/vmc.dp.cpp,"CTA1065:5: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",102
+3,destination_dir,CTA1065,/main.dp.cpp,"CTA1065:0: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",66
-2,destination_dir,CTA1000,/chi2.dp.cpp,"CTA1000:1: Base on the experience, strongly recommended to ignore this warning.",217
-3,destination_dir,CTA1001,/chi2.dp.cpp,"CTA1001:0: Base on the experience, strongly recommended to ignore this warning.",222
-4,destination_dir,CTA1001,/chi2.dp.cpp,"CTA1001:0: Base on the experience, strongly recommended to ignore this warning.",231
-5,destination_dir,CTA1001,/chi2.dp.cpp,"CTA1001:2: Base on the experience, strongly recommended to ignore this warning.",236
-6,destination_dir,CTA1001,/chi2.dp.cpp,"CTA1001:0: Base on the experience, strongly recommended to ignore this warning.",248
-7,destination_dir,CTA1001,/chi2.dp.cpp,"CTA1001:4: Base on the experience, strongly recommended to ignore this warning.",253
-8,destination_dir,CTA1001,/chi2.dp.cpp,"CTA1001:0: Base on the experience, strongly recommended to ignore this warning.",287
-9,destination_dir,CTA1001,/chi2.dp.cpp,"CTA1001:6: Base on the experience, strongly recommended to ignore this warning.",292
+4,destination_dir,CTA1000,/chi2.dp.cpp,"CTA1000:1: Base on the experience, strongly recommended to ignore this warning.",217
+5,destination_dir,CTA1000,/chi2.dp.cpp,"CTA1000:3: Base on the experience, strongly recommended to ignore this warning.",231
+6,destination_dir,CTA1000,/chi2.dp.cpp,"CTA1000:5: Base on the experience, strongly recommended to ignore this warning.",248
+7,destination_dir,CTA1000,/chi2.dp.cpp,"CTA1000:7: Base on the experience, strongly recommended to ignore this warning.",287
+8,destination_dir,CTA1001,/chi2.dp.cpp,"CTA1001:0: Base on the experience, strongly recommended to ignore this warning.",222
+9,destination_dir,CTA1001,/chi2.dp.cpp,"CTA1001:2: Base on the experience, strongly recommended to ignore this warning.",236
+10,destination_dir,CTA1001,/chi2.dp.cpp,"CTA1001:4: Base on the experience, strongly recommended to ignore this warning.",253
+11,destination_dir,CTA1001,/chi2.dp.cpp,"CTA1001:6: Base on the experience, strongly recommended to ignore this warning.",292
+12,destination_dir,CTA1032,/cluster.dp.cpp,"CTA1032:78: Base on the experience, recommended to ignore this warning. If it didn't work, adjust the code.",927
+13,destination_dir,CTA1032,/vmc.dp.cpp,"CTA1032:0: Base on the experience, recommended to ignore this warning. If it didn't work, adjust the code.",34
+14,destination_dir,CTA1032,/vmc.dp.cpp,"CTA1032:1: Base on the experience, recommended to ignore this warning. If it didn't work, adjust the code.",40
+15,destination_dir,CTA1032,/vmc.dp.cpp,"CTA1032:2: Base on the experience, recommended to ignore this warning. If it didn't work, adjust the code.",50
+16,destination_dir,CTA1032,/vmc.dp.cpp,"CTA1032:6: Base on the experience, recommended to ignore this warning. If it didn't work, adjust the code.",170
+17,destination_dir,CTA1032,/vmc.dp.cpp,"CTA1032:7: Base on the experience, recommended to ignore this warning. If it didn't work, adjust the code.",193
+18,destination_dir,CTA1032,/vmc.dp.cpp,"CTA1032:8: Base on the experience, recommended to ignore this warning. If it didn't work, adjust the code.",213
+19,destination_dir,CTA1032,/vmc.dp.cpp,"CTA1032:9: Base on the experience, recommended to ignore this warning. If it didn't work, adjust the code.",269
+20,destination_dir,CTA1032,/vmc.dp.cpp,"CTA1032:21: Base on the experience, recommended to ignore this warning. If it didn't work, adjust the code.",285
