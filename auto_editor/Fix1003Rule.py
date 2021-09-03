@@ -22,7 +22,6 @@ class Fix1003Rule(BaseRule):
 
     def run_rule(self, project: StructuredProjectSource,
                  warning_first_line: int, warning_last_line: int, file_path: str) -> StructuredProjectSource:
-        print('-----------------------------------------------------------------------------------------------')
         first_time = True
         warning_code, prefix = "", ""
         tmp_dict = project.paths_to_lines

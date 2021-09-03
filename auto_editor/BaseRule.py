@@ -43,6 +43,8 @@ class BaseRule:
                 # project is updated every time a rule runs, so it always has latest changes.
                 # the update for each warning is tracked, so all changes related to that warning can be associated to each other
                 old_project_version = copy.deepcopy(current_project_version)
+                print(f'Running rule for file {current_project_version.dpct_root}\n'
+                      f'for warning {warning_code} starting at (now) line {warning_first_line}')
                 current_project_version = self.run_rule(current_project_version, warning_first_line, warning_last_line,
                                                         file_path)
                 self.track_change(old_project_version, current_project_version)
