@@ -4,8 +4,8 @@
 
 This folder contains the scripting to evaluate the tool.
 Specifically, 2 things are done for evaluation:
-* evaluate impact on all sample projects of oneAPI-directProgramming repo ()
-* evaluate impact on real world repo relevant for the health sector, Relion ()
+* evaluate impact on all sample projects of oneAPI-directProgramming repo (https://github.com/zjin-lcf/oneAPI-DirectProgramming)
+* evaluate impact on real world repo relevant for the health sector, Relion (https://github.com/3dem/relion)
 
 To run the tool on dpct directprogramming:
 * run the mapping tool to add 'dpcpp' subfolders to each project, which contain the dpct warnings

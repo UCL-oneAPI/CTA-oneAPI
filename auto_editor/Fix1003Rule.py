@@ -28,11 +28,9 @@ class Fix1003Rule(BaseRule):
         tmp_dict = project.paths_to_lines
         self.all_lines = tmp_dict[file_path]
         other_warnings = self.get_other_warnings(warning_first_line, project)
-        print('warning_first_line: ', warning_first_line, ' ; warning_last_line: ', warning_last_line)
         one_line_warning_code = True
 
         for i in range(warning_last_line + 1, len(self.all_lines)):
-            print("warning code:", self.all_lines[i].code)
             if ";" not in self.all_lines[i].code:
                 now_code = self.strip_determin(first_time, self.all_lines[i])
                 warning_code = warning_code + now_code
@@ -45,10 +43,8 @@ class Fix1003Rule(BaseRule):
                     warning_code = warning_code + now_code + "\n"
                 else:
                     warning_code = now_code
-                print("code to remove: ", warning_code)
                 prefix, new_code = self.remove_function_info(warning_code)
                 new_code = prefix + new_code
-                print("new_code:", new_code)
 
                 # remove old statement
                 self.remove_obsolete_code(i, warning_last_line, self.all_lines, other_warnings)
@@ -56,14 +52,12 @@ class Fix1003Rule(BaseRule):
                 # remove old warning message
                 self.remove_code(self.all_lines, warning_first_line, warning_last_line)
 
-                print('warning_begin_index', warning_first_line)
                 new_lineItem = LineItem(new_code)
                 self.all_lines.insert(warning_first_line, new_lineItem)
                 tmp_dict[file_path] = self.all_lines
                 break
 
         project.paths_to_lines[file_path] = tmp_dict[file_path]
-        print('length: ', len(project.paths_to_lines[file_path]))
         return project
 
     def get_other_warnings(self, warning_first_line, project):
