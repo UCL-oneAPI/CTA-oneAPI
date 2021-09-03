@@ -1,7 +1,8 @@
-from analysers.PreAnalyser import PreAnalyser
-from analysers.PostAnalyser import PostAnalyser
 from pathlib import Path
 import os
+
+from analysers.WarningAnalyser import WarningAnalyser
+from analysers.WarningRecommendationAnalyser import WarningRecommendationAnalyser
 from report_presentation import diff_html, sub_graph, graph_visualization as graph
 
 
@@ -124,7 +125,8 @@ class Presenter:
                         <p class="serif" >
                           <a href="subgraphs.html">7.   Sub Graphs for Every File</a>
                         </p>
-                        ''' % (len(unique_file_path), file_path_string, len(unique_warning_code), warning_code_string, len(all_warnings))
+                        ''' % (
+        len(unique_file_path), file_path_string, len(unique_warning_code), warning_code_string, len(all_warnings))
         return html_basic_info
 
     def before_cta_table(self, all_warnings):
@@ -255,11 +257,11 @@ class Presenter:
             join_path = os.path.join(report_root, i)
             if os.path.isfile(join_path):
                 os.remove(join_path)
-        with open(report_root + '/report.html', 'w') as report:
+        with open(report_root / 'report.html', 'w') as report:
             report.write(
                 self.html_page(all_warnings, recommendations, final_warnings, changes, unique_warning_code,
                                unique_file_path, diff_path))
-        with open(report_root + '/subgraphs.html', 'w') as sub_images:
+        with open(report_root / 'subgraphs.html', 'w') as sub_images:
             sub_images.write(sub_graph.add_images(report_root))
 
     def remove_image_folder(self, image_path):
@@ -278,9 +280,9 @@ class Presenter:
         graph.visualization_partial(all_warnings, image_path)
 
     def get_warnings_and_changes(self, dpct_root, destination_root):
-        preAnalyser = PreAnalyser(dpct_root)
-        all_warnings = preAnalyser.get_all_warnings()
-        postAnalyser = PostAnalyser(destination_root)
-        final_warnings = postAnalyser.get_all_warnings()
-        changes = postAnalyser.get_all_recommendation()
+        pre_analyser = WarningAnalyser(dpct_root)
+        all_warnings = pre_analyser.get_all_warnings()
+        post_analyser = WarningRecommendationAnalyser(destination_root)
+        final_warnings = post_analyser.get_all_warnings()
+        changes = post_analyser.get_all_recommendation()
         return all_warnings, final_warnings, changes

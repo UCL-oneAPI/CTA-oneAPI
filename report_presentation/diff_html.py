@@ -4,6 +4,8 @@ import os
 
 
 def find_dpcpp(dpct_root, destination_root, diff_path):
+    if not dpct_root and not destination_root:
+        return
     for i in dpct_root.rglob('*.dp.cpp'):
         dpcpp_path = str(i.parent)
         dpct_file_name = i.stem[:-3]

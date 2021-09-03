@@ -6,11 +6,8 @@ import os.path
 
 
 # This defines the CLI and handles user commands.
-# Todo Zhongyuan: add CLI implementation
-
 
 def run_cta(dpct_project_path, destination_path, report_path, is_report_only=False):
-    validate_paths(dpct_project_path, destination_path)
     cta_instance = CTA_Instance(dpct_project_path, destination_path, report_path)
     cta_instance.run_pre_analyzer()
 
@@ -20,6 +17,7 @@ def run_cta(dpct_project_path, destination_path, report_path, is_report_only=Fal
 
     cta_instance.create_report_presentation()
     cta_instance.save_to_csvs()
+    return cta_instance
 
 
 def validate_paths(dpct_project_path, destination_path):
@@ -89,15 +87,13 @@ if __name__ == '__main__':
     a = Path(des).parts
     # using "join_path" to get the actually output directory
     for i in a[1:]:
-        output_folder_path = Path.joinpath(output_folder_path,i)
-    print(output_folder_path)
-    validate_check_result = validate_paths(args.project_path,
-                                           output_folder_path)  # get validate path checking result
-    if validate_check_result is True:
-        if args.mode == 'default':
-            run_cta(args.project_path, args.destination_path, args.report_path)
+        output_folder_path = Path.joinpath(output_folder_path, i)
 
-        if args.mode == 'report_only':
-            run_cta(args.project_path, args.destination_path, args.report_path, is_report_only=True)
-    else:
-        print(validate_check_result)
+    # get validate path checking result
+    validate_paths(args.project_path, output_folder_path)
+
+    if args.mode == 'default':
+        run_cta(args.project_path, args.destination_path, args.report_path)
+
+    if args.mode == 'report_only':
+        run_cta(args.project_path, args.destination_path, args.report_path, is_report_only=True)

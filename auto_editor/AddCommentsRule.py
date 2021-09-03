@@ -14,7 +14,6 @@ class AddCommentsRule(BaseRule):
 
     @property
     def dpct_warning_codes(self) -> List[str]:
-        # Todo: add relevant warning codes
         # Add new warning types in this list
         return ['DPCT1065','DPCT1039','DPCT1008','DPCT1000','DPCT1032','DPCT1001']
 
@@ -30,7 +29,6 @@ class AddCommentsRule(BaseRule):
 
     def run_rule(self, project: StructuredProjectSource,
                  warning_first_line: int, warning_last_line: int, file_path: str) -> StructuredProjectSource:
-        # Todo Qichen: fix rule
         state = False
         w_type = "DPCT"
         count = 0
