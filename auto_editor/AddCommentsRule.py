@@ -15,7 +15,7 @@ class AddCommentsRule(BaseRule):
     def dpct_warning_codes(self) -> List[str]:
         # Todo: add relevant warning codes
         # Add new warning types in this list
-        return ['DPCT1065','DPCT1039','DPCT1008','DPCT1000','DPCT1032','DPCT1001','DPCT1009','DPCT1010','DPCT1011','DPCT1017']
+        return ['DPCT1065','DPCT1039','DPCT1008','DPCT1000','DPCT1032','DPCT1001','DPCT1009','DPCT1010','DPCT1017']
 
     def get_indentation_spaces(self,new_code):
         j, prefix = 0, ""
@@ -133,14 +133,7 @@ class AddCommentsRule(BaseRule):
                     w_type = "DPCT"
                     return project
 
-                if w_type == "DPCT1011":
-                    del all_items[warning_first_line: warning_last_line + 1]
-                    comment_item = LineItem(prefix + "/*\n"
-                                                     + prefix + "CTA1011:" + count + ": Delete the namespace.\n"
-                                                     + prefix + "*/\n")
-                    all_items.insert(warning_first_line, comment_item)
-                    w_type = "DPCT"
-                    return project
+
 
                 if w_type == "DPCT1017":
                     del all_items[warning_first_line: warning_last_line + 1]
