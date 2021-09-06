@@ -9,6 +9,10 @@ import os.path
 
 def run_cta(dpct_project_path, destination_path, report_path, is_report_only=False):
     cta_instance = CTA_Instance(dpct_project_path, destination_path, report_path)
+
+    # validate paths are valid
+    validate_paths(cta_instance.dpct_version_root, cta_instance.cta_version_root)
+
     cta_instance.run_pre_analyzer()
 
     if not is_report_only:
@@ -66,26 +70,8 @@ if __name__ == '__main__':
     parser.add_argument('--version', action='version')
     args = parser.parse_args()
 
-    des = ""
-    if args.destination_path == None:
-        des = ""
-    else:
-        if os.path.exists(args.destination_path):
-            des = '/' + str(args.destination_path)
-        else:
-            os.mkdir(args.destination_path)  # make directory
-
-    # set the output folder path to the current directory
-    output_folder_path = Path(str(os.getcwd())).resolve()
-    # get the destination path
-    des = Path(des)
-    a = Path(des).parts
-    # using "join_path" to get the actually output directory
-    for i in a[1:]:
-        output_folder_path = Path.joinpath(output_folder_path, i)
-
-    # get validate path checking result
-    validate_paths(args.project_path, output_folder_path)
+    if args.destination_path and not os.path.exists(args.destination_path):
+        os.mkdir(args.destination_path)  # make directory
 
     if args.mode == 'default':
         run_cta(args.project_path, args.destination_path, args.report_path)
