@@ -29,11 +29,8 @@ def validate_paths(dpct_project_path, destination_path):
     generates exceptions if directory of destination_path is not empty
     or if dpct_project_path directory contains no (nested) .dp.cpp or .dp.h files
     '''
-    try:
-        if os.path.exists(dpct_project_path) is False:
-            raise Exception(dpct_project_path + " does not exist.")
-    except Exception as e:
-        return e
+    if os.path.exists(dpct_project_path) is False:
+        raise Exception(dpct_project_path + " does not exist.")
 
     filenames = []
     for root, dirs, files in os.walk(dpct_project_path):
@@ -43,17 +40,14 @@ def validate_paths(dpct_project_path, destination_path):
         if filename.endswith('.cpp') or filename.endswith('.hpp'):
             state_cpp = True
 
-    try:
-        if not state_cpp:
-            raise Exception(dpct_project_path + " does not contain the cpp or hpp file.")
-        elif os.path.exists(destination_path) is False:
-            raise Exception(destination_path + " does not exist")
-        elif os.path.isdir(destination_path) is False:
-            raise Exception(destination_path + " is not a folder.")
-        elif os.listdir(destination_path):
-            raise Exception(destination_path + " is not empty.")
-    except Exception as e:
-        return e
+    if not state_cpp:
+        raise Exception(dpct_project_path + " does not contain the cpp or hpp file.")
+    elif os.path.exists(destination_path) is False:
+        raise Exception(destination_path + " does not exist")
+    elif os.path.isdir(destination_path) is False:
+        raise Exception(destination_path + " is not a folder.")
+    elif os.listdir(destination_path):
+        raise Exception(destination_path + " is not empty.")
 
 
 if __name__ == '__main__':
