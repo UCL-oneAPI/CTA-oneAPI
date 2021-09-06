@@ -15,7 +15,7 @@ class AddCommentsRule(BaseRule):
     def dpct_warning_codes(self) -> List[str]:
         # Todo: add relevant warning codes
         # Add new warning types in this list
-        return ['DPCT1065','DPCT1039','DPCT1008','DPCT1000','DPCT1032','DPCT1001','DPCT1009','DPCT1010','DPCT1011','DPCT1007','DPCT1017']
+        return ['DPCT1065','DPCT1039','DPCT1008','DPCT1000','DPCT1032','DPCT1001','DPCT1009','DPCT1010','DPCT1011','DPCT1017']
 
     def get_indentation_spaces(self,new_code):
         j, prefix = 0, ""
