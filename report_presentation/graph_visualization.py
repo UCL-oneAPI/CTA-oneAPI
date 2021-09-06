@@ -17,13 +17,13 @@ def visualization_overall(warnings, image_path):
         files_contain_warnings[k] = len(list(set(v)))
 
     x = np.arange(len(occurrence.keys()))
-    bar_width = 0.3
+    bar_width = 0.2
     plt.figure(num=2, figsize=(20,12))
     plt.bar(x, occurrence.values(), bar_width, align="center", color="green", label="Number of Occurrences", alpha=0.5)
     plt.bar(x + bar_width, files_contain_warnings.values(), bar_width, align="center", color="blue",
             label="Number of documents containing such warnings",
             alpha=0.5)
-    plt.xticks(x + bar_width / 2, occurrence.keys(), fontsize=16)
+    plt.xticks(x + bar_width / 2, occurrence.keys(), fontsize=16, rotation=45)
     max_warnings = max(occurrence.values()) if occurrence.values() else 0
     plt.yticks(np.arange(0, max_warnings + 1, step=5), fontsize=16)
     plt.ylabel("Occurrence", fontsize=16)
