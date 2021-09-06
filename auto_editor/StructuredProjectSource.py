@@ -3,6 +3,7 @@ from pathlib import Path
 from typing import List, Dict
 
 from auto_editor.LineItem import LineItem
+from auto_editor.consts import DPCT_EXTENSIONS
 from enums import WarningLocation
 
 
@@ -14,7 +15,7 @@ class StructuredProjectSource:
 
     def get_paths_to_lines(self) -> Dict[str, List[LineItem]]:
         '''
-        :return: Dict where key = file path, value = list of LineItem instances.
+        :return: Dict of all relevant dpct files where key = file path, value = list of LineItem instances.
         '''
         file_items = {}
         for file_path in self.get_all_dpct_file_paths():
@@ -37,14 +38,12 @@ class StructuredProjectSource:
         Find all (relevant) files in dpct root and its subfolders
         :return: list with paths to all files inside directory at self.dpct_version_root
         '''
-        # Todo: use same logic here as in PreAnalyser. Currently nested files aren't discovered.
-        dpct_extensions = ('*.dp.cpp', '*.dp.hpp')
         all_dpct_files = []
         paths = []
         project_path = str(self.dpct_root.stem)
         root_index = 0
 
-        for ext in dpct_extensions:
+        for ext in DPCT_EXTENSIONS:
             all_dpct_files.extend(self.dpct_root.rglob(ext))
         for file in all_dpct_files:
             path_parts = file.parts
@@ -54,9 +53,6 @@ class StructuredProjectSource:
             paths.append(dpct_path)
 
         return paths
-
-    def get_all_file_paths_with_pattern(self, pattern: str):
-        pass
 
     def get_dpct_warnings_dict(self) -> Dict[str, List[WarningLocation]]:
         '''
@@ -104,7 +100,8 @@ class StructuredProjectSource:
 
         start_comment_pattern = "\/\*"
 
-        for i in range(any_warning_line):
+        # +1 because otherwise the very first line (line 0) of the file won't be checked
+        for i in range(any_warning_line + 1):
             line_index = any_warning_line - i
             code_str = code_lines[line_index].code
             if re.search(start_comment_pattern, code_str):

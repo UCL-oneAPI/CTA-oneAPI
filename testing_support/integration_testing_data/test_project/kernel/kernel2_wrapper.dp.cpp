@@ -38,6 +38,13 @@ kernel2_wrapper(  knode *knodes,
   int threadsPerBlock;
   threadsPerBlock = order < 256 ? order : 256;
 
+  /*
+  DPCT1065:14: Consider replacing sycl::nd_item::barrier() with
+  * sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+  * performance, if there is no access to global memory.
+  */
+  item_ct1.barrier();
+
   printf("# of blocks = %d, # of threads/block = %d (ensure that device can handle)\n", numBlocks, threadsPerBlock);
 
 
@@ -123,11 +130,6 @@ kernel2_wrapper(  knode *knodes,
   q_ct1.memcpy(ansDLength, reclength, count * sizeof(int));
 
   // [GPU] findRangeK kernel
-  /*
-  DPCT1049:3: The workgroup size passed to the SYCL kernel may exceed the limit.
-  To get the device limit, query info::device::max_work_group_size. Adjust the
-  workgroup size if needed.
-  */
   q_ct1.submit([&](sycl::handler &cgh) {
     cgh.parallel_for(
         sycl::nd_range<3>(sycl::range<3>(1, 1, numBlocks) *

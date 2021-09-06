@@ -3,8 +3,8 @@ from abc import abstractmethod
 from typing import List
 from uuid import uuid4
 
-from auto_editor.LineItem import LineItem
 from auto_editor.StructuredProjectSource import StructuredProjectSource
+from auto_editor.utils import get_index_of_line_id
 from enums import CodeChange, DiffOperationEnum, ChangeTypeEnum
 
 
@@ -36,13 +36,15 @@ class BaseRule:
                 code_lines = current_project_version.paths_to_lines[file_path]
 
                 # index of line id is taken at each iteration,
-                # as it may change if the project is modified in preveious iterations
-                warning_first_line = self.get_index_of_line_id(warning.first_line_id, code_lines)
-                warning_last_line = self.get_index_of_line_id(warning.last_line_id, code_lines)
+                # as it may change if the project is modified in previous iterations
+                warning_first_line = get_index_of_line_id(warning.first_line_id, code_lines)
+                warning_last_line = get_index_of_line_id(warning.last_line_id, code_lines)
 
                 # project is updated every time a rule runs, so it always has latest changes.
                 # the update for each warning is tracked, so all changes related to that warning can be associated to each other
                 old_project_version = copy.deepcopy(current_project_version)
+                print(f'Running rule for file {current_project_version.dpct_root}\n'
+                      f'for warning {warning_code} starting at (now) line {warning_first_line}')
                 current_project_version = self.run_rule(current_project_version, warning_first_line, warning_last_line,
                                                         file_path)
                 self.track_change(old_project_version, current_project_version)
@@ -76,7 +78,7 @@ class BaseRule:
 
             for line_id in deleted_line_ids:
                 change = CodeChange(edit_id=edit_id,
-                                    path_to_file=path,
+                                    file_path=path,
                                     line_id=line_id,
                                     diff_operation=DiffOperationEnum.delete,
                                     rule=self.__class__.__name__,
@@ -85,20 +87,18 @@ class BaseRule:
 
             for line_id in added_line_ids:
                 change = CodeChange(edit_id=edit_id,
-                                    path_to_file=path,
+                                    file_path=path,
                                     line_id=line_id,
                                     diff_operation=DiffOperationEnum.add,
                                     rule=self.__class__.__name__,
                                     change_type=self.change_type)
                 self.tracked_changes.append(change)
 
-    def get_index_of_line_id(self, id, code_lines: List[LineItem]):
-        for i in range(len(code_lines)):
-            if code_lines[i].id == id:
-                return i
-        raise Exception("No line with given ID found.")
-
     def get_tracked_changes(self) -> List[CodeChange]:
         if not self.is_run_complete:
             raise Exception("Documented change can only be shown after rule was applied!")
         return self.tracked_changes
+
+    def remove_code(self, file_lines, first_line: int, last_line: int = None):
+        remaining_line = last_line + 1 if last_line else first_line + 1
+        del file_lines[first_line: remaining_line]

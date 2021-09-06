@@ -1,0 +1,260 @@
+,project_name,warning_code,file_path,message,line
+0,test_project,DPCT1065,/kernel_wrapper2.dp.cpp,"DPCT1065:3: Consider replacing sycl::nd_item::barrier() with
+* sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+* performance, if there is no access to global memory.",42
+1,test_project,DPCT1065,/vmc.dp.cpp,"DPCT1065:4: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",82
+2,test_project,DPCT1065,/vmc.dp.cpp,"DPCT1065:5: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",100
+3,test_project,DPCT1065,/main.dp.cpp,"DPCT1065:0: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",66
+4,test_project,DPCT1003,/kernel_wrapper2.dp.cpp,"DPCT1003:28: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",126
+5,test_project,DPCT1003,/chi2.dp.cpp,"DPCT1003:8: Migrated API does not return error code. (*, 0) is inserted.
+You may need to rewrite this code.",165
+6,test_project,DPCT1003,/chi2.dp.cpp,"DPCT1003:9: Migrated API does not return error code. (*, 0) is inserted.
+You may need to rewrite this code.",220
+7,test_project,DPCT1003,/chi2.dp.cpp,"DPCT1003:10: Migrated API does not return error code. (*, 0) is
+inserted. You may need to rewrite this code.",242
+8,test_project,DPCT1003,/chi2.dp.cpp,"DPCT1003:11: Migrated API does not return error code. (*, 0) is
+inserted. You may need to rewrite this code.",266
+9,test_project,DPCT1003,/chi2.dp.cpp,"DPCT1003:13: Migrated API does not return error code. (*, 0) is
+inserted. You may need to rewrite this code.",313
+10,test_project,DPCT1003,/cluster.dp.cpp,"DPCT1003:28: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",262
+11,test_project,DPCT1003,/cluster.dp.cpp,"DPCT1003:30: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",267
+12,test_project,DPCT1003,/cluster.dp.cpp,"DPCT1003:31: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",272
+13,test_project,DPCT1003,/cluster.dp.cpp,"DPCT1003:32: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",277
+14,test_project,DPCT1003,/cluster.dp.cpp,"DPCT1003:33: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",282
+15,test_project,DPCT1003,/cluster.dp.cpp,"DPCT1003:34: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",287
+16,test_project,DPCT1003,/cluster.dp.cpp,"DPCT1003:35: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",292
+17,test_project,DPCT1003,/cluster.dp.cpp,"DPCT1003:36: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",297
+18,test_project,DPCT1003,/cluster.dp.cpp,"DPCT1003:37: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",327
+19,test_project,DPCT1003,/cluster.dp.cpp,"DPCT1003:38: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",332
+20,test_project,DPCT1003,/cluster.dp.cpp,"DPCT1003:39: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",337
+21,test_project,DPCT1003,/cluster.dp.cpp,"DPCT1003:40: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",343
+22,test_project,DPCT1003,/cluster.dp.cpp,"DPCT1003:41: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",349
+23,test_project,DPCT1003,/cluster.dp.cpp,"DPCT1003:42: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",356
+24,test_project,DPCT1003,/cluster.dp.cpp,"DPCT1003:43: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",365
+25,test_project,DPCT1003,/cluster.dp.cpp,"DPCT1003:44: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",374
+26,test_project,DPCT1003,/cluster.dp.cpp,"DPCT1003:45: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",386
+27,test_project,DPCT1003,/cluster.dp.cpp,"DPCT1003:46: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",393
+28,test_project,DPCT1003,/cluster.dp.cpp,"DPCT1003:47: Migrated API does not return error code. (*, 0) is inserted.
+You may need to rewrite this code.",413
+29,test_project,DPCT1003,/cluster.dp.cpp,"DPCT1003:48: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",419
+30,test_project,DPCT1003,/cluster.dp.cpp,"DPCT1003:49: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",425
+31,test_project,DPCT1003,/cluster.dp.cpp,"DPCT1003:50: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",431
+32,test_project,DPCT1003,/cluster.dp.cpp,"DPCT1003:51: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",439
+33,test_project,DPCT1003,/cluster.dp.cpp,"DPCT1003:52: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",447
+34,test_project,DPCT1003,/cluster.dp.cpp,"DPCT1003:53: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",456
+35,test_project,DPCT1003,/cluster.dp.cpp,"DPCT1003:54: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",466
+36,test_project,DPCT1003,/cluster.dp.cpp,"DPCT1003:55: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",487
+37,test_project,DPCT1003,/cluster.dp.cpp,"DPCT1003:56: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",493
+38,test_project,DPCT1003,/cluster.dp.cpp,"DPCT1003:57: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",499
+39,test_project,DPCT1003,/cluster.dp.cpp,"DPCT1003:58: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",507
+40,test_project,DPCT1003,/cluster.dp.cpp,"DPCT1003:59: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",515
+41,test_project,DPCT1003,/cluster.dp.cpp,"DPCT1003:60: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",524
+42,test_project,DPCT1003,/cluster.dp.cpp,"DPCT1003:61: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",534
+43,test_project,DPCT1003,/cluster.dp.cpp,"DPCT1003:62: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",624
+44,test_project,DPCT1003,/cluster.dp.cpp,"DPCT1003:63: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",630
+45,test_project,DPCT1003,/cluster.dp.cpp,"DPCT1003:64: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",637
+46,test_project,DPCT1003,/cluster.dp.cpp,"DPCT1003:65: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",644
+47,test_project,DPCT1003,/cluster.dp.cpp,"DPCT1003:66: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",761
+48,test_project,DPCT1003,/cluster.dp.cpp,"DPCT1003:67: Migrated API does not return error code. (*, 0) is inserted.
+You may need to rewrite this code.",818
+49,test_project,DPCT1003,/cluster.dp.cpp,"DPCT1003:70: Migrated API does not return error code. (*, 0) is inserted.
+You may need to rewrite this code.",861
+50,test_project,DPCT1003,/cluster.dp.cpp,"DPCT1003:71: Migrated API does not return error code. (*, 0) is inserted.
+You may need to rewrite this code.",891
+51,test_project,DPCT1003,/cluster.dp.cpp,"DPCT1003:72: Migrated API does not return error code. (*, 0) is inserted.
+You may need to rewrite this code.",914
+52,test_project,DPCT1003,/cluster.dp.cpp,"DPCT1003:73: Migrated API does not return error code. (*, 0) is inserted.
+You may need to rewrite this code.",959
+53,test_project,DPCT1003,/cluster.dp.cpp,"DPCT1003:74: Migrated API does not return error code. (*, 0) is inserted.
+You may need to rewrite this code.",997
+54,test_project,DPCT1003,/cluster.dp.cpp,"DPCT1003:75: Migrated API does not return error code. (*, 0) is inserted.
+You may need to rewrite this code.",1037
+55,test_project,DPCT1003,/cluster.dp.cpp,"DPCT1003:76: Migrated API does not return error code. (*, 0) is inserted.
+You may need to rewrite this code.",1092
+56,test_project,DPCT1003,/cluster.dp.cpp,"DPCT1003:79: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",1213
+57,test_project,DPCT1003,/cluster.dp.cpp,"DPCT1003:80: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",1218
+58,test_project,DPCT1003,/cluster.dp.cpp,"DPCT1003:81: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",1223
+59,test_project,DPCT1003,/vmc.dp.cpp,"DPCT1003:10: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",270
+60,test_project,DPCT1003,/vmc.dp.cpp,"DPCT1003:11: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",275
+61,test_project,DPCT1003,/vmc.dp.cpp,"DPCT1003:12: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",280
+62,test_project,DPCT1003,/vmc.dp.cpp,"DPCT1003:13: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",285
+63,test_project,DPCT1003,/vmc.dp.cpp,"DPCT1003:14: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",290
+64,test_project,DPCT1003,/vmc.dp.cpp,"DPCT1003:15: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",295
+65,test_project,DPCT1003,/vmc.dp.cpp,"DPCT1003:16: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",300
+66,test_project,DPCT1003,/vmc.dp.cpp,"DPCT1003:17: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",305
+67,test_project,DPCT1003,/vmc.dp.cpp,"DPCT1003:18: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",310
+68,test_project,DPCT1003,/vmc.dp.cpp,"DPCT1003:19: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",316
+69,test_project,DPCT1003,/vmc.dp.cpp,"DPCT1003:20: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",322
+70,test_project,DPCT1003,/vmc.dp.cpp,"DPCT1003:22: Migrated API does not return error code. (*, 0) is inserted.
+You may need to rewrite this code.",407
+71,test_project,DPCT1003,/vmc.dp.cpp,"DPCT1003:23: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",439
+72,test_project,DPCT1003,/vmc.dp.cpp,"DPCT1003:24: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",444
+73,test_project,DPCT1003,/vmc.dp.cpp,"DPCT1003:25: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",449
+74,test_project,DPCT1003,/vmc.dp.cpp,"DPCT1003:26: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",454
+75,test_project,DPCT1003,/vmc.dp.cpp,"DPCT1003:27: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",459
+76,test_project,DPCT1003,/vmc.dp.cpp,"DPCT1003:28: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",464
+77,test_project,DPCT1003,/vmc.dp.cpp,"DPCT1003:29: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",469
+78,test_project,DPCT1003,/vmc.dp.cpp,"DPCT1003:30: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",474
+79,test_project,DPCT1003,/vmc.dp.cpp,"DPCT1003:31: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",479
+80,test_project,DPCT1003,/vmc.dp.cpp,"DPCT1003:32: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",484
+81,test_project,DPCT1003,/vmc.dp.cpp,"DPCT1003:33: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",489
+82,test_project,DPCT1003,/main.dp.cpp,"DPCT1003:1: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",217
+83,test_project,DPCT1003,/main.dp.cpp,"DPCT1003:3: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",223
+84,test_project,DPCT1003,/main.dp.cpp,"DPCT1003:5: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",232
+85,test_project,DPCT1003,/main.dp.cpp,"DPCT1003:7: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",242
+86,test_project,DPCT1003,/main.dp.cpp,"DPCT1003:9: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",250
+87,test_project,DPCT1003,/main.dp.cpp,"DPCT1003:11: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",260
+88,test_project,DPCT1003,/main.dp.cpp,"DPCT1003:13: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",269
+89,test_project,DPCT1003,/main.dp.cpp,"DPCT1003:21: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",336
+90,test_project,DPCT1003,/shortcuts.dp.hpp,"DPCT1003:29: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",28
+91,test_project,DPCT1003,/shortcuts.dp.hpp,"DPCT1003:209: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",32
+92,test_project,DPCT1003,/shortcuts.dp.hpp,"DPCT1003:30: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",46
+93,test_project,DPCT1003,/shortcuts.dp.hpp,"DPCT1003:210: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",50
+94,test_project,DPCT1003,/shortcuts.dp.hpp,"DPCT1003:31: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",61
+95,test_project,DPCT1003,/shortcuts.dp.hpp,"DPCT1003:211: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",65
+96,test_project,DPCT1003,/shortcuts.dp.hpp,"DPCT1003:32: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",79
+97,test_project,DPCT1003,/shortcuts.dp.hpp,"DPCT1003:212: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",83
+98,test_project,DPCT1003,/shortcuts.dp.hpp,"DPCT1003:33: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",94
+99,test_project,DPCT1003,/shortcuts.dp.hpp,"DPCT1003:213: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",98
+100,test_project,DPCT1003,/shortcuts.dp.hpp,"DPCT1003:34: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",109
+101,test_project,DPCT1003,/shortcuts.dp.hpp,"DPCT1003:214: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",113
+102,test_project,DPCT1003,/shortcuts.dp.hpp,"DPCT1003:35: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",126
+103,test_project,DPCT1003,/shortcuts.dp.hpp,"DPCT1003:215: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",130
+104,test_project,DPCT1049,/kernel_wrapper2.dp.cpp,"DPCT1049:3: The workgroup size passed to the SYCL kernel may exceed the limit.
+To get the device limit, query info::device::max_work_group_size. Adjust the
+workgroup size if needed.",141
+105,test_project,DPCT1049,/chi2.dp.cpp,"DPCT1049:12: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",296
+106,test_project,DPCT1049,/cluster.dp.cpp,"DPCT1049:68: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",873
+107,test_project,DPCT1049,/cluster.dp.cpp,"DPCT1049:69: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",928
+108,test_project,DPCT1049,/main.dp.cpp,"DPCT1049:15: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",290
+109,test_project,DPCT1049,/main.dp.cpp,"DPCT1049:18: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",315
+110,test_project,DPCT1000,/chi2.dp.cpp,"DPCT1000:1: Error handling if-stmt was detected but could not be
+rewritten.",228
+111,test_project,DPCT1000,/chi2.dp.cpp,"DPCT1000:3: Error handling if-stmt was detected but could not be
+rewritten.",249
+112,test_project,DPCT1000,/chi2.dp.cpp,"DPCT1000:5: Error handling if-stmt was detected but could not be
+rewritten.",275
+113,test_project,DPCT1000,/chi2.dp.cpp,"DPCT1000:7: Error handling if-stmt was detected but could not be
+rewritten.",321
+114,test_project,DPCT1001,/chi2.dp.cpp,DPCT1001:0: The statement could not be removed.,234
+115,test_project,DPCT1001,/chi2.dp.cpp,DPCT1001:2: The statement could not be removed.,255
+116,test_project,DPCT1001,/chi2.dp.cpp,DPCT1001:4: The statement could not be removed.,281
+117,test_project,DPCT1001,/chi2.dp.cpp,DPCT1001:6: The statement could not be removed.,327
+118,test_project,DPCT1007,/cluster.dp.cpp,"DPCT1007:77: Migration of this CUDA API is not supported by the Intel(R)
+* DPC++ Compatibility Tool.",1119
+119,test_project,DPCT1007,/vmc.dp.cpp,"DPCT1007:3: Migration of this CUDA API is not supported by the Intel(R) DPC++
+Compatibility Tool.",56
+120,test_project,DPCT1032,/cluster.dp.cpp,"DPCT1032:78: Different generator is used, you may need to adjust the code.",1209
+121,test_project,DPCT1032,/vmc.dp.cpp,"DPCT1032:0: Different generator is used, you may need to adjust the code.",34
+122,test_project,DPCT1032,/vmc.dp.cpp,"DPCT1032:1: Different generator is used, you may need to adjust the code.",40
+123,test_project,DPCT1032,/vmc.dp.cpp,"DPCT1032:2: Different generator is used, you may need to adjust the code.",50
+124,test_project,DPCT1032,/vmc.dp.cpp,"DPCT1032:6: Different generator is used, you may need to adjust the code.",166
+125,test_project,DPCT1032,/vmc.dp.cpp,"DPCT1032:7: Different generator is used, you may need to adjust the code.",189
+126,test_project,DPCT1032,/vmc.dp.cpp,"DPCT1032:8: Different generator is used, you may need to adjust the code.",209
+127,test_project,DPCT1032,/vmc.dp.cpp,"DPCT1032:9: Different generator is used, you may need to adjust the code.",265
+128,test_project,DPCT1032,/vmc.dp.cpp,"DPCT1032:21: Different generator is used, you may need to adjust the code.",326
+129,test_project,DPCT1010,/main.dp.cpp,"DPCT1010:16: SYCL uses exceptions to report errors and does not use the error
+codes. The call was replaced with 0. You need to rewrite this code.",302
+130,test_project,DPCT1010,/main.dp.cpp,"DPCT1010:19: SYCL uses exceptions to report errors and does not use the error
+codes. The call was replaced with 0. You need to rewrite this code.",328

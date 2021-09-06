@@ -1,3 +1,4 @@
+from pathlib import Path
 from CTA_Instance import CTA_Instance
 import argparse
 import os
@@ -5,12 +6,13 @@ import os.path
 
 
 # This defines the CLI and handles user commands.
-# Todo Zhongyuan: add CLI implementation
-
 
 def run_cta(dpct_project_path, destination_path, report_path, is_report_only=False):
-    validate_paths(dpct_project_path, destination_path)
     cta_instance = CTA_Instance(dpct_project_path, destination_path, report_path)
+
+    # validate paths are valid
+    validate_paths(cta_instance.dpct_version_root, cta_instance.cta_version_root)
+
     cta_instance.run_pre_analyzer()
 
     if not is_report_only:
@@ -19,6 +21,7 @@ def run_cta(dpct_project_path, destination_path, report_path, is_report_only=Fal
 
     cta_instance.create_report_presentation()
     cta_instance.save_to_csvs()
+    return cta_instance
 
 
 def validate_paths(dpct_project_path, destination_path):
@@ -30,29 +33,24 @@ def validate_paths(dpct_project_path, destination_path):
     or if dpct_project_path directory contains no (nested) .dp.cpp or .dp.h files
     '''
     if os.path.exists(dpct_project_path) is False:
-        r = "The dpct project path does not exist."
-        return r
-    filenames = os.listdir(dpct_project_path)
+        raise Exception(str(dpct_project_path) + " does not exist.")
+
+    filenames = []
+    for root, dirs, files in os.walk(dpct_project_path):
+        filenames.extend(files)
     state_cpp = False
     for filename in filenames:
-        if filename.endswith('.cpp') is True:
+        if filename.endswith('.cpp') or filename.endswith('.hpp'):
             state_cpp = True
 
     if not state_cpp:
-        r = "The path does not contain the cpp file."
-        return r
-    elif os.path.exists(destination_path) is False:
-        r = "This path does not exist."
-        return r
+        raise Exception(str(dpct_project_path) + " does not contain the cpp or hpp file.")
+    elif os.path.exists(destination_path.parent) is False:
+        raise Exception(destination_path.parent + " does not exist, destination dir cannot be created.")
     elif os.path.isdir(destination_path) is False:
-        r = "This is not a folder."
-        return r
+        raise Exception(str(destination_path) + " is not a folder.")
     elif os.listdir(destination_path):
-        r = "This folder is not empty."
-        return r
-    else:
-        print("Works!")
-        return True
+        raise Exception(str(destination_path) + " is not empty.")
 
 
 if __name__ == '__main__':
@@ -72,23 +70,11 @@ if __name__ == '__main__':
     parser.add_argument('--version', action='version')
     args = parser.parse_args()
 
-    if args.destination_path == None:
-        des = ""
-    else:
-        des = '/'+str(args.destination_path)
-    output_folder_path = (str(os.getcwd()) + str(des)+'\outputs').replace('\\','/')
-    if os.path.exists(output_folder_path):
-        pass
-    else:
-        os.mkdir(output_folder_path)  # make directory
-    # print(output_folder_path)
-    validate_check_result = validate_paths(args.project_path,
-                                           output_folder_path)  # get validate path checking result
-    if validate_check_result is True:
-        if args.mode == 'default':
-            run_cta(args.project_path, args.destination_path, args.report_path)
+    if args.destination_path and not os.path.exists(args.destination_path):
+        os.mkdir(args.destination_path)  # make directory
 
-        if args.mode == 'report_only':
-            run_cta(args.project_path, args.destination_path, args.report_path, is_report_only=True)
-    else:
-        print(validate_check_result)
+    if args.mode == 'default':
+        run_cta(args.project_path, args.destination_path, args.report_path)
+
+    if args.mode == 'report_only':
+        run_cta(args.project_path, args.destination_path, args.report_path, is_report_only=True)

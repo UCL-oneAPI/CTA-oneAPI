@@ -12,7 +12,7 @@ class TestAutoEditorIntegration(BaseIntegrationTest):
                             cta_version_root=self.destination_root)
         changes = editor.make_changes()
 
-        self.assertEqual(len(changes), 6)
+        self.assertEqual(26, len(changes))
         for i in range(5):
             self.assertEqual(changes[i].diff_operation, DiffOperationEnum.delete)
 
