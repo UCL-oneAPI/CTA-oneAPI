@@ -18,18 +18,19 @@ def visualization_overall(warnings, image_path):
 
     x = np.arange(len(occurrence.keys()))
     bar_width = 0.2
-    plt.figure(2)
+    plt.figure(num=2, figsize=(20,12))
     plt.bar(x, occurrence.values(), bar_width, align="center", color="green", label="Number of Occurrences", alpha=0.5)
     plt.bar(x + bar_width, files_contain_warnings.values(), bar_width, align="center", color="blue",
             label="Number of documents containing such warnings",
             alpha=0.5)
-    plt.xticks(x + bar_width / 2, occurrence.keys())
-    plt.yticks(np.arange(0, max(occurrence.values()) + 1, step=5))
-    plt.ylabel("Occurrence")
-    plt.title("Warning Types with Number of Occurrences (Overall)")
-    plt.legend(loc="upper left", fontsize="x-small")
+    plt.xticks(x + bar_width / 2, occurrence.keys(), fontsize=16, rotation=45)
+    max_warnings = max(occurrence.values()) if occurrence.values() else 0
+    plt.yticks(np.arange(0, max_warnings + 1, step=5), fontsize=16)
+    plt.ylabel("Occurrence", fontsize=16)
+    plt.title("Warning Types with Number of Occurrences (Overall)", fontsize=20)
+    plt.legend(loc="upper left", fontsize=16)
     plt.savefig(str(image_path) + '/before-overall.png')
-    plt.show()
+    plt.close()
 
 
 def visualization_partial(warnings, image_path):
@@ -39,7 +40,6 @@ def visualization_partial(warnings, image_path):
         file_name = Path(i.file_path).name
         file_warnings.setdefault(file_name, []).append(i.warning_code)
         codes.add(i.warning_code)
-    #codes = set(codes)
     for k, v in file_warnings.items():
         warning_distribution = Counter(v)
         for code in codes:
@@ -48,7 +48,8 @@ def visualization_partial(warnings, image_path):
         x = np.arange(len(codes))
         bar_width = 0.2
         plt.bar(x, warning_distribution.values(), bar_width, align="center", color='blue', alpha=0.5)
-        plt.xticks(x, warning_distribution.keys())
+        plt.subplots_adjust(bottom=0.2)
+        plt.xticks(x, warning_distribution.keys(), fontsize=8, rotation=45)
         max_value = max(warning_distribution.values()) + 1
         if max_value <= 10:
             step = 1
@@ -58,4 +59,4 @@ def visualization_partial(warnings, image_path):
         plt.ylabel("Occurrence")
         plt.title("Warnings in " + k)
         plt.savefig(str(image_path) + '/' + k + '.jpg')
-        plt.show()
+        plt.close()

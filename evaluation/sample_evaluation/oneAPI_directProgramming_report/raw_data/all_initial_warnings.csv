@@ -1,0 +1,2424 @@
+,project_name,warning_code,file_path,message,line
+0,dpcpp,DPCT1049,present/.../main.dp.cpp,"DPCT1049:0: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",560
+1,dpcpp,DPCT1049,diamond/.../masking.dp.cpp,"DPCT1049:0: The workgroup size passed to the SYCL kernel may exceed the limit.
+To get the device limit, query info::device::max_work_group_size. Adjust the
+workgroup size if needed.",307
+2,dpcpp,DPCT1065,split/.../main.dp.cpp,"DPCT1065:0: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",65
+3,dpcpp,DPCT1065,split/.../main.dp.cpp,"DPCT1065:1: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",76
+4,dpcpp,DPCT1065,split/.../main.dp.cpp,"DPCT1065:2: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",86
+5,dpcpp,DPCT1065,split/.../main.dp.cpp,"DPCT1065:3: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",115
+6,dpcpp,DPCT1065,split/.../main.dp.cpp,"DPCT1065:4: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",146
+7,dpcpp,DPCT1065,split/.../main.dp.cpp,"DPCT1065:5: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",174
+8,dpcpp,DPCT1065,split/.../main.dp.cpp,"DPCT1065:6: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",187
+9,dpcpp,DPCT1049,medianfilter/.../main.dp.cpp,"DPCT1049:1: The workgroup size passed to the SYCL kernel may exceed the limit.
+To get the device limit, query info::device::max_work_group_size. Adjust the
+workgroup size if needed.",130
+10,dpcpp,DPCT1065,medianfilter/.../MedianFilter.dp.cpp,"DPCT1065:0: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",153
+11,dpcpp,DPCT1049,qtclustering/.../QTC.dp.cpp,"DPCT1049:14: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",274
+12,dpcpp,DPCT1049,qtclustering/.../QTC.dp.cpp,"DPCT1049:15: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",341
+13,dpcpp,DPCT1049,qtclustering/.../QTC.dp.cpp,"DPCT1049:16: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",409
+14,dpcpp,DPCT1049,qtclustering/.../QTC.dp.cpp,"DPCT1049:17: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",467
+15,dpcpp,DPCT1049,miniFE/.../basic/optional/cuda/CudaNode.dp.hpp,"DPCT1049:6: The workgroup size passed to the SYCL kernel may exceed the limit.
+To get the device limit, query info::device::max_work_group_size. Adjust the
+workgroup size if needed.",37
+16,dpcpp,DPCT1003,s3d/.../S3D.dp.cpp,"DPCT1003:1: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",127
+17,dpcpp,DPCT1003,s3d/.../S3D.dp.cpp,"DPCT1003:2: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",133
+18,dpcpp,DPCT1003,s3d/.../S3D.dp.cpp,"DPCT1003:3: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",139
+19,dpcpp,DPCT1003,s3d/.../S3D.dp.cpp,"DPCT1003:4: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",146
+20,dpcpp,DPCT1003,s3d/.../S3D.dp.cpp,"DPCT1003:5: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",153
+21,dpcpp,DPCT1003,s3d/.../S3D.dp.cpp,"DPCT1003:6: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",197
+22,dpcpp,DPCT1003,s3d/.../S3D.dp.cpp,"DPCT1003:7: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",203
+23,dpcpp,DPCT1003,s3d/.../S3D.dp.cpp,"DPCT1003:8: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",209
+24,dpcpp,DPCT1003,s3d/.../S3D.dp.cpp,"DPCT1003:9: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",216
+25,dpcpp,DPCT1003,s3d/.../S3D.dp.cpp,"DPCT1003:10: Migrated API does not return error code. (*, 0) is inserted.
+You may need to rewrite this code.",223
+26,dpcpp,DPCT1003,s3d/.../S3D.dp.cpp,"DPCT1003:11: Migrated API does not return error code. (*, 0) is inserted.
+You may need to rewrite this code.",230
+27,dpcpp,DPCT1003,s3d/.../S3D.dp.cpp,"DPCT1003:12: Migrated API does not return error code. (*, 0) is inserted.
+You may need to rewrite this code.",237
+28,dpcpp,DPCT1003,s3d/.../S3D.dp.cpp,"DPCT1003:13: Migrated API does not return error code. (*, 0) is inserted.
+You may need to rewrite this code.",244
+29,dpcpp,DPCT1003,s3d/.../S3D.dp.cpp,"DPCT1003:14: Migrated API does not return error code. (*, 0) is inserted.
+You may need to rewrite this code.",251
+30,dpcpp,DPCT1003,s3d/.../S3D.dp.cpp,"DPCT1003:15: Migrated API does not return error code. (*, 0) is inserted.
+You may need to rewrite this code.",258
+31,dpcpp,DPCT1003,s3d/.../S3D.dp.cpp,"DPCT1003:16: Migrated API does not return error code. (*, 0) is inserted.
+You may need to rewrite this code.",265
+32,dpcpp,DPCT1003,s3d/.../S3D.dp.cpp,"DPCT1003:17: Migrated API does not return error code. (*, 0) is inserted.
+You may need to rewrite this code.",280
+33,dpcpp,DPCT1003,s3d/.../S3D.dp.cpp,"DPCT1003:18: Migrated API does not return error code. (*, 0) is inserted.
+You may need to rewrite this code.",285
+34,dpcpp,DPCT1003,s3d/.../S3D.dp.cpp,"DPCT1003:19: Migrated API does not return error code. (*, 0) is inserted.
+You may need to rewrite this code.",290
+35,dpcpp,DPCT1003,s3d/.../S3D.dp.cpp,"DPCT1003:20: Migrated API does not return error code. (*, 0) is inserted.
+You may need to rewrite this code.",295
+36,dpcpp,DPCT1003,s3d/.../S3D.dp.cpp,"DPCT1003:48: Migrated API does not return error code. (*, 0) is inserted.
+You may need to rewrite this code.",684
+37,dpcpp,DPCT1003,s3d/.../S3D.dp.cpp,"DPCT1003:49: Migrated API does not return error code. (*, 0) is inserted.
+You may need to rewrite this code.",693
+38,dpcpp,DPCT1003,s3d/.../S3D.dp.cpp,"DPCT1003:50: Migrated API does not return error code. (*, 0) is inserted.
+You may need to rewrite this code.",698
+39,dpcpp,DPCT1003,s3d/.../S3D.dp.cpp,"DPCT1003:51: Migrated API does not return error code. (*, 0) is inserted.
+You may need to rewrite this code.",703
+40,dpcpp,DPCT1003,s3d/.../S3D.dp.cpp,"DPCT1003:52: Migrated API does not return error code. (*, 0) is inserted.
+You may need to rewrite this code.",708
+41,dpcpp,DPCT1003,s3d/.../S3D.dp.cpp,"DPCT1003:53: Migrated API does not return error code. (*, 0) is inserted.
+You may need to rewrite this code.",713
+42,dpcpp,DPCT1003,s3d/.../S3D.dp.cpp,"DPCT1003:54: Migrated API does not return error code. (*, 0) is inserted.
+You may need to rewrite this code.",718
+43,dpcpp,DPCT1003,s3d/.../S3D.dp.cpp,"DPCT1003:55: Migrated API does not return error code. (*, 0) is inserted.
+You may need to rewrite this code.",723
+44,dpcpp,DPCT1003,s3d/.../S3D.dp.cpp,"DPCT1003:56: Migrated API does not return error code. (*, 0) is inserted.
+You may need to rewrite this code.",728
+45,dpcpp,DPCT1003,s3d/.../S3D.dp.cpp,"DPCT1003:57: Migrated API does not return error code. (*, 0) is inserted.
+You may need to rewrite this code.",733
+46,dpcpp,DPCT1003,s3d/.../S3D.dp.cpp,"DPCT1003:58: Migrated API does not return error code. (*, 0) is inserted.
+You may need to rewrite this code.",738
+47,dpcpp,DPCT1003,s3d/.../S3D.dp.cpp,"DPCT1003:59: Migrated API does not return error code. (*, 0) is inserted.
+You may need to rewrite this code.",743
+48,dpcpp,DPCT1003,s3d/.../S3D.dp.cpp,"DPCT1003:60: Migrated API does not return error code. (*, 0) is inserted.
+You may need to rewrite this code.",758
+49,dpcpp,DPCT1003,s3d/.../S3D.dp.cpp,"DPCT1003:61: Migrated API does not return error code. (*, 0) is inserted.
+You may need to rewrite this code.",763
+50,dpcpp,DPCT1003,s3d/.../S3D.dp.cpp,"DPCT1003:62: Migrated API does not return error code. (*, 0) is inserted.
+You may need to rewrite this code.",768
+51,dpcpp,DPCT1003,s3d/.../S3D.dp.cpp,"DPCT1003:63: Migrated API does not return error code. (*, 0) is inserted.
+You may need to rewrite this code.",773
+52,dpcpp,DPCT1003,s3d/.../S3D.dp.cpp,"DPCT1003:64: Migrated API does not return error code. (*, 0) is inserted.
+You may need to rewrite this code.",778
+53,dpcpp,DPCT1049,s3d/.../S3D.dp.cpp,"DPCT1049:21: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",305
+54,dpcpp,DPCT1049,s3d/.../S3D.dp.cpp,"DPCT1049:22: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",319
+55,dpcpp,DPCT1049,s3d/.../S3D.dp.cpp,"DPCT1049:23: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",333
+56,dpcpp,DPCT1049,s3d/.../S3D.dp.cpp,"DPCT1049:24: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",348
+57,dpcpp,DPCT1049,s3d/.../S3D.dp.cpp,"DPCT1049:25: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",362
+58,dpcpp,DPCT1049,s3d/.../S3D.dp.cpp,"DPCT1049:26: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",376
+59,dpcpp,DPCT1049,s3d/.../S3D.dp.cpp,"DPCT1049:27: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",390
+60,dpcpp,DPCT1049,s3d/.../S3D.dp.cpp,"DPCT1049:28: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",404
+61,dpcpp,DPCT1049,s3d/.../S3D.dp.cpp,"DPCT1049:29: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",418
+62,dpcpp,DPCT1049,s3d/.../S3D.dp.cpp,"DPCT1049:30: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",432
+63,dpcpp,DPCT1049,s3d/.../S3D.dp.cpp,"DPCT1049:31: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",446
+64,dpcpp,DPCT1049,s3d/.../S3D.dp.cpp,"DPCT1049:32: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",460
+65,dpcpp,DPCT1049,s3d/.../S3D.dp.cpp,"DPCT1049:33: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",475
+66,dpcpp,DPCT1049,s3d/.../S3D.dp.cpp,"DPCT1049:34: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",489
+67,dpcpp,DPCT1049,s3d/.../S3D.dp.cpp,"DPCT1049:35: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",503
+68,dpcpp,DPCT1049,s3d/.../S3D.dp.cpp,"DPCT1049:36: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",516
+69,dpcpp,DPCT1049,s3d/.../S3D.dp.cpp,"DPCT1049:37: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",530
+70,dpcpp,DPCT1049,s3d/.../S3D.dp.cpp,"DPCT1049:38: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",543
+71,dpcpp,DPCT1049,s3d/.../S3D.dp.cpp,"DPCT1049:39: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",556
+72,dpcpp,DPCT1049,s3d/.../S3D.dp.cpp,"DPCT1049:40: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",570
+73,dpcpp,DPCT1049,s3d/.../S3D.dp.cpp,"DPCT1049:41: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",584
+74,dpcpp,DPCT1049,s3d/.../S3D.dp.cpp,"DPCT1049:42: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",598
+75,dpcpp,DPCT1049,s3d/.../S3D.dp.cpp,"DPCT1049:43: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",612
+76,dpcpp,DPCT1049,s3d/.../S3D.dp.cpp,"DPCT1049:44: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",626
+77,dpcpp,DPCT1049,s3d/.../S3D.dp.cpp,"DPCT1049:45: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",640
+78,dpcpp,DPCT1049,s3d/.../S3D.dp.cpp,"DPCT1049:46: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",654
+79,dpcpp,DPCT1049,s3d/.../S3D.dp.cpp,"DPCT1049:47: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",668
+80,dpcpp,DPCT1049,multimaterial/.../compact.dp.cpp,"DPCT1049:0: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",364
+81,dpcpp,DPCT1049,multimaterial/.../compact.dp.cpp,"DPCT1049:1: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",382
+82,dpcpp,DPCT1049,multimaterial/.../compact.dp.cpp,"DPCT1049:2: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",409
+83,dpcpp,DPCT1049,multimaterial/.../compact.dp.cpp,"DPCT1049:3: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",429
+84,dpcpp,DPCT1049,multimaterial/.../compact.dp.cpp,"DPCT1049:4: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",455
+85,dpcpp,DPCT1003,gmm/.../cluster.dp.cpp,"DPCT1003:28: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",262
+86,dpcpp,DPCT1003,gmm/.../cluster.dp.cpp,"DPCT1003:30: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",267
+87,dpcpp,DPCT1003,gmm/.../cluster.dp.cpp,"DPCT1003:31: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",272
+88,dpcpp,DPCT1003,gmm/.../cluster.dp.cpp,"DPCT1003:32: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",277
+89,dpcpp,DPCT1003,gmm/.../cluster.dp.cpp,"DPCT1003:33: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",282
+90,dpcpp,DPCT1003,gmm/.../cluster.dp.cpp,"DPCT1003:34: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",287
+91,dpcpp,DPCT1003,gmm/.../cluster.dp.cpp,"DPCT1003:35: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",292
+92,dpcpp,DPCT1003,gmm/.../cluster.dp.cpp,"DPCT1003:36: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",297
+93,dpcpp,DPCT1003,gmm/.../cluster.dp.cpp,"DPCT1003:37: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",327
+94,dpcpp,DPCT1003,gmm/.../cluster.dp.cpp,"DPCT1003:38: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",332
+95,dpcpp,DPCT1003,gmm/.../cluster.dp.cpp,"DPCT1003:39: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",337
+96,dpcpp,DPCT1003,gmm/.../cluster.dp.cpp,"DPCT1003:40: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",343
+97,dpcpp,DPCT1003,gmm/.../cluster.dp.cpp,"DPCT1003:41: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",349
+98,dpcpp,DPCT1003,gmm/.../cluster.dp.cpp,"DPCT1003:42: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",356
+99,dpcpp,DPCT1003,gmm/.../cluster.dp.cpp,"DPCT1003:43: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",365
+100,dpcpp,DPCT1003,gmm/.../cluster.dp.cpp,"DPCT1003:44: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",374
+101,dpcpp,DPCT1003,gmm/.../cluster.dp.cpp,"DPCT1003:45: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",386
+102,dpcpp,DPCT1003,gmm/.../cluster.dp.cpp,"DPCT1003:46: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",393
+103,dpcpp,DPCT1003,gmm/.../cluster.dp.cpp,"DPCT1003:47: Migrated API does not return error code. (*, 0) is inserted.
+You may need to rewrite this code.",413
+104,dpcpp,DPCT1003,gmm/.../cluster.dp.cpp,"DPCT1003:48: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",419
+105,dpcpp,DPCT1003,gmm/.../cluster.dp.cpp,"DPCT1003:49: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",425
+106,dpcpp,DPCT1003,gmm/.../cluster.dp.cpp,"DPCT1003:50: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",431
+107,dpcpp,DPCT1003,gmm/.../cluster.dp.cpp,"DPCT1003:51: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",439
+108,dpcpp,DPCT1003,gmm/.../cluster.dp.cpp,"DPCT1003:52: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",447
+109,dpcpp,DPCT1003,gmm/.../cluster.dp.cpp,"DPCT1003:53: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",456
+110,dpcpp,DPCT1003,gmm/.../cluster.dp.cpp,"DPCT1003:54: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",466
+111,dpcpp,DPCT1003,gmm/.../cluster.dp.cpp,"DPCT1003:55: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",487
+112,dpcpp,DPCT1003,gmm/.../cluster.dp.cpp,"DPCT1003:56: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",493
+113,dpcpp,DPCT1003,gmm/.../cluster.dp.cpp,"DPCT1003:57: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",499
+114,dpcpp,DPCT1003,gmm/.../cluster.dp.cpp,"DPCT1003:58: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",507
+115,dpcpp,DPCT1003,gmm/.../cluster.dp.cpp,"DPCT1003:59: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",515
+116,dpcpp,DPCT1003,gmm/.../cluster.dp.cpp,"DPCT1003:60: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",524
+117,dpcpp,DPCT1003,gmm/.../cluster.dp.cpp,"DPCT1003:61: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",534
+118,dpcpp,DPCT1003,gmm/.../cluster.dp.cpp,"DPCT1003:62: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",624
+119,dpcpp,DPCT1003,gmm/.../cluster.dp.cpp,"DPCT1003:63: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",630
+120,dpcpp,DPCT1003,gmm/.../cluster.dp.cpp,"DPCT1003:64: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",637
+121,dpcpp,DPCT1003,gmm/.../cluster.dp.cpp,"DPCT1003:65: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",644
+122,dpcpp,DPCT1003,gmm/.../cluster.dp.cpp,"DPCT1003:66: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",761
+123,dpcpp,DPCT1003,gmm/.../cluster.dp.cpp,"DPCT1003:67: Migrated API does not return error code. (*, 0) is inserted.
+You may need to rewrite this code.",818
+124,dpcpp,DPCT1003,gmm/.../cluster.dp.cpp,"DPCT1003:70: Migrated API does not return error code. (*, 0) is inserted.
+You may need to rewrite this code.",861
+125,dpcpp,DPCT1003,gmm/.../cluster.dp.cpp,"DPCT1003:71: Migrated API does not return error code. (*, 0) is inserted.
+You may need to rewrite this code.",891
+126,dpcpp,DPCT1003,gmm/.../cluster.dp.cpp,"DPCT1003:72: Migrated API does not return error code. (*, 0) is inserted.
+You may need to rewrite this code.",914
+127,dpcpp,DPCT1003,gmm/.../cluster.dp.cpp,"DPCT1003:73: Migrated API does not return error code. (*, 0) is inserted.
+You may need to rewrite this code.",959
+128,dpcpp,DPCT1003,gmm/.../cluster.dp.cpp,"DPCT1003:74: Migrated API does not return error code. (*, 0) is inserted.
+You may need to rewrite this code.",997
+129,dpcpp,DPCT1003,gmm/.../cluster.dp.cpp,"DPCT1003:75: Migrated API does not return error code. (*, 0) is inserted.
+You may need to rewrite this code.",1037
+130,dpcpp,DPCT1003,gmm/.../cluster.dp.cpp,"DPCT1003:76: Migrated API does not return error code. (*, 0) is inserted.
+You may need to rewrite this code.",1092
+131,dpcpp,DPCT1003,gmm/.../cluster.dp.cpp,"DPCT1003:77: Migrated API does not return error code. (*, 0) is inserted.
+You may need to rewrite this code.",1119
+132,dpcpp,DPCT1003,gmm/.../cluster.dp.cpp,"DPCT1003:78: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",1209
+133,dpcpp,DPCT1003,gmm/.../cluster.dp.cpp,"DPCT1003:79: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",1214
+134,dpcpp,DPCT1003,gmm/.../cluster.dp.cpp,"DPCT1003:80: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",1219
+135,dpcpp,DPCT1003,gmm/.../cluster.dp.cpp,"DPCT1003:81: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",1224
+136,dpcpp,DPCT1049,gmm/.../cluster.dp.cpp,"DPCT1049:68: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",873
+137,dpcpp,DPCT1049,gmm/.../cluster.dp.cpp,"DPCT1049:69: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",928
+138,dpcpp,DPCT1065,gmm/.../gaussian_kernel.dp.cpp,"DPCT1065:0: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",56
+139,dpcpp,DPCT1065,gmm/.../gaussian_kernel.dp.cpp,"DPCT1065:1: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",151
+140,dpcpp,DPCT1065,gmm/.../gaussian_kernel.dp.cpp,"DPCT1065:2: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",167
+141,dpcpp,DPCT1065,gmm/.../gaussian_kernel.dp.cpp,"DPCT1065:3: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",194
+142,dpcpp,DPCT1065,gmm/.../gaussian_kernel.dp.cpp,"DPCT1065:4: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",212
+143,dpcpp,DPCT1065,gmm/.../gaussian_kernel.dp.cpp,"DPCT1065:5: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",225
+144,dpcpp,DPCT1065,gmm/.../gaussian_kernel.dp.cpp,"DPCT1065:6: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",269
+145,dpcpp,DPCT1065,gmm/.../gaussian_kernel.dp.cpp,"DPCT1065:7: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",287
+146,dpcpp,DPCT1065,gmm/.../gaussian_kernel.dp.cpp,"DPCT1065:8: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",300
+147,dpcpp,DPCT1065,gmm/.../gaussian_kernel.dp.cpp,"DPCT1065:9: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",315
+148,dpcpp,DPCT1065,gmm/.../gaussian_kernel.dp.cpp,"DPCT1065:10: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",332
+149,dpcpp,DPCT1065,gmm/.../gaussian_kernel.dp.cpp,"DPCT1065:11: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",386
+150,dpcpp,DPCT1065,gmm/.../gaussian_kernel.dp.cpp,"DPCT1065:12: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",408
+151,dpcpp,DPCT1065,gmm/.../gaussian_kernel.dp.cpp,"DPCT1065:13: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",423
+152,dpcpp,DPCT1065,gmm/.../gaussian_kernel.dp.cpp,"DPCT1065:14: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",466
+153,dpcpp,DPCT1065,gmm/.../gaussian_kernel.dp.cpp,"DPCT1065:15: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",475
+154,dpcpp,DPCT1065,gmm/.../gaussian_kernel.dp.cpp,"DPCT1065:16: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",481
+155,dpcpp,DPCT1065,gmm/.../gaussian_kernel.dp.cpp,"DPCT1065:17: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",551
+156,dpcpp,DPCT1065,gmm/.../gaussian_kernel.dp.cpp,"DPCT1065:18: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",642
+157,dpcpp,DPCT1065,gmm/.../gaussian_kernel.dp.cpp,"DPCT1065:19: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",679
+158,dpcpp,DPCT1065,gmm/.../gaussian_kernel.dp.cpp,"DPCT1065:20: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",723
+159,dpcpp,DPCT1065,gmm/.../gaussian_kernel.dp.cpp,"DPCT1065:21: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",787
+160,dpcpp,DPCT1065,gmm/.../gaussian_kernel.dp.cpp,"DPCT1065:22: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",815
+161,dpcpp,DPCT1065,gmm/.../gaussian_kernel.dp.cpp,"DPCT1065:23: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",830
+162,dpcpp,DPCT1065,gmm/.../gaussian_kernel.dp.cpp,"DPCT1065:24: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",864
+163,dpcpp,DPCT1065,gmm/.../gaussian_kernel.dp.cpp,"DPCT1065:25: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",892
+164,dpcpp,DPCT1065,gmm/.../gaussian_kernel.dp.cpp,"DPCT1065:26: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",930
+165,dpcpp,DPCT1065,gmm/.../gaussian_kernel.dp.cpp,"DPCT1065:27: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",940
+166,dpcpp,DPCT1049,heat/.../heat.dp.cpp,"DPCT1049:4: The workgroup size passed to the SYCL kernel may exceed the limit.
+To get the device limit, query info::device::max_work_group_size. Adjust the
+workgroup size if needed.",147
+167,dpcpp,DPCT1049,heat/.../heat.dp.cpp,"DPCT1049:5: The workgroup size passed to the SYCL kernel may exceed the limit.
+To get the device limit, query info::device::max_work_group_size. Adjust the
+workgroup size if needed.",160
+168,dpcpp,DPCT1049,heat/.../heat.dp.cpp,"DPCT1049:7: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",205
+169,dpcpp,DPCT1003,heat/.../heat.dp.cpp,"DPCT1003:6: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",175
+170,dpcpp,DPCT1003,heat/.../heat.dp.cpp,"DPCT1003:8: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",231
+171,dpcpp,DPCT1000,heat/.../heat.dp.cpp,DPCT1000:1: Error handling if-stmt was detected but could not be rewritten.,180
+172,dpcpp,DPCT1000,heat/.../heat.dp.cpp,DPCT1000:3: Error handling if-stmt was detected but could not be rewritten.,236
+173,dpcpp,DPCT1001,heat/.../heat.dp.cpp,DPCT1001:0: The statement could not be removed.,184
+174,dpcpp,DPCT1001,heat/.../heat.dp.cpp,DPCT1001:2: The statement could not be removed.,240
+175,dpcpp,DPCT1049,iso2dfd/.../iso2dfd.dp.cpp,"DPCT1049:0: The workgroup size passed to the SYCL kernel may
+* exceed the limit. To get the device limit, query
+* info::device::max_work_group_size. Adjust the workgroup size if
+* needed.",266
+176,dpcpp,DPCT1049,iso2dfd/.../iso2dfd.dp.cpp,"DPCT1049:1: The workgroup size passed to the SYCL kernel may
+* exceed the limit. To get the device limit, query
+* info::device::max_work_group_size. Adjust the workgroup size if
+* needed.",280
+177,dpcpp,DPCT1039,all-pairs-distance/.../main.dp.cpp,"DPCT1039:0: The generated code assumes that ""distance + INSTANCES*gx + gy""
+points to the global memory address space. If it points to a local memory
+address space, replace ""dpct::atomic_fetch_add"" with
+""dpct::atomic_fetch_add<int, sycl::access::address_space::local_space>"".",68
+178,dpcpp,DPCT1065,all-pairs-distance/.../main.dp.cpp,"DPCT1065:1: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",101
+179,dpcpp,DPCT1065,all-pairs-distance/.../main.dp.cpp,"DPCT1065:2: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",131
+180,dpcpp,DPCT1049,all-pairs-distance/.../main.dp.cpp,"DPCT1049:3: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",236
+181,dpcpp,DPCT1049,all-pairs-distance/.../main.dp.cpp,"DPCT1049:4: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",271
+182,dpcpp,DPCT1065,minimod/.../minimig.dp.cpp,"DPCT1065:0: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",55
+183,dpcpp,DPCT1065,minimod/.../minimig.dp.cpp,"DPCT1065:1: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",144
+184,dpcpp,DPCT1065,minimod/.../find_min_max.dp.cpp,"DPCT1065:0: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",24
+185,dpcpp,DPCT1065,minimod/.../find_min_max.dp.cpp,"DPCT1065:1: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for
+better performance, if there is no access to global memory.",45
+186,dpcpp,DPCT1049,minimod/.../minimig.dp.cpp,"DPCT1049:2: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",300
+187,dpcpp,DPCT1049,minimod/.../minimig.dp.cpp,"DPCT1049:3: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",349
+188,dpcpp,DPCT1049,minimod/.../minimig.dp.cpp,"DPCT1049:4: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",398
+189,dpcpp,DPCT1049,minimod/.../minimig.dp.cpp,"DPCT1049:5: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",447
+190,dpcpp,DPCT1049,minimod/.../minimig.dp.cpp,"DPCT1049:6: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",496
+191,dpcpp,DPCT1049,minimod/.../minimig.dp.cpp,"DPCT1049:7: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",545
+192,dpcpp,DPCT1049,minimod/.../minimig.dp.cpp,"DPCT1049:8: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",594
+193,dpcpp,DPCT1065,knn/.../main.dp.cpp,"DPCT1065:0: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",86
+194,dpcpp,DPCT1065,knn/.../main.dp.cpp,"DPCT1065:1: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",104
+195,dpcpp,DPCT1049,knn/.../main.dp.cpp,"DPCT1049:2: The workgroup size passed to the SYCL kernel may exceed the limit.
+To get the device limit, query info::device::max_work_group_size. Adjust the
+workgroup size if needed.",284
+196,dpcpp,DPCT1049,knn/.../main.dp.cpp,"DPCT1049:3: The workgroup size passed to the SYCL kernel may exceed the limit.
+To get the device limit, query info::device::max_work_group_size. Adjust the
+workgroup size if needed.",340
+197,dpcpp,DPCT1049,knn/.../main.dp.cpp,"DPCT1049:4: The workgroup size passed to the SYCL kernel may exceed the limit.
+To get the device limit, query info::device::max_work_group_size. Adjust the
+workgroup size if needed.",367
+198,dpcpp,DPCT1065,minibude/.../kernel.dp.cpp,"DPCT1065:0: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",85
+199,dpcpp,DPCT1049,minibude/.../main.dp.cpp,"DPCT1049:0: The workgroup size passed to the SYCL kernel may exceed the limit.
+To get the device limit, query info::device::max_work_group_size. Adjust the
+workgroup size if needed.",286
+200,dpcpp,DPCT1049,minibude/.../main.dp.cpp,"DPCT1049:1: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",304
+201,dpcpp,DPCT1049,mt/.../MT.dp.cpp,"DPCT1049:0: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",172
+202,dpcpp,DPCT1049,mt/.../MT.dp.cpp,"DPCT1049:1: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",186
+203,dpcpp,DPCT1049,easyWave/.../main.dp.cpp,"DPCT1049:0: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",895
+204,dpcpp,DPCT1049,easyWave/.../main.dp.cpp,"DPCT1049:1: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",918
+205,dpcpp,DPCT1065,sosfil/.../main.dp.cpp,"DPCT1065:0: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",67
+206,dpcpp,DPCT1065,sosfil/.../main.dp.cpp,"DPCT1065:1: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",99
+207,dpcpp,DPCT1065,sosfil/.../main.dp.cpp,"DPCT1065:2: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",129
+208,dpcpp,DPCT1065,sosfil/.../main.dp.cpp,"DPCT1065:3: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for
+better performance, if there is no access to global memory.",156
+209,dpcpp,DPCT1049,sosfil/.../main.dp.cpp,"DPCT1049:4: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",223
+210,dpcpp,DPCT1049,amgmk/.../main.dp.cpp,"DPCT1049:0: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",304
+211,dpcpp,DPCT1049,black-scholes/.../blackScholesAnalyticEngine.dp.cpp,"DPCT1049:0: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",255
+212,dpcpp,DPCT1049,haccmk/.../haccmk.dp.cpp,"DPCT1049:0: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",98
+213,dpcpp,DPCT1049,gaussian/.../gaussianElim.dp.cpp,"DPCT1049:0: The workgroup size passed to the SYCL kernel may exceed
+* the limit. To get the device limit, query
+* info::device::max_work_group_size. Adjust the workgroup size if needed.
+",239
+214,dpcpp,DPCT1049,gaussian/.../gaussianElim.dp.cpp,"DPCT1049:1: The workgroup size passed to the SYCL kernel may exceed
+* the limit. To get the device limit, query
+* info::device::max_work_group_size. Adjust the workgroup size if needed.
+",252
+215,dpcpp,DPCT1049,nn/.../nearestNeighbor.dp.cpp,"DPCT1049:0: The workgroup size passed to the SYCL kernel may exceed the
+* limit. To get the device limit, query info::device::max_work_group_size.
+* Adjust the workgroup size if needed.",87
+216,dpcpp,DPCT1049,rtm8/.../rtm8.dp.cpp,"DPCT1049:0: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",198
+217,dpcpp,DPCT1049,nbody/.../GSimulation.dp.cpp,"DPCT1049:0: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",133
+218,dpcpp,DPCT1049,laplace/.../main.dp.cpp,"DPCT1049:0: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",317
+219,dpcpp,DPCT1049,laplace/.../main.dp.cpp,"DPCT1049:1: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",339
+220,dpcpp,DPCT1065,boxfilter/.../main.dp.cpp,"DPCT1065:155: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",83
+221,dpcpp,DPCT1049,boxfilter/.../main.dp.cpp,"DPCT1049:156: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",192
+222,dpcpp,DPCT1049,boxfilter/.../main.dp.cpp,"DPCT1049:157: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",218
+223,dpcpp,DPCT1065,stencil/.../stencil_1d.dp.cpp,"DPCT1065:0: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",37
+224,dpcpp,DPCT1008,simplemoc/.../init.dp.cpp,"DPCT1008:0: clock function is not defined in the DPC++. This is a
+hardware-specific feature. Consult with your hardware vendor to find a
+replacement.",117
+225,dpcpp,DPCT1049,simplemoc/.../main.dp.cpp,"DPCT1049:0: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",564
+226,dpcpp,DPCT1065,pathfinder/.../main.dp.cpp,"DPCT1065:0: Consider replacing sycl::nd_item::barrier() with
+* sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+* performance, if there is no access to global memory.",97
+227,dpcpp,DPCT1065,pathfinder/.../main.dp.cpp,"DPCT1065:1: Consider replacing sycl::nd_item::barrier() with
+* sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+* performance, if there is no access to global memory.",133
+228,dpcpp,DPCT1065,pathfinder/.../main.dp.cpp,"DPCT1065:2: Consider replacing sycl::nd_item::barrier() with
+* sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+* performance, if there is no access to global memory.",152
+229,dpcpp,DPCT1049,pathfinder/.../main.dp.cpp,"DPCT1049:3: The workgroup size passed to the SYCL kernel may exceed
+* the limit. To get the device limit, query
+* info::device::max_work_group_size. Adjust the workgroup size if needed.
+",260
+230,dpcpp,DPCT1011,tridiagonal/.../sweep_kernels.dp.cpp,"DPCT1011:0: The tool detected overloaded operators for built-in vector types,
+which may conflict with the SYCL 1.2.1 standard operators (see 4.10.2.1 Vec
+interface). The tool inserted a namespace to avoid the conflict. Use SYCL 1.2.1
+standard operators instead.",222
+231,dpcpp,DPCT1011,tridiagonal/.../sweep_kernels.dp.cpp,"DPCT1011:1: The tool detected overloaded operators for built-in vector types,
+which may conflict with the SYCL 1.2.1 standard operators (see 4.10.2.1 Vec
+interface). The tool inserted a namespace to avoid the conflict. Use SYCL 1.2.1
+standard operators instead.",238
+232,dpcpp,DPCT1011,tridiagonal/.../sweep_kernels.dp.cpp,"DPCT1011:2: The tool detected overloaded operators for built-in vector types,
+which may conflict with the SYCL 1.2.1 standard operators (see 4.10.2.1 Vec
+interface). The tool inserted a namespace to avoid the conflict. Use SYCL 1.2.1
+standard operators instead.",254
+233,dpcpp,DPCT1011,tridiagonal/.../sweep_kernels.dp.cpp,"DPCT1011:3: The tool detected overloaded operators for built-in vector types,
+which may conflict with the SYCL 1.2.1 standard operators (see 4.10.2.1 Vec
+interface). The tool inserted a namespace to avoid the conflict. Use SYCL 1.2.1
+standard operators instead.",270
+234,dpcpp,DPCT1011,tridiagonal/.../sweep_kernels.dp.cpp,"DPCT1011:12: The tool detected overloaded operators for built-in vector types,
+which may conflict with the SYCL 1.2.1 standard operators (see 4.10.2.1 Vec
+interface). The tool inserted a namespace to avoid the conflict. Use SYCL 1.2.1
+standard operators instead.",352
+235,dpcpp,DPCT1011,tridiagonal/.../sweep_kernels.dp.cpp,"DPCT1011:13: The tool detected overloaded operators for built-in vector types,
+which may conflict with the SYCL 1.2.1 standard operators (see 4.10.2.1 Vec
+interface). The tool inserted a namespace to avoid the conflict. Use SYCL 1.2.1
+standard operators instead.",367
+236,dpcpp,DPCT1013,tridiagonal/.../sweep_kernels.dp.cpp,"DPCT1013:4: The rounding mode could not be specified and the generated
+code may have different precision then the original code. Verify the
+correctness. SYCL math built-ins rounding mode is aligned with OpenCL
+C 1.2 standard.",289
+237,dpcpp,DPCT1013,tridiagonal/.../sweep_kernels.dp.cpp,"DPCT1013:5: The rounding mode could not be specified and the generated
+code may have different precision then the original code. Verify the
+correctness. SYCL math built-ins rounding mode is aligned with OpenCL
+C 1.2 standard.",296
+238,dpcpp,DPCT1013,tridiagonal/.../sweep_kernels.dp.cpp,"DPCT1013:6: The rounding mode could not be specified and the generated
+code may have different precision then the original code. Verify the
+correctness. SYCL math built-ins rounding mode is aligned with OpenCL
+C 1.2 standard.",303
+239,dpcpp,DPCT1013,tridiagonal/.../sweep_kernels.dp.cpp,"DPCT1013:7: The rounding mode could not be specified and the generated
+code may have different precision then the original code. Verify the
+correctness. SYCL math built-ins rounding mode is aligned with OpenCL
+C 1.2 standard.",310
+240,dpcpp,DPCT1013,tridiagonal/.../sweep_kernels.dp.cpp,"DPCT1013:8: The rounding mode could not be specified and the generated
+code may have different precision then the original code. Verify the
+correctness. SYCL math built-ins rounding mode is aligned with OpenCL
+C 1.2 standard.",322
+241,dpcpp,DPCT1013,tridiagonal/.../sweep_kernels.dp.cpp,"DPCT1013:9: The rounding mode could not be specified and the generated
+code may have different precision then the original code. Verify the
+correctness. SYCL math built-ins rounding mode is aligned with OpenCL
+C 1.2 standard.",329
+242,dpcpp,DPCT1013,tridiagonal/.../sweep_kernels.dp.cpp,"DPCT1013:10: The rounding mode could not be specified and the generated
+code may have different precision then the original code. Verify the
+correctness. SYCL math built-ins rounding mode is aligned with OpenCL
+C 1.2 standard.",336
+243,dpcpp,DPCT1013,tridiagonal/.../sweep_kernels.dp.cpp,"DPCT1013:11: The rounding mode could not be specified and the generated
+code may have different precision then the original code. Verify the
+correctness. SYCL math built-ins rounding mode is aligned with OpenCL
+C 1.2 standard.",343
+244,dpcpp,DPCT1013,tridiagonal/.../cyclic_kernels.dp.cpp,"DPCT1013:25: The rounding mode could not be specified and the generated
+code may have different precision then the original code. Verify the
+correctness. SYCL math built-ins rounding mode is aligned with OpenCL
+C 1.2 standard.",94
+245,dpcpp,DPCT1013,tridiagonal/.../cyclic_kernels.dp.cpp,"DPCT1013:26: The rounding mode could not be specified and the generated
+code may have different precision then the original code. Verify the
+correctness. SYCL math built-ins rounding mode is aligned with OpenCL
+C 1.2 standard.",113
+246,dpcpp,DPCT1013,tridiagonal/.../cyclic_kernels.dp.cpp,"DPCT1013:27: The rounding mode could not be specified and the generated
+code may have different precision then the original code. Verify the
+correctness. SYCL math built-ins rounding mode is aligned with OpenCL
+C 1.2 standard.",120
+247,dpcpp,DPCT1013,tridiagonal/.../cyclic_kernels.dp.cpp,"DPCT1013:28: The rounding mode could not be specified and the generated code
+may have different precision then the original code. Verify the correctness.
+SYCL math built-ins rounding mode is aligned with OpenCL C 1.2 standard.",146
+248,dpcpp,DPCT1013,tridiagonal/.../cyclic_kernels.dp.cpp,"DPCT1013:29: The rounding mode could not be specified and the generated code
+may have different precision then the original code. Verify the correctness.
+SYCL math built-ins rounding mode is aligned with OpenCL C 1.2 standard.",152
+249,dpcpp,DPCT1013,tridiagonal/.../cyclic_kernels.dp.cpp,"DPCT1013:31: The rounding mode could not be specified and the generated
+code may have different precision then the original code. Verify the
+correctness. SYCL math built-ins rounding mode is aligned with OpenCL
+C 1.2 standard.",182
+250,dpcpp,DPCT1013,tridiagonal/.../cyclic_kernels.dp.cpp,"DPCT1013:32: The rounding mode could not be specified and the generated
+code may have different precision then the original code. Verify the
+correctness. SYCL math built-ins rounding mode is aligned with OpenCL
+C 1.2 standard.",190
+251,dpcpp,DPCT1013,tridiagonal/.../cyclic_kernels.dp.cpp,"DPCT1013:36: The rounding mode could not be specified and the generated
+code may have different precision then the original code. Verify the
+correctness. SYCL math built-ins rounding mode is aligned with OpenCL
+C 1.2 standard.",281
+252,dpcpp,DPCT1013,tridiagonal/.../cyclic_kernels.dp.cpp,"DPCT1013:37: The rounding mode could not be specified and the generated
+code may have different precision then the original code. Verify the
+correctness. SYCL math built-ins rounding mode is aligned with OpenCL
+C 1.2 standard.",288
+253,dpcpp,DPCT1013,tridiagonal/.../cyclic_kernels.dp.cpp,"DPCT1013:38: The rounding mode could not be specified and the generated code
+may have different precision then the original code. Verify the correctness.
+SYCL math built-ins rounding mode is aligned with OpenCL C 1.2 standard.",314
+254,dpcpp,DPCT1013,tridiagonal/.../cyclic_kernels.dp.cpp,"DPCT1013:39: The rounding mode could not be specified and the generated code
+may have different precision then the original code. Verify the correctness.
+SYCL math built-ins rounding mode is aligned with OpenCL C 1.2 standard.",320
+255,dpcpp,DPCT1013,tridiagonal/.../cyclic_kernels.dp.cpp,"DPCT1013:41: The rounding mode could not be specified and the generated
+code may have different precision then the original code. Verify the
+correctness. SYCL math built-ins rounding mode is aligned with OpenCL
+C 1.2 standard.",350
+256,dpcpp,DPCT1013,tridiagonal/.../cyclic_kernels.dp.cpp,"DPCT1013:42: The rounding mode could not be specified and the generated
+code may have different precision then the original code. Verify the
+correctness. SYCL math built-ins rounding mode is aligned with OpenCL
+C 1.2 standard.",358
+257,dpcpp,DPCT1013,tridiagonal/.../pcr_kernels.dp.cpp,"DPCT1013:4: The rounding mode could not be specified and the generated
+code may have different precision then the original code. Verify the
+correctness. SYCL math built-ins rounding mode is aligned with OpenCL
+C 1.2 standard.",76
+258,dpcpp,DPCT1013,tridiagonal/.../pcr_kernels.dp.cpp,"DPCT1013:5: The rounding mode could not be specified and the generated
+code may have different precision then the original code. Verify the
+correctness. SYCL math built-ins rounding mode is aligned with OpenCL
+C 1.2 standard.",94
+259,dpcpp,DPCT1013,tridiagonal/.../pcr_kernels.dp.cpp,"DPCT1013:6: The rounding mode could not be specified and the generated
+code may have different precision then the original code. Verify the
+correctness. SYCL math built-ins rounding mode is aligned with OpenCL
+C 1.2 standard.",113
+260,dpcpp,DPCT1013,tridiagonal/.../pcr_kernels.dp.cpp,"DPCT1013:7: The rounding mode could not be specified and the generated
+code may have different precision then the original code. Verify the
+correctness. SYCL math built-ins rounding mode is aligned with OpenCL
+C 1.2 standard.",120
+261,dpcpp,DPCT1013,tridiagonal/.../pcr_kernels.dp.cpp,"DPCT1013:8: The rounding mode could not be specified and the generated code
+may have different precision then the original code. Verify the correctness.
+SYCL math built-ins rounding mode is aligned with OpenCL C 1.2 standard.",164
+262,dpcpp,DPCT1013,tridiagonal/.../pcr_kernels.dp.cpp,"DPCT1013:9: The rounding mode could not be specified and the generated code
+may have different precision then the original code. Verify the correctness.
+SYCL math built-ins rounding mode is aligned with OpenCL C 1.2 standard.",170
+263,dpcpp,DPCT1013,tridiagonal/.../pcr_kernels.dp.cpp,"DPCT1013:14: The rounding mode could not be specified and the generated code
+may have different precision then the original code. Verify the correctness.
+SYCL math built-ins rounding mode is aligned with OpenCL C 1.2 standard.",243
+264,dpcpp,DPCT1013,tridiagonal/.../pcr_kernels.dp.cpp,"DPCT1013:15: The rounding mode could not be specified and the generated code
+may have different precision then the original code. Verify the correctness.
+SYCL math built-ins rounding mode is aligned with OpenCL C 1.2 standard.",249
+265,dpcpp,DPCT1013,tridiagonal/.../pcr_kernels.dp.cpp,"DPCT1013:16: The rounding mode could not be specified and the generated code
+may have different precision then the original code. Verify the correctness.
+SYCL math built-ins rounding mode is aligned with OpenCL C 1.2 standard.",292
+266,dpcpp,DPCT1013,tridiagonal/.../pcr_kernels.dp.cpp,"DPCT1013:17: The rounding mode could not be specified and the generated code
+may have different precision then the original code. Verify the correctness.
+SYCL math built-ins rounding mode is aligned with OpenCL C 1.2 standard.",298
+267,dpcpp,DPCT1065,tridiagonal/.../sweep_kernels.dp.cpp,"DPCT1065:14: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",534
+268,dpcpp,DPCT1065,tridiagonal/.../cyclic_kernels.dp.cpp,"DPCT1065:0: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",66
+269,dpcpp,DPCT1065,tridiagonal/.../cyclic_kernels.dp.cpp,"DPCT1065:2: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",76
+270,dpcpp,DPCT1065,tridiagonal/.../cyclic_kernels.dp.cpp,"DPCT1065:3: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",166
+271,dpcpp,DPCT1065,tridiagonal/.../cyclic_kernels.dp.cpp,"DPCT1065:1: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",203
+272,dpcpp,DPCT1065,tridiagonal/.../cyclic_kernels.dp.cpp,"DPCT1065:4: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",253
+273,dpcpp,DPCT1065,tridiagonal/.../cyclic_kernels.dp.cpp,"DPCT1065:6: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",263
+274,dpcpp,DPCT1065,tridiagonal/.../cyclic_kernels.dp.cpp,"DPCT1065:7: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",334
+275,dpcpp,DPCT1065,tridiagonal/.../cyclic_kernels.dp.cpp,"DPCT1065:5: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",371
+276,dpcpp,DPCT1065,tridiagonal/.../pcr_kernels.dp.cpp,"DPCT1065:0: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",59
+277,dpcpp,DPCT1065,tridiagonal/.../pcr_kernels.dp.cpp,"DPCT1065:2: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",134
+278,dpcpp,DPCT1065,tridiagonal/.../pcr_kernels.dp.cpp,"DPCT1065:3: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",147
+279,dpcpp,DPCT1065,tridiagonal/.../pcr_kernels.dp.cpp,"DPCT1065:1: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",179
+280,dpcpp,DPCT1065,tridiagonal/.../pcr_kernels.dp.cpp,"DPCT1065:10: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",221
+281,dpcpp,DPCT1065,tridiagonal/.../pcr_kernels.dp.cpp,"DPCT1065:12: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",262
+282,dpcpp,DPCT1065,tridiagonal/.../pcr_kernels.dp.cpp,"DPCT1065:13: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",275
+283,dpcpp,DPCT1065,tridiagonal/.../pcr_kernels.dp.cpp,"DPCT1065:11: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",307
+284,dpcpp,DPCT1049,hotspot3D/.../3D.dp.cpp,"DPCT1049:0: The workgroup size passed to the SYCL kernel may exceed
+* the limit. To get the device limit, query
+* info::device::max_work_group_size. Adjust the workgroup size if needed.
+",169
+285,dpcpp,DPCT1065,fdtd3d/.../FDTD3dGPU.dp.cpp,"DPCT1065:0: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",93
+286,dpcpp,DPCT1065,fdtd3d/.../FDTD3dGPU.dp.cpp,"DPCT1065:1: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",121
+287,dpcpp,DPCT1049,fdtd3d/.../FDTD3dGPU.dp.cpp,"DPCT1049:2: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",196
+288,dpcpp,DPCT1065,b+tree/.../kernel/kernel2.dp.cpp,"DPCT1065:1: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space)
+for better performance, if there is no access to global memory.",43
+289,dpcpp,DPCT1065,b+tree/.../kernel/kernel2.dp.cpp,"DPCT1065:2: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space)
+for better performance, if there is no access to global memory.",55
+290,dpcpp,DPCT1065,b+tree/.../kernel/kernel2.dp.cpp,"DPCT1065:0: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for
+better performance, if there is no access to global memory.",67
+291,dpcpp,DPCT1065,b+tree/.../kernel/kernel.dp.cpp,"DPCT1065:0: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space)
+for better performance, if there is no access to global memory.",35
+292,dpcpp,DPCT1065,b+tree/.../kernel/kernel.dp.cpp,"DPCT1065:1: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space)
+for better performance, if there is no access to global memory.",46
+293,dpcpp,DPCT1049,b+tree/.../kernel/kernel_wrapper.dp.cpp,"DPCT1049:2: The workgroup size passed to the SYCL kernel may exceed the limit.
+To get the device limit, query info::device::max_work_group_size. Adjust the
+workgroup size if needed.",120
+294,dpcpp,DPCT1049,b+tree/.../kernel/kernel2_wrapper.dp.cpp,"DPCT1049:3: The workgroup size passed to the SYCL kernel may exceed the limit.
+To get the device limit, query info::device::max_work_group_size. Adjust the
+workgroup size if needed.",127
+295,dpcpp,DPCT1039,randomAccess/.../main.dp.cpp,"DPCT1039:0: The generated code assumes that ""&Table[ran[j] & (TableSize-1)]""
+points to the global memory address space. If it points to a local memory
+address space, replace ""dpct::atomic_fetch_xor"" with
+""dpct::atomic_fetch_xor<u64Int, sycl::access::address_space::local_space>"".",79
+296,dpcpp,DPCT1003,chi2/.../chi2.dp.cpp,"DPCT1003:8: Migrated API does not return error code. (*, 0) is inserted.
+You may need to rewrite this code.",165
+297,dpcpp,DPCT1003,chi2/.../chi2.dp.cpp,"DPCT1003:9: Migrated API does not return error code. (*, 0) is inserted.
+You may need to rewrite this code.",220
+298,dpcpp,DPCT1003,chi2/.../chi2.dp.cpp,"DPCT1003:10: Migrated API does not return error code. (*, 0) is
+inserted. You may need to rewrite this code.",242
+299,dpcpp,DPCT1003,chi2/.../chi2.dp.cpp,"DPCT1003:11: Migrated API does not return error code. (*, 0) is
+inserted. You may need to rewrite this code.",266
+300,dpcpp,DPCT1003,chi2/.../chi2.dp.cpp,"DPCT1003:13: Migrated API does not return error code. (*, 0) is
+inserted. You may need to rewrite this code.",313
+301,dpcpp,DPCT1000,chi2/.../chi2.dp.cpp,"DPCT1000:1: Error handling if-stmt was detected but could not be
+rewritten.",228
+302,dpcpp,DPCT1000,chi2/.../chi2.dp.cpp,"DPCT1000:3: Error handling if-stmt was detected but could not be
+rewritten.",249
+303,dpcpp,DPCT1000,chi2/.../chi2.dp.cpp,"DPCT1000:5: Error handling if-stmt was detected but could not be
+rewritten.",275
+304,dpcpp,DPCT1000,chi2/.../chi2.dp.cpp,"DPCT1000:7: Error handling if-stmt was detected but could not be
+rewritten.",321
+305,dpcpp,DPCT1001,chi2/.../chi2.dp.cpp,DPCT1001:0: The statement could not be removed.,234
+306,dpcpp,DPCT1001,chi2/.../chi2.dp.cpp,DPCT1001:2: The statement could not be removed.,255
+307,dpcpp,DPCT1001,chi2/.../chi2.dp.cpp,DPCT1001:4: The statement could not be removed.,281
+308,dpcpp,DPCT1001,chi2/.../chi2.dp.cpp,DPCT1001:6: The statement could not be removed.,327
+309,dpcpp,DPCT1049,chi2/.../chi2.dp.cpp,"DPCT1049:12: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",296
+310,dpcpp,DPCT1049,epistatis/.../main.dp.cpp,"DPCT1049:0: The workgroup size passed to the SYCL kernel may exceed
+* the limit. To get the device limit, query
+* info::device::max_work_group_size. Adjust the workgroup size if needed.
+",332
+311,dpcpp,DPCT1003,memcpy/.../main.dp.cpp,"DPCT1003:2: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",41
+312,dpcpp,DPCT1000,memcpy/.../main.dp.cpp,DPCT1000:1: Error handling if-stmt was detected but could not be rewritten.,46
+313,dpcpp,DPCT1001,memcpy/.../main.dp.cpp,DPCT1001:0: The statement could not be removed.,50
+314,dpcpp,DPCT1008,memcpy/.../main.dp.cpp,"DPCT1008:3: clock function is not defined in the DPC++. This is a
+hardware-specific feature. Consult with your hardware vendor to find a
+replacement.",61
+315,dpcpp,DPCT1008,memcpy/.../main.dp.cpp,"DPCT1008:4: clock function is not defined in the DPC++. This is a
+hardware-specific feature. Consult with your hardware vendor to find a
+replacement.",71
+316,dpcpp,DPCT1008,memcpy/.../main.dp.cpp,"DPCT1008:5: clock function is not defined in the DPC++. This is a
+hardware-specific feature. Consult with your hardware vendor to find a
+replacement.",81
+317,dpcpp,DPCT1008,memcpy/.../main.dp.cpp,"DPCT1008:6: clock function is not defined in the DPC++. This is a
+hardware-specific feature. Consult with your hardware vendor to find a
+replacement.",91
+318,dpcpp,DPCT1011,urng/.../kernel.dp.cpp,"DPCT1011:0: The tool detected overloaded operators for built-in vector types,
+which may conflict with the SYCL 1.2.1 standard operators (see 4.10.2.1 Vec
+interface). The tool inserted a namespace to avoid the conflict. Use SYCL 1.2.1
+standard operators instead.",86
+319,dpcpp,DPCT1049,urng/.../main.dp.cpp,"DPCT1049:1: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",102
+320,dpcpp,DPCT1049,popcount/.../main.dp.cpp,"DPCT1049:0: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",154
+321,dpcpp,DPCT1049,popcount/.../main.dp.cpp,"DPCT1049:1: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",171
+322,dpcpp,DPCT1049,popcount/.../main.dp.cpp,"DPCT1049:2: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",188
+323,dpcpp,DPCT1049,popcount/.../main.dp.cpp,"DPCT1049:3: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",205
+324,dpcpp,DPCT1049,popcount/.../main.dp.cpp,"DPCT1049:4: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",222
+325,dpcpp,DPCT1065,transpose/.../main.dp.cpp,"DPCT1065:0: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",70
+326,dpcpp,DPCT1065,transpose/.../main.dp.cpp,"DPCT1065:1: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",91
+327,dpcpp,DPCT1049,bezier-surface/.../main.dp.cpp,"DPCT1049:0: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",282
+328,dpcpp,DPCT1065,d2q9-bgk/.../main.dp.cpp,"DPCT1065:0: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",310
+329,dpcpp,DPCT1049,d2q9-bgk/.../main.dp.cpp,"DPCT1049:1: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",458
+330,dpcpp,DPCT1065,fpc/.../main.dp.cpp,"DPCT1065:0: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",166
+331,dpcpp,DPCT1065,fpc/.../main.dp.cpp,"DPCT1065:1: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",176
+332,dpcpp,DPCT1065,fpc/.../main.dp.cpp,"DPCT1065:3: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",238
+333,dpcpp,DPCT1065,fpc/.../main.dp.cpp,"DPCT1065:4: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",248
+334,dpcpp,DPCT1039,fpc/.../main.dp.cpp,"DPCT1039:2: The generated code assumes that ""cmp_size"" points to the global
+memory address space. If it points to a local memory address space, replace
+""dpct::atomic_fetch_add"" with ""dpct::atomic_fetch_add<unsigned int,
+sycl::access::address_space::local_space>"".",183
+335,dpcpp,DPCT1039,fpc/.../main.dp.cpp,"DPCT1039:5: The generated code assumes that ""cmp_size"" points to the global
+memory address space. If it points to a local memory address space, replace
+""dpct::atomic_fetch_add"" with ""dpct::atomic_fetch_add<unsigned int,
+sycl::access::address_space::local_space>"".",255
+336,dpcpp,DPCT1049,fpc/.../main.dp.cpp,"DPCT1049:6: The workgroup size passed to the SYCL kernel may exceed the limit.
+To get the device limit, query info::device::max_work_group_size. Adjust the
+workgroup size if needed.",281
+337,dpcpp,DPCT1049,fpc/.../main.dp.cpp,"DPCT1049:7: The workgroup size passed to the SYCL kernel may exceed the limit.
+To get the device limit, query info::device::max_work_group_size. Adjust the
+workgroup size if needed.",319
+338,dpcpp,DPCT1049,testSNAP/.../main.dp.cpp,"DPCT1049:0: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",867
+339,dpcpp,DPCT1049,testSNAP/.../main.dp.cpp,"DPCT1049:1: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",882
+340,dpcpp,DPCT1049,testSNAP/.../main.dp.cpp,"DPCT1049:2: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",898
+341,dpcpp,DPCT1049,testSNAP/.../main.dp.cpp,"DPCT1049:3: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",923
+342,dpcpp,DPCT1049,testSNAP/.../main.dp.cpp,"DPCT1049:4: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",938
+343,dpcpp,DPCT1049,testSNAP/.../main.dp.cpp,"DPCT1049:5: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",962
+344,dpcpp,DPCT1049,testSNAP/.../main.dp.cpp,"DPCT1049:6: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",987
+345,dpcpp,DPCT1049,geodesic/.../main.dp.cpp,"DPCT1049:0: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",164
+346,dpcpp,DPCT1049,deredundancy/.../main.dp.cpp,"DPCT1049:1: The workgroup size passed to the SYCL kernel may exceed the limit.
+To get the device limit, query info::device::max_work_group_size. Adjust the
+workgroup size if needed.",48
+347,dpcpp,DPCT1049,deredundancy/.../main.dp.cpp,"DPCT1049:2: The workgroup size passed to the SYCL kernel may exceed the limit.
+To get the device limit, query info::device::max_work_group_size. Adjust the
+workgroup size if needed.",70
+348,dpcpp,DPCT1049,deredundancy/.../main.dp.cpp,"DPCT1049:5: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",108
+349,dpcpp,DPCT1049,deredundancy/.../main.dp.cpp,"DPCT1049:6: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",123
+350,dpcpp,DPCT1049,deredundancy/.../main.dp.cpp,"DPCT1049:7: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",138
+351,dpcpp,DPCT1049,deredundancy/.../main.dp.cpp,"DPCT1049:8: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",153
+352,dpcpp,DPCT1049,deredundancy/.../main.dp.cpp,"DPCT1049:3: The workgroup size passed to the SYCL kernel may exceed the limit.
+To get the device limit, query info::device::max_work_group_size. Adjust the
+workgroup size if needed.",174
+353,dpcpp,DPCT1049,deredundancy/.../main.dp.cpp,"DPCT1049:4: The workgroup size passed to the SYCL kernel may exceed the limit.
+To get the device limit, query info::device::max_work_group_size. Adjust the
+workgroup size if needed.",206
+354,dpcpp,DPCT1049,deredundancy/.../main.dp.cpp,"DPCT1049:9: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",256
+355,dpcpp,DPCT1049,deredundancy/.../main.dp.cpp,"DPCT1049:10: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",270
+356,dpcpp,DPCT1049,deredundancy/.../main.dp.cpp,"DPCT1049:11: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",283
+357,dpcpp,DPCT1049,deredundancy/.../main.dp.cpp,"DPCT1049:12: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",302
+358,dpcpp,DPCT1049,deredundancy/.../main.dp.cpp,"DPCT1049:13: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",316
+359,dpcpp,DPCT1065,deredundancy/.../kernels.dp.cpp,"DPCT1065:0: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",502
+360,dpcpp,DPCT1049,inversek2j/.../main.dp.cpp,"DPCT1049:2: The workgroup size passed to the SYCL kernel may exceed
+the limit. To get the device limit, query
+info::device::max_work_group_size. Adjust the workgroup size if
+needed.",284
+361,dpcpp,DPCT1003,inversek2j/.../main.dp.cpp,"DPCT1003:3: Migrated API does not return error code. (*, 0) is inserted.
+You may need to rewrite this code.",298
+362,dpcpp,DPCT1000,inversek2j/.../main.dp.cpp,"DPCT1000:1: Error handling if-stmt was detected but could not be
+rewritten.",303
+363,dpcpp,DPCT1001,inversek2j/.../main.dp.cpp,DPCT1001:0: The statement could not be removed.,308
+364,dpcpp,DPCT1065,sampling/.../kernels.dp.cpp,"DPCT1065:0: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",123
+365,dpcpp,DPCT1049,sampling/.../kernels.dp.cpp,"DPCT1049:1: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",190
+366,dpcpp,DPCT1049,sampling/.../kernels.dp.cpp,"DPCT1049:2: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",211
+367,dpcpp,DPCT1065,lid-driven-cavity/.../main.dp.cpp,"DPCT1065:0: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",363
+368,dpcpp,DPCT1065,lid-driven-cavity/.../main.dp.cpp,"DPCT1065:1: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",377
+369,dpcpp,DPCT1065,lid-driven-cavity/.../main.dp.cpp,"DPCT1065:2: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",570
+370,dpcpp,DPCT1065,lid-driven-cavity/.../main.dp.cpp,"DPCT1065:3: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",584
+371,dpcpp,DPCT1065,lid-driven-cavity/.../main.dp.cpp,"DPCT1065:4: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",660
+372,dpcpp,DPCT1065,lid-driven-cavity/.../main.dp.cpp,"DPCT1065:5: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",675
+373,dpcpp,DPCT1065,lid-driven-cavity/.../main.dp.cpp,"DPCT1065:6: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",773
+374,dpcpp,DPCT1065,lid-driven-cavity/.../main.dp.cpp,"DPCT1065:7: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",788
+375,dpcpp,DPCT1049,lid-driven-cavity/.../main.dp.cpp,"DPCT1049:8: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",983
+376,dpcpp,DPCT1049,lid-driven-cavity/.../main.dp.cpp,"DPCT1049:9: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",994
+377,dpcpp,DPCT1049,lid-driven-cavity/.../main.dp.cpp,"DPCT1049:10: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",1007
+378,dpcpp,DPCT1049,lid-driven-cavity/.../main.dp.cpp,"DPCT1049:14: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",1047
+379,dpcpp,DPCT1049,lid-driven-cavity/.../main.dp.cpp,"DPCT1049:15: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",1059
+380,dpcpp,DPCT1049,lid-driven-cavity/.../main.dp.cpp,"DPCT1049:16: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",1076
+381,dpcpp,DPCT1049,lid-driven-cavity/.../main.dp.cpp,"DPCT1049:17: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",1093
+382,dpcpp,DPCT1049,lid-driven-cavity/.../main.dp.cpp,"DPCT1049:18: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",1110
+383,dpcpp,DPCT1049,lid-driven-cavity/.../main.dp.cpp,"DPCT1049:11: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",1150
+384,dpcpp,DPCT1049,lid-driven-cavity/.../main.dp.cpp,"DPCT1049:12: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",1169
+385,dpcpp,DPCT1049,lid-driven-cavity/.../main.dp.cpp,"DPCT1049:13: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",1202
+386,dpcpp,DPCT1049,libor/.../main.dp.cpp,"DPCT1049:0: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",359
+387,dpcpp,DPCT1049,libor/.../main.dp.cpp,"DPCT1049:1: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",386
+388,dpcpp,DPCT1007,sptrsv/.../sptrsv_syncfree.dp.cpp,"DPCT1007:0: Migration of this CUDA API is not supported by the Intel(R)
+* DPC++ Compatibility Tool.",19
+389,dpcpp,DPCT1007,sptrsv/.../sptrsv_syncfree.dp.cpp,"DPCT1007:1: Migration of this CUDA API is not supported by the Intel(R)
+* DPC++ Compatibility Tool.",32
+390,dpcpp,DPCT1065,compute-score/.../main.dp.cpp,"DPCT1065:0: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",324
+391,dpcpp,DPCT1049,compute-score/.../main.dp.cpp,"DPCT1049:1: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",438
+392,dpcpp,DPCT1049,compute-score/.../main.dp.cpp,"DPCT1049:2: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",462
+393,dpcpp,DPCT1049,murmurhash3/.../murmurhash3.dp.cpp,"DPCT1049:0: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",212
+394,dpcpp,DPCT1049,maxpool3d/.../main.dp.cpp,"DPCT1049:0: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",99
+395,dpcpp,DPCT1049,dct8x8/.../kernels.dp.cpp,"DPCT1049:0: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",187
+396,dpcpp,DPCT1049,dct8x8/.../kernels.dp.cpp,"DPCT1049:1: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",207
+397,dpcpp,DPCT1049,jenkins-hash/.../main.dp.cpp,"DPCT1049:0: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",284
+398,dpcpp,DPCT1049,particles/.../particles.dp.cpp,"DPCT1049:9: The workgroup size passed to the SYCL kernel may exceed the limit.
+To get the device limit, query info::device::max_work_group_size. Adjust the
+workgroup size if needed.",37
+399,dpcpp,DPCT1049,particles/.../particles.dp.cpp,"DPCT1049:10: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",58
+400,dpcpp,DPCT1049,particles/.../particles.dp.cpp,"DPCT1049:11: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",81
+401,dpcpp,DPCT1049,particles/.../particles.dp.cpp,"DPCT1049:12: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",109
+402,dpcpp,DPCT1049,particles/.../particles.dp.cpp,"DPCT1049:13: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",141
+403,dpcpp,DPCT1049,particles/.../bitonicSort.dp.cpp,"DPCT1049:8: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",65
+404,dpcpp,DPCT1049,particles/.../bitonicSort.dp.cpp,"DPCT1049:9: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",94
+405,dpcpp,DPCT1049,particles/.../bitonicSort.dp.cpp,"DPCT1049:10: The workgroup size passed to the SYCL kernel may exceed
+the limit. To get the device limit, query
+info::device::max_work_group_size. Adjust the workgroup size if
+needed.",128
+406,dpcpp,DPCT1049,particles/.../bitonicSort.dp.cpp,"DPCT1049:11: The workgroup size passed to the SYCL kernel may exceed
+the limit. To get the device limit, query
+info::device::max_work_group_size. Adjust the workgroup size if
+needed.",153
+407,dpcpp,DPCT1065,particles/.../bitonicSort_kernels.dp.cpp,"DPCT1065:1: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",79
+408,dpcpp,DPCT1065,particles/.../bitonicSort_kernels.dp.cpp,"DPCT1065:2: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",97
+409,dpcpp,DPCT1065,particles/.../bitonicSort_kernels.dp.cpp,"DPCT1065:0: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",112
+410,dpcpp,DPCT1065,particles/.../bitonicSort_kernels.dp.cpp,"DPCT1065:4: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",168
+411,dpcpp,DPCT1065,particles/.../bitonicSort_kernels.dp.cpp,"DPCT1065:5: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",189
+412,dpcpp,DPCT1065,particles/.../bitonicSort_kernels.dp.cpp,"DPCT1065:3: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",205
+413,dpcpp,DPCT1065,particles/.../bitonicSort_kernels.dp.cpp,"DPCT1065:7: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",295
+414,dpcpp,DPCT1065,particles/.../bitonicSort_kernels.dp.cpp,"DPCT1065:6: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",310
+415,dpcpp,DPCT1065,particles/.../particles_kernels.dp.cpp,"DPCT1065:8: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",316
+416,dpcpp,DPCT1011,particles/.../particles_kernels.dp.cpp,"DPCT1011:0: The tool detected overloaded operators for built-in vector types,
+which may conflict with the SYCL 1.2.1 standard operators (see 4.10.2.1 Vec
+interface). The tool inserted a namespace to avoid the conflict. Use SYCL 1.2.1
+standard operators instead.",14
+417,dpcpp,DPCT1011,particles/.../particles_kernels.dp.cpp,"DPCT1011:1: The tool detected overloaded operators for built-in vector types,
+which may conflict with the SYCL 1.2.1 standard operators (see 4.10.2.1 Vec
+interface). The tool inserted a namespace to avoid the conflict. Use SYCL 1.2.1
+standard operators instead.",32
+418,dpcpp,DPCT1011,particles/.../particles_kernels.dp.cpp,"DPCT1011:2: The tool detected overloaded operators for built-in vector types,
+which may conflict with the SYCL 1.2.1 standard operators (see 4.10.2.1 Vec
+interface). The tool inserted a namespace to avoid the conflict. Use SYCL 1.2.1
+standard operators instead.",48
+419,dpcpp,DPCT1011,particles/.../particles_kernels.dp.cpp,"DPCT1011:3: The tool detected overloaded operators for built-in vector types,
+which may conflict with the SYCL 1.2.1 standard operators (see 4.10.2.1 Vec
+interface). The tool inserted a namespace to avoid the conflict. Use SYCL 1.2.1
+standard operators instead.",64
+420,dpcpp,DPCT1011,particles/.../particles_kernels.dp.cpp,"DPCT1011:4: The tool detected overloaded operators for built-in vector types,
+which may conflict with the SYCL 1.2.1 standard operators (see 4.10.2.1 Vec
+interface). The tool inserted a namespace to avoid the conflict. Use SYCL 1.2.1
+standard operators instead.",80
+421,dpcpp,DPCT1011,particles/.../particles_kernels.dp.cpp,"DPCT1011:5: The tool detected overloaded operators for built-in vector types,
+which may conflict with the SYCL 1.2.1 standard operators (see 4.10.2.1 Vec
+interface). The tool inserted a namespace to avoid the conflict. Use SYCL 1.2.1
+standard operators instead.",96
+422,dpcpp,DPCT1011,particles/.../particles_kernels.dp.cpp,"DPCT1011:6: The tool detected overloaded operators for built-in vector types,
+which may conflict with the SYCL 1.2.1 standard operators (see 4.10.2.1 Vec
+interface). The tool inserted a namespace to avoid the conflict. Use SYCL 1.2.1
+standard operators instead.",111
+423,dpcpp,DPCT1011,particles/.../particles_kernels.dp.cpp,"DPCT1011:7: The tool detected overloaded operators for built-in vector types,
+which may conflict with the SYCL 1.2.1 standard operators (see 4.10.2.1 Vec
+interface). The tool inserted a namespace to avoid the conflict. Use SYCL 1.2.1
+standard operators instead.",126
+424,dpcpp,DPCT1049,radixsort/.../Scan.dp.cpp,"DPCT1049:6: The workgroup size passed to the SYCL kernel may exceed the limit.
+To get the device limit, query info::device::max_work_group_size. Adjust the
+workgroup size if needed.",29
+425,dpcpp,DPCT1049,radixsort/.../Scan.dp.cpp,"DPCT1049:7: The workgroup size passed to the SYCL kernel may exceed the limit.
+To get the device limit, query info::device::max_work_group_size. Adjust the
+workgroup size if needed.",60
+426,dpcpp,DPCT1049,radixsort/.../Scan.dp.cpp,"DPCT1049:8: The workgroup size passed to the SYCL kernel may exceed the limit.
+To get the device limit, query info::device::max_work_group_size. Adjust the
+workgroup size if needed.",86
+427,dpcpp,DPCT1049,radixsort/.../RadixSort.dp.cpp,"DPCT1049:15: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",36
+428,dpcpp,DPCT1049,radixsort/.../RadixSort.dp.cpp,"DPCT1049:16: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",70
+429,dpcpp,DPCT1049,radixsort/.../RadixSort.dp.cpp,"DPCT1049:17: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",105
+430,dpcpp,DPCT1065,radixsort/.../RadixSort_kernels.dp.cpp,"DPCT1065:3: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",61
+431,dpcpp,DPCT1065,radixsort/.../RadixSort_kernels.dp.cpp,"DPCT1065:4: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",72
+432,dpcpp,DPCT1065,radixsort/.../RadixSort_kernels.dp.cpp,"DPCT1065:5: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",82
+433,dpcpp,DPCT1065,radixsort/.../RadixSort_kernels.dp.cpp,"DPCT1065:6: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",111
+434,dpcpp,DPCT1065,radixsort/.../RadixSort_kernels.dp.cpp,"DPCT1065:7: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",145
+435,dpcpp,DPCT1065,radixsort/.../RadixSort_kernels.dp.cpp,"DPCT1065:8: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",173
+436,dpcpp,DPCT1065,radixsort/.../RadixSort_kernels.dp.cpp,"DPCT1065:9: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",186
+437,dpcpp,DPCT1065,radixsort/.../RadixSort_kernels.dp.cpp,"DPCT1065:10: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",247
+438,dpcpp,DPCT1065,radixsort/.../RadixSort_kernels.dp.cpp,"DPCT1065:11: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",262
+439,dpcpp,DPCT1065,radixsort/.../RadixSort_kernels.dp.cpp,"DPCT1065:12: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",273
+440,dpcpp,DPCT1065,radixsort/.../RadixSort_kernels.dp.cpp,"DPCT1065:13: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",297
+441,dpcpp,DPCT1065,radixsort/.../RadixSort_kernels.dp.cpp,"DPCT1065:14: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",366
+442,dpcpp,DPCT1065,radixsort/.../Scan_kernels.dp.cpp,"DPCT1065:3: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",52
+443,dpcpp,DPCT1065,radixsort/.../Scan_kernels.dp.cpp,"DPCT1065:4: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",59
+444,dpcpp,DPCT1065,radixsort/.../Scan_kernels.dp.cpp,"DPCT1065:5: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",246
+445,dpcpp,DPCT1049,myocyte/.../master.dp.cpp,"DPCT1049:0: The workgroup size passed to the SYCL kernel may
+* exceed the limit. To get the device limit, query
+* info::device::max_work_group_size. Adjust the workgroup size if
+* needed.",59
+446,dpcpp,DPCT1065,axhelm/.../axhelmKernel.cpp.dp.cpp,"DPCT1065:0: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",47
+447,dpcpp,DPCT1065,axhelm/.../axhelmKernel.cpp.dp.cpp,"DPCT1065:1: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",59
+448,dpcpp,DPCT1065,axhelm/.../axhelmKernel.cpp.dp.cpp,"DPCT1065:2: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",76
+449,dpcpp,DPCT1065,axhelm/.../axhelmKernel.cpp.dp.cpp,"DPCT1065:3: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",89
+450,dpcpp,DPCT1065,axhelm/.../axhelmKernel.cpp.dp.cpp,"DPCT1065:4: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",154
+451,dpcpp,DPCT1065,axhelm/.../axhelmKernel.cpp.dp.cpp,"DPCT1065:5: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",173
+452,dpcpp,DPCT1065,axhelm/.../axhelmKernel.cpp.dp.cpp,"DPCT1065:6: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",205
+453,dpcpp,DPCT1049,heat2d/.../main.dp.cpp,"DPCT1049:0: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",142
+454,dpcpp,DPCT1032,vmc/.../vmc.dp.cpp,"DPCT1032:0: Different generator is used, you may need to adjust the code.",34
+455,dpcpp,DPCT1032,vmc/.../vmc.dp.cpp,"DPCT1032:1: Different generator is used, you may need to adjust the code.",40
+456,dpcpp,DPCT1032,vmc/.../vmc.dp.cpp,"DPCT1032:2: Different generator is used, you may need to adjust the code.",50
+457,dpcpp,DPCT1032,vmc/.../vmc.dp.cpp,"DPCT1032:6: Different generator is used, you may need to adjust the code.",166
+458,dpcpp,DPCT1032,vmc/.../vmc.dp.cpp,"DPCT1032:7: Different generator is used, you may need to adjust the code.",189
+459,dpcpp,DPCT1032,vmc/.../vmc.dp.cpp,"DPCT1032:8: Different generator is used, you may need to adjust the code.",209
+460,dpcpp,DPCT1032,vmc/.../vmc.dp.cpp,"DPCT1032:9: Different generator is used, you may need to adjust the code.",265
+461,dpcpp,DPCT1032,vmc/.../vmc.dp.cpp,"DPCT1032:21: Different generator is used, you may need to adjust the code.",326
+462,dpcpp,DPCT1007,vmc/.../vmc.dp.cpp,"DPCT1007:3: Migration of this CUDA API is not supported by the Intel(R) DPC++
+Compatibility Tool.",56
+463,dpcpp,DPCT1065,vmc/.../vmc.dp.cpp,"DPCT1065:4: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",82
+464,dpcpp,DPCT1065,vmc/.../vmc.dp.cpp,"DPCT1065:5: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",100
+465,dpcpp,DPCT1003,vmc/.../vmc.dp.cpp,"DPCT1003:10: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",270
+466,dpcpp,DPCT1003,vmc/.../vmc.dp.cpp,"DPCT1003:11: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",275
+467,dpcpp,DPCT1003,vmc/.../vmc.dp.cpp,"DPCT1003:12: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",280
+468,dpcpp,DPCT1003,vmc/.../vmc.dp.cpp,"DPCT1003:13: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",285
+469,dpcpp,DPCT1003,vmc/.../vmc.dp.cpp,"DPCT1003:14: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",290
+470,dpcpp,DPCT1003,vmc/.../vmc.dp.cpp,"DPCT1003:15: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",295
+471,dpcpp,DPCT1003,vmc/.../vmc.dp.cpp,"DPCT1003:16: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",300
+472,dpcpp,DPCT1003,vmc/.../vmc.dp.cpp,"DPCT1003:17: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",305
+473,dpcpp,DPCT1003,vmc/.../vmc.dp.cpp,"DPCT1003:18: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",310
+474,dpcpp,DPCT1003,vmc/.../vmc.dp.cpp,"DPCT1003:19: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",316
+475,dpcpp,DPCT1003,vmc/.../vmc.dp.cpp,"DPCT1003:20: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",322
+476,dpcpp,DPCT1003,vmc/.../vmc.dp.cpp,"DPCT1003:22: Migrated API does not return error code. (*, 0) is inserted.
+You may need to rewrite this code.",407
+477,dpcpp,DPCT1003,vmc/.../vmc.dp.cpp,"DPCT1003:23: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",439
+478,dpcpp,DPCT1003,vmc/.../vmc.dp.cpp,"DPCT1003:24: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",444
+479,dpcpp,DPCT1003,vmc/.../vmc.dp.cpp,"DPCT1003:25: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",449
+480,dpcpp,DPCT1003,vmc/.../vmc.dp.cpp,"DPCT1003:26: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",454
+481,dpcpp,DPCT1003,vmc/.../vmc.dp.cpp,"DPCT1003:27: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",459
+482,dpcpp,DPCT1003,vmc/.../vmc.dp.cpp,"DPCT1003:28: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",464
+483,dpcpp,DPCT1003,vmc/.../vmc.dp.cpp,"DPCT1003:29: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",469
+484,dpcpp,DPCT1003,vmc/.../vmc.dp.cpp,"DPCT1003:30: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",474
+485,dpcpp,DPCT1003,vmc/.../vmc.dp.cpp,"DPCT1003:31: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",479
+486,dpcpp,DPCT1003,vmc/.../vmc.dp.cpp,"DPCT1003:32: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",484
+487,dpcpp,DPCT1003,vmc/.../vmc.dp.cpp,"DPCT1003:33: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",489
+488,dpcpp,DPCT1049,bsw/.../driver.dp.cpp,"DPCT1049:19: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",201
+489,dpcpp,DPCT1049,bsw/.../driver.dp.cpp,"DPCT1049:20: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",282
+490,dpcpp,DPCT1065,bsw/.../kernel.dp.cpp,"DPCT1065:0: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",107
+491,dpcpp,DPCT1065,bsw/.../kernel.dp.cpp,"DPCT1065:1: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",119
+492,dpcpp,DPCT1065,bsw/.../kernel.dp.cpp,"DPCT1065:2: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",139
+493,dpcpp,DPCT1065,bsw/.../kernel.dp.cpp,"DPCT1065:3: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",153
+494,dpcpp,DPCT1065,bsw/.../kernel.dp.cpp,"DPCT1065:4: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",175
+495,dpcpp,DPCT1065,bsw/.../kernel.dp.cpp,"DPCT1065:5: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",187
+496,dpcpp,DPCT1065,bsw/.../kernel.dp.cpp,"DPCT1065:6: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",207
+497,dpcpp,DPCT1065,bsw/.../kernel.dp.cpp,"DPCT1065:7: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",221
+498,dpcpp,DPCT1065,bsw/.../kernel.dp.cpp,"DPCT1065:8: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",330
+499,dpcpp,DPCT1065,bsw/.../kernel.dp.cpp,"DPCT1065:9: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",364
+500,dpcpp,DPCT1065,bsw/.../kernel.dp.cpp,"DPCT1065:11: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",410
+501,dpcpp,DPCT1065,bsw/.../kernel.dp.cpp,"DPCT1065:12: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",477
+502,dpcpp,DPCT1065,bsw/.../kernel.dp.cpp,"DPCT1065:10: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",484
+503,dpcpp,DPCT1065,bsw/.../kernel.dp.cpp,"DPCT1065:13: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",597
+504,dpcpp,DPCT1065,bsw/.../kernel.dp.cpp,"DPCT1065:14: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",632
+505,dpcpp,DPCT1065,bsw/.../kernel.dp.cpp,"DPCT1065:17: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",676
+506,dpcpp,DPCT1065,bsw/.../kernel.dp.cpp,"DPCT1065:18: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",750
+507,dpcpp,DPCT1065,bsw/.../kernel.dp.cpp,"DPCT1065:15: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",757
+508,dpcpp,DPCT1065,bsw/.../kernel.dp.cpp,"DPCT1065:16: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",780
+509,dpcpp,DPCT1065,scan/.../main.dp.cpp,"DPCT1065:0: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space)
+for better performance, if there is no access to global memory.",22
+510,dpcpp,DPCT1065,scan/.../main.dp.cpp,"DPCT1065:1: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space)
+for better performance, if there is no access to global memory.",41
+511,dpcpp,DPCT1065,bsearch/.../main.dp.cpp,"DPCT1065:0: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",89
+512,dpcpp,DPCT1049,minisweep/.../main.dp.cpp,"DPCT1049:4: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",306
+513,dpcpp,DPCT1049,minisweep/.../main.dp.cpp,"DPCT1049:1: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",328
+514,dpcpp,DPCT1049,minisweep/.../main.dp.cpp,"DPCT1049:2: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",349
+515,dpcpp,DPCT1049,minisweep/.../main.dp.cpp,"DPCT1049:3: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",370
+516,dpcpp,DPCT1039,minisweep/.../kernels.dp.cpp,"DPCT1039:0: The generated code assumes that ""&vo[im + dims.nm     * (
+iu + NU           * (
+ix + dims_ncell_x * (
+iy + dims_ncell_y * (
+ie + dims_ne      * (",342
+517,dpcpp,DPCT1065,ldpc/.../kernel.dp.cpp,"DPCT1065:0: Consider replacing sycl::nd_item::barrier() with
+* sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+* performance, if there is no access to global memory.",212
+518,dpcpp,DPCT1049,ldpc/.../main.dp.cpp,"DPCT1049:1: The workgroup size passed to the SYCL
+* kernel may exceed the limit. To get the device limit, query
+* info::device::max_work_group_size. Adjust the workgroup size if
+* needed.",243
+519,dpcpp,DPCT1049,ldpc/.../main.dp.cpp,"DPCT1049:2: The workgroup size passed to the SYCL
+* kernel may exceed the limit. To get the device limit, query
+* info::device::max_work_group_size. Adjust the workgroup size if
+* needed.",260
+520,dpcpp,DPCT1049,ldpc/.../main.dp.cpp,"DPCT1049:3: The workgroup size passed to the SYCL
+* kernel may exceed the limit. To get the device limit, query
+* info::device::max_work_group_size. Adjust the workgroup size if
+* needed.",288
+521,dpcpp,DPCT1049,ldpc/.../main.dp.cpp,"DPCT1049:4: The workgroup size passed to the SYCL
+* kernel may exceed the limit. To get the device limit, query
+* info::device::max_work_group_size. Adjust the workgroup size if
+* needed.",305
+522,dpcpp,DPCT1039,jaccard/.../main.dp.cpp,"DPCT1039:0: The generated code assumes that ""&weight_i[j]"" points to
+the global memory address space. If it points to a local memory
+address space, replace ""dpct::atomic_fetch_add"" with
+""dpct::atomic_fetch_add<T, sycl::access::address_space::local_space>"".",164
+523,dpcpp,DPCT1049,jaccard/.../main.dp.cpp,"DPCT1049:1: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",261
+524,dpcpp,DPCT1049,jaccard/.../main.dp.cpp,"DPCT1049:2: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",278
+525,dpcpp,DPCT1049,jaccard/.../main.dp.cpp,"DPCT1049:3: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",299
+526,dpcpp,DPCT1049,jaccard/.../main.dp.cpp,"DPCT1049:4: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",327
+527,dpcpp,DPCT1049,jaccard/.../main.dp.cpp,"DPCT1049:5: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",356
+528,dpcpp,DPCT1049,lulesh/.../lulesh.dp.cpp,"DPCT1049:0: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",2571
+529,dpcpp,DPCT1049,lulesh/.../lulesh.dp.cpp,"DPCT1049:1: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",2588
+530,dpcpp,DPCT1049,lulesh/.../lulesh.dp.cpp,"DPCT1049:2: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",2602
+531,dpcpp,DPCT1049,lulesh/.../lulesh.dp.cpp,"DPCT1049:3: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",2641
+532,dpcpp,DPCT1049,lulesh/.../lulesh.dp.cpp,"DPCT1049:12: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",2713
+533,dpcpp,DPCT1049,lulesh/.../lulesh.dp.cpp,"DPCT1049:13: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",2728
+534,dpcpp,DPCT1049,lulesh/.../lulesh.dp.cpp,"DPCT1049:4: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",2768
+535,dpcpp,DPCT1049,lulesh/.../lulesh.dp.cpp,"DPCT1049:5: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",2815
+536,dpcpp,DPCT1049,lulesh/.../lulesh.dp.cpp,"DPCT1049:6: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",2832
+537,dpcpp,DPCT1049,lulesh/.../lulesh.dp.cpp,"DPCT1049:7: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",2895
+538,dpcpp,DPCT1049,lulesh/.../lulesh.dp.cpp,"DPCT1049:8: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",2914
+539,dpcpp,DPCT1049,lulesh/.../lulesh.dp.cpp,"DPCT1049:9: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",2950
+540,dpcpp,DPCT1049,lulesh/.../lulesh.dp.cpp,"DPCT1049:10: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",2994
+541,dpcpp,DPCT1049,lulesh/.../lulesh.dp.cpp,"DPCT1049:11: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",3067
+542,dpcpp,DPCT1065,grep/.../pnfa.dp.cpp,"DPCT1065:0: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",232
+543,dpcpp,DPCT1039,sssp/.../main.dp.cpp,"DPCT1039:4: The generated code assumes that ""&iter[0]"" points to the global
+memory address space. If it points to a local memory address space, replace
+""dpct::atomic_fetch_add"" with ""dpct::atomic_fetch_add<int,
+sycl::access::address_space::local_space>"".",181
+544,dpcpp,DPCT1039,sssp/.../main.dp.cpp,"DPCT1039:5: The generated code assumes that ""n_t"" points to the global
+memory address space. If it points to a local memory address space, replace
+""dpct::atomic_fetch_add"" with ""dpct::atomic_fetch_add<int,
+sycl::access::address_space::local_space>"".",190
+545,dpcpp,DPCT1039,sssp/.../main.dp.cpp,"DPCT1039:6: The generated code assumes that ""&gray_shade[0]"" points to the
+global memory address space. If it points to a local memory address space,
+replace ""dpct::atomic_fetch_add"" with ""dpct::atomic_fetch_add<int,
+sycl::access::address_space::local_space>"".",198
+546,dpcpp,DPCT1039,sssp/.../main.dp.cpp,"DPCT1039:7: The generated code assumes that ""&head[0]"" points to the
+global memory address space. If it points to a local memory address
+space, replace ""dpct::atomic_fetch_add"" with
+""dpct::atomic_fetch_add<int, sycl::access::address_space::local_space>"".",214
+547,dpcpp,DPCT1039,sssp/.../main.dp.cpp,"DPCT1039:12: The generated code assumes that ""&tail[0]"" points
+to the global memory address space. If it points to a local
+memory address space, replace ""dpct::atomic_fetch_add"" with
+""dpct::atomic_fetch_add<int,
+sycl::access::address_space::local_space>"".",236
+548,dpcpp,DPCT1039,sssp/.../main.dp.cpp,"DPCT1039:13: The generated code assumes that ""&color[pid]"" points to
+the global memory address space. If it points to a local memory
+address space, replace ""dpct::atomic_exchange"" with
+""dpct::atomic_exchange<int,
+sycl::access::address_space::local_space>"".",280
+549,dpcpp,DPCT1039,sssp/.../main.dp.cpp,"DPCT1039:14: The generated code assumes that ""&cost[pid]"" points to
+the global memory address space. If it points to a local memory
+address space, replace ""dpct::atomic_fetch_add"" with
+""dpct::atomic_fetch_add<int,
+sycl::access::address_space::local_space>"".",288
+550,dpcpp,DPCT1039,sssp/.../main.dp.cpp,"DPCT1039:15: The generated code assumes that ""&cost[id]"" points
+to the global memory address space. If it points to a local
+memory address space, replace ""dpct::atomic_fetch_max"" with
+""dpct::atomic_fetch_max<int,
+sycl::access::address_space::local_space>"".",310
+551,dpcpp,DPCT1039,sssp/.../main.dp.cpp,"DPCT1039:16: The generated code assumes that ""&color[id]""
+points to the global memory address space. If it points to a
+local memory address space, replace ""dpct::atomic_fetch_max""
+with ""dpct::atomic_fetch_max<int,
+sycl::access::address_space::local_space>"".",321
+552,dpcpp,DPCT1039,sssp/.../main.dp.cpp,"DPCT1039:17: The generated code assumes that ""&head[0]"" points to
+the global memory address space. If it points to a local memory
+address space, replace ""dpct::atomic_fetch_add"" with
+""dpct::atomic_fetch_add<int,
+sycl::access::address_space::local_space>"".",348
+553,dpcpp,DPCT1039,sssp/.../main.dp.cpp,"DPCT1039:18: The generated code assumes that ""&tail[0]"" points to the
+global memory address space. If it points to a local memory address
+space, replace ""dpct::atomic_fetch_add"" with
+""dpct::atomic_fetch_add<int, sycl::access::address_space::local_space>"".",370
+554,dpcpp,DPCT1039,sssp/.../main.dp.cpp,"DPCT1039:19: The generated code assumes that ""&iter[0]"" points to the
+global memory address space. If it points to a local memory address
+space, replace ""dpct::atomic_fetch_add"" with
+""dpct::atomic_fetch_add<int, sycl::access::address_space::local_space>"".",395
+555,dpcpp,DPCT1065,sssp/.../main.dp.cpp,"DPCT1065:2: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",222
+556,dpcpp,DPCT1065,sssp/.../main.dp.cpp,"DPCT1065:9: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for
+better performance, if there is no access to global memory.",246
+557,dpcpp,DPCT1065,sssp/.../main.dp.cpp,"DPCT1065:10: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for
+better performance, if there is no access to global memory.",258
+558,dpcpp,DPCT1065,sssp/.../main.dp.cpp,"DPCT1065:11: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for
+better performance, if there is no access to global memory.",268
+559,dpcpp,DPCT1065,sssp/.../main.dp.cpp,"DPCT1065:8: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for
+better performance, if there is no access to global memory.",359
+560,dpcpp,DPCT1065,sssp/.../main.dp.cpp,"DPCT1065:3: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",379
+561,dpcpp,DPCT1049,sssp/.../main.dp.cpp,"DPCT1049:20: The workgroup size passed to the SYCL kernel
+may exceed the limit. To get the device limit, query
+info::device::max_work_group_size. Adjust the workgroup size
+if needed.",650
+562,dpcpp,DPCT1065,reverse/.../main.dp.cpp,"DPCT1065:0: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",13
+563,dpcpp,DPCT1049,bspline-vgh/.../main.dp.cpp,"DPCT1049:0: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",255
+564,dpcpp,DPCT1049,ss/.../main.dp.cpp,"DPCT1049:8: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",203
+565,dpcpp,DPCT1049,ss/.../main.dp.cpp,"DPCT1049:9: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",242
+566,dpcpp,DPCT1065,ss/.../kernels.dp.cpp,"DPCT1065:0: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",92
+567,dpcpp,DPCT1065,ss/.../kernels.dp.cpp,"DPCT1065:1: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",111
+568,dpcpp,DPCT1065,ss/.../kernels.dp.cpp,"DPCT1065:2: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",182
+569,dpcpp,DPCT1065,ss/.../kernels.dp.cpp,"DPCT1065:3: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",213
+570,dpcpp,DPCT1065,ss/.../kernels.dp.cpp,"DPCT1065:4: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",220
+571,dpcpp,DPCT1065,ss/.../kernels.dp.cpp,"DPCT1065:5: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",259
+572,dpcpp,DPCT1065,ss/.../kernels.dp.cpp,"DPCT1065:6: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",266
+573,dpcpp,DPCT1065,ss/.../kernels.dp.cpp,"DPCT1065:5: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",306
+574,dpcpp,DPCT1049,affine/.../main.dp.cpp,"DPCT1049:0: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",269
+575,dpcpp,DPCT1049,sph/.../fluid.dp.cpp,"DPCT1049:0: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",500
+576,dpcpp,DPCT1049,sph/.../fluid.dp.cpp,"DPCT1049:1: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",514
+577,dpcpp,DPCT1049,sph/.../fluid.dp.cpp,"DPCT1049:2: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",528
+578,dpcpp,DPCT1049,sph/.../fluid.dp.cpp,"DPCT1049:3: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",543
+579,dpcpp,DPCT1003,aobench/.../ao.dp.cpp,"DPCT1003:1: Migrated API does not return error code. (*, 0) is inserted.
+* You may need to rewrite this code.",365
+580,dpcpp,DPCT1003,aobench/.../ao.dp.cpp,"DPCT1003:2: Migrated API does not return error code. (*, 0) is inserted.
+* You may need to rewrite this code.",372
+581,dpcpp,DPCT1003,aobench/.../ao.dp.cpp,"DPCT1003:3: Migrated API does not return error code. (*, 0) is inserted.
+* You may need to rewrite this code.",377
+582,dpcpp,DPCT1003,aobench/.../ao.dp.cpp,"DPCT1003:5: Migrated API does not return error code. (*, 0) is inserted.
+* You may need to rewrite this code.",401
+583,dpcpp,DPCT1010,aobench/.../ao.dp.cpp,"DPCT1010:4: SYCL uses exceptions to report errors and does not use the
+* error codes. The call was replaced with 0. You need to rewrite this code.
+",394
+584,dpcpp,DPCT1008,aobench/.../ao.dp.cpp,"DPCT1008:6: clock function is not defined in the DPC++. This is a
+* hardware-specific feature. Consult with your hardware vendor to find a
+* replacement.",429
+585,dpcpp,DPCT1008,aobench/.../ao.dp.cpp,"DPCT1008:7: clock function is not defined in the DPC++. This is a
+* hardware-specific feature. Consult with your hardware vendor to find a
+* replacement.",438
+586,dpcpp,DPCT1049,floydwarshall/.../main.dp.cpp,"DPCT1049:0: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",246
+587,dpcpp,DPCT1065,mdh/.../main.dp.cpp,"DPCT1065:155: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",99
+588,dpcpp,DPCT1065,mdh/.../main.dp.cpp,"DPCT1065:156: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",129
+589,dpcpp,DPCT1065,mdh/.../main.dp.cpp,"DPCT1065:157: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",178
+590,dpcpp,DPCT1065,mdh/.../main.dp.cpp,"DPCT1065:158: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",207
+591,dpcpp,DPCT1049,mdh/.../main.dp.cpp,"DPCT1049:159: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",285
+592,dpcpp,DPCT1049,mdh/.../main.dp.cpp,"DPCT1049:160: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",304
+593,dpcpp,DPCT1049,srad/.../main.dp.cpp,"DPCT1049:4: The workgroup size passed to the SYCL kernel may exceed the limit.
+To get the device limit, query info::device::max_work_group_size. Adjust the
+workgroup size if needed.",296
+594,dpcpp,DPCT1049,srad/.../main.dp.cpp,"DPCT1049:6: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",325
+595,dpcpp,DPCT1049,srad/.../main.dp.cpp,"DPCT1049:9: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",350
+596,dpcpp,DPCT1049,srad/.../main.dp.cpp,"DPCT1049:7: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",409
+597,dpcpp,DPCT1049,srad/.../main.dp.cpp,"DPCT1049:8: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",425
+598,dpcpp,DPCT1049,srad/.../main.dp.cpp,"DPCT1049:5: The workgroup size passed to the SYCL kernel may exceed the limit.
+To get the device limit, query info::device::max_work_group_size. Adjust the
+workgroup size if needed.",450
+599,dpcpp,DPCT1065,srad/.../reduce_kernel.dp.cpp,"DPCT1065:0: Consider replacing sycl::nd_item::barrier() with
+* sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+* performance, if there is no access to global memory.",37
+600,dpcpp,DPCT1065,srad/.../reduce_kernel.dp.cpp,"DPCT1065:1: Consider replacing sycl::nd_item::barrier() with
+* sycl::nd_item::barrier(sycl::access::fence_space::local_space) for
+* better performance, if there is no access to global memory.",55
+601,dpcpp,DPCT1065,srad/.../reduce_kernel.dp.cpp,"DPCT1065:2: Consider replacing sycl::nd_item::barrier() with
+* sycl::nd_item::barrier(sycl::access::fence_space::local_space) for
+* better performance, if there is no access to global memory.",80
+602,dpcpp,DPCT1065,srad/.../reduce_kernel.dp.cpp,"DPCT1065:3: Consider replacing sycl::nd_item::barrier() with
+* sycl::nd_item::barrier(sycl::access::fence_space::local_space) for
+* better performance, if there is no access to global memory.",109
+603,dpcpp,DPCT1065,convolutionSeparable/.../conv.dp.cpp,"DPCT1065:0: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",62
+604,dpcpp,DPCT1065,convolutionSeparable/.../conv.dp.cpp,"DPCT1065:1: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",113
+605,dpcpp,DPCT1049,convolutionSeparable/.../conv.dp.cpp,"DPCT1049:2: The workgroup size passed to the SYCL kernel may exceed the limit.
+To get the device limit, query info::device::max_work_group_size. Adjust the
+workgroup size if needed.",145
+606,dpcpp,DPCT1049,convolutionSeparable/.../conv.dp.cpp,"DPCT1049:3: The workgroup size passed to the SYCL kernel may exceed the limit.
+To get the device limit, query info::device::max_work_group_size. Adjust the
+workgroup size if needed.",186
+607,dpcpp,DPCT1010,reduction/.../reduction.dp.cpp,"DPCT1010:2: SYCL uses exceptions to report errors and does not use the error
+codes. The call was replaced with 0. You need to rewrite this code.",38
+608,dpcpp,DPCT1000,reduction/.../reduction.dp.cpp,DPCT1000:1: Error handling if-stmt was detected but could not be rewritten.,43
+609,dpcpp,DPCT1001,reduction/.../reduction.dp.cpp,DPCT1001:0: The statement could not be removed.,48
+610,dpcpp,DPCT1009,reduction/.../reduction.dp.cpp,"DPCT1009:3: SYCL uses exceptions to report errors and does not use
+the error codes. The original code was commented out and a warning
+string was inserted. You need to rewrite this code.",52
+611,dpcpp,DPCT1039,reduction/.../reduction.dp.cpp,"DPCT1039:4: The generated code assumes that ""out"" points to the global memory
+address space. If it points to a local memory address space, replace
+""dpct::atomic_fetch_add"" with ""dpct::atomic_fetch_add<int,
+sycl::access::address_space::local_space>"".",72
+612,dpcpp,DPCT1039,reduction/.../reduction.dp.cpp,"DPCT1039:5: The generated code assumes that ""out"" points to the global memory
+address space. If it points to a local memory address space, replace
+""dpct::atomic_fetch_add"" with ""dpct::atomic_fetch_add<int,
+sycl::access::address_space::local_space>"".",91
+613,dpcpp,DPCT1039,reduction/.../reduction.dp.cpp,"DPCT1039:6: The generated code assumes that ""out"" points to the global memory
+address space. If it points to a local memory address space, replace
+""dpct::atomic_fetch_add"" with ""dpct::atomic_fetch_add<int,
+sycl::access::address_space::local_space>"".",110
+614,dpcpp,DPCT1039,reduction/.../reduction.dp.cpp,"DPCT1039:7: The generated code assumes that ""out"" points to the global memory
+address space. If it points to a local memory address space, replace
+""dpct::atomic_fetch_add"" with ""dpct::atomic_fetch_add<int,
+sycl::access::address_space::local_space>"".",128
+615,dpcpp,DPCT1039,reduction/.../reduction.dp.cpp,"DPCT1039:8: The generated code assumes that ""out"" points to the global memory
+address space. If it points to a local memory address space, replace
+""dpct::atomic_fetch_add"" with ""dpct::atomic_fetch_add<int,
+sycl::access::address_space::local_space>"".",148
+616,dpcpp,DPCT1049,reduction/.../reduction.dp.cpp,"DPCT1049:9: The workgroup size passed to the SYCL kernel may exceed the limit.
+To get the device limit, query info::device::max_work_group_size. Adjust the
+workgroup size if needed.",207
+617,dpcpp,DPCT1049,reduction/.../reduction.dp.cpp,"DPCT1049:10: The workgroup size passed to the SYCL kernel may exceed the limit.
+To get the device limit, query info::device::max_work_group_size. Adjust the
+workgroup size if needed.",243
+618,dpcpp,DPCT1049,reduction/.../reduction.dp.cpp,"DPCT1049:11: The workgroup size passed to the SYCL kernel may exceed the limit.
+To get the device limit, query info::device::max_work_group_size. Adjust the
+workgroup size if needed.",278
+619,dpcpp,DPCT1049,reduction/.../reduction.dp.cpp,"DPCT1049:12: The workgroup size passed to the SYCL kernel may exceed the limit.
+To get the device limit, query info::device::max_work_group_size. Adjust the
+workgroup size if needed.",313
+620,dpcpp,DPCT1049,reduction/.../reduction.dp.cpp,"DPCT1049:13: The workgroup size passed to the SYCL kernel may exceed the limit.
+To get the device limit, query info::device::max_work_group_size. Adjust the
+workgroup size if needed.",347
+621,dpcpp,DPCT1010,flame/.../utils.dp.cpp,"DPCT1010:0: SYCL uses exceptions to report errors and does not use the error
+codes. The call was replaced with 0. You need to rewrite this code.",82
+622,dpcpp,DPCT1049,flame/.../main.dp.cpp,"DPCT1049:0: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",180
+623,dpcpp,DPCT1049,flame/.../main.dp.cpp,"DPCT1049:2: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",198
+624,dpcpp,DPCT1049,flame/.../main.dp.cpp,"DPCT1049:1: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",216
+625,dpcpp,DPCT1049,bfs/.../bfs.dp.cpp,"DPCT1049:0: The workgroup size passed to the SYCL
+* kernel may exceed the limit. To get the device limit, query
+* info::device::max_work_group_size. Adjust the workgroup size
+* if needed.",159
+626,dpcpp,DPCT1049,bfs/.../bfs.dp.cpp,"DPCT1049:1: The workgroup size passed to the SYCL
+* kernel may exceed the limit. To get the device limit, query
+* info::device::max_work_group_size. Adjust the workgroup size
+* if needed.",175
+627,dpcpp,DPCT1010,clenergy/.../clenergy.dp.cpp,"DPCT1010:0: SYCL uses exceptions to report errors and does not use the error
+codes. The call was replaced with 0. You need to rewrite this code.",19
+628,dpcpp,DPCT1009,clenergy/.../clenergy.dp.cpp,"DPCT1009:1: SYCL uses exceptions to report errors and does not use the error
+codes. The original code was commented out and a warning string was inserted.
+You need to rewrite this code.",23
+629,dpcpp,DPCT1049,clenergy/.../clenergy.dp.cpp,"DPCT1049:2: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",262
+630,dpcpp,DPCT1049,extrema/.../main.dp.cpp,"DPCT1049:0: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",234
+631,dpcpp,DPCT1049,extrema/.../main.dp.cpp,"DPCT1049:1: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",290
+632,dpcpp,DPCT1049,backprop/.../main.dp.cpp,"DPCT1049:6: The workgroup size passed to the SYCL kernel may exceed the limit.
+To get the device limit, query info::device::max_work_group_size. Adjust the
+workgroup size if needed.",92
+633,dpcpp,DPCT1049,backprop/.../main.dp.cpp,"DPCT1049:7: The workgroup size passed to the SYCL kernel may exceed the limit.
+To get the device limit, query info::device::max_work_group_size. Adjust the
+workgroup size if needed.",145
+634,dpcpp,DPCT1049,softmax/.../main.dp.cpp,"DPCT1049:0: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",77
+635,dpcpp,DPCT1049,md5hash/.../MD5Hash.dp.cpp,"DPCT1049:0: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",430
+636,dpcpp,DPCT1049,md/.../MD.dp.cpp,"DPCT1049:0: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",215
+637,dpcpp,DPCT1049,md/.../MD.dp.cpp,"DPCT1049:1: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",243
+638,dpcpp,DPCT1011,dxtc1/.../kernel.dp.cpp,"DPCT1011:0: The tool detected overloaded operators for built-in vector types,
+which may conflict with the SYCL 1.2.1 standard operators (see 4.10.2.1 Vec
+interface). The tool inserted a namespace to avoid the conflict. Use SYCL 1.2.1
+standard operators instead.",17
+639,dpcpp,DPCT1011,dxtc1/.../kernel.dp.cpp,"DPCT1011:1: The tool detected overloaded operators for built-in vector types,
+which may conflict with the SYCL 1.2.1 standard operators (see 4.10.2.1 Vec
+interface). The tool inserted a namespace to avoid the conflict. Use SYCL 1.2.1
+standard operators instead.",35
+640,dpcpp,DPCT1011,dxtc1/.../kernel.dp.cpp,"DPCT1011:2: The tool detected overloaded operators for built-in vector types,
+which may conflict with the SYCL 1.2.1 standard operators (see 4.10.2.1 Vec
+interface). The tool inserted a namespace to avoid the conflict. Use SYCL 1.2.1
+standard operators instead.",51
+641,dpcpp,DPCT1011,dxtc1/.../kernel.dp.cpp,"DPCT1011:3: The tool detected overloaded operators for built-in vector types,
+which may conflict with the SYCL 1.2.1 standard operators (see 4.10.2.1 Vec
+interface). The tool inserted a namespace to avoid the conflict. Use SYCL 1.2.1
+standard operators instead.",67
+642,dpcpp,DPCT1011,dxtc1/.../kernel.dp.cpp,"DPCT1011:4: The tool detected overloaded operators for built-in vector types,
+which may conflict with the SYCL 1.2.1 standard operators (see 4.10.2.1 Vec
+interface). The tool inserted a namespace to avoid the conflict. Use SYCL 1.2.1
+standard operators instead.",83
+643,dpcpp,DPCT1011,dxtc1/.../kernel.dp.cpp,"DPCT1011:5: The tool detected overloaded operators for built-in vector types,
+which may conflict with the SYCL 1.2.1 standard operators (see 4.10.2.1 Vec
+interface). The tool inserted a namespace to avoid the conflict. Use SYCL 1.2.1
+standard operators instead.",98
+644,dpcpp,DPCT1004,dxtc1/.../kernel.dp.cpp,DPCT1004:6: Could not generate replacement.,257
+645,dpcpp,DPCT1004,dxtc1/.../kernel.dp.cpp,DPCT1004:7: Could not generate replacement.,261
+646,dpcpp,DPCT1004,dxtc1/.../kernel.dp.cpp,DPCT1004:8: Could not generate replacement.,265
+647,dpcpp,DPCT1065,dxtc1/.../kernel.dp.cpp,"DPCT1065:11: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for
+better performance, if there is no access to global memory.",498
+648,dpcpp,DPCT1065,dxtc1/.../kernel.dp.cpp,"DPCT1065:9: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",517
+649,dpcpp,DPCT1065,dxtc1/.../kernel.dp.cpp,"DPCT1065:10: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",553
+650,dpcpp,DPCT1065,dxtc1/.../main.dp.cpp,"DPCT1065:12: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",43
+651,dpcpp,DPCT1065,dxtc1/.../main.dp.cpp,"DPCT1065:13: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",57
+652,dpcpp,DPCT1008,bn/.../main.dp.cpp,"DPCT1008:5: clock function is not defined in the DPC++. This is a
+hardware-specific feature. Consult with your hardware vendor to find a
+replacement.",91
+653,dpcpp,DPCT1008,bn/.../main.dp.cpp,"DPCT1008:6: clock function is not defined in the DPC++. This is a
+hardware-specific feature. Consult with your hardware vendor to find a
+replacement.",123
+654,dpcpp,DPCT1008,bn/.../main.dp.cpp,"DPCT1008:7: clock function is not defined in the DPC++. This is a
+hardware-specific feature. Consult with your hardware vendor to find a
+replacement.",132
+655,dpcpp,DPCT1008,bn/.../main.dp.cpp,"DPCT1008:8: clock function is not defined in the DPC++. This is a
+hardware-specific feature. Consult with your hardware vendor to find a
+replacement.",154
+656,dpcpp,DPCT1049,bn/.../main.dp.cpp,"DPCT1049:4: The workgroup size passed to the SYCL kernel may exceed the limit.
+To get the device limit, query info::device::max_work_group_size. Adjust the
+workgroup size if needed.",104
+657,dpcpp,DPCT1065,bn/.../kernels.dp.cpp,"DPCT1065:0: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",152
+658,dpcpp,DPCT1065,bn/.../kernels.dp.cpp,"DPCT1065:3: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",178
+659,dpcpp,DPCT1065,bn/.../kernels.dp.cpp,"DPCT1065:1: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",186
+660,dpcpp,DPCT1065,bn/.../kernels.dp.cpp,"DPCT1065:2: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",206
+661,dpcpp,DPCT1049,page-rank/.../main.dp.cpp,"DPCT1049:0: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",236
+662,dpcpp,DPCT1049,page-rank/.../main.dp.cpp,"DPCT1049:1: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",251
+663,dpcpp,DPCT1049,dp/.../main.dp.cpp,"DPCT1049:0: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",84
+664,dpcpp,DPCT1065,nw/.../nw.dp.cpp,"DPCT1065:0: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",107
+665,dpcpp,DPCT1065,nw/.../nw.dp.cpp,"DPCT1065:1: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",117
+666,dpcpp,DPCT1065,nw/.../nw.dp.cpp,"DPCT1065:2: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",126
+667,dpcpp,DPCT1065,nw/.../nw.dp.cpp,"DPCT1065:3: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",135
+668,dpcpp,DPCT1065,nw/.../nw.dp.cpp,"DPCT1065:5: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",151
+669,dpcpp,DPCT1065,nw/.../nw.dp.cpp,"DPCT1065:4: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",159
+670,dpcpp,DPCT1065,nw/.../nw.dp.cpp,"DPCT1065:6: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",179
+671,dpcpp,DPCT1065,nw/.../nw.dp.cpp,"DPCT1065:7: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",218
+672,dpcpp,DPCT1065,nw/.../nw.dp.cpp,"DPCT1065:8: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",227
+673,dpcpp,DPCT1065,nw/.../nw.dp.cpp,"DPCT1065:9: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",236
+674,dpcpp,DPCT1065,nw/.../nw.dp.cpp,"DPCT1065:10: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",254
+675,dpcpp,DPCT1065,nw/.../nw.dp.cpp,"DPCT1065:11: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",274
+676,dpcpp,DPCT1049,nw/.../nw.dp.cpp,"DPCT1049:12: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",390
+677,dpcpp,DPCT1049,nw/.../nw.dp.cpp,"DPCT1049:13: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",422
+678,dpcpp,DPCT1003,ising/.../main.dp.cpp,"DPCT1003:0: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",249
+679,dpcpp,DPCT1003,ising/.../main.dp.cpp,"DPCT1003:2: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",259
+680,dpcpp,DPCT1003,ising/.../main.dp.cpp,"DPCT1003:3: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",266
+681,dpcpp,DPCT1003,ising/.../main.dp.cpp,"DPCT1003:4: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",314
+682,dpcpp,DPCT1003,ising/.../main.dp.cpp,"DPCT1003:5: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",330
+683,dpcpp,DPCT1003,ising/.../main.dp.cpp,"DPCT1003:6: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",350
+684,dpcpp,DPCT1003,ising/.../main.dp.cpp,"DPCT1003:7: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",358
+685,dpcpp,DPCT1049,rng-wallace/.../main.dp.cpp,"DPCT1049:6: The workgroup size passed to the SYCL kernel may exceed
+* the limit. To get the device limit, query
+* info::device::max_work_group_size. Adjust the workgroup size if needed.
+",53
+686,dpcpp,DPCT1065,rng-wallace/.../wallace_kernel.dp.cpp,"DPCT1065:0: Consider replacing sycl::nd_item::barrier() with
+* sycl::nd_item::barrier(sycl::access::fence_space::local_space) for
+* better performance, if there is no access to global memory.",60
+687,dpcpp,DPCT1065,rng-wallace/.../wallace_kernel.dp.cpp,"DPCT1065:2: Consider replacing
+* sycl::nd_item::barrier() with
+* sycl::nd_item::barrier(sycl::access::fence_space::local_space)
+* for better performance, if there is no access to global
+* memory.",84
+688,dpcpp,DPCT1065,rng-wallace/.../wallace_kernel.dp.cpp,"DPCT1065:3: Consider replacing
+* sycl::nd_item::barrier() with
+* sycl::nd_item::barrier(sycl::access::fence_space::local_space)
+* for better performance, if there is no access to
+* global memory.",106
+689,dpcpp,DPCT1065,rng-wallace/.../wallace_kernel.dp.cpp,"DPCT1065:4: Consider replacing
+* sycl::nd_item::barrier() with
+* sycl::nd_item::barrier(sycl::access::fence_space::local_space)
+* for better performance, if there is no access to
+* global memory.",131
+690,dpcpp,DPCT1065,rng-wallace/.../wallace_kernel.dp.cpp,"DPCT1065:5: Consider replacing
+* sycl::nd_item::barrier() with
+* sycl::nd_item::barrier(sycl::access::fence_space::local_space)
+* for better performance, if there is no access to
+* global memory.",152
+691,dpcpp,DPCT1065,rng-wallace/.../wallace_kernel.dp.cpp,"DPCT1065:1: Consider replacing sycl::nd_item::barrier() with
+* sycl::nd_item::barrier(sycl::access::fence_space::local_space) for
+* better performance, if there is no access to global memory.",163
+692,dpcpp,DPCT1039,gd/.../main.dp.cpp,"DPCT1039:0: The generated code assumes that ""l2_norm"" points to the global
+memory address space. If it points to a local memory address space, replace
+""dpct::atomic_fetch_add"" with ""dpct::atomic_fetch_add<float,
+sycl::access::address_space::local_space>"".",17
+693,dpcpp,DPCT1039,gd/.../main.dp.cpp,"DPCT1039:1: The generated code assumes that ""total_obj_val"" points to the
+global memory address space. If it points to a local memory address space,
+replace ""dpct::atomic_fetch_add"" with ""dpct::atomic_fetch_add<float,
+sycl::access::address_space::local_space>"".",51
+694,dpcpp,DPCT1039,gd/.../main.dp.cpp,"DPCT1039:2: The generated code assumes that ""correct"" points to the global
+memory address space. If it points to a local memory address space, replace
+""dpct::atomic_fetch_add"" with ""dpct::atomic_fetch_add<int,
+sycl::access::address_space::local_space>"".",62
+695,dpcpp,DPCT1039,gd/.../main.dp.cpp,"DPCT1039:3: The generated code assumes that ""&grad[A_col_index[j]]"" points
+to the global memory address space. If it points to a local memory address
+space, replace ""dpct::atomic_fetch_add"" with
+""dpct::atomic_fetch_add<float, sycl::access::address_space::local_space>"".",76
+696,dpcpp,DPCT1049,gd/.../main.dp.cpp,"DPCT1049:4: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",180
+697,dpcpp,DPCT1049,gd/.../main.dp.cpp,"DPCT1049:5: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",195
+698,dpcpp,DPCT1049,gd/.../main.dp.cpp,"DPCT1049:6: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",220
+699,dpcpp,DPCT1039,ccsd-trpdrv/.../ccsd_tengy.dp.cpp,"DPCT1039:0: The generated code assumes that ""emp4i"" points to the global
+memory address space. If it points to a local memory address space, replace
+""dpct::atomic_fetch_add"" with ""dpct::atomic_fetch_add<double,
+sycl::access::address_space::local_space>"".",56
+700,dpcpp,DPCT1039,ccsd-trpdrv/.../ccsd_tengy.dp.cpp,"DPCT1039:1: The generated code assumes that ""emp4k"" points to the global
+memory address space. If it points to a local memory address space, replace
+""dpct::atomic_fetch_add"" with ""dpct::atomic_fetch_add<double,
+sycl::access::address_space::local_space>"".",71
+701,dpcpp,DPCT1039,ccsd-trpdrv/.../ccsd_tengy.dp.cpp,"DPCT1039:2: The generated code assumes that ""emp5i"" points to the global
+memory address space. If it points to a local memory address space, replace
+""dpct::atomic_fetch_add"" with ""dpct::atomic_fetch_add<double,
+sycl::access::address_space::local_space>"".",94
+702,dpcpp,DPCT1039,ccsd-trpdrv/.../ccsd_tengy.dp.cpp,"DPCT1039:3: The generated code assumes that ""emp5k"" points to the global
+memory address space. If it points to a local memory address space, replace
+""dpct::atomic_fetch_add"" with ""dpct::atomic_fetch_add<double,
+sycl::access::address_space::local_space>"".",107
+703,dpcpp,DPCT1008,ccsd-trpdrv/.../main.dp.cpp,"DPCT1008:0: clock function is not defined in the DPC++. This
+is a hardware-specific feature. Consult with your hardware
+vendor to find a replacement.",140
+704,dpcpp,DPCT1008,ccsd-trpdrv/.../main.dp.cpp,"DPCT1008:1: clock function is not defined in the DPC++. This
+is a hardware-specific feature. Consult with your hardware
+vendor to find a replacement.",150
+705,dpcpp,DPCT1065,scan2/.../main.dp.cpp,"DPCT1065:0: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",49
+706,dpcpp,DPCT1065,scan2/.../main.dp.cpp,"DPCT1065:1: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",77
+707,dpcpp,DPCT1065,scan2/.../main.dp.cpp,"DPCT1065:2: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",96
+708,dpcpp,DPCT1065,scan2/.../main.dp.cpp,"DPCT1065:3: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",106
+709,dpcpp,DPCT1065,scan2/.../main.dp.cpp,"DPCT1065:4: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",147
+710,dpcpp,DPCT1065,scan2/.../main.dp.cpp,"DPCT1065:5: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",166
+711,dpcpp,DPCT1065,scan2/.../main.dp.cpp,"DPCT1065:6: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",176
+712,dpcpp,DPCT1049,scan2/.../main.dp.cpp,"DPCT1049:7: The workgroup size passed to the SYCL kernel may exceed the limit.
+To get the device limit, query info::device::max_work_group_size. Adjust the
+workgroup size if needed.",207
+713,dpcpp,DPCT1049,scan2/.../main.dp.cpp,"DPCT1049:8: The workgroup size passed to the SYCL kernel may exceed the limit.
+To get the device limit, query info::device::max_work_group_size. Adjust the
+workgroup size if needed.",232
+714,dpcpp,DPCT1049,scan2/.../main.dp.cpp,"DPCT1049:9: The workgroup size passed to the SYCL kernel may exceed the limit.
+To get the device limit, query info::device::max_work_group_size. Adjust the
+workgroup size if needed.",258
+715,dpcpp,DPCT1049,heartwall/.../kernel/kernel.dp.cpp,"DPCT1049:37: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",459
+716,dpcpp,DPCT1065,nms/.../main.dp.cpp,"DPCT1065:0: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",66
+717,dpcpp,DPCT1003,nms/.../main.dp.cpp,"DPCT1003:1: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",217
+718,dpcpp,DPCT1003,nms/.../main.dp.cpp,"DPCT1003:3: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",223
+719,dpcpp,DPCT1003,nms/.../main.dp.cpp,"DPCT1003:5: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",232
+720,dpcpp,DPCT1003,nms/.../main.dp.cpp,"DPCT1003:7: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",242
+721,dpcpp,DPCT1003,nms/.../main.dp.cpp,"DPCT1003:9: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",250
+722,dpcpp,DPCT1003,nms/.../main.dp.cpp,"DPCT1003:11: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",260
+723,dpcpp,DPCT1003,nms/.../main.dp.cpp,"DPCT1003:13: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",269
+724,dpcpp,DPCT1003,nms/.../main.dp.cpp,"DPCT1003:21: Migrated API does not return error code. (*, 0) is inserted. You
+may need to rewrite this code.",336
+725,dpcpp,DPCT1049,nms/.../main.dp.cpp,"DPCT1049:15: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",290
+726,dpcpp,DPCT1049,nms/.../main.dp.cpp,"DPCT1049:18: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",315
+727,dpcpp,DPCT1010,nms/.../main.dp.cpp,"DPCT1010:16: SYCL uses exceptions to report errors and does not use the error
+codes. The call was replaced with 0. You need to rewrite this code.",302
+728,dpcpp,DPCT1010,nms/.../main.dp.cpp,"DPCT1010:19: SYCL uses exceptions to report errors and does not use the error
+codes. The call was replaced with 0. You need to rewrite this code.",328
+729,dpcpp,DPCT1065,recursiveGaussian/.../main.dp.cpp,"DPCT1065:155: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",69
+730,dpcpp,DPCT1049,recursiveGaussian/.../main.dp.cpp,"DPCT1049:156: The workgroup size passed to the SYCL kernel may exceed
+the limit. To get the device limit, query
+info::device::max_work_group_size. Adjust the workgroup size if needed.",293
+731,dpcpp,DPCT1049,recursiveGaussian/.../main.dp.cpp,"DPCT1049:157: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",317
+732,dpcpp,DPCT1049,recursiveGaussian/.../main.dp.cpp,"DPCT1049:158: The workgroup size passed to the SYCL kernel may exceed
+the limit. To get the device limit, query
+info::device::max_work_group_size. Adjust the workgroup size if needed.",344
+733,dpcpp,DPCT1049,recursiveGaussian/.../main.dp.cpp,"DPCT1049:159: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",368
+734,dpcpp,DPCT1049,atomicIntrinsics/.../main.dp.cpp,"DPCT1049:7: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",154
+735,dpcpp,DPCT1039,atomicIntrinsics/.../simpleAtomicIntrinsics_kernel.dp.hpp,"DPCT1039:0: The generated code assumes that ""&g_odata[0]"" points to the
+global memory address space. If it points to a local memory address space,
+replace ""dpct::atomic_fetch_add"" with ""dpct::atomic_fetch_add<int,
+sycl::access::address_space::local_space>"".",34
+736,dpcpp,DPCT1039,atomicIntrinsics/.../simpleAtomicIntrinsics_kernel.dp.hpp,"DPCT1039:1: The generated code assumes that ""&g_odata[1]"" points to the
+global memory address space. If it points to a local memory address space,
+replace ""dpct::atomic_fetch_sub"" with ""dpct::atomic_fetch_sub<int,
+sycl::access::address_space::local_space>"".",43
+737,dpcpp,DPCT1039,atomicIntrinsics/.../simpleAtomicIntrinsics_kernel.dp.hpp,"DPCT1039:2: The generated code assumes that ""&g_odata[2]"" points to the
+global memory address space. If it points to a local memory address space,
+replace ""dpct::atomic_fetch_max"" with ""dpct::atomic_fetch_max<int,
+sycl::access::address_space::local_space>"".",52
+738,dpcpp,DPCT1039,atomicIntrinsics/.../simpleAtomicIntrinsics_kernel.dp.hpp,"DPCT1039:3: The generated code assumes that ""&g_odata[3]"" points to the
+global memory address space. If it points to a local memory address space,
+replace ""dpct::atomic_fetch_min"" with ""dpct::atomic_fetch_min<int,
+sycl::access::address_space::local_space>"".",61
+739,dpcpp,DPCT1039,atomicIntrinsics/.../simpleAtomicIntrinsics_kernel.dp.hpp,"DPCT1039:4: The generated code assumes that ""&g_odata[4]"" points to the
+global memory address space. If it points to a local memory address space,
+replace ""dpct::atomic_fetch_and"" with ""dpct::atomic_fetch_and<int,
+sycl::access::address_space::local_space>"".",70
+740,dpcpp,DPCT1039,atomicIntrinsics/.../simpleAtomicIntrinsics_kernel.dp.hpp,"DPCT1039:5: The generated code assumes that ""&g_odata[5]"" points to the
+global memory address space. If it points to a local memory address space,
+replace ""dpct::atomic_fetch_or"" with ""dpct::atomic_fetch_or<int,
+sycl::access::address_space::local_space>"".",80
+741,dpcpp,DPCT1039,atomicIntrinsics/.../simpleAtomicIntrinsics_kernel.dp.hpp,"DPCT1039:6: The generated code assumes that ""&g_odata[6]"" points to the
+global memory address space. If it points to a local memory address space,
+replace ""dpct::atomic_fetch_xor"" with ""dpct::atomic_fetch_xor<int,
+sycl::access::address_space::local_space>"".",89
+742,dpcpp,DPCT1049,hmm/.../ViterbiGPU.dp.cpp,"DPCT1049:0: The workgroup size passed to the SYCL kernel may exceed
+* the limit. To get the device limit, query
+* info::device::max_work_group_size. Adjust the workgroup size if needed.
+",94
+743,dpcpp,DPCT1049,dslash/.../kernels.dp.cpp,"DPCT1049:0: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",191
+744,dpcpp,DPCT1065,filter/.../main.dp.cpp,"DPCT1065:0: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",31
+745,dpcpp,DPCT1065,filter/.../main.dp.cpp,"DPCT1065:1: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",49
+746,dpcpp,DPCT1065,filter/.../main.dp.cpp,"DPCT1065:2: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",65
+747,dpcpp,DPCT1065,filter/.../main.dp.cpp,"DPCT1065:3: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",77
+748,dpcpp,DPCT1039,filter/.../main.dp.cpp,"DPCT1039:4: The generated code assumes that ""nres"" points to the global
+memory address space. If it points to a local memory address space, replace
+""dpct::atomic_fetch_add"" with ""dpct::atomic_fetch_add<int,
+sycl::access::address_space::local_space>"".",58
+749,dpcpp,DPCT1049,filter/.../main.dp.cpp,"DPCT1049:5: The workgroup size passed to the SYCL kernel may exceed the limit.
+To get the device limit, query info::device::max_work_group_size. Adjust the
+workgroup size if needed.",111
+750,dpcpp,DPCT1039,asta/.../main.dp.cpp,"DPCT1039:1: The generated code assumes that ""&head[0]"" points to the global
+memory address space. If it points to a local memory address space, replace
+""dpct::atomic_fetch_add"" with ""dpct::atomic_fetch_add<int,
+sycl::access::address_space::local_space>"".",63
+751,dpcpp,DPCT1039,asta/.../main.dp.cpp,"DPCT1039:5: The generated code assumes that ""&head[0]"" points to the
+global memory address space. If it points to a local memory address
+space, replace ""dpct::atomic_fetch_add"" with
+""dpct::atomic_fetch_add<int, sycl::access::address_space::local_space>"".",81
+752,dpcpp,DPCT1039,asta/.../main.dp.cpp,"DPCT1039:6: The generated code assumes that ""&finished[lmem[1]]"" points to
+the global memory address space. If it points to a local memory address
+space, replace ""dpct::atomic_fetch_add"" with ""dpct::atomic_fetch_add<int,
+sycl::access::address_space::local_space>"".",113
+753,dpcpp,DPCT1039,asta/.../main.dp.cpp,"DPCT1039:8: The generated code assumes that ""&finished[next_in_cycle]""
+points to the global memory address space. If it points to a local
+memory address space, replace ""dpct::atomic_exchange"" with
+""dpct::atomic_exchange<int, sycl::access::address_space::local_space>"".",145
+754,dpcpp,DPCT1039,asta/.../main.dp.cpp,"DPCT1039:9: The generated code assumes that ""&head[0]"" points to the
+global memory address space. If it points to a local memory address space,
+replace ""dpct::atomic_fetch_add"" with ""dpct::atomic_fetch_add<int,
+sycl::access::address_space::local_space>"".",189
+755,dpcpp,DPCT1065,asta/.../main.dp.cpp,"DPCT1065:0: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",70
+756,dpcpp,DPCT1065,asta/.../main.dp.cpp,"DPCT1065:4: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",89
+757,dpcpp,DPCT1065,asta/.../main.dp.cpp,"DPCT1065:2: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",122
+758,dpcpp,DPCT1065,asta/.../main.dp.cpp,"DPCT1065:7: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",153
+759,dpcpp,DPCT1065,asta/.../main.dp.cpp,"DPCT1065:3: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",196
+760,dpcpp,DPCT1049,asta/.../main.dp.cpp,"DPCT1049:10: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",322
+761,dpcpp,DPCT1049,thomas/.../main.dp.cpp,"DPCT1049:0: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",153
+762,dpcpp,DPCT1065,lud/.../lud_kernels.dp.cpp,"DPCT1065:0: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",16
+763,dpcpp,DPCT1065,lud/.../lud_kernels.dp.cpp,"DPCT1065:1: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",31
+764,dpcpp,DPCT1065,lud/.../lud_kernels.dp.cpp,"DPCT1065:2: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",43
+765,dpcpp,DPCT1065,lud/.../lud_kernels.dp.cpp,"DPCT1065:3: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",98
+766,dpcpp,DPCT1065,lud/.../lud_kernels.dp.cpp,"DPCT1065:4: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",120
+767,dpcpp,DPCT1065,lud/.../lud_kernels.dp.cpp,"DPCT1065:5: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",165
+768,dpcpp,DPCT1065,lanczos/.../lanczos.dp.cpp,"DPCT1065:0: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",41
+769,dpcpp,DPCT1065,lanczos/.../lanczos.dp.cpp,"DPCT1065:1: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for
+better performance, if there is no access to global memory.",54
+770,dpcpp,DPCT1049,winograd/.../main.dp.cpp,"DPCT1049:0: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",161
+771,dpcpp,DPCT1065,ced/.../main.dp.cpp,"DPCT1065:0: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",107
+772,dpcpp,DPCT1065,ced/.../main.dp.cpp,"DPCT1065:1: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",182
+773,dpcpp,DPCT1065,ced/.../main.dp.cpp,"DPCT1065:2: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",292
+774,dpcpp,DPCT1049,kmeans/.../cluster.dp.cpp,"DPCT1049:0: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",116
+775,dpcpp,DPCT1049,kmeans/.../cluster.dp.cpp,"DPCT1049:1: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",190
+776,dpcpp,DPCT1017,lombscargle/.../main.dp.cpp,"DPCT1017:1: The sycl::sincos call is used instead of the sincosf call.
+These two calls do not provide exactly the same functionality. Check the
+potential precision and/or performance issues for the generated code.",72
+777,dpcpp,DPCT1017,lombscargle/.../main.dp.cpp,"DPCT1017:0: The sycl::sincos call is used instead of the sincosf call. These
+two calls do not provide exactly the same functionality. Check the potential
+precision and/or performance issues for the generated code.",90
+778,dpcpp,DPCT1049,lombscargle/.../main.dp.cpp,"DPCT1049:2: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",195
+779,dpcpp,DPCT1065,sobol/.../sobol_gpu.dp.cpp,"DPCT1065:0: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",70
+780,dpcpp,DPCT1049,sobol/.../sobol_gpu.dp.cpp,"DPCT1049:1: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",197
+781,dpcpp,DPCT1008,clock/.../main.dp.cpp,"DPCT1008:1: clock function is not defined in the DPC++. This is a
+hardware-specific feature. Consult with your hardware vendor to find a
+replacement.",42
+782,dpcpp,DPCT1008,clock/.../main.dp.cpp,"DPCT1008:3: clock function is not defined in the DPC++. This is a
+hardware-specific feature. Consult with your hardware vendor to find a
+replacement.",86
+783,dpcpp,DPCT1065,clock/.../main.dp.cpp,"DPCT1065:2: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for
+better performance, if there is no access to global memory.",57
+784,dpcpp,DPCT1065,clock/.../main.dp.cpp,"DPCT1065:0: Consider replacing sycl::nd_item::barrier() with
+sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+performance, if there is no access to global memory.",79
+785,dpcpp,DPCT1008,hybridsort/.../hybridsort.dp.cpp,"DPCT1008:0: clock function is not defined in the DPC++. This is a
+hardware-specific feature. Consult with your hardware vendor to find a
+replacement.",119
+786,dpcpp,DPCT1008,hybridsort/.../hybridsort.dp.cpp,"DPCT1008:1: clock function is not defined in the DPC++. This is a
+hardware-specific feature. Consult with your hardware vendor to find a
+replacement.",126
+787,dpcpp,DPCT1008,hybridsort/.../hybridsort.dp.cpp,"DPCT1008:2: clock function is not defined in the DPC++. This is a
+hardware-specific feature. Consult with your hardware vendor to find a
+replacement.",142
+788,dpcpp,DPCT1008,hybridsort/.../hybridsort.dp.cpp,"DPCT1008:3: clock function is not defined in the DPC++. This is a
+hardware-specific feature. Consult with your hardware vendor to find a
+replacement.",151
+789,dpcpp,DPCT1008,hybridsort/.../hybridsort.dp.cpp,"DPCT1008:4: clock function is not defined in the DPC++. This is a
+hardware-specific feature. Consult with your hardware vendor to find a
+replacement.",171
+790,dpcpp,DPCT1008,hybridsort/.../hybridsort.dp.cpp,"DPCT1008:5: clock function is not defined in the DPC++. This is a
+hardware-specific feature. Consult with your hardware vendor to find a
+replacement.",179
+791,dpcpp,DPCT1049,hybridsort/.../mergesort.dp.cpp,"DPCT1049:1: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",196
+792,dpcpp,DPCT1049,hybridsort/.../mergesort.dp.cpp,"DPCT1049:0: The workgroup size passed to the SYCL kernel may exceed the limit.
+To get the device limit, query info::device::max_work_group_size. Adjust the
+workgroup size if needed.",239
+793,dpcpp,DPCT1049,hybridsort/.../bucketsort.dp.cpp,"DPCT1049:6: The workgroup size passed to the SYCL kernel may exceed the limit.
+To get the device limit, query info::device::max_work_group_size. Adjust the
+workgroup size if needed.",69
+794,dpcpp,DPCT1049,hybridsort/.../bucketsort.dp.cpp,"DPCT1049:7: The workgroup size passed to the SYCL kernel may exceed the limit.
+To get the device limit, query info::device::max_work_group_size. Adjust the
+workgroup size if needed.",148
+795,dpcpp,DPCT1010,keccaktreehash/.../KeccakTreeGPU.dp.cpp,"DPCT1010:0: SYCL uses exceptions to report errors and does not
+* use the error codes. The call was replaced with 0. You need to
+* rewrite this code.",24
+796,dpcpp,DPCT1049,qrg/.../main.dp.cpp,"DPCT1049:0: The workgroup size passed to the SYCL kernel may exceed the limit.
+To get the device limit, query info::device::max_work_group_size. Adjust the
+workgroup size if needed.",167
+797,dpcpp,DPCT1049,qrg/.../main.dp.cpp,"DPCT1049:1: The workgroup size passed to the SYCL kernel may exceed the limit.
+To get the device limit, query info::device::max_work_group_size. Adjust the
+workgroup size if needed.",195
+798,dpcpp,DPCT1003,quicksort/.../main.dp.cpp,"DPCT1003:22: Migrated API does not return error code. (*, 0) is inserted.
+* You may need to rewrite this code.",169
+799,dpcpp,DPCT1003,quicksort/.../main.dp.cpp,"DPCT1003:23: Migrated API does not return error code. (*, 0) is inserted.
+* You may need to rewrite this code.",176
+800,dpcpp,DPCT1003,quicksort/.../main.dp.cpp,"DPCT1003:24: Migrated API does not return error code. (*, 0) is inserted.
+* You may need to rewrite this code.",182
+801,dpcpp,DPCT1003,quicksort/.../main.dp.cpp,"DPCT1003:25: Migrated API does not return error code. (*, 0) is inserted.
+* You may need to rewrite this code.",189
+802,dpcpp,DPCT1003,quicksort/.../main.dp.cpp,"DPCT1003:26: Migrated API does not return error code. (*, 0) is inserted.
+* You may need to rewrite this code.",198
+803,dpcpp,DPCT1003,quicksort/.../main.dp.cpp,"DPCT1003:27: Migrated API does not return error code. (*, 0) is inserted.
+* You may need to rewrite this code.",207
+804,dpcpp,DPCT1003,quicksort/.../main.dp.cpp,"DPCT1003:29: Migrated API does not return error code. (*, 0) is inserted.
+* You may need to rewrite this code.",255
+805,dpcpp,DPCT1003,quicksort/.../main.dp.cpp,"DPCT1003:30: Migrated API does not return error code. (*, 0) is inserted.
+* You may need to rewrite this code.",260
+806,dpcpp,DPCT1003,quicksort/.../main.dp.cpp,"DPCT1003:31: Migrated API does not return error code. (*, 0) is inserted.
+* You may need to rewrite this code.",269
+807,dpcpp,DPCT1003,quicksort/.../main.dp.cpp,"DPCT1003:32: Migrated API does not return error code. (*, 0) is inserted.
+* You may need to rewrite this code.",274
+808,dpcpp,DPCT1003,quicksort/.../main.dp.cpp,"DPCT1003:33: Migrated API does not return error code. (*, 0) is inserted.
+* You may need to rewrite this code.",279
+809,dpcpp,DPCT1003,quicksort/.../main.dp.cpp,"DPCT1003:34: Migrated API does not return error code. (*, 0) is inserted.
+* You may need to rewrite this code.",312
+810,dpcpp,DPCT1003,quicksort/.../main.dp.cpp,"DPCT1003:35: Migrated API does not return error code. (*, 0) is inserted.
+* You may need to rewrite this code.",319
+811,dpcpp,DPCT1003,quicksort/.../main.dp.cpp,"DPCT1003:37: Migrated API does not return error code. (*, 0) is inserted.
+* You may need to rewrite this code.",385
+812,dpcpp,DPCT1003,quicksort/.../main.dp.cpp,"DPCT1003:38: Migrated API does not return error code. (*, 0) is inserted.
+* You may need to rewrite this code.",392
+813,dpcpp,DPCT1010,quicksort/.../main.dp.cpp,"DPCT1010:28: SYCL uses exceptions to report errors and does not use the
+* error codes. The call was replaced with 0. You need to rewrite this code.
+",249
+814,dpcpp,DPCT1010,quicksort/.../main.dp.cpp,"DPCT1010:36: SYCL uses exceptions to report errors and does not use the
+* error codes. The call was replaced with 0. You need to rewrite this code.
+",379
+815,dpcpp,DPCT1065,quicksort/.../QuicksortKernels.dp.hpp,"DPCT1065:1: Consider replacing sycl::nd_item::barrier() with
+* sycl::nd_item::barrier(sycl::access::fence_space::local_space) for
+* better performance, if there is no access to global memory.",61
+816,dpcpp,DPCT1065,quicksort/.../QuicksortKernels.dp.hpp,"DPCT1065:2: Consider replacing sycl::nd_item::barrier() with
+* sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+* performance, if there is no access to global memory.",78
+817,dpcpp,DPCT1065,quicksort/.../QuicksortKernels.dp.hpp,"DPCT1065:3: Consider replacing sycl::nd_item::barrier() with
+* sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+* performance, if there is no access to global memory.",111
+818,dpcpp,DPCT1065,quicksort/.../QuicksortKernels.dp.hpp,"DPCT1065:4: Consider replacing sycl::nd_item::barrier() with
+* sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+* performance, if there is no access to global memory.",165
+819,dpcpp,DPCT1065,quicksort/.../QuicksortKernels.dp.hpp,"DPCT1065:5: Consider replacing sycl::nd_item::barrier() with
+* sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+* performance, if there is no access to global memory.",185
+820,dpcpp,DPCT1065,quicksort/.../QuicksortKernels.dp.hpp,"DPCT1065:8: Consider replacing sycl::nd_item::barrier() with
+* sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+* performance, if there is no access to global memory.",200
+821,dpcpp,DPCT1065,quicksort/.../QuicksortKernels.dp.hpp,"DPCT1065:9: Consider replacing sycl::nd_item::barrier() with
+* sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+* performance, if there is no access to global memory.",221
+822,dpcpp,DPCT1065,quicksort/.../QuicksortKernels.dp.hpp,"DPCT1065:6: Consider replacing sycl::nd_item::barrier() with
+* sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+* performance, if there is no access to global memory.",259
+823,dpcpp,DPCT1065,quicksort/.../QuicksortKernels.dp.hpp,"DPCT1065:7: Consider replacing sycl::nd_item::barrier() with
+* sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+* performance, if there is no access to global memory.",280
+824,dpcpp,DPCT1065,quicksort/.../QuicksortKernels.dp.hpp,"DPCT1065:21: Consider replacing sycl::nd_item::barrier() with
+* sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+* performance, if there is no access to global memory.",339
+825,dpcpp,DPCT1065,quicksort/.../QuicksortKernels.dp.hpp,"DPCT1065:13: Consider replacing sycl::nd_item::barrier() with
+* sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+* performance, if there is no access to global memory.",406
+826,dpcpp,DPCT1065,quicksort/.../QuicksortKernels.dp.hpp,"DPCT1065:14: Consider replacing sycl::nd_item::barrier() with
+* sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+* performance, if there is no access to global memory.",419
+827,dpcpp,DPCT1065,quicksort/.../QuicksortKernels.dp.hpp,"DPCT1065:15: Consider replacing sycl::nd_item::barrier() with
+* sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+* performance, if there is no access to global memory.",440
+828,dpcpp,DPCT1065,quicksort/.../QuicksortKernels.dp.hpp,"DPCT1065:16: Consider replacing sycl::nd_item::barrier() with
+* sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+* performance, if there is no access to global memory.",465
+829,dpcpp,DPCT1065,quicksort/.../QuicksortKernels.dp.hpp,"DPCT1065:19: Consider replacing sycl::nd_item::barrier() with
+* sycl::nd_item::barrier(sycl::access::fence_space::local_space) for
+* better performance, if there is no access to global memory.",480
+830,dpcpp,DPCT1065,quicksort/.../QuicksortKernels.dp.hpp,"DPCT1065:20: Consider replacing sycl::nd_item::barrier() with
+* sycl::nd_item::barrier(sycl::access::fence_space::local_space) for
+* better performance, if there is no access to global memory.",501
+831,dpcpp,DPCT1065,quicksort/.../QuicksortKernels.dp.hpp,"DPCT1065:17: Consider replacing sycl::nd_item::barrier() with
+* sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+* performance, if there is no access to global memory.",523
+832,dpcpp,DPCT1065,quicksort/.../QuicksortKernels.dp.hpp,"DPCT1065:18: Consider replacing sycl::nd_item::barrier() with
+* sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better
+* performance, if there is no access to global memory.",535
+833,dpcpp,DPCT1039,quicksort/.../QuicksortKernels.dp.hpp,"DPCT1039:10: The generated code assumes that ""psstart"" points to the
+* global memory address space. If it points to a local memory address
+* space, replace ""dpct::atomic_fetch_add"" with
+* ""dpct::atomic_fetch_add<uint,
+* sycl::access::address_space::local_space>"".",238
+834,dpcpp,DPCT1039,quicksort/.../QuicksortKernels.dp.hpp,"DPCT1039:11: The generated code assumes that ""psend"" points to the
+* global memory address space. If it points to a local memory address
+* space, replace ""dpct::atomic_fetch_sub"" with
+* ""dpct::atomic_fetch_sub<uint,
+* sycl::access::address_space::local_space>"".",248
+835,dpcpp,DPCT1039,quicksort/.../QuicksortKernels.dp.hpp,"DPCT1039:12: The generated code assumes that ""pblockcount"" points to
+* the global memory address space. If it points to a local memory address
+* space, replace ""dpct::atomic_fetch_sub"" with
+* ""dpct::atomic_fetch_sub<uint,
+* sycl::access::address_space::local_space>"".",289
+836,dpcpp,DPCT1049,snake/.../main.dp.cpp,"DPCT1049:0: The workgroup size passed to the SYCL kernel may exceed the
+limit. To get the device limit, query info::device::max_work_group_size.
+Adjust the workgroup size if needed.",424

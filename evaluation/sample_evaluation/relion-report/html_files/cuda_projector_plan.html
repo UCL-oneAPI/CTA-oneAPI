@@ -1,0 +1,66 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type"
+          content="text/html; charset=utf-8" />
+    <title></title>
+    <style type="text/css">
+        table.diff {font-family:Courier; border:medium;}
+        .diff_header {background-color:#e0e0e0}
+        td.diff_header {text-align:right}
+        .diff_next {background-color:#c0c0c0}
+        .diff_add {background-color:#aaffaa}
+        .diff_chg {background-color:#ffff77}
+        .diff_sub {background-color:#ffaaaa}
+    </style>
+</head>
+
+<body>
+    
+    <table class="diff" id="difflib_chg_to4__top"
+           cellspacing="0" cellpadding="0" rules="groups" >
+        <colgroup></colgroup> <colgroup></colgroup> <colgroup></colgroup>
+        <colgroup></colgroup> <colgroup></colgroup> <colgroup></colgroup>
+        
+        <tbody>
+            <tr><td class="diff_next"><a href="#difflib_chg_to4__top">t</a></td><td class="diff_header" id="from4_1">1</td><td nowrap="nowrap">#include&nbsp;&lt;CL/sycl.hpp&gt;</td><td class="diff_next"><a href="#difflib_chg_to4__top">t</a></td><td class="diff_header" id="to4_1">1</td><td nowrap="nowrap">#include&nbsp;&lt;CL/sycl.hpp&gt;</td></tr>
+            <tr><td class="diff_next"></td><td class="diff_header" id="from4_2">2</td><td nowrap="nowrap">#include&nbsp;&lt;dpct/dpct.hpp&gt;</td><td class="diff_next"></td><td class="diff_header" id="to4_2">2</td><td nowrap="nowrap">#include&nbsp;&lt;dpct/dpct.hpp&gt;</td></tr>
+            <tr><td class="diff_next"></td><td class="diff_header" id="from4_3">3</td><td nowrap="nowrap">#include&nbsp;"src/acc/acc_projector_plan.h"</td><td class="diff_next"></td><td class="diff_header" id="to4_3">3</td><td nowrap="nowrap">#include&nbsp;"src/acc/acc_projector_plan.h"</td></tr>
+            <tr><td class="diff_next"></td><td class="diff_header" id="from4_4">4</td><td nowrap="nowrap">#include&nbsp;"src/time.h"</td><td class="diff_next"></td><td class="diff_header" id="to4_4">4</td><td nowrap="nowrap">#include&nbsp;"src/time.h"</td></tr>
+            <tr><td class="diff_next"></td><td class="diff_header" id="from4_5">5</td><td nowrap="nowrap"></td><td class="diff_next"></td><td class="diff_header" id="to4_5">5</td><td nowrap="nowrap"></td></tr>
+            <tr><td class="diff_next"></td><td class="diff_header" id="from4_6">6</td><td nowrap="nowrap">#ifdef&nbsp;CUDA</td><td class="diff_next"></td><td class="diff_header" id="to4_6">6</td><td nowrap="nowrap">#ifdef&nbsp;CUDA</td></tr>
+            <tr><td class="diff_next"></td><td class="diff_header" id="from4_7">7</td><td nowrap="nowrap">//#include&nbsp;&lt;cuda_runtime.h&gt;</td><td class="diff_next"></td><td class="diff_header" id="to4_7">7</td><td nowrap="nowrap">//#include&nbsp;&lt;cuda_runtime.h&gt;</td></tr>
+            <tr><td class="diff_next"></td><td class="diff_header" id="from4_8">8</td><td nowrap="nowrap">#ifdef&nbsp;CUDA_FORCESTL</td><td class="diff_next"></td><td class="diff_header" id="to4_8">8</td><td nowrap="nowrap">#ifdef&nbsp;CUDA_FORCESTL</td></tr>
+            <tr><td class="diff_next"></td><td class="diff_header" id="from4_9">9</td><td nowrap="nowrap">#include&nbsp;"src/acc/cuda/cuda_utils_stl.cuh"</td><td class="diff_next"></td><td class="diff_header" id="to4_9">9</td><td nowrap="nowrap">#include&nbsp;"src/acc/cuda/cuda_utils_stl.cuh"</td></tr>
+            <tr><td class="diff_next"></td><td class="diff_header" id="from4_10">10</td><td nowrap="nowrap">#else</td><td class="diff_next"></td><td class="diff_header" id="to4_10">10</td><td nowrap="nowrap">#else</td></tr>
+            <tr><td class="diff_next"></td><td class="diff_header" id="from4_11">11</td><td nowrap="nowrap">#include&nbsp;"src/acc/cuda/cuda_utils_cub.dp.hpp"</td><td class="diff_next"></td><td class="diff_header" id="to4_11">11</td><td nowrap="nowrap">#include&nbsp;"src/acc/cuda/cuda_utils_cub.dp.hpp"</td></tr>
+            <tr><td class="diff_next"></td><td class="diff_header" id="from4_12">12</td><td nowrap="nowrap">#endif</td><td class="diff_next"></td><td class="diff_header" id="to4_12">12</td><td nowrap="nowrap">#endif</td></tr>
+            <tr><td class="diff_next"></td><td class="diff_header" id="from4_13">13</td><td nowrap="nowrap">#endif</td><td class="diff_next"></td><td class="diff_header" id="to4_13">13</td><td nowrap="nowrap">#endif</td></tr>
+            <tr><td class="diff_next"></td><td class="diff_header" id="from4_14">14</td><td nowrap="nowrap"></td><td class="diff_next"></td><td class="diff_header" id="to4_14">14</td><td nowrap="nowrap"></td></tr>
+            <tr><td class="diff_next"></td><td class="diff_header" id="from4_15">15</td><td nowrap="nowrap">#include&nbsp;"src/acc/utilities.h"</td><td class="diff_next"></td><td class="diff_header" id="to4_15">15</td><td nowrap="nowrap">#include&nbsp;"src/acc/utilities.h"</td></tr>
+            <tr><td class="diff_next"></td><td class="diff_header" id="from4_16">16</td><td nowrap="nowrap"></td><td class="diff_next"></td><td class="diff_header" id="to4_16">16</td><td nowrap="nowrap"></td></tr>
+            <tr><td class="diff_next"></td><td class="diff_header" id="from4_17">17</td><td nowrap="nowrap">#include&nbsp;"src/acc/acc_projector_plan_impl.h"</td><td class="diff_next"></td><td class="diff_header" id="to4_17">17</td><td nowrap="nowrap">#include&nbsp;"src/acc/acc_projector_plan_impl.h"</td></tr>
+        </tbody>
+    </table>
+    <table class="diff" summary="Legends">
+        <tr> <th colspan="2"> Legends </th> </tr>
+        <tr> <td> <table border="" summary="Colors">
+                      <tr><th> Colors </th> </tr>
+                      <tr><td class="diff_add">&nbsp;Added&nbsp;</td></tr>
+                      <tr><td class="diff_chg">Changed</td> </tr>
+                      <tr><td class="diff_sub">Deleted</td> </tr>
+                  </table></td>
+             <td> <table border="" summary="Links">
+                      <tr><th colspan="2"> Links </th> </tr>
+                      <tr><td>(f)irst change</td> </tr>
+                      <tr><td>(n)ext change</td> </tr>
+                      <tr><td>(t)op</td> </tr>
+                  </table></td> </tr>
+    </table>
+</body>
+
+</html>

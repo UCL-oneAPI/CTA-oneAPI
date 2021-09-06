@@ -34,6 +34,9 @@ class Fix1049Rule(BaseRule):
         for i in range(warning_last_line + 1, len(self.file_lines)):
             current_line = self.file_lines[i]
             is_loop_starts = LOOP_BEGINNING_STR in current_line.code
+            if current_line.get_dpct_warning_code():
+                logging.warning("No loop found until next warning begins")
+                break
             if is_loop_starts:
                 vec_len, range_line_id, (vec_1, vec_2) = self.get_range_details(i)
                 self.add_vec_product_declaration(vec_1, vec_2, i)
@@ -71,11 +74,11 @@ class Fix1049Rule(BaseRule):
         masked_code, masks_to_values = self.mask_code_params(joined_code)
         params_with_multiply = re.findall("(?:,|\*|[^\s,^\*,^,]*)", masked_code)
         params_with_multiply = [e for e in params_with_multiply if not e == '']
-        if not params_with_multiply[1] == '*' and params_with_multiply[3] == ',':
+        if not len(params_with_multiply) > 3 and params_with_multiply[1] == '*' and params_with_multiply[3] == ',':
             raise Exception('Fix 1049: Code structure different than expected. Cannot resolve.')
 
-        vec_1 = self.unmask(params_with_multiply[0], masks_to_values) if masks_to_values else params_with_multiply[0]
-        vec_2 = self.unmask(params_with_multiply[2], masks_to_values) if masks_to_values else params_with_multiply[2]
+        vec_1 = self.unmask(params_with_multiply[0], masks_to_values)
+        vec_2 = self.unmask(params_with_multiply[2], masks_to_values)
 
         return vec_1, vec_2
 
@@ -83,8 +86,7 @@ class Fix1049Rule(BaseRule):
         for mask, val in masks_to_values.items():
             if mask in code:
                 return code.replace(mask, val)
-
-        raise Exception("Mask does not exist")
+        return code
 
     def mask_code_params(self, code_str) -> (str, dict):
         masks_to_values = {}
@@ -169,6 +171,8 @@ class Fix1049Rule(BaseRule):
             if i == first_line:
                 line_code = line_code[first_char:]
             if i == last_line:
+                if i == first_line:
+                    last_char -= first_char + 1
                 line_code = line_code[:last_char + 1]
 
             clean_line = line_code.strip()  # remove excessive spaces
@@ -190,7 +194,7 @@ class Fix1049Rule(BaseRule):
         indentation = self.get_indentation(new_range_first_line) + INDENTATION
         new_codes = [new_range_first_line]
 
-        self.remove_code(range_begin, closing_line_i)
+        self.remove_code(self.file_lines, range_begin, closing_line_i)
 
         reversed_new_vec = self.reverse_range(GLOBAL_RANGE_IDENTIFIER, vec_len, indentation)
         reversed_new_vec[-1] += ','
@@ -239,11 +243,7 @@ class Fix1049Rule(BaseRule):
         line_items = [LineItem(code) for code in lines_with_break]
         self.file_lines[index: index] = line_items
 
-    def remove_code(self, first_line: int, last_line: int = None):
-        remaining_line = last_line + 1 if last_line else first_line + 1
-        del self.file_lines[first_line: remaining_line]
-
     def delete_dpct_warning(self, warning_begin_id, warning_end_id):
         warning_begin_i = get_index_of_line_id(warning_begin_id, self.file_lines)
         warning_end_i = get_index_of_line_id(warning_end_id, self.file_lines)
-        self.remove_code(warning_begin_i, warning_end_i)
+        self.remove_code(self.file_lines, warning_begin_i, warning_end_i)

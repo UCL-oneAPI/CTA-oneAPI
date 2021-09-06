@@ -1,0 +1,1485 @@
+,project_name,recommendation_code,file_path,message,line
+0,cta-version,CTA1065,split/.../main.dp.cpp,"CTA1065:0: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",65
+1,cta-version,CTA1065,split/.../main.dp.cpp,"CTA1065:1: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",78
+2,cta-version,CTA1065,split/.../main.dp.cpp,"CTA1065:2: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",90
+3,cta-version,CTA1065,split/.../main.dp.cpp,"CTA1065:3: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",121
+4,cta-version,CTA1065,split/.../main.dp.cpp,"CTA1065:4: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",154
+5,cta-version,CTA1065,split/.../main.dp.cpp,"CTA1065:5: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",184
+6,cta-version,CTA1065,split/.../main.dp.cpp,"CTA1065:6: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",199
+7,cta-version,CTA1065,medianfilter/.../MedianFilter.dp.cpp,"CTA1065:0: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",153
+8,cta-version,CTA1065,gmm/.../gaussian_kernel.dp.cpp,"CTA1065:0: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",56
+9,cta-version,CTA1065,gmm/.../gaussian_kernel.dp.cpp,"CTA1065:1: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",153
+10,cta-version,CTA1065,gmm/.../gaussian_kernel.dp.cpp,"CTA1065:2: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",171
+11,cta-version,CTA1065,gmm/.../gaussian_kernel.dp.cpp,"CTA1065:3: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",200
+12,cta-version,CTA1065,gmm/.../gaussian_kernel.dp.cpp,"CTA1065:4: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",220
+13,cta-version,CTA1065,gmm/.../gaussian_kernel.dp.cpp,"CTA1065:5: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",235
+14,cta-version,CTA1065,gmm/.../gaussian_kernel.dp.cpp,"CTA1065:6: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",281
+15,cta-version,CTA1065,gmm/.../gaussian_kernel.dp.cpp,"CTA1065:7: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",301
+16,cta-version,CTA1065,gmm/.../gaussian_kernel.dp.cpp,"CTA1065:8: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",316
+17,cta-version,CTA1065,gmm/.../gaussian_kernel.dp.cpp,"CTA1065:9: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",333
+18,cta-version,CTA1065,gmm/.../gaussian_kernel.dp.cpp,"CTA1065:10: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",352
+19,cta-version,CTA1065,gmm/.../gaussian_kernel.dp.cpp,"CTA1065:11: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",408
+20,cta-version,CTA1065,gmm/.../gaussian_kernel.dp.cpp,"CTA1065:12: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",432
+21,cta-version,CTA1065,gmm/.../gaussian_kernel.dp.cpp,"CTA1065:13: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",449
+22,cta-version,CTA1065,gmm/.../gaussian_kernel.dp.cpp,"CTA1065:14: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",494
+23,cta-version,CTA1065,gmm/.../gaussian_kernel.dp.cpp,"CTA1065:15: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",505
+24,cta-version,CTA1065,gmm/.../gaussian_kernel.dp.cpp,"CTA1065:16: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",513
+25,cta-version,CTA1065,gmm/.../gaussian_kernel.dp.cpp,"CTA1065:17: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",585
+26,cta-version,CTA1065,gmm/.../gaussian_kernel.dp.cpp,"CTA1065:18: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",678
+27,cta-version,CTA1065,gmm/.../gaussian_kernel.dp.cpp,"CTA1065:19: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",717
+28,cta-version,CTA1065,gmm/.../gaussian_kernel.dp.cpp,"CTA1065:20: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",763
+29,cta-version,CTA1065,gmm/.../gaussian_kernel.dp.cpp,"CTA1065:21: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",829
+30,cta-version,CTA1065,gmm/.../gaussian_kernel.dp.cpp,"CTA1065:22: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",859
+31,cta-version,CTA1065,gmm/.../gaussian_kernel.dp.cpp,"CTA1065:23: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",876
+32,cta-version,CTA1065,gmm/.../gaussian_kernel.dp.cpp,"CTA1065:24: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",912
+33,cta-version,CTA1065,gmm/.../gaussian_kernel.dp.cpp,"CTA1065:25: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",942
+34,cta-version,CTA1065,gmm/.../gaussian_kernel.dp.cpp,"CTA1065:26: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",982
+35,cta-version,CTA1065,gmm/.../gaussian_kernel.dp.cpp,"CTA1065:27: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",994
+36,cta-version,CTA1000,heat/.../heat.dp.cpp,"CTA1000:1: Base on the experience, strongly recommended to ignore this warning.",180
+37,cta-version,CTA1000,heat/.../heat.dp.cpp,"CTA1000:3: Base on the experience, strongly recommended to ignore this warning.",234
+38,cta-version,CTA1001,heat/.../heat.dp.cpp,"CTA1001:0: Base on the experience, strongly recommended to ignore this warning.",184
+39,cta-version,CTA1001,heat/.../heat.dp.cpp,"CTA1001:2: Base on the experience, strongly recommended to ignore this warning.",238
+40,cta-version,CTA1039,all-pairs-distance/.../main.dp.cpp,"CTA1039:0: Base on the experience, strongly recommended to leave the code as it is
+and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.",68
+41,cta-version,CTA1065,all-pairs-distance/.../main.dp.cpp,"CTA1065:1: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",100
+42,cta-version,CTA1065,all-pairs-distance/.../main.dp.cpp,"CTA1065:2: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",132
+43,cta-version,CTA1065,minimod/.../minimig.dp.cpp,"CTA1065:0: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",55
+44,cta-version,CTA1065,minimod/.../minimig.dp.cpp,"CTA1065:1: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",146
+45,cta-version,CTA1065,minimod/.../find_min_max.dp.cpp,"CTA1065:0: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",24
+46,cta-version,CTA1065,minimod/.../find_min_max.dp.cpp,"CTA1065:1: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",47
+47,cta-version,CTA1065,knn/.../main.dp.cpp,"CTA1065:0: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",86
+48,cta-version,CTA1065,knn/.../main.dp.cpp,"CTA1065:1: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",106
+49,cta-version,CTA1065,minibude/.../kernel.dp.cpp,"CTA1065:0: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",85
+50,cta-version,CTA1065,sosfil/.../main.dp.cpp,"CTA1065:0: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",67
+51,cta-version,CTA1065,sosfil/.../main.dp.cpp,"CTA1065:1: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",101
+52,cta-version,CTA1065,sosfil/.../main.dp.cpp,"CTA1065:2: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",133
+53,cta-version,CTA1065,sosfil/.../main.dp.cpp,"CTA1065:3: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",162
+54,cta-version,CTA1065,boxfilter/.../main.dp.cpp,"CTA1065:155: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",83
+55,cta-version,CTA1065,stencil/.../stencil_1d.dp.cpp,"CTA1065:0: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",37
+56,cta-version,CTA1008,simplemoc/.../init.dp.cpp,"CTA1008:0: The clock function is not defined in DPC++, you can leave the code as it is for now.
+And consult with your hardware vendor to find a replacement.",117
+57,cta-version,CTA1065,pathfinder/.../main.dp.cpp,"CTA1065:0: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",97
+58,cta-version,CTA1065,pathfinder/.../main.dp.cpp,"CTA1065:1: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",135
+59,cta-version,CTA1065,pathfinder/.../main.dp.cpp,"CTA1065:2: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",156
+60,cta-version,CTA1065,tridiagonal/.../sweep_kernels.dp.cpp,"CTA1065:14: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",534
+61,cta-version,CTA1065,tridiagonal/.../cyclic_kernels.dp.cpp,"CTA1065:0: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",66
+62,cta-version,CTA1065,tridiagonal/.../cyclic_kernels.dp.cpp,"CTA1065:2: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",78
+63,cta-version,CTA1065,tridiagonal/.../cyclic_kernels.dp.cpp,"CTA1065:3: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",170
+64,cta-version,CTA1065,tridiagonal/.../cyclic_kernels.dp.cpp,"CTA1065:1: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",209
+65,cta-version,CTA1065,tridiagonal/.../cyclic_kernels.dp.cpp,"CTA1065:4: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",261
+66,cta-version,CTA1065,tridiagonal/.../cyclic_kernels.dp.cpp,"CTA1065:6: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",273
+67,cta-version,CTA1065,tridiagonal/.../cyclic_kernels.dp.cpp,"CTA1065:7: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",346
+68,cta-version,CTA1065,tridiagonal/.../cyclic_kernels.dp.cpp,"CTA1065:5: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",385
+69,cta-version,CTA1065,tridiagonal/.../pcr_kernels.dp.cpp,"CTA1065:0: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",59
+70,cta-version,CTA1065,tridiagonal/.../pcr_kernels.dp.cpp,"CTA1065:2: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",136
+71,cta-version,CTA1065,tridiagonal/.../pcr_kernels.dp.cpp,"CTA1065:3: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",151
+72,cta-version,CTA1065,tridiagonal/.../pcr_kernels.dp.cpp,"CTA1065:1: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",185
+73,cta-version,CTA1065,tridiagonal/.../pcr_kernels.dp.cpp,"CTA1065:10: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",229
+74,cta-version,CTA1065,tridiagonal/.../pcr_kernels.dp.cpp,"CTA1065:12: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",272
+75,cta-version,CTA1065,tridiagonal/.../pcr_kernels.dp.cpp,"CTA1065:13: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",287
+76,cta-version,CTA1065,tridiagonal/.../pcr_kernels.dp.cpp,"CTA1065:11: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",321
+77,cta-version,CTA1065,fdtd3d/.../FDTD3dGPU.dp.cpp,"CTA1065:0: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",93
+78,cta-version,CTA1065,fdtd3d/.../FDTD3dGPU.dp.cpp,"CTA1065:1: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",123
+79,cta-version,CTA1065,b+tree/.../kernel/kernel2.dp.cpp,"CTA1065:1: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",43
+80,cta-version,CTA1065,b+tree/.../kernel/kernel2.dp.cpp,"CTA1065:2: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",57
+81,cta-version,CTA1065,b+tree/.../kernel/kernel2.dp.cpp,"CTA1065:0: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",71
+82,cta-version,CTA1065,b+tree/.../kernel/kernel.dp.cpp,"CTA1065:0: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",35
+83,cta-version,CTA1065,b+tree/.../kernel/kernel.dp.cpp,"CTA1065:1: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",48
+84,cta-version,CTA1039,randomAccess/.../main.dp.cpp,"CTA1039:0: Base on the experience, strongly recommended to leave the code as it is
+and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.",79
+85,cta-version,CTA1000,chi2/.../chi2.dp.cpp,"CTA1000:1: Base on the experience, strongly recommended to ignore this warning.",217
+86,cta-version,CTA1000,chi2/.../chi2.dp.cpp,"CTA1000:3: Base on the experience, strongly recommended to ignore this warning.",231
+87,cta-version,CTA1000,chi2/.../chi2.dp.cpp,"CTA1000:5: Base on the experience, strongly recommended to ignore this warning.",248
+88,cta-version,CTA1000,chi2/.../chi2.dp.cpp,"CTA1000:7: Base on the experience, strongly recommended to ignore this warning.",287
+89,cta-version,CTA1001,chi2/.../chi2.dp.cpp,"CTA1001:0: Base on the experience, strongly recommended to ignore this warning.",222
+90,cta-version,CTA1001,chi2/.../chi2.dp.cpp,"CTA1001:2: Base on the experience, strongly recommended to ignore this warning.",236
+91,cta-version,CTA1001,chi2/.../chi2.dp.cpp,"CTA1001:4: Base on the experience, strongly recommended to ignore this warning.",253
+92,cta-version,CTA1001,chi2/.../chi2.dp.cpp,"CTA1001:6: Base on the experience, strongly recommended to ignore this warning.",292
+93,cta-version,CTA1000,memcpy/.../main.dp.cpp,"CTA1000:1: Base on the experience, strongly recommended to ignore this warning.",42
+94,cta-version,CTA1001,memcpy/.../main.dp.cpp,"CTA1001:0: Base on the experience, strongly recommended to ignore this warning.",46
+95,cta-version,CTA1008,memcpy/.../main.dp.cpp,"CTA1008:3: The clock function is not defined in DPC++, you can leave the code as it is for now.
+And consult with your hardware vendor to find a replacement.",57
+96,cta-version,CTA1008,memcpy/.../main.dp.cpp,"CTA1008:4: The clock function is not defined in DPC++, you can leave the code as it is for now.
+And consult with your hardware vendor to find a replacement.",66
+97,cta-version,CTA1008,memcpy/.../main.dp.cpp,"CTA1008:5: The clock function is not defined in DPC++, you can leave the code as it is for now.
+And consult with your hardware vendor to find a replacement.",75
+98,cta-version,CTA1008,memcpy/.../main.dp.cpp,"CTA1008:6: The clock function is not defined in DPC++, you can leave the code as it is for now.
+And consult with your hardware vendor to find a replacement.",84
+99,cta-version,CTA1065,transpose/.../main.dp.cpp,"CTA1065:0: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",70
+100,cta-version,CTA1065,transpose/.../main.dp.cpp,"CTA1065:1: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",93
+101,cta-version,CTA1065,d2q9-bgk/.../main.dp.cpp,"CTA1065:0: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",310
+102,cta-version,CTA1065,fpc/.../main.dp.cpp,"CTA1065:0: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",166
+103,cta-version,CTA1065,fpc/.../main.dp.cpp,"CTA1065:1: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",178
+104,cta-version,CTA1065,fpc/.../main.dp.cpp,"CTA1065:3: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",241
+105,cta-version,CTA1065,fpc/.../main.dp.cpp,"CTA1065:4: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",253
+106,cta-version,CTA1039,fpc/.../main.dp.cpp,"CTA1039:2: Base on the experience, strongly recommended to leave the code as it is
+and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.",187
+107,cta-version,CTA1039,fpc/.../main.dp.cpp,"CTA1039:5: Base on the experience, strongly recommended to leave the code as it is
+and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.",262
+108,cta-version,CTA1065,deredundancy/.../kernels.dp.cpp,"CTA1065:0: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",502
+109,cta-version,CTA1000,inversek2j/.../main.dp.cpp,"CTA1000:1: Base on the experience, strongly recommended to ignore this warning.",301
+110,cta-version,CTA1001,inversek2j/.../main.dp.cpp,"CTA1001:0: Base on the experience, strongly recommended to ignore this warning.",305
+111,cta-version,CTA1065,sampling/.../kernels.dp.cpp,"CTA1065:0: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",123
+112,cta-version,CTA1065,lid-driven-cavity/.../main.dp.cpp,"CTA1065:0: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",363
+113,cta-version,CTA1065,lid-driven-cavity/.../main.dp.cpp,"CTA1065:1: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",379
+114,cta-version,CTA1065,lid-driven-cavity/.../main.dp.cpp,"CTA1065:2: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",574
+115,cta-version,CTA1065,lid-driven-cavity/.../main.dp.cpp,"CTA1065:3: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",590
+116,cta-version,CTA1065,lid-driven-cavity/.../main.dp.cpp,"CTA1065:4: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",668
+117,cta-version,CTA1065,lid-driven-cavity/.../main.dp.cpp,"CTA1065:5: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",685
+118,cta-version,CTA1065,lid-driven-cavity/.../main.dp.cpp,"CTA1065:6: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",785
+119,cta-version,CTA1065,lid-driven-cavity/.../main.dp.cpp,"CTA1065:7: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",802
+120,cta-version,CTA1065,compute-score/.../main.dp.cpp,"CTA1065:0: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",324
+121,cta-version,CTA1065,particles/.../bitonicSort_kernels.dp.cpp,"CTA1065:1: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",79
+122,cta-version,CTA1065,particles/.../bitonicSort_kernels.dp.cpp,"CTA1065:2: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",99
+123,cta-version,CTA1065,particles/.../bitonicSort_kernels.dp.cpp,"CTA1065:0: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",116
+124,cta-version,CTA1065,particles/.../bitonicSort_kernels.dp.cpp,"CTA1065:4: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",174
+125,cta-version,CTA1065,particles/.../bitonicSort_kernels.dp.cpp,"CTA1065:5: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",197
+126,cta-version,CTA1065,particles/.../bitonicSort_kernels.dp.cpp,"CTA1065:3: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",215
+127,cta-version,CTA1065,particles/.../bitonicSort_kernels.dp.cpp,"CTA1065:7: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",307
+128,cta-version,CTA1065,particles/.../bitonicSort_kernels.dp.cpp,"CTA1065:6: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",324
+129,cta-version,CTA1065,particles/.../particles_kernels.dp.cpp,"CTA1065:8: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",316
+130,cta-version,CTA1065,radixsort/.../RadixSort_kernels.dp.cpp,"CTA1065:3: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",61
+131,cta-version,CTA1065,radixsort/.../RadixSort_kernels.dp.cpp,"CTA1065:4: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",74
+132,cta-version,CTA1065,radixsort/.../RadixSort_kernels.dp.cpp,"CTA1065:5: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",86
+133,cta-version,CTA1065,radixsort/.../RadixSort_kernels.dp.cpp,"CTA1065:6: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",117
+134,cta-version,CTA1065,radixsort/.../RadixSort_kernels.dp.cpp,"CTA1065:7: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",153
+135,cta-version,CTA1065,radixsort/.../RadixSort_kernels.dp.cpp,"CTA1065:8: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",183
+136,cta-version,CTA1065,radixsort/.../RadixSort_kernels.dp.cpp,"CTA1065:9: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",198
+137,cta-version,CTA1065,radixsort/.../RadixSort_kernels.dp.cpp,"CTA1065:10: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",261
+138,cta-version,CTA1065,radixsort/.../RadixSort_kernels.dp.cpp,"CTA1065:11: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",278
+139,cta-version,CTA1065,radixsort/.../RadixSort_kernels.dp.cpp,"CTA1065:12: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",291
+140,cta-version,CTA1065,radixsort/.../RadixSort_kernels.dp.cpp,"CTA1065:13: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",317
+141,cta-version,CTA1065,radixsort/.../RadixSort_kernels.dp.cpp,"CTA1065:14: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",388
+142,cta-version,CTA1065,radixsort/.../Scan_kernels.dp.cpp,"CTA1065:3: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",52
+143,cta-version,CTA1065,radixsort/.../Scan_kernels.dp.cpp,"CTA1065:4: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",61
+144,cta-version,CTA1065,radixsort/.../Scan_kernels.dp.cpp,"CTA1065:5: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",250
+145,cta-version,CTA1065,axhelm/.../axhelmKernel.cpp.dp.cpp,"CTA1065:0: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",47
+146,cta-version,CTA1065,axhelm/.../axhelmKernel.cpp.dp.cpp,"CTA1065:1: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",61
+147,cta-version,CTA1065,axhelm/.../axhelmKernel.cpp.dp.cpp,"CTA1065:2: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",80
+148,cta-version,CTA1065,axhelm/.../axhelmKernel.cpp.dp.cpp,"CTA1065:3: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",95
+149,cta-version,CTA1065,axhelm/.../axhelmKernel.cpp.dp.cpp,"CTA1065:4: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",162
+150,cta-version,CTA1065,axhelm/.../axhelmKernel.cpp.dp.cpp,"CTA1065:5: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",183
+151,cta-version,CTA1065,axhelm/.../axhelmKernel.cpp.dp.cpp,"CTA1065:6: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",217
+152,cta-version,CTA1032,vmc/.../vmc.dp.cpp,"CTA1032:0: Base on the experience, recommended to ignore this warning. If it didn't work, adjust the code.",34
+153,cta-version,CTA1032,vmc/.../vmc.dp.cpp,"CTA1032:1: Base on the experience, recommended to ignore this warning. If it didn't work, adjust the code.",40
+154,cta-version,CTA1032,vmc/.../vmc.dp.cpp,"CTA1032:2: Base on the experience, recommended to ignore this warning. If it didn't work, adjust the code.",50
+155,cta-version,CTA1032,vmc/.../vmc.dp.cpp,"CTA1032:6: Base on the experience, recommended to ignore this warning. If it didn't work, adjust the code.",170
+156,cta-version,CTA1032,vmc/.../vmc.dp.cpp,"CTA1032:7: Base on the experience, recommended to ignore this warning. If it didn't work, adjust the code.",193
+157,cta-version,CTA1032,vmc/.../vmc.dp.cpp,"CTA1032:8: Base on the experience, recommended to ignore this warning. If it didn't work, adjust the code.",213
+158,cta-version,CTA1032,vmc/.../vmc.dp.cpp,"CTA1032:9: Base on the experience, recommended to ignore this warning. If it didn't work, adjust the code.",269
+159,cta-version,CTA1032,vmc/.../vmc.dp.cpp,"CTA1032:21: Base on the experience, recommended to ignore this warning. If it didn't work, adjust the code.",285
+160,cta-version,CTA1065,vmc/.../vmc.dp.cpp,"CTA1065:4: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",82
+161,cta-version,CTA1065,vmc/.../vmc.dp.cpp,"CTA1065:5: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",102
+162,cta-version,CTA1065,bsw/.../kernel.dp.cpp,"CTA1065:0: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",107
+163,cta-version,CTA1065,bsw/.../kernel.dp.cpp,"CTA1065:1: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",121
+164,cta-version,CTA1065,bsw/.../kernel.dp.cpp,"CTA1065:2: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",143
+165,cta-version,CTA1065,bsw/.../kernel.dp.cpp,"CTA1065:3: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",159
+166,cta-version,CTA1065,bsw/.../kernel.dp.cpp,"CTA1065:4: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",183
+167,cta-version,CTA1065,bsw/.../kernel.dp.cpp,"CTA1065:5: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",197
+168,cta-version,CTA1065,bsw/.../kernel.dp.cpp,"CTA1065:6: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",219
+169,cta-version,CTA1065,bsw/.../kernel.dp.cpp,"CTA1065:7: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",235
+170,cta-version,CTA1065,bsw/.../kernel.dp.cpp,"CTA1065:8: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",346
+171,cta-version,CTA1065,bsw/.../kernel.dp.cpp,"CTA1065:9: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",382
+172,cta-version,CTA1065,bsw/.../kernel.dp.cpp,"CTA1065:11: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",430
+173,cta-version,CTA1065,bsw/.../kernel.dp.cpp,"CTA1065:12: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",499
+174,cta-version,CTA1065,bsw/.../kernel.dp.cpp,"CTA1065:10: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",508
+175,cta-version,CTA1065,bsw/.../kernel.dp.cpp,"CTA1065:13: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",623
+176,cta-version,CTA1065,bsw/.../kernel.dp.cpp,"CTA1065:14: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",660
+177,cta-version,CTA1065,bsw/.../kernel.dp.cpp,"CTA1065:17: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",706
+178,cta-version,CTA1065,bsw/.../kernel.dp.cpp,"CTA1065:18: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",782
+179,cta-version,CTA1065,bsw/.../kernel.dp.cpp,"CTA1065:15: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",791
+180,cta-version,CTA1065,bsw/.../kernel.dp.cpp,"CTA1065:16: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",816
+181,cta-version,CTA1065,scan/.../main.dp.cpp,"CTA1065:0: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",22
+182,cta-version,CTA1065,scan/.../main.dp.cpp,"CTA1065:1: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",43
+183,cta-version,CTA1065,bsearch/.../main.dp.cpp,"CTA1065:0: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",89
+184,cta-version,CTA1039,minisweep/.../kernels.dp.cpp,"CTA1039:0: Base on the experience, strongly recommended to leave the code as it is
+and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.",342
+185,cta-version,CTA1065,ldpc/.../kernel.dp.cpp,"CTA1065:0: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",212
+186,cta-version,CTA1039,jaccard/.../main.dp.cpp,"CTA1039:0: Base on the experience, strongly recommended to leave the code as it is
+and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.",164
+187,cta-version,CTA1065,grep/.../pnfa.dp.cpp,"CTA1065:0: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",232
+188,cta-version,CTA1039,sssp/.../main.dp.cpp,"CTA1039:4: Base on the experience, strongly recommended to leave the code as it is
+and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.",181
+189,cta-version,CTA1039,sssp/.../main.dp.cpp,"CTA1039:5: Base on the experience, strongly recommended to leave the code as it is
+and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.",189
+190,cta-version,CTA1039,sssp/.../main.dp.cpp,"CTA1039:6: Base on the experience, strongly recommended to leave the code as it is
+and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.",196
+191,cta-version,CTA1039,sssp/.../main.dp.cpp,"CTA1039:7: Base on the experience, strongly recommended to leave the code as it is
+and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.",211
+192,cta-version,CTA1039,sssp/.../main.dp.cpp,"CTA1039:12: Base on the experience, strongly recommended to leave the code as it is
+and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.",234
+193,cta-version,CTA1039,sssp/.../main.dp.cpp,"CTA1039:13: Base on the experience, strongly recommended to leave the code as it is
+and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.",282
+194,cta-version,CTA1039,sssp/.../main.dp.cpp,"CTA1039:14: Base on the experience, strongly recommended to leave the code as it is
+and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.",288
+195,cta-version,CTA1039,sssp/.../main.dp.cpp,"CTA1039:15: Base on the experience, strongly recommended to leave the code as it is
+and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.",308
+196,cta-version,CTA1039,sssp/.../main.dp.cpp,"CTA1039:16: Base on the experience, strongly recommended to leave the code as it is
+and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.",317
+197,cta-version,CTA1039,sssp/.../main.dp.cpp,"CTA1039:17: Base on the experience, strongly recommended to leave the code as it is
+and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.",342
+198,cta-version,CTA1039,sssp/.../main.dp.cpp,"CTA1039:18: Base on the experience, strongly recommended to leave the code as it is
+and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.",364
+199,cta-version,CTA1039,sssp/.../main.dp.cpp,"CTA1039:19: Base on the experience, strongly recommended to leave the code as it is
+and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.",390
+200,cta-version,CTA1065,sssp/.../main.dp.cpp,"CTA1065:2: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",218
+201,cta-version,CTA1065,sssp/.../main.dp.cpp,"CTA1065:9: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",242
+202,cta-version,CTA1065,sssp/.../main.dp.cpp,"CTA1065:10: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",256
+203,cta-version,CTA1065,sssp/.../main.dp.cpp,"CTA1065:11: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",268
+204,cta-version,CTA1065,sssp/.../main.dp.cpp,"CTA1065:8: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",351
+205,cta-version,CTA1065,sssp/.../main.dp.cpp,"CTA1065:3: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",372
+206,cta-version,CTA1065,reverse/.../main.dp.cpp,"CTA1065:0: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",13
+207,cta-version,CTA1065,ss/.../kernels.dp.cpp,"CTA1065:0: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",92
+208,cta-version,CTA1065,ss/.../kernels.dp.cpp,"CTA1065:1: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",113
+209,cta-version,CTA1065,ss/.../kernels.dp.cpp,"CTA1065:2: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",186
+210,cta-version,CTA1065,ss/.../kernels.dp.cpp,"CTA1065:3: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",219
+211,cta-version,CTA1065,ss/.../kernels.dp.cpp,"CTA1065:4: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",228
+212,cta-version,CTA1065,ss/.../kernels.dp.cpp,"CTA1065:5: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",269
+213,cta-version,CTA1065,ss/.../kernels.dp.cpp,"CTA1065:6: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",278
+214,cta-version,CTA1065,ss/.../kernels.dp.cpp,"CTA1065:5: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",320
+215,cta-version,CTA1008,aobench/.../ao.dp.cpp,"CTA1008:6: The clock function is not defined in DPC++, you can leave the code as it is for now.
+And consult with your hardware vendor to find a replacement.",410
+216,cta-version,CTA1008,aobench/.../ao.dp.cpp,"CTA1008:7: The clock function is not defined in DPC++, you can leave the code as it is for now.
+And consult with your hardware vendor to find a replacement.",418
+217,cta-version,CTA1065,mdh/.../main.dp.cpp,"CTA1065:155: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",99
+218,cta-version,CTA1065,mdh/.../main.dp.cpp,"CTA1065:156: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",131
+219,cta-version,CTA1065,mdh/.../main.dp.cpp,"CTA1065:157: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",182
+220,cta-version,CTA1065,mdh/.../main.dp.cpp,"CTA1065:158: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",213
+221,cta-version,CTA1065,srad/.../reduce_kernel.dp.cpp,"CTA1065:0: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",37
+222,cta-version,CTA1065,srad/.../reduce_kernel.dp.cpp,"CTA1065:1: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",57
+223,cta-version,CTA1065,srad/.../reduce_kernel.dp.cpp,"CTA1065:2: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",84
+224,cta-version,CTA1065,srad/.../reduce_kernel.dp.cpp,"CTA1065:3: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",115
+225,cta-version,CTA1065,convolutionSeparable/.../conv.dp.cpp,"CTA1065:0: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",62
+226,cta-version,CTA1065,convolutionSeparable/.../conv.dp.cpp,"CTA1065:1: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",115
+227,cta-version,CTA1000,reduction/.../reduction.dp.cpp,"CTA1000:1: Base on the experience, strongly recommended to ignore this warning.",43
+228,cta-version,CTA1001,reduction/.../reduction.dp.cpp,"CTA1001:0: Base on the experience, strongly recommended to ignore this warning.",48
+229,cta-version,CTA1039,reduction/.../reduction.dp.cpp,"CTA1039:4: Base on the experience, strongly recommended to leave the code as it is
+and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.",72
+230,cta-version,CTA1039,reduction/.../reduction.dp.cpp,"CTA1039:5: Base on the experience, strongly recommended to leave the code as it is
+and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.",90
+231,cta-version,CTA1039,reduction/.../reduction.dp.cpp,"CTA1039:6: Base on the experience, strongly recommended to leave the code as it is
+and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.",108
+232,cta-version,CTA1039,reduction/.../reduction.dp.cpp,"CTA1039:7: Base on the experience, strongly recommended to leave the code as it is
+and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.",125
+233,cta-version,CTA1039,reduction/.../reduction.dp.cpp,"CTA1039:8: Base on the experience, strongly recommended to leave the code as it is
+and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.",144
+234,cta-version,CTA1065,dxtc1/.../kernel.dp.cpp,"CTA1065:11: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",498
+235,cta-version,CTA1065,dxtc1/.../kernel.dp.cpp,"CTA1065:9: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",519
+236,cta-version,CTA1065,dxtc1/.../kernel.dp.cpp,"CTA1065:10: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",557
+237,cta-version,CTA1065,dxtc1/.../main.dp.cpp,"CTA1065:12: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",43
+238,cta-version,CTA1065,dxtc1/.../main.dp.cpp,"CTA1065:13: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",59
+239,cta-version,CTA1008,bn/.../main.dp.cpp,"CTA1008:5: The clock function is not defined in DPC++, you can leave the code as it is for now.
+And consult with your hardware vendor to find a replacement.",91
+240,cta-version,CTA1008,bn/.../main.dp.cpp,"CTA1008:6: The clock function is not defined in DPC++, you can leave the code as it is for now.
+And consult with your hardware vendor to find a replacement.",125
+241,cta-version,CTA1008,bn/.../main.dp.cpp,"CTA1008:7: The clock function is not defined in DPC++, you can leave the code as it is for now.
+And consult with your hardware vendor to find a replacement.",133
+242,cta-version,CTA1008,bn/.../main.dp.cpp,"CTA1008:8: The clock function is not defined in DPC++, you can leave the code as it is for now.
+And consult with your hardware vendor to find a replacement.",154
+243,cta-version,CTA1065,bn/.../kernels.dp.cpp,"CTA1065:0: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",152
+244,cta-version,CTA1065,bn/.../kernels.dp.cpp,"CTA1065:3: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",180
+245,cta-version,CTA1065,bn/.../kernels.dp.cpp,"CTA1065:1: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",190
+246,cta-version,CTA1065,bn/.../kernels.dp.cpp,"CTA1065:2: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",212
+247,cta-version,CTA1065,nw/.../nw.dp.cpp,"CTA1065:0: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",107
+248,cta-version,CTA1065,nw/.../nw.dp.cpp,"CTA1065:1: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",119
+249,cta-version,CTA1065,nw/.../nw.dp.cpp,"CTA1065:2: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",130
+250,cta-version,CTA1065,nw/.../nw.dp.cpp,"CTA1065:3: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",141
+251,cta-version,CTA1065,nw/.../nw.dp.cpp,"CTA1065:5: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",159
+252,cta-version,CTA1065,nw/.../nw.dp.cpp,"CTA1065:4: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",169
+253,cta-version,CTA1065,nw/.../nw.dp.cpp,"CTA1065:6: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",191
+254,cta-version,CTA1065,nw/.../nw.dp.cpp,"CTA1065:7: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",232
+255,cta-version,CTA1065,nw/.../nw.dp.cpp,"CTA1065:8: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",243
+256,cta-version,CTA1065,nw/.../nw.dp.cpp,"CTA1065:9: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",254
+257,cta-version,CTA1065,nw/.../nw.dp.cpp,"CTA1065:10: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",274
+258,cta-version,CTA1065,nw/.../nw.dp.cpp,"CTA1065:11: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",296
+259,cta-version,CTA1065,rng-wallace/.../wallace_kernel.dp.cpp,"CTA1065:0: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",60
+260,cta-version,CTA1065,rng-wallace/.../wallace_kernel.dp.cpp,"CTA1065:2: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",86
+261,cta-version,CTA1065,rng-wallace/.../wallace_kernel.dp.cpp,"CTA1065:3: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",108
+262,cta-version,CTA1065,rng-wallace/.../wallace_kernel.dp.cpp,"CTA1065:4: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",133
+263,cta-version,CTA1065,rng-wallace/.../wallace_kernel.dp.cpp,"CTA1065:5: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",154
+264,cta-version,CTA1065,rng-wallace/.../wallace_kernel.dp.cpp,"CTA1065:1: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",165
+265,cta-version,CTA1039,gd/.../main.dp.cpp,"CTA1039:0: Base on the experience, strongly recommended to leave the code as it is
+and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.",17
+266,cta-version,CTA1039,gd/.../main.dp.cpp,"CTA1039:1: Base on the experience, strongly recommended to leave the code as it is
+and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.",50
+267,cta-version,CTA1039,gd/.../main.dp.cpp,"CTA1039:2: Base on the experience, strongly recommended to leave the code as it is
+and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.",60
+268,cta-version,CTA1039,gd/.../main.dp.cpp,"CTA1039:3: Base on the experience, strongly recommended to leave the code as it is
+and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.",73
+269,cta-version,CTA1039,ccsd-trpdrv/.../ccsd_tengy.dp.cpp,"CTA1039:0: Base on the experience, strongly recommended to leave the code as it is
+and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.",56
+270,cta-version,CTA1039,ccsd-trpdrv/.../ccsd_tengy.dp.cpp,"CTA1039:1: Base on the experience, strongly recommended to leave the code as it is
+and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.",70
+271,cta-version,CTA1039,ccsd-trpdrv/.../ccsd_tengy.dp.cpp,"CTA1039:2: Base on the experience, strongly recommended to leave the code as it is
+and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.",92
+272,cta-version,CTA1039,ccsd-trpdrv/.../ccsd_tengy.dp.cpp,"CTA1039:3: Base on the experience, strongly recommended to leave the code as it is
+and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.",104
+273,cta-version,CTA1008,ccsd-trpdrv/.../main.dp.cpp,"CTA1008:0: The clock function is not defined in DPC++, you can leave the code as it is for now.
+And consult with your hardware vendor to find a replacement.",140
+274,cta-version,CTA1008,ccsd-trpdrv/.../main.dp.cpp,"CTA1008:1: The clock function is not defined in DPC++, you can leave the code as it is for now.
+And consult with your hardware vendor to find a replacement.",149
+275,cta-version,CTA1065,scan2/.../main.dp.cpp,"CTA1065:0: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",49
+276,cta-version,CTA1065,scan2/.../main.dp.cpp,"CTA1065:1: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",79
+277,cta-version,CTA1065,scan2/.../main.dp.cpp,"CTA1065:2: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",100
+278,cta-version,CTA1065,scan2/.../main.dp.cpp,"CTA1065:3: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",112
+279,cta-version,CTA1065,scan2/.../main.dp.cpp,"CTA1065:4: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",155
+280,cta-version,CTA1065,scan2/.../main.dp.cpp,"CTA1065:5: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",176
+281,cta-version,CTA1065,scan2/.../main.dp.cpp,"CTA1065:6: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",188
+282,cta-version,CTA1065,nms/.../main.dp.cpp,"CTA1065:0: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",66
+283,cta-version,CTA1065,recursiveGaussian/.../main.dp.cpp,"CTA1065:155: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",69
+284,cta-version,CTA1039,atomicIntrinsics/.../simpleAtomicIntrinsics_kernel.dp.hpp,"CTA1039:0: Base on the experience, strongly recommended to leave the code as it is
+and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.",34
+285,cta-version,CTA1039,atomicIntrinsics/.../simpleAtomicIntrinsics_kernel.dp.hpp,"CTA1039:1: Base on the experience, strongly recommended to leave the code as it is
+and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.",42
+286,cta-version,CTA1039,atomicIntrinsics/.../simpleAtomicIntrinsics_kernel.dp.hpp,"CTA1039:2: Base on the experience, strongly recommended to leave the code as it is
+and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.",50
+287,cta-version,CTA1039,atomicIntrinsics/.../simpleAtomicIntrinsics_kernel.dp.hpp,"CTA1039:3: Base on the experience, strongly recommended to leave the code as it is
+and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.",58
+288,cta-version,CTA1039,atomicIntrinsics/.../simpleAtomicIntrinsics_kernel.dp.hpp,"CTA1039:4: Base on the experience, strongly recommended to leave the code as it is
+and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.",66
+289,cta-version,CTA1039,atomicIntrinsics/.../simpleAtomicIntrinsics_kernel.dp.hpp,"CTA1039:5: Base on the experience, strongly recommended to leave the code as it is
+and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.",75
+290,cta-version,CTA1039,atomicIntrinsics/.../simpleAtomicIntrinsics_kernel.dp.hpp,"CTA1039:6: Base on the experience, strongly recommended to leave the code as it is
+and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.",83
+291,cta-version,CTA1065,filter/.../main.dp.cpp,"CTA1065:0: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",31
+292,cta-version,CTA1065,filter/.../main.dp.cpp,"CTA1065:1: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",51
+293,cta-version,CTA1065,filter/.../main.dp.cpp,"CTA1065:2: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",68
+294,cta-version,CTA1065,filter/.../main.dp.cpp,"CTA1065:3: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",82
+295,cta-version,CTA1039,filter/.../main.dp.cpp,"CTA1039:4: Base on the experience, strongly recommended to leave the code as it is
+and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.",62
+296,cta-version,CTA1039,asta/.../main.dp.cpp,"CTA1039:1: Base on the experience, strongly recommended to leave the code as it is
+and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.",63
+297,cta-version,CTA1039,asta/.../main.dp.cpp,"CTA1039:5: Base on the experience, strongly recommended to leave the code as it is
+and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.",82
+298,cta-version,CTA1039,asta/.../main.dp.cpp,"CTA1039:6: Base on the experience, strongly recommended to leave the code as it is
+and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.",115
+299,cta-version,CTA1039,asta/.../main.dp.cpp,"CTA1039:8: Base on the experience, strongly recommended to leave the code as it is
+and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.",148
+300,cta-version,CTA1039,asta/.../main.dp.cpp,"CTA1039:9: Base on the experience, strongly recommended to leave the code as it is
+and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.",193
+301,cta-version,CTA1065,asta/.../main.dp.cpp,"CTA1065:0: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",69
+302,cta-version,CTA1065,asta/.../main.dp.cpp,"CTA1065:4: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",89
+303,cta-version,CTA1065,asta/.../main.dp.cpp,"CTA1065:2: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",123
+304,cta-version,CTA1065,asta/.../main.dp.cpp,"CTA1065:7: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",155
+305,cta-version,CTA1065,asta/.../main.dp.cpp,"CTA1065:3: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",199
+306,cta-version,CTA1065,lud/.../lud_kernels.dp.cpp,"CTA1065:0: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",16
+307,cta-version,CTA1065,lud/.../lud_kernels.dp.cpp,"CTA1065:1: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",33
+308,cta-version,CTA1065,lud/.../lud_kernels.dp.cpp,"CTA1065:2: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",47
+309,cta-version,CTA1065,lud/.../lud_kernels.dp.cpp,"CTA1065:3: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",104
+310,cta-version,CTA1065,lud/.../lud_kernels.dp.cpp,"CTA1065:4: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",128
+311,cta-version,CTA1065,lud/.../lud_kernels.dp.cpp,"CTA1065:5: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",175
+312,cta-version,CTA1065,lanczos/.../lanczos.dp.cpp,"CTA1065:0: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",41
+313,cta-version,CTA1065,lanczos/.../lanczos.dp.cpp,"CTA1065:1: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",56
+314,cta-version,CTA1065,ced/.../main.dp.cpp,"CTA1065:0: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",107
+315,cta-version,CTA1065,ced/.../main.dp.cpp,"CTA1065:1: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",184
+316,cta-version,CTA1065,ced/.../main.dp.cpp,"CTA1065:2: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",296
+317,cta-version,CTA1065,sobol/.../sobol_gpu.dp.cpp,"CTA1065:0: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",70
+318,cta-version,CTA1008,clock/.../main.dp.cpp,"CTA1008:1: The clock function is not defined in DPC++, you can leave the code as it is for now.
+And consult with your hardware vendor to find a replacement.",42
+319,cta-version,CTA1008,clock/.../main.dp.cpp,"CTA1008:3: The clock function is not defined in DPC++, you can leave the code as it is for now.
+And consult with your hardware vendor to find a replacement.",89
+320,cta-version,CTA1065,clock/.../main.dp.cpp,"CTA1065:2: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",56
+321,cta-version,CTA1065,clock/.../main.dp.cpp,"CTA1065:0: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",80
+322,cta-version,CTA1008,hybridsort/.../hybridsort.dp.cpp,"CTA1008:0: The clock function is not defined in DPC++, you can leave the code as it is for now.
+And consult with your hardware vendor to find a replacement.",119
+323,cta-version,CTA1008,hybridsort/.../hybridsort.dp.cpp,"CTA1008:1: The clock function is not defined in DPC++, you can leave the code as it is for now.
+And consult with your hardware vendor to find a replacement.",125
+324,cta-version,CTA1008,hybridsort/.../hybridsort.dp.cpp,"CTA1008:2: The clock function is not defined in DPC++, you can leave the code as it is for now.
+And consult with your hardware vendor to find a replacement.",140
+325,cta-version,CTA1008,hybridsort/.../hybridsort.dp.cpp,"CTA1008:3: The clock function is not defined in DPC++, you can leave the code as it is for now.
+And consult with your hardware vendor to find a replacement.",148
+326,cta-version,CTA1008,hybridsort/.../hybridsort.dp.cpp,"CTA1008:4: The clock function is not defined in DPC++, you can leave the code as it is for now.
+And consult with your hardware vendor to find a replacement.",167
+327,cta-version,CTA1008,hybridsort/.../hybridsort.dp.cpp,"CTA1008:5: The clock function is not defined in DPC++, you can leave the code as it is for now.
+And consult with your hardware vendor to find a replacement.",174
+328,cta-version,CTA1065,quicksort/.../QuicksortKernels.dp.hpp,"CTA1065:1: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",61
+329,cta-version,CTA1065,quicksort/.../QuicksortKernels.dp.hpp,"CTA1065:2: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",80
+330,cta-version,CTA1065,quicksort/.../QuicksortKernels.dp.hpp,"CTA1065:3: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",115
+331,cta-version,CTA1065,quicksort/.../QuicksortKernels.dp.hpp,"CTA1065:4: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",171
+332,cta-version,CTA1065,quicksort/.../QuicksortKernels.dp.hpp,"CTA1065:5: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",193
+333,cta-version,CTA1065,quicksort/.../QuicksortKernels.dp.hpp,"CTA1065:8: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",210
+334,cta-version,CTA1065,quicksort/.../QuicksortKernels.dp.hpp,"CTA1065:9: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",233
+335,cta-version,CTA1065,quicksort/.../QuicksortKernels.dp.hpp,"CTA1065:6: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",269
+336,cta-version,CTA1065,quicksort/.../QuicksortKernels.dp.hpp,"CTA1065:7: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",292
+337,cta-version,CTA1065,quicksort/.../QuicksortKernels.dp.hpp,"CTA1065:21: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",351
+338,cta-version,CTA1065,quicksort/.../QuicksortKernels.dp.hpp,"CTA1065:13: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",420
+339,cta-version,CTA1065,quicksort/.../QuicksortKernels.dp.hpp,"CTA1065:14: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",435
+340,cta-version,CTA1065,quicksort/.../QuicksortKernels.dp.hpp,"CTA1065:15: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",458
+341,cta-version,CTA1065,quicksort/.../QuicksortKernels.dp.hpp,"CTA1065:16: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",485
+342,cta-version,CTA1065,quicksort/.../QuicksortKernels.dp.hpp,"CTA1065:19: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",502
+343,cta-version,CTA1065,quicksort/.../QuicksortKernels.dp.hpp,"CTA1065:20: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",525
+344,cta-version,CTA1065,quicksort/.../QuicksortKernels.dp.hpp,"CTA1065:17: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",549
+345,cta-version,CTA1065,quicksort/.../QuicksortKernels.dp.hpp,"CTA1065:18: CTA recommended to ignore this warning.
+but you can also consider replacing 'item_ct1.barrier();'
+with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
+to have have better performance if the kernel function
+has no memory accesses in the global memory.",563
+346,cta-version,CTA1039,quicksort/.../QuicksortKernels.dp.hpp,"CTA1039:10: Base on the experience, strongly recommended to leave the code as it is
+and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.",252
+347,cta-version,CTA1039,quicksort/.../QuicksortKernels.dp.hpp,"CTA1039:11: Base on the experience, strongly recommended to leave the code as it is
+and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.",260
+348,cta-version,CTA1039,quicksort/.../QuicksortKernels.dp.hpp,"CTA1039:12: Base on the experience, strongly recommended to leave the code as it is
+and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.",303

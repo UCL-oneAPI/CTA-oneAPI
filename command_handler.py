@@ -1,3 +1,4 @@
+from pathlib import Path
 from CTA_Instance import CTA_Instance
 import argparse
 import os
@@ -5,11 +6,8 @@ import os.path
 
 
 # This defines the CLI and handles user commands.
-# Todo Zhongyuan: add CLI implementation
-
 
 def run_cta(dpct_project_path, destination_path, report_path, is_report_only=False):
-    validate_paths(dpct_project_path, destination_path)
     cta_instance = CTA_Instance(dpct_project_path, destination_path, report_path)
     cta_instance.run_pre_analyzer()
 
@@ -19,6 +17,7 @@ def run_cta(dpct_project_path, destination_path, report_path, is_report_only=Fal
 
     cta_instance.create_report_presentation()
     cta_instance.save_to_csvs()
+    return cta_instance
 
 
 def validate_paths(dpct_project_path, destination_path):
@@ -72,23 +71,24 @@ if __name__ == '__main__':
         des = ""
     else:
         if os.path.exists(args.destination_path):
-            des = '/'+str(args.destination_path)
+            des = '/' + str(args.destination_path)
         else:
             os.mkdir(args.destination_path)  # make directory
 
-    output_folder_path = (str(os.getcwd()) + str(des)+'\outputs').replace('\\','/')
-    if os.path.exists(output_folder_path):
-        pass
-    else:
-        os.mkdir(output_folder_path)  # make directory
-    # print(output_folder_path)
-    validate_check_result = validate_paths(args.project_path,
-                                           output_folder_path)  # get validate path checking result
-    if validate_check_result is True:
-        if args.mode == 'default':
-            run_cta(args.project_path, args.destination_path, args.report_path)
+    # set the output folder path to the current directory
+    output_folder_path = Path(str(os.getcwd())).resolve()
+    # get the destination path
+    des = Path(des)
+    a = Path(des).parts
+    # using "join_path" to get the actually output directory
+    for i in a[1:]:
+        output_folder_path = Path.joinpath(output_folder_path, i)
 
-        if args.mode == 'report_only':
-            run_cta(args.project_path, args.destination_path, args.report_path, is_report_only=True)
-    else:
-        print(validate_check_result)
+    # get validate path checking result
+    validate_paths(args.project_path, output_folder_path)
+
+    if args.mode == 'default':
+        run_cta(args.project_path, args.destination_path, args.report_path)
+
+    if args.mode == 'report_only':
+        run_cta(args.project_path, args.destination_path, args.report_path, is_report_only=True)
