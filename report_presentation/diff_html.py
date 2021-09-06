@@ -1,19 +1,21 @@
 import difflib
 from pathlib import Path
 import os
+from auto_editor.consts import DPCT_EXTENSIONS
 
 
 def find_dpcpp(dpct_root, destination_root, diff_path):
     if not dpct_root and not destination_root:
         return
-    for i in dpct_root.rglob('*.dp.cpp'):
-        dpcpp_path = str(i.parent)
-        dpct_file_name = i.stem[:-3]
-        for j in destination_root.rglob('*.dp.cpp'):
-            cta_file_name = j.stem[:-3]
-            if dpct_file_name == cta_file_name:
-                dpct_path = str(j.parent)
-                generate_html(diff_path, dpcpp_path+'/'+dpct_file_name+'.dp.cpp', dpct_path+'/'+dpct_file_name+'.dp.cpp', dpct_file_name)
+    for ext in DPCT_EXTENSIONS:
+        for i in dpct_root.rglob(ext):
+            dpcpp_path = str(i.parent)
+            dpct_file_name = i.stem[:-3]
+            for j in destination_root.rglob(ext):
+                cta_file_name = j.stem[:-3]
+                if dpct_file_name == cta_file_name:
+                    dpct_path = str(j.parent)
+                    generate_html(diff_path, dpcpp_path+'/'+dpct_file_name+ext[1:], dpct_path+'/'+dpct_file_name+ext[1:], dpct_file_name)
 
 
 def generate_html(diff_path, file1, file2, name):
