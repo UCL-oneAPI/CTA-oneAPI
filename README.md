@@ -58,7 +58,7 @@ python command_handler.py --version
 ```
 
 ## Demo Video
-[CTA Relion Demo](https://youtu.be/1qtxt8nkgb0)
+[![CTA Relion Demo](https://img.youtube.com/vi/1qtxt8nkgb0/0.jpg)](https://youtu.be/1qtxt8nkgb0)
 
 ## Report
 [Auto-generate Report Example](http://htmlpreview.github.io/?https://github.com/UCL-oneAPI/CTA-oneAPI/blob/main/Demo-Auto_report/report.html)
