@@ -25,6 +25,8 @@ cd CTA-oneAPI
 ### Prerequisites
 CTA is standalone but closely linked to the Intel® DPC++ Compatibility Tool (DPCT).
 CTA can further process the output files of the DPCT, and help complete the migration of code from CUDA to DPC++.  
+[Get Started with the Intel® DPC++ Compatibility Tool](https://software.intel.com/content/www/us/en/develop/documentation/get-started-with-intel-dpcpp-compatibility-tool/top.html)
+ 
 Create a virtual environment, e.g. using `venv`.
 To install required packages, run `pip install -r -U requirements.txt 
 `
