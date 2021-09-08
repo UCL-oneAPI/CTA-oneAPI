@@ -23,6 +23,8 @@ cd CTA-oneAPI
 ```
 
 ### Prerequisites
+CTA is standalone but closely linked to the Intel® DPC++ Compatibility Tool (DPCT).
+CTA can further process the output files of the DPCT, and help complete the migration of code from CUDA to DPC++.  
 Create a virtual environment, e.g. using `venv`.
 To install required packages, run `pip install -r -U requirements.txt 
 `
@@ -59,6 +61,9 @@ python command_handler.py --version
 
 ## Demo Video
 [![CTA Relion Demo](https://img.youtube.com/vi/1qtxt8nkgb0/0.jpg)](https://youtu.be/1qtxt8nkgb0)
+
+## Mid-term Presentation
+[![Presentation](https://img.youtube.com/vi/RFUgYQLz8XQ/0.jpg)](https://youtu.be/RFUgYQLz8XQ)
 
 ## Report
 [Auto-generate Report Example](http://htmlpreview.github.io/?https://github.com/UCL-oneAPI/CTA-oneAPI/blob/main/Demo-Auto_report/report.html)
