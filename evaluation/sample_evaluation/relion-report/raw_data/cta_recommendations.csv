@@ -1,135 +1,189 @@
 ,project_name,recommendation_code,file_path,message,line
 0,relion_cta,CTA1008,/src/acc/cuda/cuda_benchmark_utils.dp.cpp,"CTA1008:0: The clock function is not defined in DPC++, you can leave the code as it is for now.
-And consult with your hardware vendor to find a replacement.",32
+And consult with your hardware vendor to find a replacement. 15/15 1008 warnings in CTA analysis data pool choose not to change anything.",32
 1,relion_cta,CTA1008,/src/acc/cuda/cuda_benchmark_utils.dp.cpp,"CTA1008:1: The clock function is not defined in DPC++, you can leave the code as it is for now.
-And consult with your hardware vendor to find a replacement.",55
-2,relion_cta,CTA1032,/src/acc/cuda/cuda_kernels/helper.dp.cpp,"CTA1032:221: Base on the experience, recommended to ignore this warning. If it didn't work, adjust the code.",84
-3,relion_cta,CTA1032,/src/acc/cuda/cuda_kernels/helper.dp.cpp,"CTA1032:222: Base on the experience, recommended to ignore this warning. If it didn't work, adjust the code.",103
-4,relion_cta,CTA1032,/src/acc/cuda/cuda_kernels/helper.dp.cpp,"CTA1032:223: Base on the experience, recommended to ignore this warning. If it didn't work, adjust the code.",155
-5,relion_cta,CTA1032,/src/acc/cuda/cuda_kernels/helper.dp.hpp,"CTA1032:118: Base on the experience, recommended to ignore this warning. If it didn't work, adjust the code.",205
-6,relion_cta,CTA1032,/src/acc/cuda/cuda_kernels/helper.dp.hpp,"CTA1032:119: Base on the experience, recommended to ignore this warning. If it didn't work, adjust the code.",213
-7,relion_cta,CTA1032,/src/acc/cuda/cuda_kernels/helper.dp.hpp,"CTA1032:120: Base on the experience, recommended to ignore this warning. If it didn't work, adjust the code.",221
-8,relion_cta,CTA1065,/src/acc/cuda/cuda_kernels/helper.dp.cpp,"CTA1065:224: CTA recommended to ignore this warning.
+And consult with your hardware vendor to find a replacement. 15/15 1008 warnings in CTA analysis data pool choose not to change anything.",55
+2,relion_cta,CTA1010,/src/acc/cuda/cuda_autopicker.dp.cpp,"CTA1010:293: Based on analysed sample data, in 7/9 cases in the sample data, this warning was ignored,
+so strongly recommended to ignore this warning.",208
+3,relion_cta,CTA1010,/src/acc/cuda/cuda_autopicker.dp.cpp,"CTA1010:294: Based on analysed sample data, in 7/9 cases in the sample data, this warning was ignored,
+so strongly recommended to ignore this warning.",233
+4,relion_cta,CTA1010,/src/acc/cuda/cuda_autopicker.dp.cpp,"CTA1010:295: Based on analysed sample data, in 7/9 cases in the sample data, this warning was ignored,
+so strongly recommended to ignore this warning.",245
+5,relion_cta,CTA1010,/src/acc/cuda/cuda_autopicker.dp.cpp,"CTA1010:296: Based on analysed sample data, in 7/9 cases in the sample data, this warning was ignored,
+so strongly recommended to ignore this warning.",280
+6,relion_cta,CTA1010,/src/acc/cuda/cuda_autopicker.dp.cpp,"CTA1010:297: Based on analysed sample data, in 7/9 cases in the sample data, this warning was ignored,
+so strongly recommended to ignore this warning.",318
+7,relion_cta,CTA1010,/src/acc/cuda/cuda_autopicker.dp.cpp,"CTA1010:299: Based on analysed sample data, in 7/9 cases in the sample data, this warning was ignored,
+so strongly recommended to ignore this warning.",608
+8,relion_cta,CTA1010,/src/acc/cuda/cuda_autopicker.dp.cpp,"CTA1010:300: Based on analysed sample data, in 7/9 cases in the sample data, this warning was ignored,
+so strongly recommended to ignore this warning.",622
+9,relion_cta,CTA1010,/src/acc/cuda/cuda_autopicker.dp.cpp,"CTA1010:301: Based on analysed sample data, in 7/9 cases in the sample data, this warning was ignored,
+so strongly recommended to ignore this warning.",900
+10,relion_cta,CTA1010,/src/acc/cuda/cuda_autopicker.dp.cpp,"CTA1010:302: Based on analysed sample data, in 7/9 cases in the sample data, this warning was ignored,
+so strongly recommended to ignore this warning.",1060
+11,relion_cta,CTA1010,/src/acc/cuda/cuda_autopicker.dp.cpp,"CTA1010:303: Based on analysed sample data, in 7/9 cases in the sample data, this warning was ignored,
+so strongly recommended to ignore this warning.",1092
+12,relion_cta,CTA1010,/src/acc/cuda/cuda_autopicker.dp.cpp,"CTA1010:306: Based on analysed sample data, in 7/9 cases in the sample data, this warning was ignored,
+so strongly recommended to ignore this warning.",1172
+13,relion_cta,CTA1010,/src/acc/cuda/cub/device/dispatch/dispatch_radix_sort.dp.hpp,"CTA1010:104: Based on analysed sample data, in 7/9 cases in the sample data, this warning was ignored,
+so strongly recommended to ignore this warning.",1026
+14,relion_cta,CTA1010,/src/acc/cuda/cub/device/dispatch/dispatch_radix_sort.dp.hpp,"CTA1010:105: Based on analysed sample data, in 7/9 cases in the sample data, this warning was ignored,
+so strongly recommended to ignore this warning.",1057
+15,relion_cta,CTA1010,/src/acc/cuda/cub/device/dispatch/dispatch_radix_sort.dp.hpp,"CTA1010:106: Based on analysed sample data, in 7/9 cases in the sample data, this warning was ignored,
+so strongly recommended to ignore this warning.",1096
+16,relion_cta,CTA1010,/src/acc/cuda/cub/device/dispatch/dispatch_radix_sort.dp.hpp,"CTA1010:108: Based on analysed sample data, in 7/9 cases in the sample data, this warning was ignored,
+so strongly recommended to ignore this warning.",1558
+17,relion_cta,CTA1032,/src/acc/cuda/cuda_kernels/helper.dp.cpp,"CTA1032:221: Based on analysed sample data, recommended to ignore this warning（5/8 cases）. If it didn't work, adjust the code.",84
+18,relion_cta,CTA1032,/src/acc/cuda/cuda_kernels/helper.dp.cpp,"CTA1032:222: Based on analysed sample data, recommended to ignore this warning（5/8 cases）. If it didn't work, adjust the code.",103
+19,relion_cta,CTA1032,/src/acc/cuda/cuda_kernels/helper.dp.cpp,"CTA1032:223: Based on analysed sample data, recommended to ignore this warning（5/8 cases）. If it didn't work, adjust the code.",155
+20,relion_cta,CTA1032,/src/acc/cuda/cuda_kernels/helper.dp.hpp,"CTA1032:118: Based on analysed sample data, recommended to ignore this warning（5/8 cases）. If it didn't work, adjust the code.",205
+21,relion_cta,CTA1032,/src/acc/cuda/cuda_kernels/helper.dp.hpp,"CTA1032:119: Based on analysed sample data, recommended to ignore this warning（5/8 cases）. If it didn't work, adjust the code.",213
+22,relion_cta,CTA1032,/src/acc/cuda/cuda_kernels/helper.dp.hpp,"CTA1032:120: Based on analysed sample data, recommended to ignore this warning（5/8 cases）. If it didn't work, adjust the code.",221
+23,relion_cta,CTA1065,/src/acc/cuda/cuda_kernels/helper.dp.cpp,"CTA1065:224: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",330
-9,relion_cta,CTA1065,/src/acc/cuda/cuda_kernels/helper.dp.cpp,"CTA1065:226: CTA recommended to ignore this warning.
+24,relion_cta,CTA1065,/src/acc/cuda/cuda_kernels/helper.dp.cpp,"CTA1065:226: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",345
-10,relion_cta,CTA1065,/src/acc/cuda/cub/util_ptx.dp.hpp,"CTA1065:56: CTA recommended to ignore this warning.
+25,relion_cta,CTA1065,/src/acc/cuda/cub/util_ptx.dp.hpp,"CTA1065:56: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",272
-11,relion_cta,CTA1065,/src/acc/cuda/cub/util_ptx.dp.hpp,"CTA1065:57: CTA recommended to ignore this warning.
+26,relion_cta,CTA1065,/src/acc/cuda/cub/util_ptx.dp.hpp,"CTA1065:57: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",288
-12,relion_cta,CTA1065,/src/acc/cuda/cuda_kernels/BP.dp.hpp,"CTA1065:307: CTA recommended to ignore this warning.
+27,relion_cta,CTA1065,/src/acc/cuda/cuda_kernels/BP.dp.hpp,"CTA1065:307: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",63
-13,relion_cta,CTA1065,/src/acc/cuda/cuda_kernels/BP.dp.hpp,"CTA1065:312: CTA recommended to ignore this warning.
+28,relion_cta,CTA1065,/src/acc/cuda/cuda_kernels/BP.dp.hpp,"CTA1065:312: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",242
-14,relion_cta,CTA1065,/src/acc/cuda/cuda_kernels/BP.dp.hpp,"CTA1065:317: CTA recommended to ignore this warning.
+29,relion_cta,CTA1065,/src/acc/cuda/cuda_kernels/BP.dp.hpp,"CTA1065:317: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",499
-15,relion_cta,CTA1065,/src/acc/cuda/cuda_kernels/diff2.dp.hpp,"CTA1065:133: CTA recommended to ignore this warning.
+30,relion_cta,CTA1065,/src/acc/cuda/cuda_kernels/diff2.dp.hpp,"CTA1065:133: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",69
-16,relion_cta,CTA1065,/src/acc/cuda/cuda_kernels/diff2.dp.hpp,"CTA1065:134: CTA recommended to ignore this warning.
+31,relion_cta,CTA1065,/src/acc/cuda/cuda_kernels/diff2.dp.hpp,"CTA1065:134: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",147
-17,relion_cta,CTA1065,/src/acc/cuda/cuda_kernels/diff2.dp.hpp,"CTA1065:135: CTA recommended to ignore this warning.
+32,relion_cta,CTA1065,/src/acc/cuda/cuda_kernels/diff2.dp.hpp,"CTA1065:135: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",390
-18,relion_cta,CTA1065,/src/acc/cuda/cuda_kernels/diff2.dp.hpp,"CTA1065:145: CTA recommended to ignore this warning.
+33,relion_cta,CTA1065,/src/acc/cuda/cuda_kernels/diff2.dp.hpp,"CTA1065:145: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",408
-19,relion_cta,CTA1065,/src/acc/cuda/cuda_kernels/diff2.dp.hpp,"CTA1065:146: CTA recommended to ignore this warning.
+34,relion_cta,CTA1065,/src/acc/cuda/cuda_kernels/diff2.dp.hpp,"CTA1065:146: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",513
-20,relion_cta,CTA1065,/src/acc/cuda/cuda_kernels/diff2.dp.hpp,"CTA1065:156: CTA recommended to ignore this warning.
+35,relion_cta,CTA1065,/src/acc/cuda/cuda_kernels/diff2.dp.hpp,"CTA1065:156: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",589
-21,relion_cta,CTA1065,/src/acc/cuda/cuda_kernels/diff2.dp.hpp,"CTA1065:159: CTA recommended to ignore this warning.
+36,relion_cta,CTA1065,/src/acc/cuda/cuda_kernels/diff2.dp.hpp,"CTA1065:159: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",607
-22,relion_cta,CTA1065,/src/acc/cuda/cuda_kernels/diff2.dp.hpp,"CTA1065:160: CTA recommended to ignore this warning.
+37,relion_cta,CTA1065,/src/acc/cuda/cuda_kernels/diff2.dp.hpp,"CTA1065:160: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",672
-23,relion_cta,CTA1065,/src/acc/cuda/cuda_kernels/diff2.dp.hpp,"CTA1065:161: CTA recommended to ignore this warning.
+38,relion_cta,CTA1065,/src/acc/cuda/cuda_kernels/diff2.dp.hpp,"CTA1065:161: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",819
-24,relion_cta,CTA1065,/src/acc/cuda/cuda_kernels/diff2.dp.hpp,"CTA1065:172: CTA recommended to ignore this warning.
+39,relion_cta,CTA1065,/src/acc/cuda/cuda_kernels/diff2.dp.hpp,"CTA1065:172: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",838
-25,relion_cta,CTA1065,/src/acc/cuda/cuda_kernels/wavg.dp.hpp,"CTA1065:125: CTA recommended to ignore this warning.
+40,relion_cta,CTA1065,/src/acc/cuda/cuda_kernels/wavg.dp.hpp,"CTA1065:125: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",53
-26,relion_cta,CTA1065,/src/acc/cuda/cuda_kernels/helper.dp.hpp,"CTA1065:115: CTA recommended to ignore this warning.
+41,relion_cta,CTA1065,/src/acc/cuda/cuda_kernels/helper.dp.hpp,"CTA1065:115: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",128
-27,relion_cta,CTA1065,/src/acc/cuda/cuda_kernels/helper.dp.hpp,"CTA1065:116: CTA recommended to ignore this warning.
+42,relion_cta,CTA1065,/src/acc/cuda/cuda_kernels/helper.dp.hpp,"CTA1065:116: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",158
-28,relion_cta,CTA1065,/src/acc/cuda/cuda_kernels/helper.dp.hpp,"CTA1065:117: CTA recommended to ignore this warning.
+43,relion_cta,CTA1065,/src/acc/cuda/cuda_kernels/helper.dp.hpp,"CTA1065:117: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",178
-29,relion_cta,CTA1065,/src/acc/cuda/cuda_kernels/helper.dp.hpp,"CTA1065:121: CTA recommended to ignore this warning.
+44,relion_cta,CTA1065,/src/acc/cuda/cuda_kernels/helper.dp.hpp,"CTA1065:121: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",690
-30,relion_cta,CTA1065,/src/acc/cuda/cuda_kernels/helper.dp.hpp,"CTA1065:122: CTA recommended to ignore this warning.
+45,relion_cta,CTA1065,/src/acc/cuda/cuda_kernels/helper.dp.hpp,"CTA1065:122: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",702
-31,relion_cta,CTA1039,/src/acc/cuda/cuda_kernels/helper.dp.hpp,"CTA1039:123: Base on the experience, strongly recommended to leave the code as it is
-and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
-replace the atomic function name with an atomic function name that includes the template parameters.",1089
-32,relion_cta,CTA1039,/src/acc/cuda/cuda_kernels/helper.dp.hpp,"CTA1039:124: Base on the experience, strongly recommended to leave the code as it is
-and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
-replace the atomic function name with an atomic function name that includes the template parameters.",1098
-33,relion_cta,CTA1039,/src/acc/cuda/cuda_kernels/cuda_device_utils.dp.hpp,"CTA1039:110: Base on the experience, strongly recommended to leave the code as it is
-and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
-replace the atomic function name with an atomic function name that includes the template parameters.",25
+46,relion_cta,CTA1017,/src/acc/cuda/cuda_kernels/helper.dp.cpp,"CTA1017:230: The sycl: sincos call is used instead of the sincosf call. These two calls do not provide exactly the same functionality.
+Check thepotential precision and/or performance issues for the generated code.
+2/2 1017 warnings in CTA analysis data pool choose not to change anything.",634
+47,relion_cta,CTA1017,/src/acc/cuda/cuda_kernels/helper.dp.cpp,"CTA1017:231: The sycl: sincos call is used instead of the sincosf call. These two calls do not provide exactly the same functionality.
+Check thepotential precision and/or performance issues for the generated code.
+2/2 1017 warnings in CTA analysis data pool choose not to change anything.",679
+48,relion_cta,CTA1017,/src/acc/cuda/cuda_kernels/helper.dp.cpp,"CTA1017:217: The sycl: sincos call is used instead of the sincosf call. These two calls do not provide exactly the same functionality.
+Check thepotential precision and/or performance issues for the generated code.
+2/2 1017 warnings in CTA analysis data pool choose not to change anything.",873
+49,relion_cta,CTA1017,/src/acc/cuda/cuda_kernels/helper.dp.cpp,"CTA1017:218: The sycl: sincos call is used instead of the sincosf call. These two calls do not provide exactly the same functionality.
+Check thepotential precision and/or performance issues for the generated code.
+2/2 1017 warnings in CTA analysis data pool choose not to change anything.",937
+50,relion_cta,CTA1017,/src/acc/cuda/cuda_kernels/helper.dp.cpp,"CTA1017:219: The sycl: sincos call is used instead of the sincosf call. These two calls do not provide exactly the same functionality.
+Check thepotential precision and/or performance issues for the generated code.
+2/2 1017 warnings in CTA analysis data pool choose not to change anything.",945
+51,relion_cta,CTA1017,/src/acc/cuda/cuda_kernels/helper.dp.cpp,"CTA1017:220: The sycl: sincos call is used instead of the sincosf call. These two calls do not provide exactly the same functionality.
+Check thepotential precision and/or performance issues for the generated code.
+2/2 1017 warnings in CTA analysis data pool choose not to change anything.",953
+52,relion_cta,CTA1017,/src/acc/cuda/cuda_kernels/cuda_device_utils.dp.hpp,"CTA1017:111: The sycl: sincos call is used instead of the sincosf call. These two calls do not provide exactly the same functionality.
+Check thepotential precision and/or performance issues for the generated code.
+2/2 1017 warnings in CTA analysis data pool choose not to change anything.",125
+53,relion_cta,CTA1017,/src/acc/cuda/cuda_kernels/cuda_device_utils.dp.hpp,"CTA1017:112: The sycl: sincos call is used instead of the sincosf call. These two calls do not provide exactly the same functionality.
+Check thepotential precision and/or performance issues for the generated code.
+2/2 1017 warnings in CTA analysis data pool choose not to change anything.",148
+54,relion_cta,CTA1039,/src/acc/cuda/cuda_kernels/helper.dp.hpp,"CTA1039:123: Based on analysed sample data, strongly recommended to leave the code as it is
+and ignore this warning （27/32 cases）. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.（5/32 cases）",1089
+55,relion_cta,CTA1039,/src/acc/cuda/cuda_kernels/helper.dp.hpp,"CTA1039:124: Based on analysed sample data, strongly recommended to leave the code as it is
+and ignore this warning （27/32 cases）. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.（5/32 cases）",1098
+56,relion_cta,CTA1039,/src/acc/cuda/cuda_kernels/cuda_device_utils.dp.hpp,"CTA1039:110: Based on analysed sample data, strongly recommended to leave the code as it is
+and ignore this warning （27/32 cases）. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.（5/32 cases）",25
