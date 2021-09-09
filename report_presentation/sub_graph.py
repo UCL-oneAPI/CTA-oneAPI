@@ -2,7 +2,6 @@ from pathlib import Path
 
 
 def add_images(report_root):
-    # cwd = Path.cwd()
     image_path = Path.joinpath(Path(report_root), 'images')
     html = """
     <html lang="en">
@@ -23,6 +22,3 @@ def add_images(report_root):
     </html>
     """
     return html
-
-# with open('subgraphs.html', 'w') as f:
-#     f.write(add_images())
