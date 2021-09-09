@@ -179,13 +179,13 @@ but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",994
-36,cta-version,CTA1000,heat/.../heat.dp.cpp,"CTA1000:1: Base on the experience, strongly recommended to ignore this warning.",180
-37,cta-version,CTA1000,heat/.../heat.dp.cpp,"CTA1000:3: Base on the experience, strongly recommended to ignore this warning.",234
-38,cta-version,CTA1001,heat/.../heat.dp.cpp,"CTA1001:0: Base on the experience, strongly recommended to ignore this warning.",184
-39,cta-version,CTA1001,heat/.../heat.dp.cpp,"CTA1001:2: Base on the experience, strongly recommended to ignore this warning.",238
-40,cta-version,CTA1039,all-pairs-distance/.../main.dp.cpp,"CTA1039:0: Base on the experience, strongly recommended to leave the code as it is
-and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
-replace the atomic function name with an atomic function name that includes the template parameters.",68
+36,cta-version,CTA1000,heat/.../heat.dp.cpp,"CTA1000:1: Based on analysed sample data, this warning was ignored in 9/9 cases，strongly recommended to ignore this warning.",180
+37,cta-version,CTA1000,heat/.../heat.dp.cpp,"CTA1000:3: Based on analysed sample data, this warning was ignored in 9/9 cases，strongly recommended to ignore this warning.",234
+38,cta-version,CTA1001,heat/.../heat.dp.cpp,"CTA1001:0: Based on analysed sample data, this warning was ignored in 9/9 cases，strongly recommended to ignore this warning.",184
+39,cta-version,CTA1001,heat/.../heat.dp.cpp,"CTA1001:2: Based on analysed sample data, this warning was ignored in 9/9 cases，strongly recommended to ignore this warning.",238
+40,cta-version,CTA1039,all-pairs-distance/.../main.dp.cpp,"CTA1039:0: Based on analysed sample data, strongly recommended to leave the code as it is
+and ignore this warning （27/32 cases）. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.（5/32 cases）",68
 41,cta-version,CTA1065,all-pairs-distance/.../main.dp.cpp,"CTA1065:1: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
@@ -262,7 +262,7 @@ with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",37
 56,cta-version,CTA1008,simplemoc/.../init.dp.cpp,"CTA1008:0: The clock function is not defined in DPC++, you can leave the code as it is for now.
-And consult with your hardware vendor to find a replacement.",117
+And consult with your hardware vendor to find a replacement. 15/15 1008 warnings in CTA analysis data pool choose not to change anything.",117
 57,cta-version,CTA1065,pathfinder/.../main.dp.cpp,"CTA1065:0: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
@@ -398,27 +398,27 @@ but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",48
-84,cta-version,CTA1039,randomAccess/.../main.dp.cpp,"CTA1039:0: Base on the experience, strongly recommended to leave the code as it is
-and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
-replace the atomic function name with an atomic function name that includes the template parameters.",79
-85,cta-version,CTA1000,chi2/.../chi2.dp.cpp,"CTA1000:1: Base on the experience, strongly recommended to ignore this warning.",217
-86,cta-version,CTA1000,chi2/.../chi2.dp.cpp,"CTA1000:3: Base on the experience, strongly recommended to ignore this warning.",231
-87,cta-version,CTA1000,chi2/.../chi2.dp.cpp,"CTA1000:5: Base on the experience, strongly recommended to ignore this warning.",248
-88,cta-version,CTA1000,chi2/.../chi2.dp.cpp,"CTA1000:7: Base on the experience, strongly recommended to ignore this warning.",287
-89,cta-version,CTA1001,chi2/.../chi2.dp.cpp,"CTA1001:0: Base on the experience, strongly recommended to ignore this warning.",222
-90,cta-version,CTA1001,chi2/.../chi2.dp.cpp,"CTA1001:2: Base on the experience, strongly recommended to ignore this warning.",236
-91,cta-version,CTA1001,chi2/.../chi2.dp.cpp,"CTA1001:4: Base on the experience, strongly recommended to ignore this warning.",253
-92,cta-version,CTA1001,chi2/.../chi2.dp.cpp,"CTA1001:6: Base on the experience, strongly recommended to ignore this warning.",292
-93,cta-version,CTA1000,memcpy/.../main.dp.cpp,"CTA1000:1: Base on the experience, strongly recommended to ignore this warning.",42
-94,cta-version,CTA1001,memcpy/.../main.dp.cpp,"CTA1001:0: Base on the experience, strongly recommended to ignore this warning.",46
+84,cta-version,CTA1039,randomAccess/.../main.dp.cpp,"CTA1039:0: Based on analysed sample data, strongly recommended to leave the code as it is
+and ignore this warning （27/32 cases）. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.（5/32 cases）",79
+85,cta-version,CTA1000,chi2/.../chi2.dp.cpp,"CTA1000:1: Based on analysed sample data, this warning was ignored in 9/9 cases，strongly recommended to ignore this warning.",217
+86,cta-version,CTA1000,chi2/.../chi2.dp.cpp,"CTA1000:3: Based on analysed sample data, this warning was ignored in 9/9 cases，strongly recommended to ignore this warning.",231
+87,cta-version,CTA1000,chi2/.../chi2.dp.cpp,"CTA1000:5: Based on analysed sample data, this warning was ignored in 9/9 cases，strongly recommended to ignore this warning.",248
+88,cta-version,CTA1000,chi2/.../chi2.dp.cpp,"CTA1000:7: Based on analysed sample data, this warning was ignored in 9/9 cases，strongly recommended to ignore this warning.",287
+89,cta-version,CTA1001,chi2/.../chi2.dp.cpp,"CTA1001:0: Based on analysed sample data, this warning was ignored in 9/9 cases，strongly recommended to ignore this warning.",222
+90,cta-version,CTA1001,chi2/.../chi2.dp.cpp,"CTA1001:2: Based on analysed sample data, this warning was ignored in 9/9 cases，strongly recommended to ignore this warning.",236
+91,cta-version,CTA1001,chi2/.../chi2.dp.cpp,"CTA1001:4: Based on analysed sample data, this warning was ignored in 9/9 cases，strongly recommended to ignore this warning.",253
+92,cta-version,CTA1001,chi2/.../chi2.dp.cpp,"CTA1001:6: Based on analysed sample data, this warning was ignored in 9/9 cases，strongly recommended to ignore this warning.",292
+93,cta-version,CTA1000,memcpy/.../main.dp.cpp,"CTA1000:1: Based on analysed sample data, this warning was ignored in 9/9 cases，strongly recommended to ignore this warning.",42
+94,cta-version,CTA1001,memcpy/.../main.dp.cpp,"CTA1001:0: Based on analysed sample data, this warning was ignored in 9/9 cases，strongly recommended to ignore this warning.",46
 95,cta-version,CTA1008,memcpy/.../main.dp.cpp,"CTA1008:3: The clock function is not defined in DPC++, you can leave the code as it is for now.
-And consult with your hardware vendor to find a replacement.",57
+And consult with your hardware vendor to find a replacement. 15/15 1008 warnings in CTA analysis data pool choose not to change anything.",57
 96,cta-version,CTA1008,memcpy/.../main.dp.cpp,"CTA1008:4: The clock function is not defined in DPC++, you can leave the code as it is for now.
-And consult with your hardware vendor to find a replacement.",66
+And consult with your hardware vendor to find a replacement. 15/15 1008 warnings in CTA analysis data pool choose not to change anything.",66
 97,cta-version,CTA1008,memcpy/.../main.dp.cpp,"CTA1008:5: The clock function is not defined in DPC++, you can leave the code as it is for now.
-And consult with your hardware vendor to find a replacement.",75
+And consult with your hardware vendor to find a replacement. 15/15 1008 warnings in CTA analysis data pool choose not to change anything.",75
 98,cta-version,CTA1008,memcpy/.../main.dp.cpp,"CTA1008:6: The clock function is not defined in DPC++, you can leave the code as it is for now.
-And consult with your hardware vendor to find a replacement.",84
+And consult with your hardware vendor to find a replacement. 15/15 1008 warnings in CTA analysis data pool choose not to change anything.",84
 99,cta-version,CTA1065,transpose/.../main.dp.cpp,"CTA1065:0: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
@@ -454,19 +454,19 @@ but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",253
-106,cta-version,CTA1039,fpc/.../main.dp.cpp,"CTA1039:2: Base on the experience, strongly recommended to leave the code as it is
-and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
-replace the atomic function name with an atomic function name that includes the template parameters.",187
-107,cta-version,CTA1039,fpc/.../main.dp.cpp,"CTA1039:5: Base on the experience, strongly recommended to leave the code as it is
-and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
-replace the atomic function name with an atomic function name that includes the template parameters.",262
+106,cta-version,CTA1039,fpc/.../main.dp.cpp,"CTA1039:2: Based on analysed sample data, strongly recommended to leave the code as it is
+and ignore this warning （27/32 cases）. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.（5/32 cases）",187
+107,cta-version,CTA1039,fpc/.../main.dp.cpp,"CTA1039:5: Based on analysed sample data, strongly recommended to leave the code as it is
+and ignore this warning （27/32 cases）. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.（5/32 cases）",262
 108,cta-version,CTA1065,deredundancy/.../kernels.dp.cpp,"CTA1065:0: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",502
-109,cta-version,CTA1000,inversek2j/.../main.dp.cpp,"CTA1000:1: Base on the experience, strongly recommended to ignore this warning.",301
-110,cta-version,CTA1001,inversek2j/.../main.dp.cpp,"CTA1001:0: Base on the experience, strongly recommended to ignore this warning.",305
+109,cta-version,CTA1000,inversek2j/.../main.dp.cpp,"CTA1000:1: Based on analysed sample data, this warning was ignored in 9/9 cases，strongly recommended to ignore this warning.",301
+110,cta-version,CTA1001,inversek2j/.../main.dp.cpp,"CTA1001:0: Based on analysed sample data, this warning was ignored in 9/9 cases，strongly recommended to ignore this warning.",305
 111,cta-version,CTA1065,sampling/.../kernels.dp.cpp,"CTA1065:0: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
@@ -672,14 +672,14 @@ but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",217
-152,cta-version,CTA1032,vmc/.../vmc.dp.cpp,"CTA1032:0: Base on the experience, recommended to ignore this warning. If it didn't work, adjust the code.",34
-153,cta-version,CTA1032,vmc/.../vmc.dp.cpp,"CTA1032:1: Base on the experience, recommended to ignore this warning. If it didn't work, adjust the code.",40
-154,cta-version,CTA1032,vmc/.../vmc.dp.cpp,"CTA1032:2: Base on the experience, recommended to ignore this warning. If it didn't work, adjust the code.",50
-155,cta-version,CTA1032,vmc/.../vmc.dp.cpp,"CTA1032:6: Base on the experience, recommended to ignore this warning. If it didn't work, adjust the code.",170
-156,cta-version,CTA1032,vmc/.../vmc.dp.cpp,"CTA1032:7: Base on the experience, recommended to ignore this warning. If it didn't work, adjust the code.",193
-157,cta-version,CTA1032,vmc/.../vmc.dp.cpp,"CTA1032:8: Base on the experience, recommended to ignore this warning. If it didn't work, adjust the code.",213
-158,cta-version,CTA1032,vmc/.../vmc.dp.cpp,"CTA1032:9: Base on the experience, recommended to ignore this warning. If it didn't work, adjust the code.",269
-159,cta-version,CTA1032,vmc/.../vmc.dp.cpp,"CTA1032:21: Base on the experience, recommended to ignore this warning. If it didn't work, adjust the code.",285
+152,cta-version,CTA1032,vmc/.../vmc.dp.cpp,"CTA1032:0: Based on analysed sample data, recommended to ignore this warning（5/8 cases）. If it didn't work, adjust the code.",34
+153,cta-version,CTA1032,vmc/.../vmc.dp.cpp,"CTA1032:1: Based on analysed sample data, recommended to ignore this warning（5/8 cases）. If it didn't work, adjust the code.",40
+154,cta-version,CTA1032,vmc/.../vmc.dp.cpp,"CTA1032:2: Based on analysed sample data, recommended to ignore this warning（5/8 cases）. If it didn't work, adjust the code.",50
+155,cta-version,CTA1032,vmc/.../vmc.dp.cpp,"CTA1032:6: Based on analysed sample data, recommended to ignore this warning（5/8 cases）. If it didn't work, adjust the code.",170
+156,cta-version,CTA1032,vmc/.../vmc.dp.cpp,"CTA1032:7: Based on analysed sample data, recommended to ignore this warning（5/8 cases）. If it didn't work, adjust the code.",193
+157,cta-version,CTA1032,vmc/.../vmc.dp.cpp,"CTA1032:8: Based on analysed sample data, recommended to ignore this warning（5/8 cases）. If it didn't work, adjust the code.",213
+158,cta-version,CTA1032,vmc/.../vmc.dp.cpp,"CTA1032:9: Based on analysed sample data, recommended to ignore this warning（5/8 cases）. If it didn't work, adjust the code.",269
+159,cta-version,CTA1032,vmc/.../vmc.dp.cpp,"CTA1032:21: Based on analysed sample data, recommended to ignore this warning（5/8 cases）. If it didn't work, adjust the code.",285
 160,cta-version,CTA1065,vmc/.../vmc.dp.cpp,"CTA1065:4: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
@@ -800,58 +800,58 @@ but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",89
-184,cta-version,CTA1039,minisweep/.../kernels.dp.cpp,"CTA1039:0: Base on the experience, strongly recommended to leave the code as it is
-and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
-replace the atomic function name with an atomic function name that includes the template parameters.",342
+184,cta-version,CTA1039,minisweep/.../kernels.dp.cpp,"CTA1039:0: Based on analysed sample data, strongly recommended to leave the code as it is
+and ignore this warning （27/32 cases）. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.（5/32 cases）",342
 185,cta-version,CTA1065,ldpc/.../kernel.dp.cpp,"CTA1065:0: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",212
-186,cta-version,CTA1039,jaccard/.../main.dp.cpp,"CTA1039:0: Base on the experience, strongly recommended to leave the code as it is
-and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
-replace the atomic function name with an atomic function name that includes the template parameters.",164
+186,cta-version,CTA1039,jaccard/.../main.dp.cpp,"CTA1039:0: Based on analysed sample data, strongly recommended to leave the code as it is
+and ignore this warning （27/32 cases）. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.（5/32 cases）",164
 187,cta-version,CTA1065,grep/.../pnfa.dp.cpp,"CTA1065:0: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",232
-188,cta-version,CTA1039,sssp/.../main.dp.cpp,"CTA1039:4: Base on the experience, strongly recommended to leave the code as it is
-and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
-replace the atomic function name with an atomic function name that includes the template parameters.",181
-189,cta-version,CTA1039,sssp/.../main.dp.cpp,"CTA1039:5: Base on the experience, strongly recommended to leave the code as it is
-and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
-replace the atomic function name with an atomic function name that includes the template parameters.",189
-190,cta-version,CTA1039,sssp/.../main.dp.cpp,"CTA1039:6: Base on the experience, strongly recommended to leave the code as it is
-and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
-replace the atomic function name with an atomic function name that includes the template parameters.",196
-191,cta-version,CTA1039,sssp/.../main.dp.cpp,"CTA1039:7: Base on the experience, strongly recommended to leave the code as it is
-and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
-replace the atomic function name with an atomic function name that includes the template parameters.",211
-192,cta-version,CTA1039,sssp/.../main.dp.cpp,"CTA1039:12: Base on the experience, strongly recommended to leave the code as it is
-and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
-replace the atomic function name with an atomic function name that includes the template parameters.",234
-193,cta-version,CTA1039,sssp/.../main.dp.cpp,"CTA1039:13: Base on the experience, strongly recommended to leave the code as it is
-and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
-replace the atomic function name with an atomic function name that includes the template parameters.",282
-194,cta-version,CTA1039,sssp/.../main.dp.cpp,"CTA1039:14: Base on the experience, strongly recommended to leave the code as it is
-and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
-replace the atomic function name with an atomic function name that includes the template parameters.",288
-195,cta-version,CTA1039,sssp/.../main.dp.cpp,"CTA1039:15: Base on the experience, strongly recommended to leave the code as it is
-and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
-replace the atomic function name with an atomic function name that includes the template parameters.",308
-196,cta-version,CTA1039,sssp/.../main.dp.cpp,"CTA1039:16: Base on the experience, strongly recommended to leave the code as it is
-and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
-replace the atomic function name with an atomic function name that includes the template parameters.",317
-197,cta-version,CTA1039,sssp/.../main.dp.cpp,"CTA1039:17: Base on the experience, strongly recommended to leave the code as it is
-and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
-replace the atomic function name with an atomic function name that includes the template parameters.",342
-198,cta-version,CTA1039,sssp/.../main.dp.cpp,"CTA1039:18: Base on the experience, strongly recommended to leave the code as it is
-and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
-replace the atomic function name with an atomic function name that includes the template parameters.",364
-199,cta-version,CTA1039,sssp/.../main.dp.cpp,"CTA1039:19: Base on the experience, strongly recommended to leave the code as it is
-and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
-replace the atomic function name with an atomic function name that includes the template parameters.",390
+188,cta-version,CTA1039,sssp/.../main.dp.cpp,"CTA1039:4: Based on analysed sample data, strongly recommended to leave the code as it is
+and ignore this warning （27/32 cases）. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.（5/32 cases）",181
+189,cta-version,CTA1039,sssp/.../main.dp.cpp,"CTA1039:5: Based on analysed sample data, strongly recommended to leave the code as it is
+and ignore this warning （27/32 cases）. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.（5/32 cases）",189
+190,cta-version,CTA1039,sssp/.../main.dp.cpp,"CTA1039:6: Based on analysed sample data, strongly recommended to leave the code as it is
+and ignore this warning （27/32 cases）. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.（5/32 cases）",196
+191,cta-version,CTA1039,sssp/.../main.dp.cpp,"CTA1039:7: Based on analysed sample data, strongly recommended to leave the code as it is
+and ignore this warning （27/32 cases）. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.（5/32 cases）",211
+192,cta-version,CTA1039,sssp/.../main.dp.cpp,"CTA1039:12: Based on analysed sample data, strongly recommended to leave the code as it is
+and ignore this warning （27/32 cases）. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.（5/32 cases）",234
+193,cta-version,CTA1039,sssp/.../main.dp.cpp,"CTA1039:13: Based on analysed sample data, strongly recommended to leave the code as it is
+and ignore this warning （27/32 cases）. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.（5/32 cases）",282
+194,cta-version,CTA1039,sssp/.../main.dp.cpp,"CTA1039:14: Based on analysed sample data, strongly recommended to leave the code as it is
+and ignore this warning （27/32 cases）. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.（5/32 cases）",288
+195,cta-version,CTA1039,sssp/.../main.dp.cpp,"CTA1039:15: Based on analysed sample data, strongly recommended to leave the code as it is
+and ignore this warning （27/32 cases）. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.（5/32 cases）",308
+196,cta-version,CTA1039,sssp/.../main.dp.cpp,"CTA1039:16: Based on analysed sample data, strongly recommended to leave the code as it is
+and ignore this warning （27/32 cases）. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.（5/32 cases）",317
+197,cta-version,CTA1039,sssp/.../main.dp.cpp,"CTA1039:17: Based on analysed sample data, strongly recommended to leave the code as it is
+and ignore this warning （27/32 cases）. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.（5/32 cases）",342
+198,cta-version,CTA1039,sssp/.../main.dp.cpp,"CTA1039:18: Based on analysed sample data, strongly recommended to leave the code as it is
+and ignore this warning （27/32 cases）. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.（5/32 cases）",364
+199,cta-version,CTA1039,sssp/.../main.dp.cpp,"CTA1039:19: Based on analysed sample data, strongly recommended to leave the code as it is
+and ignore this warning （27/32 cases）. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.（5/32 cases）",390
 200,cta-version,CTA1065,sssp/.../main.dp.cpp,"CTA1065:2: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
@@ -927,559 +927,587 @@ but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",320
-215,cta-version,CTA1008,aobench/.../ao.dp.cpp,"CTA1008:6: The clock function is not defined in DPC++, you can leave the code as it is for now.
-And consult with your hardware vendor to find a replacement.",410
-216,cta-version,CTA1008,aobench/.../ao.dp.cpp,"CTA1008:7: The clock function is not defined in DPC++, you can leave the code as it is for now.
-And consult with your hardware vendor to find a replacement.",418
-217,cta-version,CTA1065,mdh/.../main.dp.cpp,"CTA1065:155: CTA recommended to ignore this warning.
+215,cta-version,CTA1010,aobench/.../ao.dp.cpp,"CTA1010:4: Based on analysed sample data, in 7/9 cases in the sample data, this warning was ignored,
+so strongly recommended to ignore this warning.",380
+216,cta-version,CTA1008,aobench/.../ao.dp.cpp,"CTA1008:6: The clock function is not defined in DPC++, you can leave the code as it is for now.
+And consult with your hardware vendor to find a replacement. 15/15 1008 warnings in CTA analysis data pool choose not to change anything.",409
+217,cta-version,CTA1008,aobench/.../ao.dp.cpp,"CTA1008:7: The clock function is not defined in DPC++, you can leave the code as it is for now.
+And consult with your hardware vendor to find a replacement. 15/15 1008 warnings in CTA analysis data pool choose not to change anything.",417
+218,cta-version,CTA1065,mdh/.../main.dp.cpp,"CTA1065:155: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",99
-218,cta-version,CTA1065,mdh/.../main.dp.cpp,"CTA1065:156: CTA recommended to ignore this warning.
+219,cta-version,CTA1065,mdh/.../main.dp.cpp,"CTA1065:156: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",131
-219,cta-version,CTA1065,mdh/.../main.dp.cpp,"CTA1065:157: CTA recommended to ignore this warning.
+220,cta-version,CTA1065,mdh/.../main.dp.cpp,"CTA1065:157: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",182
-220,cta-version,CTA1065,mdh/.../main.dp.cpp,"CTA1065:158: CTA recommended to ignore this warning.
+221,cta-version,CTA1065,mdh/.../main.dp.cpp,"CTA1065:158: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",213
-221,cta-version,CTA1065,srad/.../reduce_kernel.dp.cpp,"CTA1065:0: CTA recommended to ignore this warning.
+222,cta-version,CTA1065,srad/.../reduce_kernel.dp.cpp,"CTA1065:0: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",37
-222,cta-version,CTA1065,srad/.../reduce_kernel.dp.cpp,"CTA1065:1: CTA recommended to ignore this warning.
+223,cta-version,CTA1065,srad/.../reduce_kernel.dp.cpp,"CTA1065:1: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",57
-223,cta-version,CTA1065,srad/.../reduce_kernel.dp.cpp,"CTA1065:2: CTA recommended to ignore this warning.
+224,cta-version,CTA1065,srad/.../reduce_kernel.dp.cpp,"CTA1065:2: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",84
-224,cta-version,CTA1065,srad/.../reduce_kernel.dp.cpp,"CTA1065:3: CTA recommended to ignore this warning.
+225,cta-version,CTA1065,srad/.../reduce_kernel.dp.cpp,"CTA1065:3: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",115
-225,cta-version,CTA1065,convolutionSeparable/.../conv.dp.cpp,"CTA1065:0: CTA recommended to ignore this warning.
+226,cta-version,CTA1065,convolutionSeparable/.../conv.dp.cpp,"CTA1065:0: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",62
-226,cta-version,CTA1065,convolutionSeparable/.../conv.dp.cpp,"CTA1065:1: CTA recommended to ignore this warning.
+227,cta-version,CTA1065,convolutionSeparable/.../conv.dp.cpp,"CTA1065:1: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",115
-227,cta-version,CTA1000,reduction/.../reduction.dp.cpp,"CTA1000:1: Base on the experience, strongly recommended to ignore this warning.",43
-228,cta-version,CTA1001,reduction/.../reduction.dp.cpp,"CTA1001:0: Base on the experience, strongly recommended to ignore this warning.",48
-229,cta-version,CTA1039,reduction/.../reduction.dp.cpp,"CTA1039:4: Base on the experience, strongly recommended to leave the code as it is
-and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
-replace the atomic function name with an atomic function name that includes the template parameters.",72
-230,cta-version,CTA1039,reduction/.../reduction.dp.cpp,"CTA1039:5: Base on the experience, strongly recommended to leave the code as it is
-and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
-replace the atomic function name with an atomic function name that includes the template parameters.",90
-231,cta-version,CTA1039,reduction/.../reduction.dp.cpp,"CTA1039:6: Base on the experience, strongly recommended to leave the code as it is
-and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
-replace the atomic function name with an atomic function name that includes the template parameters.",108
-232,cta-version,CTA1039,reduction/.../reduction.dp.cpp,"CTA1039:7: Base on the experience, strongly recommended to leave the code as it is
-and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
-replace the atomic function name with an atomic function name that includes the template parameters.",125
-233,cta-version,CTA1039,reduction/.../reduction.dp.cpp,"CTA1039:8: Base on the experience, strongly recommended to leave the code as it is
-and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
-replace the atomic function name with an atomic function name that includes the template parameters.",144
-234,cta-version,CTA1065,dxtc1/.../kernel.dp.cpp,"CTA1065:11: CTA recommended to ignore this warning.
+228,cta-version,CTA1010,reduction/.../reduction.dp.cpp,"CTA1010:2: Based on analysed sample data, in 7/9 cases in the sample data, this warning was ignored,
+so strongly recommended to ignore this warning.",38
+229,cta-version,CTA1000,reduction/.../reduction.dp.cpp,"CTA1000:1: Based on analysed sample data, this warning was ignored in 9/9 cases，strongly recommended to ignore this warning.",43
+230,cta-version,CTA1001,reduction/.../reduction.dp.cpp,"CTA1001:0: Based on analysed sample data, this warning was ignored in 9/9 cases，strongly recommended to ignore this warning.",48
+231,cta-version,CTA1009,reduction/.../reduction.dp.cpp,"CTA1009:3: SYCL uses exceptions to report errors and does not use the error codes.
+The original code was commented out and a warning string was inserted. You need to rewrite this code（1/2 cases）",52
+232,cta-version,CTA1039,reduction/.../reduction.dp.cpp,"CTA1039:4: Based on analysed sample data, strongly recommended to leave the code as it is
+and ignore this warning （27/32 cases）. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.（5/32 cases）",71
+233,cta-version,CTA1039,reduction/.../reduction.dp.cpp,"CTA1039:5: Based on analysed sample data, strongly recommended to leave the code as it is
+and ignore this warning （27/32 cases）. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.（5/32 cases）",89
+234,cta-version,CTA1039,reduction/.../reduction.dp.cpp,"CTA1039:6: Based on analysed sample data, strongly recommended to leave the code as it is
+and ignore this warning （27/32 cases）. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.（5/32 cases）",107
+235,cta-version,CTA1039,reduction/.../reduction.dp.cpp,"CTA1039:7: Based on analysed sample data, strongly recommended to leave the code as it is
+and ignore this warning （27/32 cases）. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.（5/32 cases）",124
+236,cta-version,CTA1039,reduction/.../reduction.dp.cpp,"CTA1039:8: Based on analysed sample data, strongly recommended to leave the code as it is
+and ignore this warning （27/32 cases）. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.（5/32 cases）",143
+237,cta-version,CTA1010,flame/.../utils.dp.cpp,"CTA1010:0: Based on analysed sample data, in 7/9 cases in the sample data, this warning was ignored,
+so strongly recommended to ignore this warning.",82
+238,cta-version,CTA1010,clenergy/.../clenergy.dp.cpp,"CTA1010:0: Based on analysed sample data, in 7/9 cases in the sample data, this warning was ignored,
+so strongly recommended to ignore this warning.",19
+239,cta-version,CTA1009,clenergy/.../clenergy.dp.cpp,"CTA1009:1: SYCL uses exceptions to report errors and does not use the error codes.
+The original code was commented out and a warning string was inserted. You need to rewrite this code（1/2 cases）",23
+240,cta-version,CTA1065,dxtc1/.../kernel.dp.cpp,"CTA1065:11: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",498
-235,cta-version,CTA1065,dxtc1/.../kernel.dp.cpp,"CTA1065:9: CTA recommended to ignore this warning.
+241,cta-version,CTA1065,dxtc1/.../kernel.dp.cpp,"CTA1065:9: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",519
-236,cta-version,CTA1065,dxtc1/.../kernel.dp.cpp,"CTA1065:10: CTA recommended to ignore this warning.
+242,cta-version,CTA1065,dxtc1/.../kernel.dp.cpp,"CTA1065:10: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",557
-237,cta-version,CTA1065,dxtc1/.../main.dp.cpp,"CTA1065:12: CTA recommended to ignore this warning.
+243,cta-version,CTA1065,dxtc1/.../main.dp.cpp,"CTA1065:12: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",43
-238,cta-version,CTA1065,dxtc1/.../main.dp.cpp,"CTA1065:13: CTA recommended to ignore this warning.
+244,cta-version,CTA1065,dxtc1/.../main.dp.cpp,"CTA1065:13: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",59
-239,cta-version,CTA1008,bn/.../main.dp.cpp,"CTA1008:5: The clock function is not defined in DPC++, you can leave the code as it is for now.
-And consult with your hardware vendor to find a replacement.",91
-240,cta-version,CTA1008,bn/.../main.dp.cpp,"CTA1008:6: The clock function is not defined in DPC++, you can leave the code as it is for now.
-And consult with your hardware vendor to find a replacement.",125
-241,cta-version,CTA1008,bn/.../main.dp.cpp,"CTA1008:7: The clock function is not defined in DPC++, you can leave the code as it is for now.
-And consult with your hardware vendor to find a replacement.",133
-242,cta-version,CTA1008,bn/.../main.dp.cpp,"CTA1008:8: The clock function is not defined in DPC++, you can leave the code as it is for now.
-And consult with your hardware vendor to find a replacement.",154
-243,cta-version,CTA1065,bn/.../kernels.dp.cpp,"CTA1065:0: CTA recommended to ignore this warning.
+245,cta-version,CTA1008,bn/.../main.dp.cpp,"CTA1008:5: The clock function is not defined in DPC++, you can leave the code as it is for now.
+And consult with your hardware vendor to find a replacement. 15/15 1008 warnings in CTA analysis data pool choose not to change anything.",91
+246,cta-version,CTA1008,bn/.../main.dp.cpp,"CTA1008:6: The clock function is not defined in DPC++, you can leave the code as it is for now.
+And consult with your hardware vendor to find a replacement. 15/15 1008 warnings in CTA analysis data pool choose not to change anything.",125
+247,cta-version,CTA1008,bn/.../main.dp.cpp,"CTA1008:7: The clock function is not defined in DPC++, you can leave the code as it is for now.
+And consult with your hardware vendor to find a replacement. 15/15 1008 warnings in CTA analysis data pool choose not to change anything.",133
+248,cta-version,CTA1008,bn/.../main.dp.cpp,"CTA1008:8: The clock function is not defined in DPC++, you can leave the code as it is for now.
+And consult with your hardware vendor to find a replacement. 15/15 1008 warnings in CTA analysis data pool choose not to change anything.",154
+249,cta-version,CTA1065,bn/.../kernels.dp.cpp,"CTA1065:0: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",152
-244,cta-version,CTA1065,bn/.../kernels.dp.cpp,"CTA1065:3: CTA recommended to ignore this warning.
+250,cta-version,CTA1065,bn/.../kernels.dp.cpp,"CTA1065:3: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",180
-245,cta-version,CTA1065,bn/.../kernels.dp.cpp,"CTA1065:1: CTA recommended to ignore this warning.
+251,cta-version,CTA1065,bn/.../kernels.dp.cpp,"CTA1065:1: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",190
-246,cta-version,CTA1065,bn/.../kernels.dp.cpp,"CTA1065:2: CTA recommended to ignore this warning.
+252,cta-version,CTA1065,bn/.../kernels.dp.cpp,"CTA1065:2: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",212
-247,cta-version,CTA1065,nw/.../nw.dp.cpp,"CTA1065:0: CTA recommended to ignore this warning.
+253,cta-version,CTA1065,nw/.../nw.dp.cpp,"CTA1065:0: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",107
-248,cta-version,CTA1065,nw/.../nw.dp.cpp,"CTA1065:1: CTA recommended to ignore this warning.
+254,cta-version,CTA1065,nw/.../nw.dp.cpp,"CTA1065:1: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",119
-249,cta-version,CTA1065,nw/.../nw.dp.cpp,"CTA1065:2: CTA recommended to ignore this warning.
+255,cta-version,CTA1065,nw/.../nw.dp.cpp,"CTA1065:2: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",130
-250,cta-version,CTA1065,nw/.../nw.dp.cpp,"CTA1065:3: CTA recommended to ignore this warning.
+256,cta-version,CTA1065,nw/.../nw.dp.cpp,"CTA1065:3: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",141
-251,cta-version,CTA1065,nw/.../nw.dp.cpp,"CTA1065:5: CTA recommended to ignore this warning.
+257,cta-version,CTA1065,nw/.../nw.dp.cpp,"CTA1065:5: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",159
-252,cta-version,CTA1065,nw/.../nw.dp.cpp,"CTA1065:4: CTA recommended to ignore this warning.
+258,cta-version,CTA1065,nw/.../nw.dp.cpp,"CTA1065:4: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",169
-253,cta-version,CTA1065,nw/.../nw.dp.cpp,"CTA1065:6: CTA recommended to ignore this warning.
+259,cta-version,CTA1065,nw/.../nw.dp.cpp,"CTA1065:6: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",191
-254,cta-version,CTA1065,nw/.../nw.dp.cpp,"CTA1065:7: CTA recommended to ignore this warning.
+260,cta-version,CTA1065,nw/.../nw.dp.cpp,"CTA1065:7: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",232
-255,cta-version,CTA1065,nw/.../nw.dp.cpp,"CTA1065:8: CTA recommended to ignore this warning.
+261,cta-version,CTA1065,nw/.../nw.dp.cpp,"CTA1065:8: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",243
-256,cta-version,CTA1065,nw/.../nw.dp.cpp,"CTA1065:9: CTA recommended to ignore this warning.
+262,cta-version,CTA1065,nw/.../nw.dp.cpp,"CTA1065:9: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",254
-257,cta-version,CTA1065,nw/.../nw.dp.cpp,"CTA1065:10: CTA recommended to ignore this warning.
+263,cta-version,CTA1065,nw/.../nw.dp.cpp,"CTA1065:10: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",274
-258,cta-version,CTA1065,nw/.../nw.dp.cpp,"CTA1065:11: CTA recommended to ignore this warning.
+264,cta-version,CTA1065,nw/.../nw.dp.cpp,"CTA1065:11: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",296
-259,cta-version,CTA1065,rng-wallace/.../wallace_kernel.dp.cpp,"CTA1065:0: CTA recommended to ignore this warning.
+265,cta-version,CTA1065,rng-wallace/.../wallace_kernel.dp.cpp,"CTA1065:0: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",60
-260,cta-version,CTA1065,rng-wallace/.../wallace_kernel.dp.cpp,"CTA1065:2: CTA recommended to ignore this warning.
+266,cta-version,CTA1065,rng-wallace/.../wallace_kernel.dp.cpp,"CTA1065:2: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",86
-261,cta-version,CTA1065,rng-wallace/.../wallace_kernel.dp.cpp,"CTA1065:3: CTA recommended to ignore this warning.
+267,cta-version,CTA1065,rng-wallace/.../wallace_kernel.dp.cpp,"CTA1065:3: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",108
-262,cta-version,CTA1065,rng-wallace/.../wallace_kernel.dp.cpp,"CTA1065:4: CTA recommended to ignore this warning.
+268,cta-version,CTA1065,rng-wallace/.../wallace_kernel.dp.cpp,"CTA1065:4: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",133
-263,cta-version,CTA1065,rng-wallace/.../wallace_kernel.dp.cpp,"CTA1065:5: CTA recommended to ignore this warning.
+269,cta-version,CTA1065,rng-wallace/.../wallace_kernel.dp.cpp,"CTA1065:5: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",154
-264,cta-version,CTA1065,rng-wallace/.../wallace_kernel.dp.cpp,"CTA1065:1: CTA recommended to ignore this warning.
+270,cta-version,CTA1065,rng-wallace/.../wallace_kernel.dp.cpp,"CTA1065:1: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",165
-265,cta-version,CTA1039,gd/.../main.dp.cpp,"CTA1039:0: Base on the experience, strongly recommended to leave the code as it is
-and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
-replace the atomic function name with an atomic function name that includes the template parameters.",17
-266,cta-version,CTA1039,gd/.../main.dp.cpp,"CTA1039:1: Base on the experience, strongly recommended to leave the code as it is
-and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
-replace the atomic function name with an atomic function name that includes the template parameters.",50
-267,cta-version,CTA1039,gd/.../main.dp.cpp,"CTA1039:2: Base on the experience, strongly recommended to leave the code as it is
-and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
-replace the atomic function name with an atomic function name that includes the template parameters.",60
-268,cta-version,CTA1039,gd/.../main.dp.cpp,"CTA1039:3: Base on the experience, strongly recommended to leave the code as it is
-and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
-replace the atomic function name with an atomic function name that includes the template parameters.",73
-269,cta-version,CTA1039,ccsd-trpdrv/.../ccsd_tengy.dp.cpp,"CTA1039:0: Base on the experience, strongly recommended to leave the code as it is
-and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
-replace the atomic function name with an atomic function name that includes the template parameters.",56
-270,cta-version,CTA1039,ccsd-trpdrv/.../ccsd_tengy.dp.cpp,"CTA1039:1: Base on the experience, strongly recommended to leave the code as it is
-and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
-replace the atomic function name with an atomic function name that includes the template parameters.",70
-271,cta-version,CTA1039,ccsd-trpdrv/.../ccsd_tengy.dp.cpp,"CTA1039:2: Base on the experience, strongly recommended to leave the code as it is
-and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
-replace the atomic function name with an atomic function name that includes the template parameters.",92
-272,cta-version,CTA1039,ccsd-trpdrv/.../ccsd_tengy.dp.cpp,"CTA1039:3: Base on the experience, strongly recommended to leave the code as it is
-and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
-replace the atomic function name with an atomic function name that includes the template parameters.",104
-273,cta-version,CTA1008,ccsd-trpdrv/.../main.dp.cpp,"CTA1008:0: The clock function is not defined in DPC++, you can leave the code as it is for now.
-And consult with your hardware vendor to find a replacement.",140
-274,cta-version,CTA1008,ccsd-trpdrv/.../main.dp.cpp,"CTA1008:1: The clock function is not defined in DPC++, you can leave the code as it is for now.
-And consult with your hardware vendor to find a replacement.",149
-275,cta-version,CTA1065,scan2/.../main.dp.cpp,"CTA1065:0: CTA recommended to ignore this warning.
+271,cta-version,CTA1039,gd/.../main.dp.cpp,"CTA1039:0: Based on analysed sample data, strongly recommended to leave the code as it is
+and ignore this warning （27/32 cases）. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.（5/32 cases）",17
+272,cta-version,CTA1039,gd/.../main.dp.cpp,"CTA1039:1: Based on analysed sample data, strongly recommended to leave the code as it is
+and ignore this warning （27/32 cases）. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.（5/32 cases）",50
+273,cta-version,CTA1039,gd/.../main.dp.cpp,"CTA1039:2: Based on analysed sample data, strongly recommended to leave the code as it is
+and ignore this warning （27/32 cases）. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.（5/32 cases）",60
+274,cta-version,CTA1039,gd/.../main.dp.cpp,"CTA1039:3: Based on analysed sample data, strongly recommended to leave the code as it is
+and ignore this warning （27/32 cases）. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.（5/32 cases）",73
+275,cta-version,CTA1039,ccsd-trpdrv/.../ccsd_tengy.dp.cpp,"CTA1039:0: Based on analysed sample data, strongly recommended to leave the code as it is
+and ignore this warning （27/32 cases）. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.（5/32 cases）",56
+276,cta-version,CTA1039,ccsd-trpdrv/.../ccsd_tengy.dp.cpp,"CTA1039:1: Based on analysed sample data, strongly recommended to leave the code as it is
+and ignore this warning （27/32 cases）. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.（5/32 cases）",70
+277,cta-version,CTA1039,ccsd-trpdrv/.../ccsd_tengy.dp.cpp,"CTA1039:2: Based on analysed sample data, strongly recommended to leave the code as it is
+and ignore this warning （27/32 cases）. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.（5/32 cases）",92
+278,cta-version,CTA1039,ccsd-trpdrv/.../ccsd_tengy.dp.cpp,"CTA1039:3: Based on analysed sample data, strongly recommended to leave the code as it is
+and ignore this warning （27/32 cases）. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.（5/32 cases）",104
+279,cta-version,CTA1008,ccsd-trpdrv/.../main.dp.cpp,"CTA1008:0: The clock function is not defined in DPC++, you can leave the code as it is for now.
+And consult with your hardware vendor to find a replacement. 15/15 1008 warnings in CTA analysis data pool choose not to change anything.",140
+280,cta-version,CTA1008,ccsd-trpdrv/.../main.dp.cpp,"CTA1008:1: The clock function is not defined in DPC++, you can leave the code as it is for now.
+And consult with your hardware vendor to find a replacement. 15/15 1008 warnings in CTA analysis data pool choose not to change anything.",149
+281,cta-version,CTA1065,scan2/.../main.dp.cpp,"CTA1065:0: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",49
-276,cta-version,CTA1065,scan2/.../main.dp.cpp,"CTA1065:1: CTA recommended to ignore this warning.
+282,cta-version,CTA1065,scan2/.../main.dp.cpp,"CTA1065:1: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",79
-277,cta-version,CTA1065,scan2/.../main.dp.cpp,"CTA1065:2: CTA recommended to ignore this warning.
+283,cta-version,CTA1065,scan2/.../main.dp.cpp,"CTA1065:2: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",100
-278,cta-version,CTA1065,scan2/.../main.dp.cpp,"CTA1065:3: CTA recommended to ignore this warning.
+284,cta-version,CTA1065,scan2/.../main.dp.cpp,"CTA1065:3: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",112
-279,cta-version,CTA1065,scan2/.../main.dp.cpp,"CTA1065:4: CTA recommended to ignore this warning.
+285,cta-version,CTA1065,scan2/.../main.dp.cpp,"CTA1065:4: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",155
-280,cta-version,CTA1065,scan2/.../main.dp.cpp,"CTA1065:5: CTA recommended to ignore this warning.
+286,cta-version,CTA1065,scan2/.../main.dp.cpp,"CTA1065:5: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",176
-281,cta-version,CTA1065,scan2/.../main.dp.cpp,"CTA1065:6: CTA recommended to ignore this warning.
+287,cta-version,CTA1065,scan2/.../main.dp.cpp,"CTA1065:6: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",188
-282,cta-version,CTA1065,nms/.../main.dp.cpp,"CTA1065:0: CTA recommended to ignore this warning.
+288,cta-version,CTA1065,nms/.../main.dp.cpp,"CTA1065:0: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",66
-283,cta-version,CTA1065,recursiveGaussian/.../main.dp.cpp,"CTA1065:155: CTA recommended to ignore this warning.
+289,cta-version,CTA1010,nms/.../main.dp.cpp,"CTA1010:16: Based on analysed sample data, in 7/9 cases in the sample data, this warning was ignored,
+so strongly recommended to ignore this warning.",266
+290,cta-version,CTA1010,nms/.../main.dp.cpp,"CTA1010:19: Based on analysed sample data, in 7/9 cases in the sample data, this warning was ignored,
+so strongly recommended to ignore this warning.",295
+291,cta-version,CTA1065,recursiveGaussian/.../main.dp.cpp,"CTA1065:155: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",69
-284,cta-version,CTA1039,atomicIntrinsics/.../simpleAtomicIntrinsics_kernel.dp.hpp,"CTA1039:0: Base on the experience, strongly recommended to leave the code as it is
-and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
-replace the atomic function name with an atomic function name that includes the template parameters.",34
-285,cta-version,CTA1039,atomicIntrinsics/.../simpleAtomicIntrinsics_kernel.dp.hpp,"CTA1039:1: Base on the experience, strongly recommended to leave the code as it is
-and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
-replace the atomic function name with an atomic function name that includes the template parameters.",42
-286,cta-version,CTA1039,atomicIntrinsics/.../simpleAtomicIntrinsics_kernel.dp.hpp,"CTA1039:2: Base on the experience, strongly recommended to leave the code as it is
-and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
-replace the atomic function name with an atomic function name that includes the template parameters.",50
-287,cta-version,CTA1039,atomicIntrinsics/.../simpleAtomicIntrinsics_kernel.dp.hpp,"CTA1039:3: Base on the experience, strongly recommended to leave the code as it is
-and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
-replace the atomic function name with an atomic function name that includes the template parameters.",58
-288,cta-version,CTA1039,atomicIntrinsics/.../simpleAtomicIntrinsics_kernel.dp.hpp,"CTA1039:4: Base on the experience, strongly recommended to leave the code as it is
-and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
-replace the atomic function name with an atomic function name that includes the template parameters.",66
-289,cta-version,CTA1039,atomicIntrinsics/.../simpleAtomicIntrinsics_kernel.dp.hpp,"CTA1039:5: Base on the experience, strongly recommended to leave the code as it is
-and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
-replace the atomic function name with an atomic function name that includes the template parameters.",75
-290,cta-version,CTA1039,atomicIntrinsics/.../simpleAtomicIntrinsics_kernel.dp.hpp,"CTA1039:6: Base on the experience, strongly recommended to leave the code as it is
-and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
-replace the atomic function name with an atomic function name that includes the template parameters.",83
-291,cta-version,CTA1065,filter/.../main.dp.cpp,"CTA1065:0: CTA recommended to ignore this warning.
+292,cta-version,CTA1039,atomicIntrinsics/.../simpleAtomicIntrinsics_kernel.dp.hpp,"CTA1039:0: Based on analysed sample data, strongly recommended to leave the code as it is
+and ignore this warning （27/32 cases）. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.（5/32 cases）",34
+293,cta-version,CTA1039,atomicIntrinsics/.../simpleAtomicIntrinsics_kernel.dp.hpp,"CTA1039:1: Based on analysed sample data, strongly recommended to leave the code as it is
+and ignore this warning （27/32 cases）. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.（5/32 cases）",42
+294,cta-version,CTA1039,atomicIntrinsics/.../simpleAtomicIntrinsics_kernel.dp.hpp,"CTA1039:2: Based on analysed sample data, strongly recommended to leave the code as it is
+and ignore this warning （27/32 cases）. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.（5/32 cases）",50
+295,cta-version,CTA1039,atomicIntrinsics/.../simpleAtomicIntrinsics_kernel.dp.hpp,"CTA1039:3: Based on analysed sample data, strongly recommended to leave the code as it is
+and ignore this warning （27/32 cases）. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.（5/32 cases）",58
+296,cta-version,CTA1039,atomicIntrinsics/.../simpleAtomicIntrinsics_kernel.dp.hpp,"CTA1039:4: Based on analysed sample data, strongly recommended to leave the code as it is
+and ignore this warning （27/32 cases）. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.（5/32 cases）",66
+297,cta-version,CTA1039,atomicIntrinsics/.../simpleAtomicIntrinsics_kernel.dp.hpp,"CTA1039:5: Based on analysed sample data, strongly recommended to leave the code as it is
+and ignore this warning （27/32 cases）. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.（5/32 cases）",75
+298,cta-version,CTA1039,atomicIntrinsics/.../simpleAtomicIntrinsics_kernel.dp.hpp,"CTA1039:6: Based on analysed sample data, strongly recommended to leave the code as it is
+and ignore this warning （27/32 cases）. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.（5/32 cases）",83
+299,cta-version,CTA1065,filter/.../main.dp.cpp,"CTA1065:0: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",31
-292,cta-version,CTA1065,filter/.../main.dp.cpp,"CTA1065:1: CTA recommended to ignore this warning.
+300,cta-version,CTA1065,filter/.../main.dp.cpp,"CTA1065:1: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",51
-293,cta-version,CTA1065,filter/.../main.dp.cpp,"CTA1065:2: CTA recommended to ignore this warning.
+301,cta-version,CTA1065,filter/.../main.dp.cpp,"CTA1065:2: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",68
-294,cta-version,CTA1065,filter/.../main.dp.cpp,"CTA1065:3: CTA recommended to ignore this warning.
+302,cta-version,CTA1065,filter/.../main.dp.cpp,"CTA1065:3: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",82
-295,cta-version,CTA1039,filter/.../main.dp.cpp,"CTA1039:4: Base on the experience, strongly recommended to leave the code as it is
-and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
-replace the atomic function name with an atomic function name that includes the template parameters.",62
-296,cta-version,CTA1039,asta/.../main.dp.cpp,"CTA1039:1: Base on the experience, strongly recommended to leave the code as it is
-and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
-replace the atomic function name with an atomic function name that includes the template parameters.",63
-297,cta-version,CTA1039,asta/.../main.dp.cpp,"CTA1039:5: Base on the experience, strongly recommended to leave the code as it is
-and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
-replace the atomic function name with an atomic function name that includes the template parameters.",82
-298,cta-version,CTA1039,asta/.../main.dp.cpp,"CTA1039:6: Base on the experience, strongly recommended to leave the code as it is
-and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
-replace the atomic function name with an atomic function name that includes the template parameters.",115
-299,cta-version,CTA1039,asta/.../main.dp.cpp,"CTA1039:8: Base on the experience, strongly recommended to leave the code as it is
-and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
-replace the atomic function name with an atomic function name that includes the template parameters.",148
-300,cta-version,CTA1039,asta/.../main.dp.cpp,"CTA1039:9: Base on the experience, strongly recommended to leave the code as it is
-and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
-replace the atomic function name with an atomic function name that includes the template parameters.",193
-301,cta-version,CTA1065,asta/.../main.dp.cpp,"CTA1065:0: CTA recommended to ignore this warning.
+303,cta-version,CTA1039,filter/.../main.dp.cpp,"CTA1039:4: Based on analysed sample data, strongly recommended to leave the code as it is
+and ignore this warning （27/32 cases）. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.（5/32 cases）",62
+304,cta-version,CTA1039,asta/.../main.dp.cpp,"CTA1039:1: Based on analysed sample data, strongly recommended to leave the code as it is
+and ignore this warning （27/32 cases）. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.（5/32 cases）",63
+305,cta-version,CTA1039,asta/.../main.dp.cpp,"CTA1039:5: Based on analysed sample data, strongly recommended to leave the code as it is
+and ignore this warning （27/32 cases）. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.（5/32 cases）",82
+306,cta-version,CTA1039,asta/.../main.dp.cpp,"CTA1039:6: Based on analysed sample data, strongly recommended to leave the code as it is
+and ignore this warning （27/32 cases）. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.（5/32 cases）",115
+307,cta-version,CTA1039,asta/.../main.dp.cpp,"CTA1039:8: Based on analysed sample data, strongly recommended to leave the code as it is
+and ignore this warning （27/32 cases）. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.（5/32 cases）",148
+308,cta-version,CTA1039,asta/.../main.dp.cpp,"CTA1039:9: Based on analysed sample data, strongly recommended to leave the code as it is
+and ignore this warning （27/32 cases）. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.（5/32 cases）",193
+309,cta-version,CTA1065,asta/.../main.dp.cpp,"CTA1065:0: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",69
-302,cta-version,CTA1065,asta/.../main.dp.cpp,"CTA1065:4: CTA recommended to ignore this warning.
+310,cta-version,CTA1065,asta/.../main.dp.cpp,"CTA1065:4: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",89
-303,cta-version,CTA1065,asta/.../main.dp.cpp,"CTA1065:2: CTA recommended to ignore this warning.
+311,cta-version,CTA1065,asta/.../main.dp.cpp,"CTA1065:2: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",123
-304,cta-version,CTA1065,asta/.../main.dp.cpp,"CTA1065:7: CTA recommended to ignore this warning.
+312,cta-version,CTA1065,asta/.../main.dp.cpp,"CTA1065:7: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",155
-305,cta-version,CTA1065,asta/.../main.dp.cpp,"CTA1065:3: CTA recommended to ignore this warning.
+313,cta-version,CTA1065,asta/.../main.dp.cpp,"CTA1065:3: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",199
-306,cta-version,CTA1065,lud/.../lud_kernels.dp.cpp,"CTA1065:0: CTA recommended to ignore this warning.
+314,cta-version,CTA1065,lud/.../lud_kernels.dp.cpp,"CTA1065:0: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",16
-307,cta-version,CTA1065,lud/.../lud_kernels.dp.cpp,"CTA1065:1: CTA recommended to ignore this warning.
+315,cta-version,CTA1065,lud/.../lud_kernels.dp.cpp,"CTA1065:1: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",33
-308,cta-version,CTA1065,lud/.../lud_kernels.dp.cpp,"CTA1065:2: CTA recommended to ignore this warning.
+316,cta-version,CTA1065,lud/.../lud_kernels.dp.cpp,"CTA1065:2: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",47
-309,cta-version,CTA1065,lud/.../lud_kernels.dp.cpp,"CTA1065:3: CTA recommended to ignore this warning.
+317,cta-version,CTA1065,lud/.../lud_kernels.dp.cpp,"CTA1065:3: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",104
-310,cta-version,CTA1065,lud/.../lud_kernels.dp.cpp,"CTA1065:4: CTA recommended to ignore this warning.
+318,cta-version,CTA1065,lud/.../lud_kernels.dp.cpp,"CTA1065:4: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",128
-311,cta-version,CTA1065,lud/.../lud_kernels.dp.cpp,"CTA1065:5: CTA recommended to ignore this warning.
+319,cta-version,CTA1065,lud/.../lud_kernels.dp.cpp,"CTA1065:5: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",175
-312,cta-version,CTA1065,lanczos/.../lanczos.dp.cpp,"CTA1065:0: CTA recommended to ignore this warning.
+320,cta-version,CTA1065,lanczos/.../lanczos.dp.cpp,"CTA1065:0: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",41
-313,cta-version,CTA1065,lanczos/.../lanczos.dp.cpp,"CTA1065:1: CTA recommended to ignore this warning.
+321,cta-version,CTA1065,lanczos/.../lanczos.dp.cpp,"CTA1065:1: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",56
-314,cta-version,CTA1065,ced/.../main.dp.cpp,"CTA1065:0: CTA recommended to ignore this warning.
+322,cta-version,CTA1065,ced/.../main.dp.cpp,"CTA1065:0: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",107
-315,cta-version,CTA1065,ced/.../main.dp.cpp,"CTA1065:1: CTA recommended to ignore this warning.
+323,cta-version,CTA1065,ced/.../main.dp.cpp,"CTA1065:1: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",184
-316,cta-version,CTA1065,ced/.../main.dp.cpp,"CTA1065:2: CTA recommended to ignore this warning.
+324,cta-version,CTA1065,ced/.../main.dp.cpp,"CTA1065:2: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",296
-317,cta-version,CTA1065,sobol/.../sobol_gpu.dp.cpp,"CTA1065:0: CTA recommended to ignore this warning.
+325,cta-version,CTA1017,lombscargle/.../main.dp.cpp,"CTA1017:1: The sycl: sincos call is used instead of the sincosf call. These two calls do not provide exactly the same functionality.
+Check thepotential precision and/or performance issues for the generated code.
+2/2 1017 warnings in CTA analysis data pool choose not to change anything.",72
+326,cta-version,CTA1017,lombscargle/.../main.dp.cpp,"CTA1017:0: The sycl: sincos call is used instead of the sincosf call. These two calls do not provide exactly the same functionality.
+Check thepotential precision and/or performance issues for the generated code.
+2/2 1017 warnings in CTA analysis data pool choose not to change anything.",90
+327,cta-version,CTA1065,sobol/.../sobol_gpu.dp.cpp,"CTA1065:0: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",70
-318,cta-version,CTA1008,clock/.../main.dp.cpp,"CTA1008:1: The clock function is not defined in DPC++, you can leave the code as it is for now.
-And consult with your hardware vendor to find a replacement.",42
-319,cta-version,CTA1008,clock/.../main.dp.cpp,"CTA1008:3: The clock function is not defined in DPC++, you can leave the code as it is for now.
-And consult with your hardware vendor to find a replacement.",89
-320,cta-version,CTA1065,clock/.../main.dp.cpp,"CTA1065:2: CTA recommended to ignore this warning.
+328,cta-version,CTA1008,clock/.../main.dp.cpp,"CTA1008:1: The clock function is not defined in DPC++, you can leave the code as it is for now.
+And consult with your hardware vendor to find a replacement. 15/15 1008 warnings in CTA analysis data pool choose not to change anything.",42
+329,cta-version,CTA1008,clock/.../main.dp.cpp,"CTA1008:3: The clock function is not defined in DPC++, you can leave the code as it is for now.
+And consult with your hardware vendor to find a replacement. 15/15 1008 warnings in CTA analysis data pool choose not to change anything.",89
+330,cta-version,CTA1065,clock/.../main.dp.cpp,"CTA1065:2: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",56
-321,cta-version,CTA1065,clock/.../main.dp.cpp,"CTA1065:0: CTA recommended to ignore this warning.
+331,cta-version,CTA1065,clock/.../main.dp.cpp,"CTA1065:0: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",80
-322,cta-version,CTA1008,hybridsort/.../hybridsort.dp.cpp,"CTA1008:0: The clock function is not defined in DPC++, you can leave the code as it is for now.
-And consult with your hardware vendor to find a replacement.",119
-323,cta-version,CTA1008,hybridsort/.../hybridsort.dp.cpp,"CTA1008:1: The clock function is not defined in DPC++, you can leave the code as it is for now.
-And consult with your hardware vendor to find a replacement.",125
-324,cta-version,CTA1008,hybridsort/.../hybridsort.dp.cpp,"CTA1008:2: The clock function is not defined in DPC++, you can leave the code as it is for now.
-And consult with your hardware vendor to find a replacement.",140
-325,cta-version,CTA1008,hybridsort/.../hybridsort.dp.cpp,"CTA1008:3: The clock function is not defined in DPC++, you can leave the code as it is for now.
-And consult with your hardware vendor to find a replacement.",148
-326,cta-version,CTA1008,hybridsort/.../hybridsort.dp.cpp,"CTA1008:4: The clock function is not defined in DPC++, you can leave the code as it is for now.
-And consult with your hardware vendor to find a replacement.",167
-327,cta-version,CTA1008,hybridsort/.../hybridsort.dp.cpp,"CTA1008:5: The clock function is not defined in DPC++, you can leave the code as it is for now.
-And consult with your hardware vendor to find a replacement.",174
-328,cta-version,CTA1065,quicksort/.../QuicksortKernels.dp.hpp,"CTA1065:1: CTA recommended to ignore this warning.
+332,cta-version,CTA1008,hybridsort/.../hybridsort.dp.cpp,"CTA1008:0: The clock function is not defined in DPC++, you can leave the code as it is for now.
+And consult with your hardware vendor to find a replacement. 15/15 1008 warnings in CTA analysis data pool choose not to change anything.",119
+333,cta-version,CTA1008,hybridsort/.../hybridsort.dp.cpp,"CTA1008:1: The clock function is not defined in DPC++, you can leave the code as it is for now.
+And consult with your hardware vendor to find a replacement. 15/15 1008 warnings in CTA analysis data pool choose not to change anything.",125
+334,cta-version,CTA1008,hybridsort/.../hybridsort.dp.cpp,"CTA1008:2: The clock function is not defined in DPC++, you can leave the code as it is for now.
+And consult with your hardware vendor to find a replacement. 15/15 1008 warnings in CTA analysis data pool choose not to change anything.",140
+335,cta-version,CTA1008,hybridsort/.../hybridsort.dp.cpp,"CTA1008:3: The clock function is not defined in DPC++, you can leave the code as it is for now.
+And consult with your hardware vendor to find a replacement. 15/15 1008 warnings in CTA analysis data pool choose not to change anything.",148
+336,cta-version,CTA1008,hybridsort/.../hybridsort.dp.cpp,"CTA1008:4: The clock function is not defined in DPC++, you can leave the code as it is for now.
+And consult with your hardware vendor to find a replacement. 15/15 1008 warnings in CTA analysis data pool choose not to change anything.",167
+337,cta-version,CTA1008,hybridsort/.../hybridsort.dp.cpp,"CTA1008:5: The clock function is not defined in DPC++, you can leave the code as it is for now.
+And consult with your hardware vendor to find a replacement. 15/15 1008 warnings in CTA analysis data pool choose not to change anything.",174
+338,cta-version,CTA1010,keccaktreehash/.../KeccakTreeGPU.dp.cpp,"CTA1010:0: Based on analysed sample data, in 7/9 cases in the sample data, this warning was ignored,
+so strongly recommended to ignore this warning.",24
+339,cta-version,CTA1010,quicksort/.../main.dp.cpp,"CTA1010:28: Based on analysed sample data, in 7/9 cases in the sample data, this warning was ignored,
+so strongly recommended to ignore this warning.",209
+340,cta-version,CTA1010,quicksort/.../main.dp.cpp,"CTA1010:36: Based on analysed sample data, in 7/9 cases in the sample data, this warning was ignored,
+so strongly recommended to ignore this warning.",302
+341,cta-version,CTA1065,quicksort/.../QuicksortKernels.dp.hpp,"CTA1065:1: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",61
-329,cta-version,CTA1065,quicksort/.../QuicksortKernels.dp.hpp,"CTA1065:2: CTA recommended to ignore this warning.
+342,cta-version,CTA1065,quicksort/.../QuicksortKernels.dp.hpp,"CTA1065:2: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",80
-330,cta-version,CTA1065,quicksort/.../QuicksortKernels.dp.hpp,"CTA1065:3: CTA recommended to ignore this warning.
+343,cta-version,CTA1065,quicksort/.../QuicksortKernels.dp.hpp,"CTA1065:3: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",115
-331,cta-version,CTA1065,quicksort/.../QuicksortKernels.dp.hpp,"CTA1065:4: CTA recommended to ignore this warning.
+344,cta-version,CTA1065,quicksort/.../QuicksortKernels.dp.hpp,"CTA1065:4: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",171
-332,cta-version,CTA1065,quicksort/.../QuicksortKernels.dp.hpp,"CTA1065:5: CTA recommended to ignore this warning.
+345,cta-version,CTA1065,quicksort/.../QuicksortKernels.dp.hpp,"CTA1065:5: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",193
-333,cta-version,CTA1065,quicksort/.../QuicksortKernels.dp.hpp,"CTA1065:8: CTA recommended to ignore this warning.
+346,cta-version,CTA1065,quicksort/.../QuicksortKernels.dp.hpp,"CTA1065:8: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",210
-334,cta-version,CTA1065,quicksort/.../QuicksortKernels.dp.hpp,"CTA1065:9: CTA recommended to ignore this warning.
+347,cta-version,CTA1065,quicksort/.../QuicksortKernels.dp.hpp,"CTA1065:9: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",233
-335,cta-version,CTA1065,quicksort/.../QuicksortKernels.dp.hpp,"CTA1065:6: CTA recommended to ignore this warning.
+348,cta-version,CTA1065,quicksort/.../QuicksortKernels.dp.hpp,"CTA1065:6: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",269
-336,cta-version,CTA1065,quicksort/.../QuicksortKernels.dp.hpp,"CTA1065:7: CTA recommended to ignore this warning.
+349,cta-version,CTA1065,quicksort/.../QuicksortKernels.dp.hpp,"CTA1065:7: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",292
-337,cta-version,CTA1065,quicksort/.../QuicksortKernels.dp.hpp,"CTA1065:21: CTA recommended to ignore this warning.
+350,cta-version,CTA1065,quicksort/.../QuicksortKernels.dp.hpp,"CTA1065:21: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",351
-338,cta-version,CTA1065,quicksort/.../QuicksortKernels.dp.hpp,"CTA1065:13: CTA recommended to ignore this warning.
+351,cta-version,CTA1065,quicksort/.../QuicksortKernels.dp.hpp,"CTA1065:13: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",420
-339,cta-version,CTA1065,quicksort/.../QuicksortKernels.dp.hpp,"CTA1065:14: CTA recommended to ignore this warning.
+352,cta-version,CTA1065,quicksort/.../QuicksortKernels.dp.hpp,"CTA1065:14: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",435
-340,cta-version,CTA1065,quicksort/.../QuicksortKernels.dp.hpp,"CTA1065:15: CTA recommended to ignore this warning.
+353,cta-version,CTA1065,quicksort/.../QuicksortKernels.dp.hpp,"CTA1065:15: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",458
-341,cta-version,CTA1065,quicksort/.../QuicksortKernels.dp.hpp,"CTA1065:16: CTA recommended to ignore this warning.
+354,cta-version,CTA1065,quicksort/.../QuicksortKernels.dp.hpp,"CTA1065:16: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",485
-342,cta-version,CTA1065,quicksort/.../QuicksortKernels.dp.hpp,"CTA1065:19: CTA recommended to ignore this warning.
+355,cta-version,CTA1065,quicksort/.../QuicksortKernels.dp.hpp,"CTA1065:19: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",502
-343,cta-version,CTA1065,quicksort/.../QuicksortKernels.dp.hpp,"CTA1065:20: CTA recommended to ignore this warning.
+356,cta-version,CTA1065,quicksort/.../QuicksortKernels.dp.hpp,"CTA1065:20: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",525
-344,cta-version,CTA1065,quicksort/.../QuicksortKernels.dp.hpp,"CTA1065:17: CTA recommended to ignore this warning.
+357,cta-version,CTA1065,quicksort/.../QuicksortKernels.dp.hpp,"CTA1065:17: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",549
-345,cta-version,CTA1065,quicksort/.../QuicksortKernels.dp.hpp,"CTA1065:18: CTA recommended to ignore this warning.
+358,cta-version,CTA1065,quicksort/.../QuicksortKernels.dp.hpp,"CTA1065:18: CTA recommended to ignore this warning.
 but you can also consider replacing 'item_ct1.barrier();'
 with 'item_ct1.barrier(sycl::access::fence_space::local_space);'
 to have have better performance if the kernel function
 has no memory accesses in the global memory.",563
-346,cta-version,CTA1039,quicksort/.../QuicksortKernels.dp.hpp,"CTA1039:10: Base on the experience, strongly recommended to leave the code as it is
-and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
-replace the atomic function name with an atomic function name that includes the template parameters.",252
-347,cta-version,CTA1039,quicksort/.../QuicksortKernels.dp.hpp,"CTA1039:11: Base on the experience, strongly recommended to leave the code as it is
-and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
-replace the atomic function name with an atomic function name that includes the template parameters.",260
-348,cta-version,CTA1039,quicksort/.../QuicksortKernels.dp.hpp,"CTA1039:12: Base on the experience, strongly recommended to leave the code as it is
-and ignore this warning. BUT, if the first parameter of an atomic function points to a local memory address space,
-replace the atomic function name with an atomic function name that includes the template parameters.",303
+359,cta-version,CTA1039,quicksort/.../QuicksortKernels.dp.hpp,"CTA1039:10: Based on analysed sample data, strongly recommended to leave the code as it is
+and ignore this warning （27/32 cases）. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.（5/32 cases）",252
+360,cta-version,CTA1039,quicksort/.../QuicksortKernels.dp.hpp,"CTA1039:11: Based on analysed sample data, strongly recommended to leave the code as it is
+and ignore this warning （27/32 cases）. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.（5/32 cases）",260
+361,cta-version,CTA1039,quicksort/.../QuicksortKernels.dp.hpp,"CTA1039:12: Based on analysed sample data, strongly recommended to leave the code as it is
+and ignore this warning （27/32 cases）. BUT, if the first parameter of an atomic function points to a local memory address space,
+replace the atomic function name with an atomic function name that includes the template parameters.（5/32 cases）",303

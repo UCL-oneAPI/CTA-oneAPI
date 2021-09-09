@@ -179,64 +179,30 @@ interface). The tool inserted a namespace to avoid the conflict. Use SYCL 1.2.1
 standard operators instead.",126
 48,cta-version,DPCT1007,vmc/.../vmc.dp.cpp,"DPCT1007:3: Migration of this CUDA API is not supported by the Intel(R) DPC++
 Compatibility Tool.",56
-49,cta-version,DPCT1010,aobench/.../ao.dp.cpp,"DPCT1010:4: SYCL uses exceptions to report errors and does not use the
-* error codes. The call was replaced with 0. You need to rewrite this code.
-",380
-50,cta-version,DPCT1010,reduction/.../reduction.dp.cpp,"DPCT1010:2: SYCL uses exceptions to report errors and does not use the error
-codes. The call was replaced with 0. You need to rewrite this code.",38
-51,cta-version,DPCT1009,reduction/.../reduction.dp.cpp,"DPCT1009:3: SYCL uses exceptions to report errors and does not use
-the error codes. The original code was commented out and a warning
-string was inserted. You need to rewrite this code.",52
-52,cta-version,DPCT1010,flame/.../utils.dp.cpp,"DPCT1010:0: SYCL uses exceptions to report errors and does not use the error
-codes. The call was replaced with 0. You need to rewrite this code.",82
-53,cta-version,DPCT1010,clenergy/.../clenergy.dp.cpp,"DPCT1010:0: SYCL uses exceptions to report errors and does not use the error
-codes. The call was replaced with 0. You need to rewrite this code.",19
-54,cta-version,DPCT1009,clenergy/.../clenergy.dp.cpp,"DPCT1009:1: SYCL uses exceptions to report errors and does not use the error
-codes. The original code was commented out and a warning string was inserted.
-You need to rewrite this code.",23
-55,cta-version,DPCT1011,dxtc1/.../kernel.dp.cpp,"DPCT1011:0: The tool detected overloaded operators for built-in vector types,
+49,cta-version,DPCT1011,dxtc1/.../kernel.dp.cpp,"DPCT1011:0: The tool detected overloaded operators for built-in vector types,
 which may conflict with the SYCL 1.2.1 standard operators (see 4.10.2.1 Vec
 interface). The tool inserted a namespace to avoid the conflict. Use SYCL 1.2.1
 standard operators instead.",17
-56,cta-version,DPCT1011,dxtc1/.../kernel.dp.cpp,"DPCT1011:1: The tool detected overloaded operators for built-in vector types,
+50,cta-version,DPCT1011,dxtc1/.../kernel.dp.cpp,"DPCT1011:1: The tool detected overloaded operators for built-in vector types,
 which may conflict with the SYCL 1.2.1 standard operators (see 4.10.2.1 Vec
 interface). The tool inserted a namespace to avoid the conflict. Use SYCL 1.2.1
 standard operators instead.",35
-57,cta-version,DPCT1011,dxtc1/.../kernel.dp.cpp,"DPCT1011:2: The tool detected overloaded operators for built-in vector types,
+51,cta-version,DPCT1011,dxtc1/.../kernel.dp.cpp,"DPCT1011:2: The tool detected overloaded operators for built-in vector types,
 which may conflict with the SYCL 1.2.1 standard operators (see 4.10.2.1 Vec
 interface). The tool inserted a namespace to avoid the conflict. Use SYCL 1.2.1
 standard operators instead.",51
-58,cta-version,DPCT1011,dxtc1/.../kernel.dp.cpp,"DPCT1011:3: The tool detected overloaded operators for built-in vector types,
+52,cta-version,DPCT1011,dxtc1/.../kernel.dp.cpp,"DPCT1011:3: The tool detected overloaded operators for built-in vector types,
 which may conflict with the SYCL 1.2.1 standard operators (see 4.10.2.1 Vec
 interface). The tool inserted a namespace to avoid the conflict. Use SYCL 1.2.1
 standard operators instead.",67
-59,cta-version,DPCT1011,dxtc1/.../kernel.dp.cpp,"DPCT1011:4: The tool detected overloaded operators for built-in vector types,
+53,cta-version,DPCT1011,dxtc1/.../kernel.dp.cpp,"DPCT1011:4: The tool detected overloaded operators for built-in vector types,
 which may conflict with the SYCL 1.2.1 standard operators (see 4.10.2.1 Vec
 interface). The tool inserted a namespace to avoid the conflict. Use SYCL 1.2.1
 standard operators instead.",83
-60,cta-version,DPCT1011,dxtc1/.../kernel.dp.cpp,"DPCT1011:5: The tool detected overloaded operators for built-in vector types,
+54,cta-version,DPCT1011,dxtc1/.../kernel.dp.cpp,"DPCT1011:5: The tool detected overloaded operators for built-in vector types,
 which may conflict with the SYCL 1.2.1 standard operators (see 4.10.2.1 Vec
 interface). The tool inserted a namespace to avoid the conflict. Use SYCL 1.2.1
 standard operators instead.",98
-61,cta-version,DPCT1004,dxtc1/.../kernel.dp.cpp,DPCT1004:6: Could not generate replacement.,257
-62,cta-version,DPCT1004,dxtc1/.../kernel.dp.cpp,DPCT1004:7: Could not generate replacement.,261
-63,cta-version,DPCT1004,dxtc1/.../kernel.dp.cpp,DPCT1004:8: Could not generate replacement.,265
-64,cta-version,DPCT1010,nms/.../main.dp.cpp,"DPCT1010:16: SYCL uses exceptions to report errors and does not use the error
-codes. The call was replaced with 0. You need to rewrite this code.",266
-65,cta-version,DPCT1010,nms/.../main.dp.cpp,"DPCT1010:19: SYCL uses exceptions to report errors and does not use the error
-codes. The call was replaced with 0. You need to rewrite this code.",295
-66,cta-version,DPCT1017,lombscargle/.../main.dp.cpp,"DPCT1017:1: The sycl::sincos call is used instead of the sincosf call.
-These two calls do not provide exactly the same functionality. Check the
-potential precision and/or performance issues for the generated code.",72
-67,cta-version,DPCT1017,lombscargle/.../main.dp.cpp,"DPCT1017:0: The sycl::sincos call is used instead of the sincosf call. These
-two calls do not provide exactly the same functionality. Check the potential
-precision and/or performance issues for the generated code.",90
-68,cta-version,DPCT1010,keccaktreehash/.../KeccakTreeGPU.dp.cpp,"DPCT1010:0: SYCL uses exceptions to report errors and does not
-* use the error codes. The call was replaced with 0. You need to
-* rewrite this code.",24
-69,cta-version,DPCT1010,quicksort/.../main.dp.cpp,"DPCT1010:28: SYCL uses exceptions to report errors and does not use the
-* error codes. The call was replaced with 0. You need to rewrite this code.
-",209
-70,cta-version,DPCT1010,quicksort/.../main.dp.cpp,"DPCT1010:36: SYCL uses exceptions to report errors and does not use the
-* error codes. The call was replaced with 0. You need to rewrite this code.
-",303
+55,cta-version,DPCT1004,dxtc1/.../kernel.dp.cpp,DPCT1004:6: Could not generate replacement.,257
+56,cta-version,DPCT1004,dxtc1/.../kernel.dp.cpp,DPCT1004:7: Could not generate replacement.,261
+57,cta-version,DPCT1004,dxtc1/.../kernel.dp.cpp,DPCT1004:8: Could not generate replacement.,265

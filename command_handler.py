@@ -7,11 +7,12 @@ import os.path
 
 # This defines the CLI and handles user commands.
 
-def run_cta(dpct_project_path, destination_path, report_path, is_report_only=False):
+def run_cta(dpct_project_path, destination_path, report_path, is_report_only=False, should_validate=True):
     cta_instance = CTA_Instance(dpct_project_path, destination_path, report_path)
 
     # validate paths are valid
-    validate_paths(cta_instance.dpct_version_root, cta_instance.cta_version_root)
+    if should_validate:
+        validate_paths(cta_instance.dpct_version_root, cta_instance.cta_version_root)
 
     cta_instance.run_pre_analyzer()
 
