@@ -22,7 +22,8 @@ def evaluate_samples(projects_root, report_path):
         dpct_root = path + '/dpcpp'  # expected to be provided in each project
         destination_dir = path + '/cta-version'
         project_report_dir = path + '/cta-report'
-        cta_instance = run_cta(dpct_root, destination_dir, project_report_dir)
+        cta_instance = run_cta(dpct_root, destination_dir, project_report_dir, is_report_only=False,
+                               should_validate=False)
 
         all_initial_warnings = augment_and_extend(cta_instance.initial_warnings, project_name, all_initial_warnings)
         all_final_warnings = augment_and_extend(cta_instance.final_warnings, project_name, all_final_warnings)
